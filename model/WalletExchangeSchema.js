@@ -1,0 +1,35 @@
+const mongoose = require('mongoose');
+const { Schema, SchemaTypes } = mongoose;
+const uniqueValidator = require('mongoose-unique-validator');
+
+const WalletExchangeSchema = new Schema({
+  code: {
+    type: SchemaTypes.String,
+    index: true
+  },
+  user: {
+    type: SchemaTypes.ObjectId,
+    ref: 'User'
+  },
+  type: {
+    type: SchemaTypes.String,
+    enum: ['item_purchase', 'box_purchase'],
+  },
+  value_change: { type: SchemaTypes.Number },
+  changed_after: { type: SchemaTypes.Number },
+  wallet: {
+    type: SchemaTypes.ObjectId,
+    ref: 'UserWallet',
+  },
+  currency: { type: SchemaTypes.String },
+  target: { type: SchemaTypes.ObjectId },
+}, {
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  },
+});
+
+WalletExchangeSchema.plugin(uniqueValidator, { message: " is already exist" });
+
+module.exports = mongoose.model('WalletExchange', WalletExchangeSchema);
