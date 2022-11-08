@@ -1,6 +1,7 @@
 // const createError = require('http-errors');
 const http = require('http')
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require("body-parser")
@@ -66,7 +67,7 @@ mongoose.connect(
 
 if (process.env.NODE_ENV == 'dev') {
   mongoose.set("debug", true);
-  mongoose.set("setCreateIndex", true);
+  mongoose.set("autoIndex", true);
   
   app.use(require('errorhandler')());
 }

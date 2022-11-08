@@ -26,6 +26,22 @@ const UserSchema = new Schema({
   email_verify: { type: SchemaTypes.Boolean },
   steam_id: { type: SchemaTypes.String },
   steam_apiKey: { type: SchemaTypes.String },
+  account: {
+    type: SchemaTypes.ObjectId,
+    ref: 'Account'
+  },
+  user_progress: {
+    type: SchemaTypes.ObjectId,
+    ref: 'UserProgress'
+  },
+  wallets: {
+    type: SchemaTypes.ObjectId,
+    ref: 'UserWallet'
+  },
+  shipping_info: {
+    type: SchemaTypes.ObjectId,
+    ref: 'UserShippingInfo'
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',

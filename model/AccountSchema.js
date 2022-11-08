@@ -6,7 +6,10 @@ const AccountSchema = new Schema({
   user_code: { type: SchemaTypes.String },
   username: { type: SchemaTypes.String },
   g_rank: { type: SchemaTypes.Number },
-  avatar: { type: SchemaTypes.String },
+  avatar: {
+    type: SchemaTypes.ObjectId,
+    ref: 'Asset'
+  },
   locked_chat: { type: SchemaTypes.Boolean },
   sticky_referee: { type: SchemaTypes.Boolean },
   total_deposit: { type: SchemaTypes.Number },

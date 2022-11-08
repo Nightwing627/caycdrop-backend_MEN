@@ -2,7 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 // define API router
-router.use("/", require("./users"))
+router.use("/", require("./users"));
+router.use('/', require('./auth'));
 
 router.use(function (err, req, res, next) { 
   // validations for API request
