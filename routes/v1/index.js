@@ -2,22 +2,32 @@ var express = require('express');
 var router = express.Router();
 
 const mongoose = require('mongoose');
-const util = require('../../util')
-
+const util = require('../../util');
+const seed = require('../../seed');
 // define API router
 router.use("/", require("./users"));
 router.use('/', require('./auth'));
+router.use('/', require('./home'));
 
-router.post('/test', function (req, res) {
+//** -- TEST functions via API --
+// test sending email
+router.post('/testEmail', function (req, res) {
   util.sendEmail(
-        process.env.EMAIL_VERIFY,
-        {
-          userCode: 'code',
-          email: 'webdev0627@gmail.com',
-          token: '123123123'
-        }
-      );
+    process.env.EMAIL_VERIFY,
+    {
+      userCode: 'code',
+      email: 'webdev0627@gmail.com',
+      token: '123123123'
+    }
+  );
 });
+
+// test seed
+router.post('/testseed', function (req, res) {
+  seed();
+  res.json(200).send('ss');
+});
+
 
 router.use(function (err, req, res, next) { 
   // validations for API request

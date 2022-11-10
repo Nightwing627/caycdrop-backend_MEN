@@ -99,7 +99,30 @@ function sendEmail(type, data) {
       }
     );
   }
+  // TODO: change the link and content
+  if (type == process.env.EMAIL_FORGET_PASS) {
+    subject = 'Forget Password - CAYCDROP';
+    // email_verify/u/' + user.code +'?token=' + token +
+    content = `
+      <p>To reset your password, please click on the link below, or copy and paste the entire link into your browser.</p>
+      ${process.env.LINK}/resetpassword/u/${data.userCode}?token=${data.token}
+      <p>Please note that this confirmation link expires in 24 hours and may require your immediate attention if you wish to access your online account in the future.</p>
+      <p>If you require additional assistance logging into your account, please contact us at ${process.env.LINK}/about-us/contact-us.</p>
 
+      <p>PLEASE DO NOT REPLY TO THIS MESSAGE</p>
+    `;
+
+    axios
+      .post(process.env.SMTP_URL, {
+        authuser: process.env.SMTP_USER,
+        authpass: process.env.SMTP_PASSWORD,
+        from: process.env.SMTP_USER,
+        to: data.email,
+        subject,
+        content
+      }
+    );
+  }
   
 }
 

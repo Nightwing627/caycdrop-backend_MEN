@@ -9,10 +9,7 @@ const BoxSchema = new Schema({
   cost: { type: SchemaTypes.Number },
   original_price: { type: SchemaTypes.Number },
   currency: { type: SchemaTypes.String },
-  icon: {
-    type: SchemaTypes.ObjectId,
-    ref: 'Asset'
-  },
+  icon: { type: SchemaTypes.String },
   level_required: { type: SchemaTypes.Number },
   tags: [{
     type: SchemaTypes.ObjectId,
@@ -33,8 +30,12 @@ const BoxSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'Asset'
   },
+  order: { type: SchemaTypes.Number }
 }, {
-  timestamps: false
+  timestamps: {
+    createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  },
 });
 
 BoxSchema.plugin(uniqueValidator, { message: " is already taken " });

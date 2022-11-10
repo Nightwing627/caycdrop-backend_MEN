@@ -1,0 +1,158 @@
+[
+  {
+      "code": "VGFnOjc",
+      "name": "featured",
+      "visible": true,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjg",
+      "name": "new",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEw",
+      "name": "streetwear",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjI4",
+      "name": "tech",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjQw",
+      "name": "gaming",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjQy",
+      "name": "miscellaneous",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjQ2",
+      "name": "hot",
+      "visible": true,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjUw",
+      "name": "budget",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTM",
+      "name": "jordan-21-22",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTQ",
+      "name": "half-a-jordan",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTU",
+      "name": "updated",
+      "visible": true,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTY",
+      "name": "discount-5",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTc",
+      "name": "star-wars",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNTg",
+      "name": "harry-potter",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNjI",
+      "name": "watches",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNjY",
+      "name": "mix",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNjg",
+      "name": "sneakers",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNjk",
+      "name": "jewellery",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNzE",
+      "name": "collectables",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNzI",
+      "name": "influencer",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNzY",
+      "name": "cars",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwNzc",
+      "name": "VIP",
+      "visible": false,
+      "position": 0  
+  },
+  {
+      "code": "VGFnOjEwNzg",
+      "name": "snkrs-day",
+      "visible": false,
+      "position": 0  
+  },
+  {
+      "code": "VGFnOjEwNzk",
+      "name": "lego",
+      "visible": false,
+      "position": 0  
+  },
+  {
+      "code": "VGFnOjEwODA",
+      "name": "hot-wheels",
+      "visible": false,
+      "position": 0
+  },
+  {
+      "code": "VGFnOjEwODE",
+      "name": "trips",
+      "visible": false,
+      "position": 0
+  }  
+]
