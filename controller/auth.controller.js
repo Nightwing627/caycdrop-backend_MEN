@@ -257,7 +257,7 @@ const AuthController = {
           token,
           password: user.password,
           status: 'pending'
-        })
+        });
         
         Util.sendEmail(process.env.EMAIL_FORGET_PASS, {
           userCode: user.code,
@@ -267,23 +267,70 @@ const AuthController = {
         
         return res.status(200).send('success');
       } else {
-        res.status(400).send('The Email is not registered with us')
+        res.status(400).send('The Email is not registered with us');
       }
     } catch (error) {
-      res.status(400).send('The Email is not registered with us')
+      res.status(400).send('Something went wrong. Please contact with support team');
     }
   },
 
   passwordReset: async (req, res) => {
+    const { code, token, password } = req.body;
 
+    try {
+      if (!(code && token && password)) {
+        return res.status(400).send('Link or password is wrong');
+      }
+
+      let user = await UserSchema.findOne({ where: { code } });
+
+      if (user) {
+        const forgetPass = await ForgetPasswordSchema.findOne({ user_code: code, token });
+        if (forgetPass) {
+          const enryptedPWD = await bcrypt.hash(password, 10)
+          user = await UserSchema.updateOne({ code }, { password: enryptedPWD });
+          await ForgetPasswordSchema.deleteOne({ user_code: code, token })
+          
+          return res.status(200).send('success')
+        } else {
+          res.status(405).send('This requst is not registered');
+        }
+      } else {
+        res.status(400).send('User is not registered with us');
+      }
+    } catch (error) {
+      console.log(error);
+      res.status(400).send('Something went wrong, Please contact with support team');
+    }
   },
 
   sendEmailVerification: async (req, res) => {
-
+    // TODO: this feature may be added
   },
 
   emailVerify: async (req, res) => {
+    const { code, token } = req.body;
 
+    try {
+      const user = await UserSchema.findOne({ code });
+
+      if (user) {
+        const verify = await UserVerifySchema.findOne({ user_code: user.code, token })
+        if (verify) {
+          await verify.remove();
+          user.email_verify = true;
+          await user.save();
+          res.status(200).send('success')
+        } else {
+          res.status(400).send('This request is not registered');
+        }
+      } else {
+        res.status(400).send('User is not registered with us');
+      }
+    } catch (error) {
+      console.log(error)
+      res.status(400).send('error')
+    }
   }
 };
 
