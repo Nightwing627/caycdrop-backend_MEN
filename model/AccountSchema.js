@@ -6,14 +6,11 @@ const AccountSchema = new Schema({
   user_code: { type: SchemaTypes.String },
   username: { type: SchemaTypes.String },
   g_rank: { type: SchemaTypes.Number },
-  avatar: {
-    type: SchemaTypes.ObjectId,
-    ref: 'Asset'
-  },
+  avatar: { type: SchemaTypes.String },
   locked_chat: { type: SchemaTypes.Boolean },
   sticky_referee: { type: SchemaTypes.Boolean },
   total_deposit: { type: SchemaTypes.Number },
-  total_rake_back: { type: SchemaTypes.String },
+  total_rake_back: { type: SchemaTypes.Number },
   daily_withdraw_limit: { type: SchemaTypes.Number },
   team_id: { type: SchemaTypes.String },
   is_trader: { type: SchemaTypes.Boolean },

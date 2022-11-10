@@ -15,7 +15,7 @@ const UserProgressSchema = new Schema({
   updated_at:     { type: SchemaTypes.Date }
 }, {
   timestamps: false
-})
+});
 
 UserProgressSchema.plugin(uniqueValidator, { message: 'is already taken' });
 
