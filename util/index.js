@@ -126,6 +126,20 @@ function sendEmail(type, data) {
   
 }
 
+function getLevelXps(level) {
+  return (
+    process.env.XP_SEED_1 + 
+		process.env.XP_SEED_2 * level + 
+		process.env.XP_SEED_3 * level / 2 + 
+		100 * (
+			Math.pow(level, 4) - 
+			2 * Math.pow(level, 3) - 
+			Math.pow(level, 2) + 
+			2 * level) 
+		/ 24
+  );
+}
+
 async function getCountryByReq(request) { 
   let ip = request.headers['x-forwarded-for']
     || request.connection.remoteAddress;
@@ -136,5 +150,5 @@ async function getCountryByReq(request) {
 }
 
 module.exports = {
-  generateCode, sendEmail, getCountryByReq, getRandomToken
+  generateCode, sendEmail, getCountryByReq, getRandomToken, getLevelXps
 }

@@ -62,7 +62,11 @@ mongoose.connect(
     useUnifiedTopology: true,
     useNewUrlParser: true,
   },
-  () => { console.log("connected to the database!") }
+  () => {
+    console.log("connected to the database!");
+    require('./model');
+    
+  }
 )
 
 if (process.env.NODE_ENV == 'dev') {

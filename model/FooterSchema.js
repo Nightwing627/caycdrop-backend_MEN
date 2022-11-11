@@ -4,7 +4,7 @@ const { Schema, SchemaTypes } = mongoose;
 const FooterSchema = new Schema({
   classes: { type: SchemaTypes.String },
   link: { type: SchemaTypes.String },
-  is_new_tabl: { type: SchemaTypes.Boolean },
+  is_new_tab: { type: SchemaTypes.Boolean },
   image: { type: SchemaTypes.ObjectId, ref: 'Asset' },
   text: { type: SchemaTypes.String },
   visibleFor: { type: SchemaTypes.String },

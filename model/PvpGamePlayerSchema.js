@@ -28,4 +28,4 @@ const PvpGamePlayerSchema = new Schema({
 
 PvpGamePlayerSchema.plugin(uniqueValidator, { message: " is already exist" });
 
-module.exports = mongoose.model('Market', PvpGamePlayerSchema);
+module.exports = mongoose.model('PvpGamePlayer', PvpGamePlayerSchema);

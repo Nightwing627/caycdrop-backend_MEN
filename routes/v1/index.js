@@ -8,6 +8,7 @@ const seed = require('../../seed');
 router.use("/", require("./users"));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
+router.use('/box', require('./box'));
 
 //** -- TEST functions via API --
 // test sending email

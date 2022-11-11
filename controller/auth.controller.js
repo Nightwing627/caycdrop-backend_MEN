@@ -139,13 +139,14 @@ const AuthController = {
 
       // create user progress
       // make the level xp alorithm
-      const levelXps = 8000;
+      const levelXps = Util.getLevelXps(1);
       const userProgress = new UserProgressSchema({
         user_code: code,
         xp: 0,
         required_xp: 0,
         next_required_xp: levelXps,
-        updated_at: new Date()
+        level: 1,
+        updated_at: new Date(),
       });
       await userProgress.save();
       newUser.user_progress = userProgress._id;

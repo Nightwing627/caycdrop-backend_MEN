@@ -30,13 +30,25 @@ const BoxSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'Asset'
   },
-  order: { type: SchemaTypes.Number }
+  order: { type: SchemaTypes.Number },
+  statistic: {
+    type: SchemaTypes.ObjectId,
+    'ref': 'BoxStatistics'
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
-  },
+  }
 });
+
+BoxSchema.virtual('virSort').get(function () {
+  return Math.round(this.original_price);
+});
+
+BoxSchema.set('toObject', { virtuals: true });
+
+BoxSchema.set('toJSON', { virtuals: true });
 
 BoxSchema.plugin(uniqueValidator, { message: " is already taken " });
 
