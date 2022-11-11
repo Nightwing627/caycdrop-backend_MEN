@@ -45,8 +45,7 @@ const BoxController = {
       })
       .populate('statistic')
       .select('-_id')
-      .limit(_size * 1)
-      .skip((_page - 1) * _size)
+      .limit(_size * _page)
       .sort({ "statistic.opened": -1 })
       .exec();
     

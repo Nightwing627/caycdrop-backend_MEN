@@ -1,0 +1,408 @@
+[{
+  "_id": {
+    "$oid": "636d3e4a011e9f12edd951d2"
+  },
+  "box_code": "Ba2c75b885f6c9a3b3dce",
+  "opened": "451",
+  "popular": "120"
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ecd"
+  },
+  "box_code": "Bfdf6d81fb415fca6a03d",
+  "opened": 194,
+  "popular": 175,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ece"
+  },
+  "box_code": "Bf73615aa0846982f3eb5",
+  "opened": 368,
+  "popular": 498,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ecf"
+  },
+  "box_code": "Be2029dbf9890ce19bb2c",
+  "opened": 372,
+  "popular": 349,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed0"
+  },
+  "box_code": "Bce47c8fb169f6a0a9bde",
+  "opened": 186,
+  "popular": 52,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed1"
+  },
+  "box_code": "B6706b4f34ebdc26fb1d0",
+  "opened": 420,
+  "popular": 10,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed2"
+  },
+  "box_code": "B49ae514f244e564b7fb5",
+  "opened": 393,
+  "popular": 174,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed3"
+  },
+  "box_code": "Bce556b918858b6d8d6d6",
+  "opened": 120,
+  "popular": 407,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed4"
+  },
+  "box_code": "B3ac2e4355423607bd216",
+  "opened": 260,
+  "popular": 224,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed7"
+  },
+  "box_code": "B149c95d19d600f96840a",
+  "opened": 200,
+  "popular": 183,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed8"
+  },
+  "box_code": "Ba2c75b885f6c9a3b3dce",
+  "opened": 218,
+  "popular": 4,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed9"
+  },
+  "box_code": "B42bf431d23c38b52684f",
+  "opened": 52,
+  "popular": 481,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eda"
+  },
+  "box_code": "Bfb36ce2c63c7cd3290f4",
+  "opened": 237,
+  "popular": 496,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4edb"
+  },
+  "box_code": "B57cac19e72440e8648af",
+  "opened": 478,
+  "popular": 157,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4edc"
+  },
+  "box_code": "B562d69226f6bf96c5b86",
+  "opened": 474,
+  "popular": 421,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4edd"
+  },
+  "box_code": "B999869b8f7e7c1e18309",
+  "opened": 420,
+  "popular": 56,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ede"
+  },
+  "box_code": "Ba7905805e185f405798d",
+  "opened": 212,
+  "popular": 299,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4edf"
+  },
+  "box_code": "B01fe0c32c2cd2e3c1366",
+  "opened": 311,
+  "popular": 79,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee0"
+  },
+  "box_code": "B7d20e32d1d78c9477df2",
+  "opened": 306,
+  "popular": 218,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee1"
+  },
+  "box_code": "B6b5022504263387c94f2",
+  "opened": 441,
+  "popular": 419,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee2"
+  },
+  "box_code": "B6c43171ce7198f0ca23f",
+  "opened": 280,
+  "popular": 192,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee3"
+  },
+  "box_code": "Bc7b33ebf2df0c29ea2db",
+  "opened": 98,
+  "popular": 381,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee4"
+  },
+  "box_code": "Bc2465fa4f2ca8b1b1696",
+  "opened": 48,
+  "popular": 452,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee5"
+  },
+  "box_code": "Ba5044a4e81a056da8cb9",
+  "opened": 4,
+  "popular": 126,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee6"
+  },
+  "box_code": "B55212907551c227d998e",
+  "opened": 112,
+  "popular": 61,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee7"
+  },
+  "box_code": "B0b7acde6762a42ecaf06",
+  "opened": 392,
+  "popular": 272,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee8"
+  },
+  "box_code": "B41b21d143ac25f3c510d",
+  "opened": 17,
+  "popular": 263,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ee9"
+  },
+  "box_code": "Bb49f4a00321e18254984",
+  "opened": 413,
+  "popular": 82,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eea"
+  },
+  "box_code": "B38aebc8f640a5ce7bd91",
+  "opened": 407,
+  "popular": 166,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eeb"
+  },
+  "box_code": "Bef932449883c6411630e",
+  "opened": 407,
+  "popular": 395,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eec"
+  },
+  "box_code": "B20061b5453d274cdbec1",
+  "opened": 260,
+  "popular": 361,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eed"
+  },
+  "box_code": "B95ffcb6676d1784befd2",
+  "opened": 445,
+  "popular": 389,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eee"
+  },
+  "box_code": "Bb6a97266243bb1732c48",
+  "opened": 53,
+  "popular": 21,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed5"
+  },
+  "box_code": "Bbc053173defb2299bdb8",
+  "opened": 16,
+  "popular": 371,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef0"
+  },
+  "box_code": "B46a700c653f3b0186626",
+  "opened": 213,
+  "popular": 403,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef1"
+  },
+  "box_code": "B95f05bd78f4bb15cfb0a",
+  "opened": 247,
+  "popular": 74,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef2"
+  },
+  "box_code": "Bf498ebe91ea96d1dff97",
+  "opened": 96,
+  "popular": 99,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef3"
+  },
+  "box_code": "Bb2c8db54fa88edcdc719",
+  "opened": 258,
+  "popular": 352,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef4"
+  },
+  "box_code": "B219e9c206076032e360c",
+  "opened": 182,
+  "popular": 407,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef5"
+  },
+  "box_code": "B43d5f8f2c0e3674e0829",
+  "opened": 154,
+  "popular": 230,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef6"
+  },
+  "box_code": "B62fe86a60372316bcd97",
+  "opened": 400,
+  "popular": 182,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef7"
+  },
+  "box_code": "Bb36344d803d874900c92",
+  "opened": 200,
+  "popular": 39,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef8"
+  },
+  "box_code": "B7b154ea434b80423f590",
+  "opened": 95,
+  "popular": 242,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ed6"
+  },
+  "box_code": "Beeb6ec92dc307bee9ee4",
+  "opened": 428,
+  "popular": 468,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4efa"
+  },
+  "box_code": "B0e5b227bc13ac6f1fd63",
+  "opened": 453,
+  "popular": 24,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4efb"
+  },
+  "box_code": "B80f4c5b877ff1b535331",
+  "opened": 479,
+  "popular": 36,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4efc"
+  },
+  "box_code": "Bcfae757c70987c1c995f",
+  "opened": 241,
+  "popular": 235,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4efd"
+  },
+  "box_code": "B0889b47b5bee89bce797",
+  "opened": 348,
+  "popular": 79,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4efe"
+  },
+  "box_code": "B9fbebf22cdb4925369a0",
+  "opened": 131,
+  "popular": 132,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4eef"
+  },
+  "box_code": "B31eec575ee7e211c5ccd",
+  "opened": 354,
+  "popular": 103,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636d40fad7edc3d222fb4ef9"
+  },
+  "box_code": "Bd15bc05014214bad6763",
+  "opened": 104,
+  "popular": 13,
+  "__v": 0
+}]
