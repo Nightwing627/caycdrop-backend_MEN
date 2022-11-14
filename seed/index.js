@@ -2,12 +2,14 @@ const TagSchema = require('../model/TagSchema');
 const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
+const SeedSchema = require('../model/SeedSchema');
 
 const Util = require('../util');
 const tagData = require('./tag.json');
 const boxData = require('./box');
 const itemData = require('./item');
 const boxItemData = require('./boxItem');
+const seedData = require('./seed.json');
 
 const init = async () => {
   
@@ -28,9 +30,13 @@ const init = async () => {
 
   const boxItems = await BoxItemSchema.find();
   if (boxItems == null || boxItems.length == 0) {
-    await BoxItemSchema.insertMany(boxItemData)
+    await BoxItemSchema.insertMany(boxItemData);
   }
 
+  const seeds = await SeedSchema.find();
+  if (seeds == null || seeds.length == 0) {
+    await SeedSchema.insertMany(seedData);
+  }
   // boxs.forEach(async item => {
   //   item.opened = Math.floor(Math.random() * 500);
   //   item.popular = Math.floor(Math.random() * 500);

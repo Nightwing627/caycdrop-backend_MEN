@@ -170,6 +170,25 @@ const BoxController = {
     try {
       const box = await BoxSchema.findOne({ slug });
       
+      const data = await BoxOpenSchema
+        .find({ box: box._id })
+        .populate({
+          path: 'user',
+          populate: {
+            path: 'account',
+            select: 'username g_rank avatar is_authentic'
+          },
+          populate: {
+            path: 'user_progress',
+            select: 'level'
+          },
+          select: 'code'
+        })
+        .populate('item', '-_id -__v code name icon_url rarity value currency type')
+        .select('-id -__v -box')
+        .sort({ profit: 1 })
+        .limit(20);
+      
       
       
       return res.status(200).json({ data });

@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { Schema, SchemaTypes } = mongoose;
 
 const BoxOpenSchema = new Schema({
+  code: { type: SchemaTypes.String },
   user: {
     type: SchemaTypes.ObjectId,
     ref: 'User'
@@ -10,10 +11,19 @@ const BoxOpenSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'Box'
   },
+  item: {
+    type: SchemaTypes.ObjectId,
+    ref: 'item'
+  },
+  pvp_code: { type: SchemaTypes.String },
+  user_item: {
+    type: SchemaTypes.ObjectId,
+    ref: 'UserCart'
+  },
   cost: { type: SchemaTypes.Number },
   profit: { type: SchemaTypes.Number },
   xp_rewarded: { type: SchemaTypes.Number },
-  roll_code: { type: SchemaTypes.String } // TODO: assign the Roll collection
+  roll_code: { type: SchemaTypes.String }, // roll history code
 }, {
   timestamps: {
     createdAt: 'created_at',
