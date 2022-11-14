@@ -119,7 +119,7 @@ const BoxController = {
   getBoxBySlug: async (req, res) => {
     const slug = req.params.slug || '';
 
-    // try {
+    try {
       const box = await BoxSchema
         .findOne({ slug })
         .populate('tags', '-_id -__v -created_at -updated_at')
@@ -128,8 +128,6 @@ const BoxController = {
       if (!box) {
         return res.status(400).send('not found');
       }
-
-      // TODO Best Unboxing
       
       let boxItems = await BoxItemSchema
         .find({ box_code: box.code })
@@ -150,9 +148,9 @@ const BoxController = {
       };
     
       return res.status(200).json({ data });  
-    // } catch (error) {
-    //    return res.status(400).send('not found');
-    // }
+    } catch (error) {
+       return res.status(400).send('not found');
+    }
   },
 
   getRecommendedBoxs: async (req, res) => {
@@ -164,6 +162,20 @@ const BoxController = {
         })
     } catch (error) {
       return res.status(200).json({ data: [] });
+    }
+  },
+
+  getBoxTopOpen: async (req, res) => {
+    const slug = req.params.slug || '';
+    try {
+      const box = await BoxSchema.findOne({ slug });
+      
+      
+      
+      return res.status(200).json({ data });
+    } catch (error) {
+      console.log(error);
+      return res.status(400).send('no data');
     }
   }
 };

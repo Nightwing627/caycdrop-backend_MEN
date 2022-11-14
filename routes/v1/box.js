@@ -10,4 +10,6 @@ router.get('/view/:slug', BoxController.getBoxBySlug);
 
 router.get('/recommended', BoxController.getRecommendedBoxs);
 
+router.get('/view/:slug/top_opening', BoxController.getBoxTopOpen);
+
 module.exports = router;

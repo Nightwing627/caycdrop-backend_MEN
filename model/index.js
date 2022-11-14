@@ -28,5 +28,8 @@ require('./UserTagSchema')
 require('./UserVerifySchema')
 require('./UserWalletSchema')
 require('./WalletExchangeSchema')
+require('./RollSchema')
+require('./SeedSchema')
+require('./UserSeedSchema')
 
 console.log('loaded all collections!');
