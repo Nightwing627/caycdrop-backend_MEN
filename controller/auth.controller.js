@@ -67,7 +67,7 @@ const AuthController = {
   },
 
   register: async (req, res) => {
-    const { password, subscribe, agreeTerms = true } = req.body;
+    const { password, subscribe = true, agreeTerms = true } = req.body;
     const email = req.body.email ? req.body.email.toLowerCase() : '';
 
     if (!(email && password)) {

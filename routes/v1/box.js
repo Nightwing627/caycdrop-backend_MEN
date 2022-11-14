@@ -8,4 +8,6 @@ router.get('/list', BoxController.getAllData);
 
 router.get('/view/:slug', BoxController.getBoxBySlug);
 
+router.get('/recommended', BoxController.getRecommendedBoxs);
+
 module.exports = router;

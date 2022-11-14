@@ -3,6 +3,7 @@ const randToken = require('rand-token');
 const axios = require('axios');
 const geoip = require('geoip-country');
 const CountrySchema = require('../model/CountrySchema');
+const item = require('../seed/item');
 
 const algorithm = 'aes-256-cbc';
 
@@ -149,6 +150,19 @@ async function getCountryByReq(request) {
   return country;
 }
 
+function setBoxItemRolls(data) { 
+  const diff = Number(process.env.ROLL_DIFF);
+  
+  let preRoll = 0;
+  data.forEach(item => {
+    item.roll_start = preRoll + 1;
+    item.roll_end = preRoll + item.rate * diff;
+    preRoll = item.roll_end;
+  });
+
+  return data;
+}
+
 module.exports = {
-  generateCode, sendEmail, getCountryByReq, getRandomToken, getLevelXps
+  generateCode, sendEmail, getCountryByReq, getRandomToken, getLevelXps, setBoxItemRolls
 }

@@ -10,19 +10,15 @@ const ItemVariantSchema = new Schema({
   name: { type: SchemaTypes.String },
   size: { type: SchemaTypes.String },
   color: { type: SchemaTypes.String },
-  min_value: { type: SchemaTypes.Number },
-  max_value: { type: SchemaTypes.Number },
+  currency: { type: SchemaTypes.String }, 
   exchange_rate: {
     type: SchemaTypes.ObjectId,
     ref: 'ExchangeRate'
   },
-  shipping_cost: { type: SchemaTypes.Number },
   markets: [{
     type: SchemaTypes.ObjectId,
     ref: 'Market',
   }],
-  min_rarity: { type: SchemaTypes.String },
-  max_rarity: { type: SchemaTypes.String },
   estimated_delivery_in_hrs: { type: SchemaTypes.String },
 }, {
   timestamps: true,

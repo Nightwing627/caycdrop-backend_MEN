@@ -10,6 +10,7 @@ const BoxItemSchema = new Schema({
   rate: { type: SchemaTypes.Number },
   roll_start: { type: SchemaTypes.Number },
   roll_end: { type: SchemaTypes.Number },
+  status: { type: SchemaTypes.Boolean }
 }, {
   timestamps: {
     createdAt: 'created_at',

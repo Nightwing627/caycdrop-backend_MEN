@@ -19,11 +19,23 @@ const ItemSchema = new Schema({
   currency: { type: SchemaTypes.String },
   released_at: { type: SchemaTypes.Date },
   type: { type: SchemaTypes.String },
-  code: { type: SchemaTypes.String },
-  tags: [{
+  category: [{
     type: SchemaTypes.ObjectId,
     ref: 'Tag'
-  }]
+  }],
+  shipping_cost: { type: SchemaTypes.Number },
+  min_value: { type: SchemaTypes.Number },
+  max_value: { type: SchemaTypes.Number },
+  min_rarity: { type: SchemaTypes.String },
+  max_rarity: { type: SchemaTypes.String },
+  variants: [{
+    type: SchemaTypes.ObjectId,
+    ref: 'ItemVariant'
+  }],
+  market: {
+    type: SchemaTypes.ObjectId,
+    ref: 'Market'
+  }
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -31,10 +31,9 @@ const BoxSchema = new Schema({
     ref: 'Asset'
   },
   order: { type: SchemaTypes.Number },
-  statistic: {
-    type: SchemaTypes.ObjectId,
-    'ref': 'BoxStatistics'
-  }
+  /// statistic data
+  opened: { type: SchemaTypes.Number },
+  popular: { type: SchemaTypes.Number }
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -42,13 +41,48 @@ const BoxSchema = new Schema({
   }
 });
 
-BoxSchema.virtual('virSort').get(function () {
-  return Math.round(this.original_price);
-});
-
 BoxSchema.set('toObject', { virtuals: true });
 
 BoxSchema.set('toJSON', { virtuals: true });
+
+BoxSchema.methods.toListJSON = function () { 
+  return {
+    ancestor_box: this.ancestor_box,
+    code: this.code,
+    name: this.name,
+    cost: this.cost,
+    originalPrice: this.original_price,
+    currency: this.currency,
+    icon: this.icon,
+    levelRequired: this.level_required,
+    tags: this.tags,
+    order: this.order,
+  }
+}
+
+BoxSchema.methods.toGetOneJSON = function() {
+  return {
+    ancestorBox: this.ancestor_box,
+    code: this.code,
+    name: this.name,
+    cost: this.cost,
+    originalPrice: this.original_price,
+    currency: this.currency,
+    icon: this.icon,
+    levelRequired: this.level_required,
+    tags: this.tags,
+    maxPurchaseDaily: this.max_purchase_daily,
+    purchasable: this.purchasable,
+    sellable: this.sellable,
+    openable: this.openable,
+    slug: this.slug,
+    markets: this.markets,
+    description: this.description,
+    enable: this.enable,
+    bgImage: this.background_image,
+    order: this.order,
+  }
+}
 
 BoxSchema.plugin(uniqueValidator, { message: " is already taken " });
 
