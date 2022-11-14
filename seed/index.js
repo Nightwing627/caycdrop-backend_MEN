@@ -5,6 +5,7 @@ const BoxItemSchema = require('../model/BoxItemSchema');
 const SeedSchema = require('../model/SeedSchema');
 const RollHistorySchema = require('../model/RollHistorySchema');
 const BoxOpenSchema = require('../model/BoxOpenSchema');
+const UserSchema = require('../model/UserSchema');
 
 const Util = require('../util');
 const tagData = require('./tag.json');
@@ -25,7 +26,7 @@ const init = async () => {
   const boxs = await BoxSchema.find();
   if (boxs == null || boxs.length == 0) {
     await BoxSchema.insertMany(boxData);
-  }
+  } 
 
   const items = await ItemSchema.find();
   if (items == null || items.length == 0) {
@@ -51,9 +52,15 @@ const init = async () => {
   if (boxOpens == null || boxOpens.length == 0) {
     await BoxOpenSchema.insertMany(boxOpenData);
   }
+
   // boxs.forEach(async item => {
   //   item.opened = Math.floor(Math.random() * 500);
   //   item.popular = Math.floor(Math.random() * 500);
+  //   await item.save();
+  // })
+
+  // boxs.forEach(async item => {
+  //   item.code = Util.generateCode('item', item._id);
   //   await item.save();
   // })
 }

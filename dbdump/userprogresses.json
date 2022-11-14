@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "636bae5f64a555ae41b9cdec"
+  },
+  "user_code": "U29c73ba9631a69b81391",
+  "xp": 0,
+  "required_xp": 0,
+  "next_required_xp": 8000,
+  "level": 1,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668001375594"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636e7e5ccebde1922618c9f1"
+  },
+  "user_code": "U73b2cbc5a890ccff8892",
+  "xp": 0,
+  "required_xp": 0,
+  "next_required_xp": 80001500,
+  "level": 1,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668185692716"
+    }
+  },
+  "__v": 0
+}]

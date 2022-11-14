@@ -167,35 +167,55 @@ const BoxController = {
 
   getBoxTopOpen: async (req, res) => {
     const slug = req.params.slug || '';
-    try {
+    // try {
       const box = await BoxSchema.findOne({ slug });
       
-      const data = await BoxOpenSchema
-        .find({ box: box._id })
-        .populate({
-          path: 'user',
-          populate: {
+    const data = await BoxOpenSchema
+      .find({ box: box._id })
+      .populate({
+        path: 'user',
+        select: '-_id code',
+        populate: [
+          {
             path: 'account',
-            select: 'username g_rank avatar is_authentic'
+            select: '-_id username g_rank avatar is_authentic'
           },
-          populate: {
+          {
             path: 'user_progress',
-            select: 'level'
-          },
-          select: 'code'
-        })
-        .populate('item', '-_id -__v code name icon_url rarity value currency type')
-        .select('-id -__v -box')
-        .sort({ profit: 1 })
-        .limit(20);
+            select: '-_id level'
+          }
+        ]
+      })
+      .populate('box', '-_id name slug icon cost currency')
+      .populate('item', '-_id code name icon_url rarity value currency type')
+      .select('-_id -__v -box')
+      .limit(20)
+      .sort({ profit: 1 });
       
+    const result = [];
+    data.forEach(item => {
+      
+      result.push({
+        code: item.code,
+        cost: item.cost,
+        profit: item.profit,
+        box: null,
+        userItem: item.user_item,
+        xpRewarded: item.xp_rewarded,
+        pvpCode: item.pvp_code,
+        rollCode: item.rollCode,
+        roll: null,
+        createdAt: item.created_at,
+        updatedAt: item.updatedAt,
+      });
+    })
       
       
       return res.status(200).json({ data });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).send('no data');
-    }
+    // } catch (error) {
+    //   console.log(error);
+    //   return res.status(400).send('no data');
+    // }
   }
 };
 

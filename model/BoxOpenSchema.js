@@ -13,7 +13,7 @@ const BoxOpenSchema = new Schema({
   },
   item: {
     type: SchemaTypes.ObjectId,
-    ref: 'item'
+    ref: 'Item'
   },
   pvp_code: { type: SchemaTypes.String },
   user_item: {

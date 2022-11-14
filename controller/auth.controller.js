@@ -178,6 +178,7 @@ const AuthController = {
       newUser.shipping_info = userShippingInfo._id;
       
       // update user : code, accountid, user_progress, wallets, shipping_info
+      newUser.code = code;
       await newUser.save();
       
       // create user verify
@@ -187,6 +188,8 @@ const AuthController = {
       });
       await userVerify.save();
       
+      // TODO: fix issues
+
       // Util.sendEmail(
       //   process.env.EMAIL_VERIFY,
       //   {
