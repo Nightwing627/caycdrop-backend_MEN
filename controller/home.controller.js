@@ -6,21 +6,36 @@ const HomeController = {
   index: async (req, res) => {
     const tag = await TagSchema.findOne({ name: 'featured' });
 
-    let featureBoxs = await BoxSchema
-      .find({ tags: tag._id })
-      .populate('tags', '-_id')
-      // .populate('markets')
-      // .populate('background_image')
-      .sort({ 'tagLength': -1 })
-      .limit(24)
-      .select('-_id')
-      .exec();
+    const data = await BoxSchema.aggregate([
+        {
+            $match: { tags: tag._id }
+        }, {
+            $lookup: {
+                from: 'tags',
+                localField: 'tags',
+                foreignField: '_id',
+                as: 'tags'
+            }
+        }, {
+            $addFields: { "length": { $size: "$tags" } }
+        }, {
+            $sort: { "length": -1 }
+        }, {
+            $limit: 24
+        }, {
+            $project: {
+                _id: 0, ancestor_box: 1, code: 1, name: 1, cost: 1, original_price: 1,
+                currency: 1, icon: 1, level_required: 1, order: 1, slug: 1,
+                "tags.code": 1, "tags.name": 1, "tags.visible": 1, "tags.color": 1
+                }
+        }
+    ]);
     
     // TODO: get latest battles x 4
     
     // TODO: get live drop items
 
-    return res.status(200).json(featureBoxs)
+    return res.status(200).json(data)
   },
 
   getFooterData: (req, res) => {
