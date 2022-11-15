@@ -26,9 +26,15 @@ router.post('/testEmail', function (req, res) {
 // test seed
 router.post('/testseed', function (req, res) {
   seed();
-  res.json(200).send('ss');
+  res.status(200).send('ss');
 });
 
+// test funcs
+router.post('/testfunc', function (req, res) { 
+  util.generateHashSeed();
+
+  res.status(200).send('sssss');
+})
 
 router.use(function (err, req, res, next) { 
   // validations for API request

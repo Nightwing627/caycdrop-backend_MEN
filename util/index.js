@@ -1,26 +1,16 @@
 const crypto = require('crypto');
+crypto.createHa
 const randToken = require('rand-token');
 const axios = require('axios');
 const geoip = require('geoip-country');
 const CountrySchema = require('../model/CountrySchema');
-const item = require('../seed/item');
 
 const algorithm = 'aes-256-cbc';
-
 // secret key generate 32 bytes of random data
 const key = crypto.randomBytes(32);
-
 // generate 16 bytes of random data
 const iv = crypto.randomBytes(16);
-// const SENDGRID_API = process.env.SENDGRID_API_THOMAS
 
-// const transporter = nodemailer.createTransport(
-//   sendgirdTransport({
-//     auth: {
-//       api_key: SENDGRID_API
-//     }
-//   })
-// )
 
 function encrypt(text) { 
   try {
@@ -165,6 +155,50 @@ function setBoxItemRolls(data) {
   return data;
 }
 
+function generateHashSeed() {
+  var serverHashed = crypto.createHash('sha3-256').update('11111').digest('hex');
+  var clientHashed = crypto.createHash('sha3-256').update('nightwing').digest('hex');
+  const nonce = 468;
+  const game = 'PVP_BOX';
+  const seed = getCombinedSeed(game, serverHashed, clientHashed, nonce);
+  const max = 1e8;
+  const rollValue = getRandomInt({ max, seed });
+  console.log(rollValue);
+}
+
+function getRandomInt({ max, seed }) {
+  // Get hash from seed
+  const hash = crypto.createHmac('sha256', seed).digest('hex');
+  
+  // Get value from hash
+  const subHash = hash.slice(0, 13);
+  const valueFromHash = Number.parseInt(subHash, 16);
+
+  // Get dynamic result for this roll
+  const e = Math.pow(2, 52);
+  const result = valueFromHash / e;
+  return Math.floor(result * max);
+}
+
+function getCombinedSeed(game, serverSeed, clientSeed, nonce) {
+  // Add main parameters
+  const seedParameters = [serverSeed, clientSeed, nonce];
+
+  // Add game parameter if needed
+  if (game) {
+    seedParameters.unshift(game);
+  }
+
+  // Combine parameters to get seed value
+  return seedParameters.join('-')
+}
+
 module.exports = {
-  generateCode, sendEmail, getCountryByReq, getRandomToken, getLevelXps, setBoxItemRolls
+  generateCode,
+  sendEmail,
+  getCountryByReq,
+  getRandomToken,
+  getLevelXps,
+  setBoxItemRolls,
+  generateHashSeed
 }

@@ -47,6 +47,8 @@ const BoxController = {
       } else {
         tagFilter = await TagSchema.findOne({ name: 'featured' })
       }
+      
+      console.log(sort, page, size, _tag, '1111111111')
 
       let aggreSort;
       if (sort == 'recommend') {
@@ -88,7 +90,7 @@ const BoxController = {
       let data = await BoxSchema.aggregate([
         {
           $match: {
-            $and: [
+            $or: [
               { name: { $regex: '.*' + search + '.*', $options: 'i' } },
               { tags: tagFilter._id }
             ]
@@ -173,10 +175,10 @@ const BoxController = {
   getBoxTopOpen: async (req, res) => {
     const slug = req.params.slug || '';
     // try {
-      const box = await BoxSchema.findOne({ slug });
+      const boxSrc = await BoxSchema.findOne({ slug });
       
     const data = await BoxOpenSchema
-      .find({ box: box._id })
+      .find({ box: boxSrc._id })
       .populate({
         path: 'user',
         select: '-_id code',
@@ -191,32 +193,38 @@ const BoxController = {
           }
         ]
       })
-      .populate('box', '-_id name slug icon cost currency')
+      .populate('box', '-_id code name slug icon cost currency')
       .populate('item', '-_id code name icon_url rarity value currency type')
-      .select('-_id -__v -box')
+      .select('-_id -__v')
       .limit(20)
       .sort({ profit: 1 });
       
     const result = [];
     data.forEach(item => {
-      
       result.push({
         code: item.code,
         cost: item.cost,
         profit: item.profit,
-        box: null,
-        userItem: item.user_item,
+        user: {
+          code: item.user.code,
+          username: item.user.account.username,
+          g_rank: item.user.account.g_rank,
+          avatar: item.user.account.avatar,
+          is_authentic: item.user.account.is_authentic,
+          level: item.user.user_progress.level,
+        },
+        box: item.box,
+        item: item.item,
         xpRewarded: item.xp_rewarded,
         pvpCode: item.pvp_code,
-        rollCode: item.rollCode,
-        roll: null,
+        roll: item.roll_code,
         createdAt: item.created_at,
         updatedAt: item.updatedAt,
       });
     })
       
       
-      return res.status(200).json({ data });
+      return res.status(200).json({ result });
     // } catch (error) {
     //   console.log(error);
     //   return res.status(400).send('no data');

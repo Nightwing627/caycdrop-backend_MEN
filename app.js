@@ -5,6 +5,7 @@ const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require("body-parser");
+var cors = require('cors');
 require('dotenv').config();
 
 const mongoose = require('mongoose')
@@ -18,7 +19,20 @@ var app = express();
 // app.use(express.static(path.join(__dirname, 'public')));
 
 // set middleware
-app.use(require('cors')())
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
+app.use(cors(corsOpts));
 app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
