@@ -23,10 +23,11 @@ const AuthController = {
       
       let user = await UserSchema
         .findOne({ email: email.toLowerCase() })
-        .populate('account', '-_id')
-        .populate('user_progress', '-_id')
-        .populate('wallets', '-_id')
-        .populate('shipping_info', '-_id');
+        .populate('account', '-_id -__v -user_code')
+        .populate('user_progress', '-_id -__v -user_code')
+        .populate('wallets', '-_id -__v -user_code')
+        .populate('shipping_info', '-_id -__v -user_code')
+        .select('-__v');
       
       if (user && (await bcrypt.compare(password, user.password))) {
         const accessToken = jwt.sign(
@@ -45,8 +46,7 @@ const AuthController = {
         user.refresh_token = refreshToken;
         
         await user.save();
-        user = user.toJSON();
-        delete user._id;
+        user = user.toAuthJSON();
 
         return res.status(200).json({
           currentUser: user,

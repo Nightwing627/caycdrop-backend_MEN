@@ -51,4 +51,20 @@ const UserSchema = new Schema({
 
 UserSchema.plugin(uniqueValidator, 'is already registered');
 
+UserSchema.methods.toAuthJSON = function () {
+  return {
+    code: this.code,
+    email: this.email,
+    isSubscribe: this.is_subscribe,
+    isTOS: this.is_termsService,
+    emailVerify: this.email_verify,
+    steamId: this.steam_id,
+    steamApiKey: this.steamApiKey,
+    account: this.account,
+    userProgress: this.user_progress,
+    wallets: this.wallets,
+    shippingInfo: this.shipping_info
+  }
+}
+
 module.exports = mongoose.model('User', UserSchema);
