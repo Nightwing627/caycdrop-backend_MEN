@@ -20,16 +20,7 @@ var app = express();
 
 // set middleware
 const corsOpts = {
-  origin: '*',
-
-  methods: [
-    'GET',
-    'POST',
-  ],
-
-  allowedHeaders: [
-    'Content-Type',
-  ],
+  origin: '*'
 };
 
 app.use(cors(corsOpts));

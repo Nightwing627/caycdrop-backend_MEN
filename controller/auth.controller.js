@@ -127,7 +127,6 @@ const AuthController = {
         is_authentic: false,
       });
       await account.save();
-      newUser.account = account._id;
 
       // create user tag
       const userTag = new UserTagSchema({
@@ -149,7 +148,6 @@ const AuthController = {
         updated_at: new Date(),
       });
       await userProgress.save();
-      newUser.user_progress = userProgress._id;
 
       // create user wallet
       const userWallet = new UserWalletSchema({
@@ -165,7 +163,6 @@ const AuthController = {
         updated_at: new Date()
       });
       await userWallet.save();
-      newUser.wallets = userWallet._id;
 
       // create user shipping info
       const country = await Util.getCountryByReq(req);
@@ -175,10 +172,15 @@ const AuthController = {
         gender: 'male'
       });
       await userShippingInfo.save();
-      newUser.shipping_info = userShippingInfo._id;
       
       // update user : code, accountid, user_progress, wallets, shipping_info
-      await UserSchema.findByIdAndUpdate(newUser._id, { code });
+      await UserSchema.findByIdAndUpdate(newUser._id, {
+        code,
+        account: account._id,
+        user_progress: userProgress._id,
+        wallets: userWallet._id,
+        shipping_info: userShippingInfo._id
+      });
       
       // create user verify
       const userVerify = new UserVerifySchema({
