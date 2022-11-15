@@ -178,8 +178,7 @@ const AuthController = {
       newUser.shipping_info = userShippingInfo._id;
       
       // update user : code, accountid, user_progress, wallets, shipping_info
-      newUser.code = code;
-      await newUser.save();
+      await UserSchema.findByIdAndUpdate(newUser._id, { code });
       
       // create user verify
       const userVerify = new UserVerifySchema({
