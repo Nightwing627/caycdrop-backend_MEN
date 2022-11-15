@@ -4,8 +4,8 @@ const express = require('express');
 const session = require('express-session');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require("body-parser")
-require('dotenv').config()
+const bodyParser = require("body-parser");
+require('dotenv').config();
 
 const mongoose = require('mongoose')
 const { MongoClient, ServerApiVersion } = require('mongodb')

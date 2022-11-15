@@ -28,12 +28,17 @@ const BoxController = {
 
   getAllData: async (req, res) => {
     const {
-      _q = '',
+      _q,
       _sort = 'recommend',
       _page = 1,
       _size = 50,
       _tag
     } = req.query;
+    
+    const sort = _sort ? _sort : 'recommend';
+    const page = Number(_page) ? Number(_page) : 1;
+    const size = Number(_size) ? Number(_size) : 50;
+    const search = _q ? _q : '';
 
     try {
       let tagFilter;
@@ -44,7 +49,7 @@ const BoxController = {
       }
 
       let aggreSort;
-      if (_sort == 'recommend') {
+      if (sort == 'recommend') {
         aggreSort = [
           {
             $addFields: { "recommend": { $sum: ["$opened", "$popular"] } }
@@ -84,7 +89,7 @@ const BoxController = {
         {
           $match: {
             $and: [
-              { name: { $regex: '.*' + _q + '.*', $options: 'i' } },
+              { name: { $regex: '.*' + search + '.*', $options: 'i' } },
               { tags: tagFilter._id }
             ]
           }
@@ -105,8 +110,8 @@ const BoxController = {
             "tags.code": 1, "tags.name": 1, "tags.visible": 1, "tags.color": 1
           }
         },
-        { $skip: (_page - 1) * _size },
-        { $limit: _size }
+        { $skip: (page - 1) * size },
+        { $limit: size }
       ]);
 
       // TODO: live drop items socket
