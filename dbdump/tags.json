@@ -16,14 +16,15 @@
     "$date": {
       "$numberLong": "1668060779193"
     }
-  }
+  },
+  "color": "#3d789d"
 },{
   "_id": {
     "$oid": "636c84ece4830d466abadc0b"
   },
   "code": "TGdec0af6834fc8c591d4d",
   "name": "new",
-  "visible": false,
+  "visible": true,
   "position": "0",
   "__v": 0,
   "created_at": {
@@ -35,7 +36,8 @@
     "$date": {
       "$numberLong": "1668060779193"
     }
-  }
+  },
+  "color": "#3d9d43"
 },{
   "_id": {
     "$oid": "636c84ece4830d466abadc0c"
@@ -130,7 +132,8 @@
     "$date": {
       "$numberLong": "1668060779193"
     }
-  }
+  },
+  "color": "#db3232"
 },{
   "_id": {
     "$oid": "636c84ece4830d466abadc11"
@@ -206,7 +209,8 @@
     "$date": {
       "$numberLong": "1668060779193"
     }
-  }
+  },
+  "color": "#3d789d"
 },{
   "_id": {
     "$oid": "636c84ece4830d466abadc15"

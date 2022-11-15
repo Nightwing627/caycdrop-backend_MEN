@@ -28,10 +28,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bfdf6d81fb415fca6a03d"
+  "code": "B37e3003958b15a9d2a3e",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ecd"
+  },
+  "opened": 288,
+  "popular": 177
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e800f"
@@ -62,10 +67,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bf73615aa0846982f3eb5"
+  "code": "B8da9d27168fdd8306280",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ece"
+  },
+  "opened": 11,
+  "popular": 119
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8010"
@@ -105,10 +115,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Be2029dbf9890ce19bb2c"
+  "code": "B9243b92b90d94b4da902",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ecf"
+  },
+  "opened": 61,
+  "popular": 227
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8011"
@@ -148,10 +163,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bce47c8fb169f6a0a9bde"
+  "code": "B54ae0335601a77af5b6b",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed0"
+  },
+  "opened": 241,
+  "popular": 380
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8012"
@@ -185,10 +205,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "B6706b4f34ebdc26fb1d0"
+  "code": "Bbfe98160a56391ad7b7f",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed1"
+  },
+  "opened": 297,
+  "popular": 401
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8013"
@@ -222,10 +247,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "B49ae514f244e564b7fb5"
+  "code": "B4c932bc63dcc21db0b00",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed2"
+  },
+  "opened": 473,
+  "popular": 283
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8014"
@@ -259,10 +289,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bce556b918858b6d8d6d6"
+  "code": "B40de746f7d44f475ca49",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed3"
+  },
+  "opened": 256,
+  "popular": 58
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8015"
@@ -293,10 +328,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "B3ac2e4355423607bd216"
+  "code": "Bc9a5aa51df1f8dc33085",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed4"
+  },
+  "opened": 263,
+  "popular": 358
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8016"
@@ -330,10 +370,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bbc053173defb2299bdb8"
+  "code": "B98359ec289f10775dd44",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed5"
+  },
+  "opened": 495,
+  "popular": 253
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8017"
@@ -367,10 +412,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Beeb6ec92dc307bee9ee4"
+  "code": "B5f280062f66fa98bf255",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed6"
+  },
+  "opened": 446,
+  "popular": 321
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8018"
@@ -401,10 +451,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "B149c95d19d600f96840a"
+  "code": "B32f573ce33ef2da7df1a",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed7"
+  },
+  "opened": 360,
+  "popular": 491
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8019"
@@ -447,10 +502,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Ba2c75b885f6c9a3b3dce"
+  "code": "Baed6f3f364bada615709",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed8"
+  },
+  "opened": 487,
+  "popular": 189
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801a"
@@ -489,10 +549,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "B42bf431d23c38b52684f"
+  "code": "B00664d77434ab4fd9258",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed9"
+  },
+  "opened": 203,
+  "popular": 1
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801b"
@@ -523,10 +588,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909544"
     }
   },
-  "code": "Bfb36ce2c63c7cd3290f4"
+  "code": "B9e0a5e8778a3e6d24a9e",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eda"
+  },
+  "opened": 496,
+  "popular": 84
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801c"
@@ -563,10 +633,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B57cac19e72440e8648af"
+  "code": "B378bfd1b0be076f26e24",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edb"
+  },
+  "opened": 61,
+  "popular": 346
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801d"
@@ -597,10 +672,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B562d69226f6bf96c5b86"
+  "code": "B9bb63af24412ea171fe0",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edc"
+  },
+  "opened": 129,
+  "popular": 477
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801e"
@@ -640,10 +720,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B999869b8f7e7c1e18309"
+  "code": "B4239bfb8550cccd71290",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edd"
+  },
+  "opened": 238,
+  "popular": 190
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e801f"
@@ -677,10 +762,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Ba7905805e185f405798d"
+  "code": "B6ccceef6f6100c39ce03",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ede"
+  },
+  "opened": 213,
+  "popular": 319
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8020"
@@ -711,10 +801,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B01fe0c32c2cd2e3c1366"
+  "code": "B403945318eec71d4ddaf",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edf"
+  },
+  "opened": 270,
+  "popular": 232
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8021"
@@ -748,10 +843,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B7d20e32d1d78c9477df2"
+  "code": "B87ac59e94268c9f80e96",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee0"
+  },
+  "opened": 245,
+  "popular": 89
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8022"
@@ -791,10 +891,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B6b5022504263387c94f2"
+  "code": "B1ab63ff6ea0b0ae41be8",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee1"
+  },
+  "opened": 193,
+  "popular": 210
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8023"
@@ -831,10 +936,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B6c43171ce7198f0ca23f"
+  "code": "B2ebea802f28763ea91b6",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee2"
+  },
+  "opened": 223,
+  "popular": 234
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8024"
@@ -871,10 +981,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Bc7b33ebf2df0c29ea2db"
+  "code": "B9051330a817578246b66",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee3"
+  },
+  "opened": 178,
+  "popular": 187
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8025"
@@ -914,10 +1029,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Bc2465fa4f2ca8b1b1696"
+  "code": "Bf494fade7eeb8010117d",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee4"
+  },
+  "opened": 229,
+  "popular": 484
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8026"
@@ -966,10 +1086,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Ba5044a4e81a056da8cb9"
+  "code": "B6d7a0f812f35b20d6a98",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee5"
+  },
+  "opened": 206,
+  "popular": 19
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8027"
@@ -1018,10 +1143,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B55212907551c227d998e"
+  "code": "B2be30897faf925e313c6",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee6"
+  },
+  "opened": 435,
+  "popular": 240
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8028"
@@ -1055,10 +1185,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779291"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B0b7acde6762a42ecaf06"
+  "code": "B2a62825c0298a082afb1",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee7"
+  },
+  "opened": 216,
+  "popular": 447
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8029"
@@ -1089,10 +1224,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B41b21d143ac25f3c510d"
+  "code": "Bdf520e739943b1772aed",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee8"
+  },
+  "opened": 296,
+  "popular": 46
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802a"
@@ -1132,10 +1272,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Bb49f4a00321e18254984"
+  "code": "B49b11f3f4644528dc943",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee9"
+  },
+  "opened": 360,
+  "popular": 344
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802b"
@@ -1166,10 +1311,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B38aebc8f640a5ce7bd91"
+  "code": "B5d8c8fd6218d1e4fa079",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eea"
+  },
+  "opened": 93,
+  "popular": 192
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802c"
@@ -1203,10 +1353,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Bef932449883c6411630e"
+  "code": "B0469f16df7c0ad5e7919",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eeb"
+  },
+  "opened": 313,
+  "popular": 362
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802d"
@@ -1240,10 +1395,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B20061b5453d274cdbec1"
+  "code": "Bf23b2f627e9fba4a25f2",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eec"
+  },
+  "opened": 18,
+  "popular": 47
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802e"
@@ -1274,10 +1434,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B95ffcb6676d1784befd2"
+  "code": "B40cbc29ad242e7b5d8aa",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eed"
+  },
+  "opened": 303,
+  "popular": 239
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e802f"
@@ -1311,10 +1476,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "Bb6a97266243bb1732c48"
+  "code": "B07c8d01294b040526ac9",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eee"
+  },
+  "opened": 420,
+  "popular": 302
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8030"
@@ -1351,10 +1521,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B31eec575ee7e211c5ccd"
+  "code": "B6f24c3cdab677251a210",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eef"
+  },
+  "opened": 68,
+  "popular": 67
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8031"
@@ -1385,10 +1560,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B46a700c653f3b0186626"
+  "code": "Bc9d1196a3ff9eaf546a4",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef0"
+  },
+  "opened": 263,
+  "popular": 87
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8032"
@@ -1422,10 +1602,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909545"
     }
   },
-  "code": "B95f05bd78f4bb15cfb0a"
+  "code": "B84fcea2ae1479aff80b7",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef1"
+  },
+  "opened": 478,
+  "popular": 222
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8033"
@@ -1465,10 +1650,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "Bf498ebe91ea96d1dff97"
+  "code": "B16de526258b30b066e18",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef2"
+  },
+  "opened": 60,
+  "popular": 21
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8034"
@@ -1499,10 +1689,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "Bb2c8db54fa88edcdc719"
+  "code": "B985e419f2562c434f130",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef3"
+  },
+  "opened": 138,
+  "popular": 64
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8035"
@@ -1533,10 +1728,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B219e9c206076032e360c"
+  "code": "B99718c91b12e6ad00240",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef4"
+  },
+  "opened": 144,
+  "popular": 105
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8036"
@@ -1567,10 +1767,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B43d5f8f2c0e3674e0829"
+  "code": "B1cb03a926d63cea11880",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef5"
+  },
+  "opened": 196,
+  "popular": 406
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8037"
@@ -1607,10 +1812,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B62fe86a60372316bcd97"
+  "code": "Bfd2c65a432fe72cbca82",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef6"
+  },
+  "opened": 496,
+  "popular": 80
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8038"
@@ -1644,10 +1854,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "Bb36344d803d874900c92"
+  "code": "Bd01b59903657215fd43d",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef7"
+  },
+  "opened": 365,
+  "popular": 22
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e8039"
@@ -1684,10 +1899,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B7b154ea434b80423f590"
+  "code": "Bfd33ff0c1f4cf84bb62d",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef8"
+  },
+  "opened": 13,
+  "popular": 94
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803a"
@@ -1718,10 +1938,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "Bd15bc05014214bad6763"
+  "code": "Bad4815fdfcbc10ce4d68",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ef9"
+  },
+  "opened": 22,
+  "popular": 186
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803b"
@@ -1752,10 +1977,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B0e5b227bc13ac6f1fd63"
+  "code": "Be465ebc3009317646276",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4efa"
+  },
+  "opened": 148,
+  "popular": 425
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803c"
@@ -1789,10 +2019,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B80f4c5b877ff1b535331"
+  "code": "B48d9624c54ec6206a11b",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4efb"
+  },
+  "opened": 367,
+  "popular": 331
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803d"
@@ -1826,10 +2061,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "Bcfae757c70987c1c995f"
+  "code": "B15c011014823fa04aedc",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4efc"
+  },
+  "opened": 476,
+  "popular": 428
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803e"
@@ -1866,10 +2106,15 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B0889b47b5bee89bce797"
+  "code": "Bbd8721ca5406256ecd5d",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4efd"
+  },
+  "opened": 453,
+  "popular": 295
 },{
   "_id": {
     "$oid": "636c8f299ce54e43e61e803f"
@@ -1900,8 +2145,13 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668060779292"
+      "$numberLong": "1668441909546"
     }
   },
-  "code": "B9fbebf22cdb4925369a0"
+  "code": "B34b2b9bf40f8b58607a5",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4efe"
+  },
+  "opened": 247,
+  "popular": 120
 }]

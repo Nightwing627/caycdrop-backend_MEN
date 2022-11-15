@@ -1,0 +1,37 @@
+[{
+  "_id": {
+    "$oid": "636bae6a64a555ae41b9cdf2"
+  },
+  "user_code": "Uc887e74d32a1924eb29b",
+  "country": null,
+  "gender": "male",
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668001389305"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668001389305"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636e7e5ccebde1922618c9f7"
+  },
+  "user_code": "Ua914358671da1163d93b",
+  "country": null,
+  "gender": "male",
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668185692736"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668185692736"
+    }
+  },
+  "__v": 0
+}]

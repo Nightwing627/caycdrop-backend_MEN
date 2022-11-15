@@ -1,0 +1,59 @@
+[{
+  "_id": {
+    "$oid": "636bae6464a555ae41b9cdef"
+  },
+  "user_code": "Uc887e74d32a1924eb29b",
+  "main": 0,
+  "main_currency": "USD",
+  "bonus": 0,
+  "bonus_currency": "USD",
+  "affiliate_earning": 0,
+  "affiliate_currency": "USD",
+  "gem_stone": 0,
+  "gem_currency": "USD",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668001380308"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668001381527"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668001381527"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636e7e5ccebde1922618c9f4"
+  },
+  "user_code": "Ua914358671da1163d93b",
+  "main": 0,
+  "main_currency": "USD",
+  "bonus": 0,
+  "bonus_currency": "USD",
+  "affiliate_earning": 0,
+  "affiliate_currency": "USD",
+  "gem_stone": 0,
+  "gem_currency": "USD",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668185692723"
+    }
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668185692724"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668185692724"
+    }
+  },
+  "__v": 0
+}]

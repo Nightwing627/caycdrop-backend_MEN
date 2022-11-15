@@ -1,0 +1,17 @@
+[{
+  "_id": {
+    "$oid": "636bae5964a555ae41b9cde9"
+  },
+  "user_code": "Uc887e74d32a1924eb29b",
+  "tag": 50,
+  "status": "used",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636e7e5ccebde1922618c9ee"
+  },
+  "user_code": "Ua914358671da1163d93b",
+  "tag": 51,
+  "status": "used",
+  "__v": 0
+}]

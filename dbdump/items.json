@@ -1,0 +1,2471 @@
+[{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c28"
+  },
+  "name": "Submariner",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20Submariner%20Black.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 58086,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0c"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc0d"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "min_value": 58086,
+  "max_value": 58086,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264164"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909793"
+    }
+  },
+  "code": "I2155d3a661c316f0e5a6"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c29"
+  },
+  "name": "Daytona",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20DAYTONA%20white%20black.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 50295,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc13"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc15"
+    }
+  ],
+  "min_value": 50295,
+  "max_value": 50295,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264167"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I5c926739d3f7a98ff2e1"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2a"
+  },
+  "name": "Raised Baguette Cuban Link Bracelet 14k",
+  "icon_url": "https://static.ancientgaming.io/images/Raised%20Baguette%20Cuban%20Link%20Bracelet%2014k%2020.50ctw.png",
+  "description": "",
+  "brand": "Icebox",
+  "value": 46000,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1a"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1f"
+    }
+  ],
+  "min_value": 46000,
+  "max_value": 46000,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264167"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I006e1d20ad2235f6952b"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2b"
+  },
+  "name": "Sky-Dweller",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20Sky-Dweller.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 29988,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 29988,
+  "max_value": 29988,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264167"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ib0e78d8929ef3c1dbaa8"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2c"
+  },
+  "name": "GMT-MASTER II \"PEPSI\"",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20GMT-Master%20ll%20PEPSI.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 29442,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [],
+  "min_value": 29442,
+  "max_value": 29442,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264168"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ia0227ed6aed2dd9fd2ff"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2d"
+  },
+  "name": "Aviator Leather Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/Brunello%20Cucinelli%20Aviator%20Leather%20Jacket.png",
+  "description": "",
+  "brand": "Brunello Cucinelli",
+  "value": 8528.33,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc16"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc18"
+    }
+  ],
+  "min_value": 8528.33,
+  "max_value": 8528.33,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264168"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I56820c78ec2b6ab553b8"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2e"
+  },
+  "name": "Datejust 31",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20DATEJUST%2031.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 12852,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc20"
+    }
+  ],
+  "min_value": 12852,
+  "max_value": 12852,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264168"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I5cf92057eb35cc75c556"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c2f"
+  },
+  "name": "Medium Full Diamond Signature Bangle Bracelet 14k",
+  "icon_url": "https://static.ancientgaming.io/images/Icebox%20Medium%20Full%20Diamond%20Signature%20Bangle%20Bracelet%2014k%20Rose%20Gold.png",
+  "description": "",
+  "brand": "Icebox",
+  "value": 12250,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 12250,
+  "max_value": 12250,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264168"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I4666ca15745224d3441a"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c30"
+  },
+  "name": "Jordan 1 Retro High Off-White Chicago",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Retro%20High%20Off-White%20Chicago1.png",
+  "description": "",
+  "brand": "Nike",
+  "value": 6290,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc23"
+    }
+  ],
+  "min_value": 6290,
+  "max_value": 6290,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264168"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ied3c1f4b4c0082d9de4b"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c31"
+  },
+  "name": "Box Logo Hooded Sweatshirt",
+  "icon_url": "https://static.ancientgaming.io/images/Supreme%20x%20Louis%20Vuitton%20Box%20Logo%20Hooded%20Sweatshirt.png",
+  "description": "",
+  "brand": "Supreme x Louis Vuitton",
+  "value": 6240,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1498752000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc15"
+    }
+  ],
+  "min_value": 6240,
+  "max_value": 6240,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I167a09d1d212ad2a8e4d"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c32"
+  },
+  "name": "Datejust 36",
+  "icon_url": "https://static.ancientgaming.io/images/Rolex%20Datejust%2036%20M.png",
+  "description": "",
+  "brand": "Rolex",
+  "value": 19173,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1593100800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc16"
+    }
+  ],
+  "min_value": 19173,
+  "max_value": 19173,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ie2ad47e9af5e718d21be"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c33"
+  },
+  "name": "Cartier Brown Tinted Lens Sunglasses 14K",
+  "icon_url": "https://static.ancientgaming.io/images/Cartier%20Brown%20Tinted%20Lens%20Sunglasses%2014K%203.00ctw.png",
+  "description": "",
+  "brand": "Icebox",
+  "value": 10400,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1593100800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    }
+  ],
+  "min_value": 10400,
+  "max_value": 10400,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I8905f3dada8c7bcc49ac"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c34"
+  },
+  "name": "Medium Half Diamond Cuban Bangle Bracelet 14K",
+  "icon_url": "https://static.ancientgaming.io/images/Icebox%20Medium%20Half%20Diamond%20Cuban%20Bangle%20Bracelet%2014K.png",
+  "description": "",
+  "brand": "Icebox",
+  "value": 7000,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1593100800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1a"
+    }
+  ],
+  "min_value": 7000,
+  "max_value": 7000,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ia53838d93c9607c95889"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c35"
+  },
+  "name": "Giant Damier Waves MNGM Denim Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/Louis%20Vuitton%20x%20Nigo%20Giant%20Damier%20Waves%20MNGM%20Denim%20Jacket.png",
+  "description": "",
+  "brand": "Louis Vuitton x Nigo",
+  "value": 4770,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1593100800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "min_value": 4770,
+  "max_value": 4770,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "If780c9cad3fa6e9b7d44"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c36"
+  },
+  "name": "1 High OG SP fragment design x Travis Scott",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20High%20OG%20SP%20fragment%20design%20x%20Travis%20Scott.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 3248,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1627527600000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0d"
+    }
+  ],
+  "min_value": 3248,
+  "max_value": 3248,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I6e120ff0578129b35a0a"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c37"
+  },
+  "name": "1 Retro High Trophy Room Chicago",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Trophy%20Room%20Chicago.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 1898.57,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1612926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc21"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 1898.57,
+  "max_value": 1898.57,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264169"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I6a18b12d89de2691ea73"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c38"
+  },
+  "name": "Painted Camo Crinkle Down Jacket",
+  "icon_url": "https://imgix.ancientgaming.io/images/Supreme%20Stone%20Island%20Painted%20Camo%20Crinkle%20Down%20Jacket%20Coral.png?format=auto",
+  "description": "",
+  "brand": "Supreme x Stone Island",
+  "value": 2330,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1605754800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1f"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc20"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc21"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc23"
+    }
+  ],
+  "min_value": 2330,
+  "max_value": 2330,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I9c85c2a33d22e712d4c0"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c39"
+  },
+  "name": "Jordan 1 Retro High Travis Scott",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Travis%20Scott.png?format=auto",
+  "description": "",
+  "brand": "Nike",
+  "value": 1916.43,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1557543600000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc23"
+    }
+  ],
+  "min_value": 1916.43,
+  "max_value": 1916.43,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I14fa9e1bc6c5688a5d82"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3a"
+  },
+  "name": "Dionysus Denim Shoulder Bag",
+  "icon_url": "https://static.ancientgaming.io/images/Gucci%20Dionysus%20Denim%20Shoulder%20Bag.png",
+  "description": "",
+  "brand": "Gucci",
+  "value": 2980,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1435374000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    }
+  ],
+  "min_value": 2980,
+  "max_value": 2980,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I12dfbe1b33629132fe1c"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3b"
+  },
+  "name": "Varsity Leather Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/Varsity%20Leather%20Jacket.png",
+  "description": "",
+  "brand": "Off-White",
+  "value": 2655,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1435374000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1a"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1b"
+    }
+  ],
+  "min_value": 2655,
+  "max_value": 2655,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ic55d4a2d9960d4e6c0fb"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3c"
+  },
+  "name": "1 Retro Shattered Backboard",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Retro%20Shattered%20Backboard.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 1663.75,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1435374000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc18"
+    }
+  ],
+  "min_value": 1663.75,
+  "max_value": 1663.75,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I8f95496d1a4d48addf13"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3d"
+  },
+  "name": "Eyewear CatStyle Frame Sunglasses",
+  "icon_url": "https://static.ancientgaming.io/images/Dior%20Eyewear%20CatStyle%20frame%20sunglasses.png",
+  "description": "",
+  "brand": "Dior",
+  "value": 1310,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1541556000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc16"
+    }
+  ],
+  "min_value": 1310,
+  "max_value": 1310,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I64dffa4107333cf27ddc"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3e"
+  },
+  "name": "1 Retro High \"Not for Resale\" Varsity Red",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Retro%20High%20Not%20for%20Resale%20Varsity%20Red.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 1090.71,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1541556000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0d"
+    }
+  ],
+  "min_value": 1090.71,
+  "max_value": 1090.71,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264170"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I9b9174b219359f5035ea"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c3f"
+  },
+  "name": "Lens-decal Square Sunglasses",
+  "icon_url": "https://static.ancientgaming.io/images/Bape%20Lens-decal%20Square%20Sunglasses.png",
+  "description": "",
+  "brand": "Bape",
+  "value": 955,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1541556000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0c"
+    }
+  ],
+  "min_value": 955,
+  "max_value": 955,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I514f36c9f48d081f087b"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c40"
+  },
+  "name": "1 Retro High Bred Toe",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Bred%20Toe.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 734.38,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1519441200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc13"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc14"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc15"
+    }
+  ],
+  "min_value": 734.38,
+  "max_value": 734.38,
+  "min_rarity": "epic",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I9f12c65f9e03933dafdd"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c41"
+  },
+  "name": "Crofton Packable Padded Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/Crofton%20Packable%20Padded%20Jacket.png",
+  "description": "",
+  "brand": "Canada Goose",
+  "value": 723.75,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1a"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1b"
+    }
+  ],
+  "min_value": 723.75,
+  "max_value": 723.75,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I16bac7970306d91ec8fa"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c42"
+  },
+  "name": "Jordan 4 Retro Bred (2019)",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%204%20Retro%20Bred%20(2019).png?format=auto",
+  "description": "",
+  "brand": "Nike",
+  "value": 625,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1556938800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1f"
+    }
+  ],
+  "min_value": 625,
+  "max_value": 625,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I77a5ba5daaad7a181823"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c43"
+  },
+  "name": "Tie Dye Logo Crewneck Sweatshirt",
+  "icon_url": "https://static.ancientgaming.io/images/Saint%20Laurent%20Tie%20Dye%20Logo%20Crewneck%20Sweatshirt.png",
+  "description": "",
+  "brand": "Saint Laurent",
+  "value": 894,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc21"
+    }
+  ],
+  "min_value": 894,
+  "max_value": 894,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I99a296e18e535ff2412d"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c44"
+  },
+  "name": "Patchwork-detail Denim Jeans",
+  "icon_url": "https://static.ancientgaming.io/images/Amiri%20Patchwork-detail%20Denim%20Jeans.png",
+  "description": "",
+  "brand": "Amiri",
+  "value": 1989,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1b"
+    }
+  ],
+  "min_value": 1989,
+  "max_value": 1989,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ie63fc855dbb91fba34ec"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c45"
+  },
+  "name": "Logo Zipped Hooded Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/A-Cold-Wall%20Logo%20Zipped%20Hooded%20Jacket.png",
+  "description": "",
+  "brand": "A-Cold-Wall",
+  "value": 1278,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc12"
+    }
+  ],
+  "min_value": 1278,
+  "max_value": 1278,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I38093f070b204dee935f"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c46"
+  },
+  "name": "Oversized Oblique T-shirt",
+  "icon_url": "https://static.ancientgaming.io/images/Dior%20Oversized%20Oblique%20T-shirt%20White.png",
+  "description": "",
+  "brand": "Dior",
+  "value": 833.33,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 800,
+  "max_value": 850,
+  "min_rarity": "epic",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I84ab15071df820c50df0"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c47"
+  },
+  "name": "1 Retro High Bred Toe",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Bred%20Toe.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 734.38,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1519441200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0d"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 670,
+  "max_value": 920,
+  "min_rarity": "epic",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I14aab8bb9083c40d0faa"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c48"
+  },
+  "name": "Crofton Packable Padded Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/Crofton%20Packable%20Padded%20Jacket.png",
+  "description": "",
+  "brand": "Canada Goose",
+  "value": 723.75,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0c"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 715,
+  "max_value": 750,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264171"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I29f35cbfc2a2957dfe29"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c49"
+  },
+  "name": "Jordan 4 Retro Bred (2019)",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%204%20Retro%20Bred%20(2019).png?format=auto",
+  "description": "",
+  "brand": "Nike",
+  "value": 625,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1556938800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 600,
+  "max_value": 665,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I41ccf732c7793381f40f"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4a"
+  },
+  "name": "Tie Dye Logo Crewneck Sweatshirt",
+  "icon_url": "https://static.ancientgaming.io/images/Saint%20Laurent%20Tie%20Dye%20Logo%20Crewneck%20Sweatshirt.png",
+  "description": "",
+  "brand": "Saint Laurent",
+  "value": 894,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 790,
+  "max_value": 998,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ic403f0dc29a407e3b5f6"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4b"
+  },
+  "name": "Patchwork-detail Denim Jeans",
+  "icon_url": "https://static.ancientgaming.io/images/Amiri%20Patchwork-detail%20Denim%20Jeans.png",
+  "description": "",
+  "brand": "Amiri",
+  "value": 1989,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc23"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 1920,
+  "max_value": 2035,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ief93342aeb7d58c8a2a7"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4c"
+  },
+  "name": "Logo Zipped Hooded Jacket",
+  "icon_url": "https://static.ancientgaming.io/images/A-Cold-Wall%20Logo%20Zipped%20Hooded%20Jacket.png",
+  "description": "",
+  "brand": "A-Cold-Wall",
+  "value": 1278,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 1278,
+  "max_value": 1278,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I98428c64b2dd3c06685f"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4d"
+  },
+  "name": "Distressed Slim-fit Jeans",
+  "icon_url": "https://static.ancientgaming.io/images/Dsquared2%20Distressed%20Slim-fit%20Jeans.png",
+  "description": "",
+  "brand": "Dsquared2",
+  "value": 650,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 615,
+  "max_value": 720,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "Ibcd18de2667e4d8cab2f"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4e"
+  },
+  "name": "3 Retro Cardinal Red",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%203%20Retro%20cardinal%20red.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 256.25,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1645153200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc18"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 245,
+  "max_value": 270,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I12a69eac2fee058f1c29"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c4f"
+  },
+  "name": "1 Retro High Spider-Man Origin Story",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Retro%20High%20Spider-Man%20Origin%20Story.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 952.5,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1544752800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc15"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 775,
+  "max_value": 1200,
+  "min_rarity": "epic",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909794"
+    }
+  },
+  "code": "I8deb17c7703e5e7bbbb2"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c50"
+  },
+  "name": "Cross Box Logo Hooded Sweatshirt Heather",
+  "icon_url": "https://imgix.ancientgaming.io/images/Supreme%20Cross%20Box%20Logo%20Hooded%20Sweatshirt%20Heather%20Grey.png?format=auto",
+  "description": "",
+  "brand": "Supreme",
+  "value": 395,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1606964400000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 385,
+  "max_value": 405,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I5f9d5ab6b923053233e4"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c51"
+  },
+  "name": "Logo-print Cotton T-shirt",
+  "icon_url": "https://static.ancientgaming.io/images/Dolce%20%26%20Gabbana%20logo-print%20cotton%20T-shirt.png",
+  "description": "",
+  "brand": "Dolce & Gabbana",
+  "value": 595,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0c"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 595,
+  "max_value": 595,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264172"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Ic9a4627d96e5d09a0f70"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c52"
+  },
+  "name": "Half Zip Hooded Sweatshirt",
+  "icon_url": "https://static.ancientgaming.io/images/Supreme%20Nike%20Half%20Zip%20Hooded%20Sweatshirt%20Black.png",
+  "description": "",
+  "brand": "Supreme x Nike",
+  "value": 203.33,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1615431600000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1c"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 190,
+  "max_value": 210,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I2288dc9d210e454439aa"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c53"
+  },
+  "name": "Logo-print Crew Neck Sweatshirt",
+  "icon_url": "https://static.ancientgaming.io/images/Alexander%20McQueen%20Logo-print%20Crew%20Neck%20Sweatshirt.png",
+  "description": "",
+  "brand": "Alexander McQueen",
+  "value": 680,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 680,
+  "max_value": 680,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Ia07a78785389e3a649f1"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c54"
+  },
+  "name": "Box Logo Hooded Sweatshirt (FW21) Black",
+  "icon_url": "https://static.ancientgaming.io/images/Supreme%20Box%20Logo%20Hooded%20Sweatshirt%20(FW21)%20Black.png",
+  "description": "",
+  "brand": "Supreme",
+  "value": 380,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1638979200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc16"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc17"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc18"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 320,
+  "max_value": 410,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I581d1f528ce10ec3eb76"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c55"
+  },
+  "name": "1 Mid Chicago Toe",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Mid%20Chicago%20Toe.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 322.86,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1585710000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc13"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 235,
+  "max_value": 395,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Ibddb07b4215faf56a3da"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c56"
+  },
+  "name": "1 Retro High Royal Toe",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Royal%20Toe.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 319.38,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1588993200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc23"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 285,
+  "max_value": 395,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I5e9b6f45cf5e69277829"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c57"
+  },
+  "name": "1 Zoom Air CMFT PSG Paris Saint-Germain",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Zoom%20Air%20CMFT%20PSG%20Paris%20Saint-Germain.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 314.44,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1613530800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc15"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 260,
+  "max_value": 510,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "If91ae9a116173b6439cc"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c58"
+  },
+  "name": "1 Retro High Light Smoke Grey",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Retro%20High%20Light%20Smoke%20Grey.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 276.67,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1594436400000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc12"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 255,
+  "max_value": 300,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I4d42f64e25fd7141a6ba"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c59"
+  },
+  "name": "Logo-print Track Pants",
+  "icon_url": "https://static.ancientgaming.io/images/Palm%20Angels%20Logo-print%20Track%20Pants.png",
+  "description": "",
+  "brand": "Palm Angels",
+  "value": 470,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1668410260186"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc10"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 470,
+  "max_value": 470,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Id0f6f394783f8fe1978a"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c5a"
+  },
+  "name": "NRG AG Utility Sweatpants",
+  "icon_url": "https://imgix.ancientgaming.io/images/Travis%20Scott%20x%20Nike%20NRG%20AG%20Utility%20Sweatpants%20Black.png?format=auto",
+  "description": "",
+  "brand": "Travis Scott x Nike",
+  "value": 326.67,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1590721200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 255,
+  "max_value": 435,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264173"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I8e44d615d63a9892b4f9"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c5b"
+  },
+  "name": "Patched Ribbed Beanie",
+  "icon_url": "https://static.ancientgaming.io/images/Moncler%20x%20Palm%20Angels%20Patched%20Ribbed%20Beanie.png",
+  "description": "",
+  "brand": "Moncler x Palm Angels",
+  "value": 305,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1638374400000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1b"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 305,
+  "max_value": 305,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264174"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Ied98c0ef2bf5c50640be"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c5c"
+  },
+  "name": "1 Mid Shattered Backboard",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Mid%20Shattered%20Backboard.png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 280.83,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1567825200000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc21"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 240,
+  "max_value": 350,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264174"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I6b4050f62c1d94b209d9"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c5d"
+  },
+  "name": "1 Low Game Royal",
+  "icon_url": "https://imgix.ancientgaming.io/images/Jordan%201%20Low%20Game%20Royal.png?format=auto",
+  "description": "",
+  "brand": "Jordan",
+  "value": 257,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1595559600000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0d"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 230,
+  "max_value": 300,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264174"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "Ia17aa9c78ee84cbb0b6e"
+},{
+  "_id": {
+    "$oid": "6371eb98b1f2e42dafa14c5e"
+  },
+  "name": "1 Retro High Satin Snake Chicago (W)",
+  "icon_url": "https://static.ancientgaming.io/images/Jordan%201%20Retro%20High%20Satin%20Snake%20Chicago%20(W).png",
+  "description": "",
+  "brand": "Jordan",
+  "value": 249.38,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1596682800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc16"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc17"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc18"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc19"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1a"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc1b"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 220,
+  "max_value": 295,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668410264174"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668441909795"
+    }
+  },
+  "code": "I41aea4e30769994596af"
+}]

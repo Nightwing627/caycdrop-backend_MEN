@@ -1,0 +1,35 @@
+[{
+  "_id": {
+    "$oid": "63725c420ce251c2ca3ec4f5"
+  },
+  "code": "U2VlZDoyMDMzNzIxNA",
+  "value": "48a3454fd714284862b0e0e15a1b65f96a30aed76c0b636fc348f12ec7c35086",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668439106795"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668439106795"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63725c420ce251c2ca3ec4f6"
+  },
+  "code": "U2VlZDoyMDMzNzI4OA",
+  "value": "Nightwing",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668439106796"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668439106796"
+    }
+  }
+}]

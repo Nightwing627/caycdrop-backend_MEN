@@ -1,0 +1,466 @@
+[{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f3b"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c28"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -58086,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjA0MTMyNTA",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903425"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BO2edebb9db640fc967036"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f3c"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c29"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -50295,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjA0MTMyMzQ",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903425"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BO2bf8c480b7d68e128fc2"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f3d"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2a"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -46000,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjA0MTMyMjE",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BOdf5ec7abc8908d29a5bf"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f3e"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2b"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -29988,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjA0MTMyMTM",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BO7841cb631c5765b5e304"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f3f"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2c"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -29442,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc5Mjk",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BO4dc3e05325d3289a06b1"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f40"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2d"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -8528.33,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc5MDk",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905474"
+    }
+  },
+  "code": "BO50e85e4a877d0a572916"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f41"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2e"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -12852,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc4ODQ",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BO2aab7156d2614bd64bd9"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f42"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c2f"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -12250,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc4NDI",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BOf8142d6fc54053bd907c"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f43"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c30"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -6290,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc3ODM",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903426"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BOc2f401234efea6d82349"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f44"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c31"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -6240,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc3NTY",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903427"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BOc459e380a40675e36ff5"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f45"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c36"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -3248,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc3Mjg",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903427"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BOb0654f14201a5cb6c2ae"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f46"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c37"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -1898.57,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc0NjU",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903427"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BO3de4538a36b6867949b7"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f47"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c38"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -2330,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc0NTM",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903428"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BO4af7176e085f14a8d443"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f48"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c39"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -1916.43,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTc0MzA",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903428"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BO54ec4705a0bc7eb6a849"
+},{
+  "_id": {
+    "$oid": "63726347b49d06608aa75f49"
+  },
+  "user": {
+    "$oid": "636bae1e64a555ae41b9cde0"
+  },
+  "box": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "item": {
+    "$oid": "6371eb98b1f2e42dafa14c52"
+  },
+  "pvp_code": null,
+  "user_item": null,
+  "cost": 560.22,
+  "profit": -203.33,
+  "xp_rewarded": 0,
+  "roll_code": "Um9sbDoxMjAzMTcyMzI",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668440903428"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668446905475"
+    }
+  },
+  "code": "BO78ee2c69bd04a3f01234"
+}]
