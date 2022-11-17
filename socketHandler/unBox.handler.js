@@ -14,7 +14,6 @@ const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 
 module.exports = (io, socket) => {
   socket.on('box.open', async (payload, callback) => {
-
     try {
       if (typeof callback !== "function") {
         console.log('callback is not a function');
