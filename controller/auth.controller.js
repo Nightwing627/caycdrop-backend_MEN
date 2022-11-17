@@ -72,17 +72,21 @@ const AuthController = {
     const email = req.body.email ? req.body.email.toLowerCase() : '';
 
     if (!(email && password)) {
-      return res.status(400).send("Please input all informations")
+      return res.status(400).json({
+        error: "Please input all informations"
+      });
     }
     if (!agreeTerms) {
-      return res.status(400).send("please read and agree the Terms of Service")
+      return res.status(400).json({
+        error: "please read and agree the Terms of Service"
+      });
     }
 
     try {
       let checkUser = await UserSchema.findOne({ email });
       if (checkUser) {
         return res.status(409).json({
-          error: { email: "This email is already in use." }
+          error: "This email is already in use."
         });
       }
 
@@ -214,15 +218,12 @@ const AuthController = {
       //   }
       // );
 
-      return res.status(200).send('success');
+      return res.status(200).json({ result: 'success' });
     } catch (error) {
       console.log(error)
-      return res.status(400).json(
-        {
-          msg: 'User information is not correct',
-          err: error
-        }
-      );
+      return res.status(400).json({
+        error: 'User information is not correct',
+      });
     }
   },
 
@@ -261,10 +262,14 @@ const AuthController = {
           refreshToken: newRefreshToken
         })
       } else {
-        return res.status(400).json('refreshToken is wrong')
+        return res.status(400).json({
+          error: 'refreshToken is wrong'
+        });
       }
     } catch( err ) {
-      return res.status(400).json('refreshToken is invalid')
+      return res.status(400).json({
+        error: 'refreshToken is invalid'
+      });
     }
   },
 
@@ -289,12 +294,18 @@ const AuthController = {
           token
         });
         
-        return res.status(200).send('success');
+        return res.status(200).json({
+          result: 'success'
+        });
       } else {
-        res.status(400).send('The Email is not registered with us');
+        res.status(400).json({
+          error: 'The Email is not registered with us'
+        });
       }
     } catch (error) {
-      res.status(400).send('Something went wrong. Please contact with support team');
+      res.status(400).json({
+        error: 'Something went wrong. Please contact with support team'
+      });
     }
   },
 
@@ -303,7 +314,9 @@ const AuthController = {
 
     try {
       if (!(code && token && password)) {
-        return res.status(400).send('Link or password is wrong');
+        return res.status(400).json({
+          error: 'Link or password is wrong'
+        });
       }
 
       let user = await UserSchema.findOne({ where: { code } });
@@ -315,16 +328,22 @@ const AuthController = {
           user = await UserSchema.updateOne({ code }, { password: enryptedPWD });
           await ForgetPasswordSchema.deleteOne({ user_code: code, token })
           
-          return res.status(200).send('success')
+          return res.status(200).json({ result: 'success'})
         } else {
-          res.status(405).send('This requst is not registered');
+          res.status(405).json({
+            error: 'This requst is not registered'
+          });
         }
       } else {
-        res.status(400).send('User is not registered with us');
+        res.status(400).json({
+          error: 'User is not registered with us'
+        });
       }
     } catch (error) {
       console.log(error);
-      res.status(400).send('Something went wrong, Please contact with support team');
+      res.status(400).json({
+        error: 'Something went wrong, Please contact with support team'
+      });
     }
   },
 
@@ -344,12 +363,16 @@ const AuthController = {
           await verify.remove();
           user.email_verify = true;
           await user.save();
-          res.status(200).send('success')
+          res.status(200).json({ result: 'success' });
         } else {
-          res.status(400).send('This request is not registered');
+          res.status(400).json({
+            error: 'This request is not registered'
+          });
         }
       } else {
-        res.status(400).send('User is not registered with us');
+        res.status(400).json({
+          error: 'User is not registered with us'
+        });
       }
     } catch (error) {
       console.log(error)

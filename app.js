@@ -42,8 +42,8 @@ app.use(
     resave: false,
     saveUninitialized: false,
   })
-)
-app.use('/api', require('./routes'))
+);
+app.use('/api', require('./routes'));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -117,9 +117,9 @@ const BoxController = {
       ]);
 
       // TODO: live drop items socket
-      res.status(200).json(data);
+      res.status(200).json({ data });
     } catch (error) {
-      res.status(200).json([]);
+      res.status(200).json({ data: [] });
     }
   },
 
@@ -133,7 +133,9 @@ const BoxController = {
         .populate('markets', '-_id');      
       
       if (!box) {
-        return res.status(400).send('not found');
+        return res.status(400).json({
+          error: 'box not found'
+        });
       }
       
       let boxItems = await BoxItemSchema
@@ -156,7 +158,9 @@ const BoxController = {
     
       return res.status(200).json({ data });  
     } catch (error) {
-       return res.status(400).send('not found');
+      return res.status(400).json({
+        error: 'not found'
+      });
     }
   },
 
@@ -226,9 +230,9 @@ const BoxController = {
       
       
       return res.status(200).json({ result });
-    } catch (error) {
-      console.log(error);
-      return res.status(400).send('no data');
+    } catch (err) {
+      console.log(err);
+      return res.status(400).json({ error: 'no data'});
     }
   }
 };

@@ -47,7 +47,7 @@ module.exports = (io, socket) => {
       const box = await BoxSchema.findOne({ code: boxcode });
 
       // compare box budget and user wallet
-      if (user.wallets.main < box.original_price) {
+      if (userWallet.main < box.original_price) {
         return callback({ error: 'tight wallet' });
       }
 
