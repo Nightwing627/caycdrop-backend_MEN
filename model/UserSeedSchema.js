@@ -8,14 +8,22 @@ const UserSeedSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'Seed'
   },
-  server_seed: {
+  old_client_seed: {
     type: SchemaTypes.ObjectId,
     ref: 'Seed'
   },
-  next_server_seed: {
+  server_seed: {  // current
     type: SchemaTypes.ObjectId,
     ref: 'Seed'
-  }
+  },
+  next_server_seed: { // future
+    type: SchemaTypes.ObjectId,
+    ref: 'Seed'
+  },
+  old_server_seed: { // old
+    type: SchemaTypes.ObjectId,
+    ref: 'Seed'
+  },
 }, {
   timestamps: {
     createdAt: 'created_at',

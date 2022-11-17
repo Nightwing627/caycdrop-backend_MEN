@@ -174,61 +174,62 @@ const BoxController = {
 
   getBoxTopOpen: async (req, res) => {
     const slug = req.params.slug || '';
-    // try {
+    try {
       const boxSrc = await BoxSchema.findOne({ slug });
       
-    const data = await BoxOpenSchema
-      .find({ box: boxSrc._id })
-      .populate({
-        path: 'user',
-        select: '-_id code',
-        populate: [
-          {
-            path: 'account',
-            select: '-_id username g_rank avatar is_authentic'
-          },
-          {
-            path: 'user_progress',
-            select: '-_id level'
-          }
-        ]
-      })
-      .populate('box', '-_id code name slug icon cost currency')
-      .populate('item', '-_id code name icon_url rarity value currency type')
-      .select('-_id -__v')
-      .limit(20)
-      .sort({ profit: 1 });
+      const data = await BoxOpenSchema
+        .find({ box: boxSrc._id })
+        .populate({
+          path: 'user',
+          select: '-_id code',
+          populate: [
+            {
+              path: 'account',
+              select: '-_id username g_rank avatar is_authentic'
+            },
+            {
+              path: 'user_progress',
+              select: '-_id level'
+            }
+          ]
+        })
+        .populate('box', '-_id code name slug icon cost currency')
+        .populate('item', '-_id code name icon_url rarity value currency type')
+        .select('-_id -__v')
+        .limit(20)
+        .sort({ profit: 1 });
       
-    const result = [];
-    data.forEach(item => {
-      result.push({
-        code: item.code,
-        cost: item.cost,
-        profit: item.profit,
-        user: {
-          code: item.user.code,
-          username: item.user.account.username,
-          g_rank: item.user.account.g_rank,
-          avatar: item.user.account.avatar,
-          is_authentic: item.user.account.is_authentic,
-          level: item.user.user_progress.level,
-        },
-        box: item.box,
-        item: item.item,
-        xpRewarded: item.xp_rewarded,
-        pvpCode: item.pvp_code,
-        roll: item.roll_code,
-        createdAt: item.created_at,
-        updatedAt: item.updatedAt,
+      const result = [];
+
+      data.forEach(item => {
+        result.push({
+          code: item.code,
+          cost: item.cost,
+          profit: item.profit,
+          user: {
+            code: item.user.code,
+            username: item.user.account.username,
+            g_rank: item.user.account.g_rank,
+            avatar: item.user.account.avatar,
+            is_authentic: item.user.account.is_authentic,
+            level: item.user.user_progress.level,
+          },
+          box: item.box,
+          item: item.item,
+          xpRewarded: item.xp_rewarded,
+          pvpCode: item.pvp_code,
+          roll: item.roll_code,
+          createdAt: item.created_at,
+          updatedAt: item.updatedAt,
+        });
       });
-    })
       
       
       return res.status(200).json({ result });
-    // } catch (error) {
-    //   console.log(error);
-    //   return res.status(400).send('no data');
-    // }
+    } catch (error) {
+      console.log(error);
+      return res.status(400).send('no data');
+    }
   }
 };
 

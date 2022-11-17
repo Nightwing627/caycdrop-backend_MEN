@@ -8,6 +8,9 @@ const bodyParser = require("body-parser");
 var cors = require('cors');
 require('dotenv').config();
 
+
+const Handler = require('./socketHandler');
+
 const mongoose = require('mongoose')
 const { MongoClient, ServerApiVersion } = require('mongodb')
 
@@ -81,6 +84,9 @@ if (process.env.NODE_ENV == 'dev') {
   app.use(require('errorhandler')());
 }
 
-http.createServer(app).listen(process.env.PORT, () => {
+const httpServer = http.createServer(app);
+require('./socketHandler')(httpServer);
+
+httpServer.listen(process.env.PORT, () => {
   console.log("Server is running on port: ", process.env.PORT)
 });

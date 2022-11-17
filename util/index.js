@@ -1,5 +1,4 @@
 const crypto = require('crypto');
-crypto.createHa
 const randToken = require('rand-token');
 const axios = require('axios');
 const geoip = require('geoip-country');
@@ -58,6 +57,14 @@ function generateCode(type, text) {
       prefix = process.env.CODE_PREFIX_PVP; break;
     case "boxopen":
       prefix = process.env.CODE_PREFIX_BOX_OPEN; break;
+    case "userseed":
+      prefix = process.env.CODE_PREFIX_USER_SEED; break;
+    case "seed":
+      prefix = process.env.CODE_PREFIX_SEED; break;
+    case "rollhistory":
+      prefix = process.env.CODE_PREFIX_ROLL_HISTORY; break;
+    case "walletexchange":
+      prefix = process.env.CODE_PREFIX_WALLET_EXCHANGE; break;
   }
 
   return prefix + content;
@@ -155,43 +162,14 @@ function setBoxItemRolls(data) {
   return data;
 }
 
-function generateHashSeed() {
-  var serverHashed = crypto.createHash('sha3-256').update('11111').digest('hex');
-  var clientHashed = crypto.createHash('sha3-256').update('nightwing').digest('hex');
-  const nonce = 468;
-  const game = 'PVP_BOX';
-  const seed = getCombinedSeed(game, serverHashed, clientHashed, nonce);
-  const max = 1e8;
-  const rollValue = getRandomInt({ max, seed });
-  console.log(rollValue);
+function getHashValue(type) {
+  let value = "" + type + "_" + Date.now();
+  const hashed = crypto.createHash('sha3-256').update(value).digest('hex');
+  console.log(`${type}: ${hashed}`);
+  return hashed;
 }
 
-function getRandomInt({ max, seed }) {
-  // Get hash from seed
-  const hash = crypto.createHmac('sha256', seed).digest('hex');
-  
-  // Get value from hash
-  const subHash = hash.slice(0, 13);
-  const valueFromHash = Number.parseInt(subHash, 16);
-
-  // Get dynamic result for this roll
-  const e = Math.pow(2, 52);
-  const result = valueFromHash / e;
-  return Math.floor(result * max);
-}
-
-function getCombinedSeed(game, serverSeed, clientSeed, nonce) {
-  // Add main parameters
-  const seedParameters = [serverSeed, clientSeed, nonce];
-
-  // Add game parameter if needed
-  if (game) {
-    seedParameters.unshift(game);
-  }
-
-  // Combine parameters to get seed value
-  return seedParameters.join('-')
-}
+const Seed = require('./seed');
 
 module.exports = {
   generateCode,
@@ -200,5 +178,6 @@ module.exports = {
   getRandomToken,
   getLevelXps,
   setBoxItemRolls,
-  generateHashSeed
+  getHashValue,
+  Seed
 }

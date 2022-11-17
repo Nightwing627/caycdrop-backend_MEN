@@ -11,6 +11,7 @@ const UserShippingInfoSchema = require('../model/UserShippingInfoSchema');
 const UserTagSchema = require('../model/UserTagSchema');
 
 const Util = require('../util');
+const UserSeedSchema = require("../model/UserSeedSchema");
 
 const AuthController = {
   login: async (req, res) => {
@@ -24,7 +25,7 @@ const AuthController = {
       let user = await UserSchema
         .findOne({ email: email.toLowerCase() })
         .populate('account', '-_id -__v -user_code')
-        .populate('user_progress', '-_id -__v -user_code')
+        .populate('user_progress', '-_id -__v -user_code -bet_count')
         .populate('wallets', '-_id -__v -user_code')
         .populate('shipping_info', '-_id -__v -user_code')
         .select('-__v');
@@ -145,6 +146,7 @@ const AuthController = {
         required_xp: 0,
         next_required_xp: levelXps,
         level: 1,
+        bet_count: 0,
         updated_at: new Date(),
       });
       await userProgress.save();
@@ -172,6 +174,18 @@ const AuthController = {
         gender: 'male'
       });
       await userShippingInfo.save();
+
+      // create user seed
+      const userSeed = new UserSeedSchema({
+        userId: newUser._id,
+        client_seed: null,
+        server_seed: null,
+        next_server_seed: null,
+        old_server_seed: null,
+      });
+      await userSeed.save();
+      userSeed.code = Util.generateCode('userseed', userSeed._id);
+      await userSeed.save();
       
       // update user : code, accountid, user_progress, wallets, shipping_info
       await UserSchema.findByIdAndUpdate(newUser._id, {
@@ -214,9 +228,14 @@ const AuthController = {
 
   refreshToken: async (req, res) => {
     let { refreshToken } = req.body;
-    if (refreshToken.includes('"')) {
+    if (refreshToken) {
+      return res.status(400).json({
+        error: 'Please send the refresh token'
+      })
+    } else if (refreshToken.includes('"')) {
       refreshToken = refreshToken.split('"')[1]
     }
+    
     try {
       const user = await UserSchema.findOne({
         refresh_token: refreshToken

@@ -8,11 +8,12 @@ const UserProgressSchema = new Schema({
     type: SchemaTypes.String,
     index: true
   },
-  xp:             { type: SchemaTypes.Number },
-  required_xp:    { type: SchemaTypes.Number },
+  xp: { type: SchemaTypes.Number },
+  required_xp: { type: SchemaTypes.Number },
   next_required_xp: { type: SchemaTypes.Number },
-  level:          { type: SchemaTypes.Number },
-  updated_at:     { type: SchemaTypes.Date }
+  level: { type: SchemaTypes.Number },
+  bet_count: { type: SchemaTypes.Number },
+  updated_at: { type: SchemaTypes.Date },
 }, {
   timestamps: false
 });

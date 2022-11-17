@@ -13,7 +13,7 @@ const WalletExchangeSchema = new Schema({
   },
   type: {
     type: SchemaTypes.String,
-    enum: ['item_purchase', 'box_purchase'],
+    enum: [process.env.WALLET_EXCHANGE_ITEM, process.env.WALLET_EXCHANGE_BOX],
   },
   value_change: { type: SchemaTypes.Number },
   changed_after: { type: SchemaTypes.Number },

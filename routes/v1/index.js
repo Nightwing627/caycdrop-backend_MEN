@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
+var verifyToken = require('../middleware/auth');
 
 const mongoose = require('mongoose');
 const util = require('../../util');
 const seed = require('../../seed');
 // define API router
-router.use("/", require("./users"));
+router.use("/player", /* verifyToken, */ require("./users"));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));
@@ -31,9 +32,9 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', function (req, res) { 
-  util.generateHashSeed();
-
-  res.status(200).send('sssss');
+  const roll = util.Seed.getRoll('PVP', 'NIGHTWING', 'EW234IFJLW', 4501);
+  
+  res.status(200).json({roll});
 })
 
 router.use(function (err, req, res, next) { 

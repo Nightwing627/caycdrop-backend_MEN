@@ -1,9 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const UserController = require('../../controller/user.controller');
 
 /* GET users listing. */
-router.get('/user', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/:code/fairness', UserController.getUserSeed);
 
 module.exports = router;
