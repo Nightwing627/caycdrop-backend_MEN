@@ -150,6 +150,10 @@ module.exports = (io, socket) => {
     }
 
   });
+
+  socket.on('box.open.handle', async (payload, callback) => {
+    
+  });
 }
 
 // Insert seed info to Seed, and update User seed

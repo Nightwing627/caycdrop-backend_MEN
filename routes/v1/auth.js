@@ -8,7 +8,7 @@ router.post("/register", AuthController.register)
 
 router.post('/refresh_token', AuthController.refreshToken)
 
-router.get('/password_reset', AuthController.forgetPassword)
+router.post('/password_reset', AuthController.forgetPassword)
 
 router.post('/password_reset', AuthController.passwordReset)
 
