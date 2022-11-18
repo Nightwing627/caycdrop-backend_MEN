@@ -1,0 +1,82 @@
+[{
+  "_id": {
+    "$oid": "636bae4d64a555ae41b9cde6"
+  },
+  "user_code": "Uc887e74d32a1924eb29b",
+  "username": "USER#50",
+  "g_rank": 0,
+  "avatar": "https://s.gravatar.com/avatar/71c0184eb0f1009ea5ceaf8d6abd95e0?s=100&r=r&d=retro",
+  "locked_chat": true,
+  "sticky_referee": false,
+  "total_deposit": 0,
+  "total_rake_back": 0,
+  "daily_withdraw_limit": 1000,
+  "is_trader": false,
+  "suspected_trader": false,
+  "is_authentic": false,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668001361422"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668001361422"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "636e7e5ccebde1922618c9eb"
+  },
+  "user_code": "Ua914358671da1163d93b",
+  "username": "USER#51",
+  "g_rank": 0,
+  "avatar": "https://s.gravatar.com/avatar/71c0184eb0f1009ea5ceaf8d6abd95e0?s=100&r=r&d=retro",
+  "locked_chat": true,
+  "sticky_referee": false,
+  "total_deposit": 0,
+  "total_rake_back": 0,
+  "daily_withdraw_limit": 1000,
+  "is_trader": false,
+  "suspected_trader": false,
+  "is_authentic": false,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668185692701"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668185692701"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6375f656876a92686a47c29b"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "username": "USER#52",
+  "g_rank": 0,
+  "avatar": "https://s.gravatar.com/avatar/71c0184eb0f1009ea5ceaf8d6abd95e0?s=100&r=r&d=retro",
+  "locked_chat": true,
+  "sticky_referee": false,
+  "total_deposit": 0,
+  "total_rake_back": 0,
+  "daily_withdraw_limit": 1000,
+  "is_trader": false,
+  "suspected_trader": false,
+  "is_authentic": false,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668675158209"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668675158209"
+    }
+  },
+  "__v": 0
+}]

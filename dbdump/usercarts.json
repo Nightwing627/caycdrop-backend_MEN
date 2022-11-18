@@ -1,0 +1,96 @@
+[{
+  "_id": {
+    "$oid": "6377aeb34e465602f09b06aa"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "item_code": "I6a18b12d89de2691ea73",
+  "status": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668787892873"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668787893557"
+    }
+  },
+  "__v": 0,
+  "code": "UCdf568db3813e6c44f499"
+},{
+  "_id": {
+    "$oid": "6377b147fce333fbdd5cdf58"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "item_code": "I29f35cbfc2a2957dfe29",
+  "status": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668788551786"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668788553180"
+    }
+  },
+  "__v": 0,
+  "code": "UC009ae2aa08da5cef9806"
+},{
+  "_id": {
+    "$oid": "6377b249856b87d9b4543e64"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "item_code": "I2288dc9d210e454439aa",
+  "status": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668788809869"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668788809877"
+    }
+  },
+  "__v": 0,
+  "code": "UC52f5a2de79349b99541d"
+},{
+  "_id": {
+    "$oid": "6377b88913fdd95262cdc7d1"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "item_code": "I2288dc9d210e454439aa",
+  "status": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668790409101"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668790409109"
+    }
+  },
+  "__v": 0,
+  "code": "UC036e51f3c3fddc262f81"
+},{
+  "_id": {
+    "$oid": "6377b9cb38c97c95b1f97ff0"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "item_code": "I2288dc9d210e454439aa",
+  "status": 1,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1668790731316"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1668790731326"
+    }
+  },
+  "__v": 0,
+  "code": "UC34cf1c1747e04efc9468"
+}]

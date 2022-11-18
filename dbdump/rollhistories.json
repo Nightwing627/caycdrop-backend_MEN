@@ -373,4 +373,279 @@
       "$numberLong": "1668439913094"
     }
   }
+},{
+  "_id": {
+    "$oid": "6376397637be23ae030abbf4"
+  },
+  "value": 14621943,
+  "nonce": 1,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668692343643"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668692344980"
+    }
+  },
+  "__v": 0,
+  "code": "RH8fd683f2d46aed7207e2"
+},{
+  "_id": {
+    "$oid": "6376402078b519fe77e912f8"
+  },
+  "value": 59288716,
+  "nonce": 3,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694049009"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694049018"
+    }
+  },
+  "__v": 0,
+  "code": "RHcad106d2fef38d173a7e"
+},{
+  "_id": {
+    "$oid": "637640c438d0cac69ac6e80e"
+  },
+  "value": 47206748,
+  "nonce": 4,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694212718"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694212726"
+    }
+  },
+  "__v": 0,
+  "code": "RHb29dd276338a5958765f"
+},{
+  "_id": {
+    "$oid": "6376414238d0cac69ac6e822"
+  },
+  "value": 20433716,
+  "nonce": 5,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694338547"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694338551"
+    }
+  },
+  "__v": 0,
+  "code": "RHf42a78a1e8c246dee000"
+},{
+  "_id": {
+    "$oid": "6377aea84e465602f09b06a7"
+  },
+  "value": 2039210,
+  "nonce": 6,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668787881238"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668787882440"
+    }
+  },
+  "__v": 0,
+  "code": "RHc8755b5dc2f17ef6170f"
+},{
+  "_id": {
+    "$oid": "6377af0e4e465602f09b06c2"
+  },
+  "value": 2039210,
+  "nonce": 6,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668787983413"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668787988186"
+    }
+  },
+  "__v": 0,
+  "code": "RHf44173f28dbfa6560226"
+},{
+  "_id": {
+    "$oid": "6377aff53eda297330f81705"
+  },
+  "value": 10288906,
+  "nonce": 7,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668788213582"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668788235795"
+    }
+  },
+  "__v": 0,
+  "code": "RH3e287a2e93464a7bfb35"
+},{
+  "_id": {
+    "$oid": "6377b140fce333fbdd5cdf55"
+  },
+  "value": 10288906,
+  "nonce": 7,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668788544700"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668788547039"
+    }
+  },
+  "__v": 0,
+  "code": "RHa7ee41b806ad0d3f657f"
+},{
+  "_id": {
+    "$oid": "6377b249856b87d9b4543e61"
+  },
+  "value": 77718179,
+  "nonce": 8,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668788809851"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668788809862"
+    }
+  },
+  "__v": 0,
+  "code": "RH89598f86881a5d6749e8"
+},{
+  "_id": {
+    "$oid": "6377b88913fdd95262cdc7ce"
+  },
+  "value": 77718179,
+  "nonce": 8,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668790409083"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668790409095"
+    }
+  },
+  "__v": 0,
+  "code": "RHe0f2752c1782cf13a33e"
+},{
+  "_id": {
+    "$oid": "6377b9cb38c97c95b1f97fed"
+  },
+  "value": 77718179,
+  "nonce": 8,
+  "game": "BOX",
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668790731292"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668790731309"
+    }
+  },
+  "__v": 0,
+  "code": "RH3744fff2625882cee6dc"
 }]

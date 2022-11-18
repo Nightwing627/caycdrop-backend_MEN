@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "6375f656876a92686a47c2aa"
+  },
+  "userId": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "client_seed": {
+    "$oid": "6376360591d681b261367a26"
+  },
+  "server_seed": {
+    "$oid": "6376360591d681b261367a2b"
+  },
+  "next_server_seed": null,
+  "old_server_seed": null,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668675158245"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668691461520"
+    }
+  },
+  "__v": 0,
+  "code": "BOb5b9e11977bf8e2850a2"
+}]

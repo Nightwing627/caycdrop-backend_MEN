@@ -1,0 +1,262 @@
+[{
+  "_id": {
+    "$oid": "6376398137be23ae030abbfa"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 1014.88,
+  "changed_after": 999998985.12,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e800e"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668692355066"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668692355928"
+    }
+  },
+  "__v": 0,
+  "code": "eb6cacc47fab45d4f313"
+},{
+  "_id": {
+    "$oid": "6376402178b519fe77e912fe"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 1014.88,
+  "changed_after": 999997970.24,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e800e"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694049043"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694049047"
+    }
+  },
+  "__v": 0,
+  "code": "ffef45d6940baac30c74"
+},{
+  "_id": {
+    "$oid": "637640c438d0cac69ac6e814"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 1014.88,
+  "changed_after": 999996955.36,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e800e"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694212748"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694212753"
+    }
+  },
+  "__v": 0,
+  "code": "066e45834e3e29ce5727"
+},{
+  "_id": {
+    "$oid": "6376414238d0cac69ac6e828"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 1014.88,
+  "changed_after": 999995940.48,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e800e"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668694338567"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668694338571"
+    }
+  },
+  "__v": 0,
+  "code": "4e2bd39c6088a102a2b0"
+},{
+  "_id": {
+    "$oid": "6377aef54e465602f09b06b3"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 560.22,
+  "changed_after": 999995380.26,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668787959579"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668787963637"
+    }
+  },
+  "__v": 0,
+  "code": "ed1a0e63f7cb411dc64c"
+},{
+  "_id": {
+    "$oid": "6377b151fce333fbdd5cdf5e"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 560.22,
+  "changed_after": 999994820.04,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668788561633"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668788563615"
+    }
+  },
+  "__v": 0,
+  "code": "afe869b52cb8ce3a47e8"
+},{
+  "_id": {
+    "$oid": "6377b249856b87d9b4543e6a"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 560.22,
+  "changed_after": 999994259.8199999,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668788809898"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668788809903"
+    }
+  },
+  "__v": 0,
+  "code": "9a1a65b37b25f1178ffc"
+},{
+  "_id": {
+    "$oid": "6377b88913fdd95262cdc7d7"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 560.22,
+  "changed_after": 999994259.8199999,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668790409131"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668790409136"
+    }
+  },
+  "__v": 0,
+  "code": "e6fa047db29b9deaf0ab"
+},{
+  "_id": {
+    "$oid": "6377b9cb38c97c95b1f97ff6"
+  },
+  "user": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "type": "box_purchase",
+  "value_change": 560.22,
+  "changed_after": 999994259.8199999,
+  "wallet": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "currency": "USD",
+  "target": {
+    "$oid": "636c8f299ce54e43e61e8016"
+  },
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668790731357"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668790731364"
+    }
+  },
+  "__v": 0,
+  "code": "bab599272d2075c172fc"
+}]

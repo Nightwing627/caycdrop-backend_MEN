@@ -4,7 +4,7 @@
   },
   "email": "webdev0627@gmail.com",
   "password": "$2a$10$hAdFNseBQLTgXZiVm6otNeQ2.Jv8zRLoheQkRwmQClYBpOiL2Vhp2",
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjgwMDQ2MTQsImV4cCI6MTY2ODAwNTIxNH0.4v5bKtnw333nCErRqGQHcKiY0g-bYgAcBgAk2LHywY8",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6IlUyOWM3M2JhOTYzMWE2OWI4MTM5MSIsImlhdCI6MTY2ODY2OTI4MSwiZXhwIjoxNjY4NzU1NjgxfQ.E9a27Pj_e-Frgle3ugMBJUgS-5VLZFhu_4rWKE3Slg8",
   "is_termsService": true,
   "email_verify": false,
   "created_at": {
@@ -14,7 +14,7 @@
   },
   "updated_at": {
     "$date": {
-      "$numberLong": "1668443880041"
+      "$numberLong": "1668669281262"
     }
   },
   "__v": 0,
@@ -30,7 +30,7 @@
   "wallets": {
     "$oid": "636bae6464a555ae41b9cdef"
   },
-  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjgwMDQ2MTQsImV4cCI6MTY2ODAwNTIxNH0.PoMA3Olm3XVxfPvplCMYX41GntustIolZDujXJz7Nuk",
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6IlUyOWM3M2JhOTYzMWE2OWI4MTM5MSIsImlhdCI6MTY2ODY2OTI4MSwiZXhwIjoxNjY4NzU1NjgxfQ.HaT7cWWFDJRa-7Oklzo3a_C2qIV8CVmHqW1PJf0cO9A",
   "code": "U29c73ba9631a69b81391"
 },{
   "_id": {
@@ -67,4 +67,39 @@
   },
   "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2NjgxODU3OTUsImV4cCI6MTY2ODE4NjM5NX0.keSAIup18m1CtwRExoDtVvDrFVPysY0wyVbeoqjCt2g",
   "code": "U73b2cbc5a890ccff8892"
+},{
+  "_id": {
+    "$oid": "6375f656876a92686a47c296"
+  },
+  "email": "yuki@gmail.com",
+  "password": "$2a$10$F6NSYkDr8NPn34KUqj8EH.Z3BWEKlnNP5L7azpfjoq./EbHC/J6X.",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6IlViNDdmNWQxYTc5OTRlYjU1YWViMiIsImlhdCI6MTY2ODc4NzExNCwiZXhwIjoxNjY4ODczNTE0fQ.Y8pTUg35TYmah-8YH0fqwFGDsfbduPh89VUfCX9Vt9s",
+  "is_subscribe": true,
+  "is_termsService": true,
+  "email_verify": false,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668675158189"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668787114228"
+    }
+  },
+  "__v": 0,
+  "account": {
+    "$oid": "6375f656876a92686a47c29b"
+  },
+  "code": "Ub47f5d1a7994eb55aeb2",
+  "shipping_info": {
+    "$oid": "6375f656876a92686a47c2a7"
+  },
+  "user_progress": {
+    "$oid": "6375f656876a92686a47c2a1"
+  },
+  "wallets": {
+    "$oid": "6375f656876a92686a47c2a4"
+  },
+  "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ29kZSI6IlViNDdmNWQxYTc5OTRlYjU1YWViMiIsImlhdCI6MTY2ODc4NzExNCwiZXhwIjoxNjY4ODczNTE0fQ.mdY50h_2yiuqrWq7Tmnm0a63o2Nu2SSIyS2vzlRhJUo"
 }]

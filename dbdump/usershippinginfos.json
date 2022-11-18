@@ -34,4 +34,22 @@
     }
   },
   "__v": 0
+},{
+  "_id": {
+    "$oid": "6375f656876a92686a47c2a7"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "country": null,
+  "gender": "male",
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668675158241"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668675158241"
+    }
+  },
+  "__v": 0
 }]

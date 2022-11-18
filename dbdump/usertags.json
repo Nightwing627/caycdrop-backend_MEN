@@ -14,4 +14,12 @@
   "tag": 51,
   "status": "used",
   "__v": 0
+},{
+  "_id": {
+    "$oid": "6375f656876a92686a47c29e"
+  },
+  "user_code": "Ub47f5d1a7994eb55aeb2",
+  "tag": 52,
+  "status": "used",
+  "__v": 0
 }]

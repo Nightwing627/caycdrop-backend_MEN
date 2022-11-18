@@ -28,14 +28,14 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668482752269"
+      "$numberLong": "1668694338575"
     }
   },
   "code": "B37e3003958b15a9d2a3e",
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ecd"
   },
-  "opened": 288,
+  "opened": 292,
   "popular": 177
 },{
   "_id": {
@@ -371,14 +371,14 @@
   "__v": 0,
   "updated_at": {
     "$date": {
-      "$numberLong": "1668482752270"
+      "$numberLong": "1668790731371"
     }
   },
   "code": "B98359ec289f10775dd44",
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed5"
   },
-  "opened": 495,
+  "opened": 500,
   "popular": 253
 },{
   "_id": {
