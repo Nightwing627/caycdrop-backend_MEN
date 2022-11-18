@@ -9,7 +9,10 @@ const Init = (server) => {
     // path: '/caycdrop_socket/',
     serveClient: false,
     connectTimeout: 60000,
-    maxHttpBufferSize: 1e8
+    maxHttpBufferSize: 1e8,
+    cors: {
+      origin: "http://localhost:3000/"
+    }
   });
 
   io.engine.generateId = (req) => {

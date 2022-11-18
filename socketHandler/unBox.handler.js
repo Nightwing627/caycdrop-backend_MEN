@@ -131,7 +131,7 @@ module.exports = (io, socket) => {
       await box.save();
       userProgress.bet_count += 1;
       if (itemData.xp) { 
-        userProgress = Util.updateUserProgress(userProgress, 80001500);
+        userProgress = Util.updateUserProgress(userProgress, itemData.xp);
       }
       await userProgress.save();
       
