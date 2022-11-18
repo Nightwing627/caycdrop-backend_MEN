@@ -65,6 +65,8 @@ function generateCode(type, text) {
       prefix = process.env.CODE_PREFIX_ROLL_HISTORY; break;
     case "walletexchange":
       prefix = process.env.CODE_PREFIX_WALLET_EXCHANGE; break;
+    case "usercart":
+      prefix = process.env.CODE_PREFIX_USER_CART; break;
   }
 
   return prefix + content;
@@ -127,17 +129,18 @@ function sendEmail(type, data) {
 }
 
 function getLevelXps(level) {
-  return (
-    process.env.XP_SEED_1 + 
-		process.env.XP_SEED_2 * level + 
-		process.env.XP_SEED_3 * level / 2 + 
-		100 * (
-			Math.pow(level, 4) - 
-			2 * Math.pow(level, 3) - 
-			Math.pow(level, 2) + 
-			2 * level) 
-		/ 24
+  return Number(
+    process.env.XP_SEED_1 * level +
+    process.env.XP_SEED_2 * (level - 1) * level / 2 +
+    100 * (
+      Math.pow(level, 4) -
+      2 * Math.pow(level, 3) -
+      Math.pow(level, 2) +
+      2 * level)
+    / 24
   );
+  
+
 }
 
 async function getCountryByReq(request) { 
@@ -162,11 +165,30 @@ function setBoxItemRolls(data) {
   return data;
 }
 
+function getItemByRollValue(data, rollValue) { 
+  data = setBoxItemRolls(data);
+  var item = data.find(item => rollValue > item.roll_start && rollValue < item.roll_end);
+  return item;
+}
+
 function getHashValue(type) {
   let value = "" + type + "_" + Date.now();
   const hashed = crypto.createHash('sha3-256').update(value).digest('hex');
   console.log(`${type}: ${hashed}`);
   return hashed;
+}
+
+function updateUserProgress(upData, newXp) {
+  upData.xp += newXp;
+  var upLevel = false;
+  while (upData.xp > getLevelXps(upData.level)) {
+    upLevel = true;
+    upData.required_xp = upData.next_required_xp;
+    upData.level++;
+    upData.next_required_xp = getLevelXps(upData.level);
+  }
+  upData.level = upLevel ? upData.level - 1 : upData.level;
+  return upData;
 }
 
 const Seed = require('./seed');
@@ -179,5 +201,7 @@ module.exports = {
   getLevelXps,
   setBoxItemRolls,
   getHashValue,
+  getItemByRollValue,
+  updateUserProgress,
   Seed
 }

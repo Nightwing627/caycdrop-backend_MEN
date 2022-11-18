@@ -32,9 +32,8 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', function (req, res) { 
-  const roll = util.Seed.getRoll('PVP', 'NIGHTWING', 'EW234IFJLW', 4501);
   
-  res.status(200).json({roll});
+  res.status(200).json(util.getLevelXps(1));
 })
 
 router.use(function (err, req, res, next) { 

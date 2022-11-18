@@ -11,41 +11,34 @@ const SeedSchema = require('../model/SeedSchema');
 const BoxOpenSchema = require('../model/BoxOpenSchema');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
+const UserCartSchema = require('../model/UserCartSchema');
+const BoxItemSchema = require('../model/BoxItemSchema');
 
 module.exports = (io, socket) => {
   socket.on('box.open', async (payload, callback) => {
     try {
       if (typeof callback !== "function") {
-        console.log('callback is not a function');
-        socket.emit('box.open.fail', {
-          error: 'callback error'
-        });
-        
+        socket.emit('box.open.fail', { error: 'callback error' });
         return socket.disconnect();
       }
-      
+      // Validate params and user info
       const { usercode, token, boxcode, time } = payload;
       if (!(usercode && token && boxcode && time)) {
-        return callback({
-          error: 'params must be filled'
-        })
+        return callback({ error: 'params must be filled' });
       }
-
       // verify user
       const userData = jwt.verify(token, process.env.TOKEN_KEY);
       if (!usercode == userData.userCode) {
-        return callback({
-          error: 'wrong token'
-        });
+        return callback({ error: 'wrong token' });
       }
 
-      // Get user and box information
+      // Get basic information - User, UserWallet, UserProgress, Box
       const user = await UserSchema.findOne({ code: usercode });
       const userWallet = await UserWalletSchema.findById(user.wallets);
-      const userProgress = await UserProgressSchema.findById(user.user_progress);
+      let userProgress = await UserProgressSchema.findById(user.user_progress);
       const box = await BoxSchema.findOne({ code: boxcode });
 
-      // compare box budget and user wallet
+      // Compare box budget and user wallet
       if (userWallet.main < box.original_price) {
         return callback({ error: 'tight wallet' });
       }
@@ -85,38 +78,44 @@ module.exports = (io, socket) => {
       );
 
       /// *** Log all informations RollHistory, BoxOpen, Box statistic, WalletExchange
+      const itemData = await getItemAndXP(box.code, rollValue);
       // Roll History
-      const rollHis = new RollHistorySchema({
+      const rollHis = await RollHistorySchema.create({
         value: rollValue,
         nonce,
         game: 'BOX',
         server_seed: userSeed.server_seed,
         client_seed: userSeed.client_seed
       });
+      rollHis.code = Util.generateCode('rollhistory', rollHis._id);
       await rollHis.save();
-      await RollHistorySchema.findByIdAndUpdate(rollHis._id, {
-        code: Util.generateCode('rollhistory', rollHis._id)
+      
+      // Default Add to User Cart
+      const userCart = await UserCartSchema.create({
+        user_code: user.code,
+        item_code: itemData.item.code,
+        status: true
       });
+      userCart.code = Util.generateCode('usercart', userCart._id);
+      await userCart.save();
 
       // Box Opening History
-      const boxOpen = new BoxOpenSchema({
+      let boxOpen = await BoxOpenSchema.create({
         user: user._id,
         box: box._id,
-        item: null,
+        item: itemData.item._id,
         pvp_code: null,
-        user_item: null,
+        user_item: userCart._id,
         cost: box.original_price,
-        profit: null,
-        xp_rewarded: null,
+        profit: itemData.profit,
+        xp_rewarded: itemData.xp,
         roll_code: rollHis.code
       });
+      boxOpen.code = Util.generateCode('boxopen', boxOpen._id);
       await boxOpen.save();
-      await BoxOpenSchema.findByIdAndUpdate(boxOpen._id, {
-        code: Util.generateCode('boxopen', boxOpen._id)
-      });
 
       // Wallet Exchange History
-      const walletExchange = new WalletExchangeSchema({
+      const walletExchange = await WalletExchangeSchema.create({
         user: user._id,
         type: process.env.WALLET_EXCHANGE_BOX,
         value_change: box.original_price,
@@ -125,14 +124,15 @@ module.exports = (io, socket) => {
         currency: 'USD',
         target: box._id
       });
+      walletExchange.code = Util.generateCode('wallexchange', walletExchange._id);
       await walletExchange.save();
-      await WalletExchangeSchema.findByIdAndUpdate(walletExchange._id, {
-        code: Util.generateCode('wallexchange', walletExchange._id)
-      });
 
       box.opened += 1;
       await box.save();
       userProgress.bet_count += 1;
+      if (itemData.xp) { 
+        userProgress = Util.updateUserProgress(userProgress, 80001500);
+      }
       await userProgress.save();
       
       // Change User Wallet
@@ -140,7 +140,8 @@ module.exports = (io, socket) => {
         main: userWallet.main - box.original_price
       });
 
-      callback({ result: 'ok', data: { rollValue } });  
+      boxOpen = await BoxOpenSchema.findById(boxOpen._id);
+      callback({ result: 'ok', data: { rollValue, BOL: boxOpen.code } });
     } catch (error) {
       console.log(error);
       if (error.message == 'jwt expired')
@@ -148,38 +149,80 @@ module.exports = (io, socket) => {
       else 
         callback({ error: error.message })
     }
-
   });
 
-  socket.on('box.open.handle', async (payload, callback) => {
+  socket.on('box.open.picked', async (payload, callback) => {
+    if (typeof callback !== "function") {
+      socket.emit('box.open.fail', { error: 'callback error' });
+      return socket.disconnect();
+    }
+    // Validate params and user info
+    const { usercode, token, bol, method, time } = payload;
+    if (!(usercode && token && bol && method && time)) {
+      return callback({ error: 'params must be filled' });
+    }
+    // verify user
+    const userData = jwt.verify(token, process.env.TOKEN_KEY);
+    if (!usercode == userData.userCode) {
+      return callback({ error: 'wrong token' });
+    }
+
+    const boxOpen = await BoxOpenSchema
+      .find({ code: bol })
+      .populate('user');
     
+    if (boxOpen == null) {
+      return callback({ error: 'this is fake data' });
+    } else if (boxOpen.user.code !== usercode) {
+      return callback({ error: 'user not match' });
+    }
+
+    if (method == process.env.UNBOX_ITEM_SELL) { 
+      const userWallet = user
+    } else if (method == process.env.UNBOX_ITEM_TO_CART) {
+
+    }
   });
 }
 
 // Insert seed info to Seed, and update User seed
 const updateUserSeed = async (userSeed, clientValue, serverValue) => { 
-  const clientSeed = new SeedSchema({
+  const clientSeed = await SeedSchema.create({
     type: process.env.SEED_TYPE_CLIENT,
     future: false,
     value: '',
     hash: clientValue
   });
+  clientSeed.code = Util.generateCode('seed', clientSeed._id);
   await clientSeed.save();
-  await SeedSchema.findByIdAndUpdate(clientSeed._id,
-    { code: Util.generateCode('seed', clientSeed._id) });
   
-  const serverSeed = new SeedSchema({
+  const serverSeed = await SeedSchema.create({
     type: process.env.SEED_TYPE_SERVER,
     future: false,
     value: serverValue,
     hash: crypto.createHash('sha3-256').update(serverValue).digest('hex')
   });
+  serverSeed.code = Util.generateCode('seed', serverSeed._id);
   await serverSeed.save();
-  await SeedSchema.findByIdAndUpdate(serverSeed._id,
-    { code: Util.generateCode('seed', serverSeed._id) });
   
   userSeed.client_seed = clientSeed._id;
   userSeed.server_seed = serverSeed._id;
 
   await userSeed.save();
+}
+
+const getItemAndXP = async (boxCode, rollValue) => {
+  const box = await BoxSchema.findOne({ code: boxCode });
+  let boxItems = await BoxItemSchema
+    .find({ box_code: boxCode })
+    .populate('item');
+  
+  const pickedItem = Util.getItemByRollValue(boxItems, rollValue);
+  const profit = Number(box.original_price - pickedItem.item.value);
+  let xpRewarded = 0;
+  if (profit > 0) {
+    xpRewarded = profit * process.env.XP_CALC_VALUE;
+  }
+  
+  return { item: pickedItem.item, xp: xpRewarded, profit };
 }
