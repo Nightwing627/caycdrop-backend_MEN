@@ -11,7 +11,7 @@ const Init = (server) => {
     connectTimeout: 60000,
     maxHttpBufferSize: 1e8,
     cors: {
-      origin: "http://localhost:3000/"
+      origin: "*"
     }
   });
 
