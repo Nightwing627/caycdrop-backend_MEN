@@ -9,7 +9,7 @@ var cors = require('cors');
 require('dotenv').config();
 
 
-const Handler = require('./socketHandler');
+const Handler = require('./socket');
 
 const mongoose = require('mongoose')
 const { MongoClient, ServerApiVersion } = require('mongodb')
@@ -90,7 +90,7 @@ if (process.env.NODE_ENV == 'dev') {
 }
 
 const httpServer = http.createServer(app);
-require('./socketHandler')(httpServer);
+require('./socket')(httpServer);
 
 httpServer.listen(process.env.PORT, () => {
   console.log("Server is running on port: ", process.env.PORT)
