@@ -34,7 +34,8 @@ const BoxController = {
       _size = 50,
       _tag
     } = req.body;
-    
+    console.log(req.body)
+
     const sort = _sort ? _sort : 'recommend';
     const page = Number(_page) ? Number(_page) : 1;
     const size = Number(_size) ? Number(_size) : 50;
@@ -48,7 +49,7 @@ const BoxController = {
         tagFilter = await TagSchema.findOne({ name: 'featured' })
       }
       
-      console.log(sort, page, size, _tag, '1111111111')
+      console.log('######### BOX FILTER PARAMS: ', sort, page, size, _tag);
 
       let aggreSort;
       if (sort == 'recommend') {
