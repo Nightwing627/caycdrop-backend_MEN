@@ -158,7 +158,7 @@ const AuthController = {
       // create user wallet
       const userWallet = new UserWalletSchema({
         user_code: code,
-        main: 0,
+        main: 500000, // for test, default is 0
         main_currency: 'USD',
         bonus: 0,
         bonus_currency: 'USD',

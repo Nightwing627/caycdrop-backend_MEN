@@ -33,7 +33,7 @@ const BoxController = {
       _page = 1,
       _size = 50,
       _tag
-    } = req.query;
+    } = req.body;
     
     const sort = _sort ? _sort : 'recommend';
     const page = Number(_page) ? Number(_page) : 1;
