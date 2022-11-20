@@ -19,15 +19,20 @@ const Init = (server) => {
     return uuid.v4();
   }
 
-  io.on("connection", (socket) => { 
+  io.on("connection", (socket) => {
+    var address = socket.handshake.address;
+    console.log('New connection from ' + address.address + ':' + address.port);
+    var clientIp = socket.request.connection.remoteAddress;
+    console.log('Remote address: ', clientIp);
     Handler(io, socket);
   });
 
 }
 
 const Handler = (io, socket) => { 
+  
   console.log(`${socket.id} Sockect connected!`);
-
+  socket.emit("connected");
   UnBoxHandler(io, socket);
   PvpHandler(io, socket);
   LiveDropHandler(io, socket);
