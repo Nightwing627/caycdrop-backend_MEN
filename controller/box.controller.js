@@ -20,7 +20,8 @@ const orders = [
 const BoxController = {
   getFilterData: async (req, res) => {
     // visible tag list
-    const tags = await TagSchema.find({ visible: true }, { _id: 0, __v: 0 });
+    // const tags = await TagSchema.find({ visible: true }, { _id: 0, __v: 0 });
+    const tags = await TagSchema.find().select({ _id: 0, __v: 0 });
     res.status(200).json({
       tags, orders
     })
@@ -42,13 +43,6 @@ const BoxController = {
     const search = _q ? _q : '';
 
     try {
-      let tagFilter;
-      if (_tag) {
-        tagFilter = await TagSchema.findOne({ code: _tag });
-      } else {
-        tagFilter = await TagSchema.findOne({ name: 'featured' })
-      }
-      
       console.log('######### BOX FILTER PARAMS: ', sort, page, size, _tag);
 
       let aggreSort;
@@ -70,9 +64,9 @@ const BoxController = {
       } else if (_sort == 'l_popular') {
         aggreSort = [{ $sort: { "popular": 1 } }];
       } else if (_sort == 'p_to_high') {
-        aggreSort = [{ $sort: { "original_price": -1 } }];
-      } else if (_sort == 'p_to_low') {
         aggreSort = [{ $sort: { "original_price": 1 } }];
+      } else if (_sort == 'p_to_low') {
+        aggreSort = [{ $sort: { "original_price": -1 } }];
       } else if (_sort == 'new') {
         aggreSort = [{ $sort: { "created_at": -1 } }];
       } else if (_sort == 'old') {
@@ -88,14 +82,23 @@ const BoxController = {
         ];
       }
 
+      let conditions;
+      let tagFilter;
+      if (_tag) {
+        tagFilter = await TagSchema.findOne({ code: _tag });
+        conditions = {
+          $and: [
+            { name: { $regex: '.*' + search + '.*', $options: 'i' } },
+            { tags: tagFilter._id }
+        ]}
+      } else {
+        conditions = { name: { $regex: '.*' + search + '.*', $options: 'i' } };
+      }
+
+
       let data = await BoxSchema.aggregate([
         {
-          $match: {
-            $or: [
-              { name: { $regex: '.*' + search + '.*', $options: 'i' } },
-              { tags: tagFilter._id }
-            ]
-          }
+          $match: conditions
         },
         {
           $lookup: {
@@ -109,7 +112,7 @@ const BoxController = {
         {
           $project: {
             _id: 0, ancestor_box: 1, code: 1, name: 1, cost: 1, original_price: 1,
-            currency: 1, icon: 1, level_required: 1, order: 1,
+            currency: 1, icon: 1, level_required: 1, order: 1, slug: 1,
             "tags.code": 1, "tags.name": 1, "tags.visible": 1, "tags.color": 1
           }
         },
@@ -254,7 +257,7 @@ const getSuggestBoxs = async (_page = 1, _size = 50) => {
     }, {
       $project: {
         _id: 0, ancestor_box: 1, code: 1, name: 1, cost: 1, original_price: 1,
-        currency: 1, icon: 1, level_required: 1, order: 1,
+        currency: 1, icon: 1, level_required: 1, order: 1, slug: 1,
         "tags.code": 1, "tags.name": 1, "tags.visible": 1, "tags.color": 1
       }
     },

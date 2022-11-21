@@ -3,7 +3,7 @@
     "$oid": "636c84ece4830d466abadc0a"
   },
   "code": "TGf22b9518474db3f01321",
-  "name": "featured",
+  "name": "Clothing",
   "visible": true,
   "position": "0",
   "__v": 0,
@@ -23,7 +23,7 @@
     "$oid": "636c84ece4830d466abadc0b"
   },
   "code": "TGdec0af6834fc8c591d4d",
-  "name": "new",
+  "name": "Combination",
   "visible": true,
   "position": "0",
   "__v": 0,
@@ -43,7 +43,7 @@
     "$oid": "636c84ece4830d466abadc0c"
   },
   "code": "TG9d3f29b313802861a481",
-  "name": "streetwear",
+  "name": "Jewelry",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -62,7 +62,7 @@
     "$oid": "636c84ece4830d466abadc0d"
   },
   "code": "TGa4508678dfdb41226ff0",
-  "name": "tech",
+  "name": "Toys",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -81,7 +81,7 @@
     "$oid": "636c84ece4830d466abadc0e"
   },
   "code": "TG24b29f90c093ef3d2f90",
-  "name": "gaming",
+  "name": "Accessories",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -100,7 +100,7 @@
     "$oid": "636c84ece4830d466abadc0f"
   },
   "code": "TGccba9eb8db66ce4df1fb",
-  "name": "miscellaneous",
+  "name": "Shoes",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -119,7 +119,7 @@
     "$oid": "636c84ece4830d466abadc10"
   },
   "code": "TG834a8a2f359613b1a906",
-  "name": "hot",
+  "name": "Basketball",
   "visible": true,
   "position": "0",
   "__v": 0,
@@ -139,7 +139,7 @@
     "$oid": "636c84ece4830d466abadc11"
   },
   "code": "TG02b77becaf76e910c4f3",
-  "name": "budget",
+  "name": "Misc",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -158,7 +158,7 @@
     "$oid": "636c84ece4830d466abadc12"
   },
   "code": "TGfe4fe73f51bce068524e",
-  "name": "jordan-21-22",
+  "name": "NFT",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -177,7 +177,7 @@
     "$oid": "636c84ece4830d466abadc13"
   },
   "code": "TG2f3d54538fb38768f593",
-  "name": "half-a-jordan",
+  "name": "Electronics",
   "visible": false,
   "position": "0",
   "__v": 0,
@@ -189,311 +189,6 @@
   "updated_at": {
     "$date": {
       "$numberLong": "1668060779193"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc14"
-  },
-  "code": "TG64dfd824223cf14f2415",
-  "name": "updated",
-  "visible": true,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300305"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779193"
-    }
-  },
-  "color": "#3d789d"
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc15"
-  },
-  "code": "TG836243ffc0fb7fbfec79",
-  "name": "discount-5",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300305"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779193"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc16"
-  },
-  "code": "TG09a58cf2a50bb8f40bb3",
-  "name": "star-wars",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300305"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779193"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc17"
-  },
-  "code": "TGad0d9d5aadf04eacc213",
-  "name": "harry-potter",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300305"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779193"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc18"
-  },
-  "code": "TG2f9991eedb57e8805d5d",
-  "name": "watches",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779193"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc19"
-  },
-  "code": "TGf284203c499e03edef36",
-  "name": "mix",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1a"
-  },
-  "code": "TGd52bc4188bc1e7bf5815",
-  "name": "sneakers",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1b"
-  },
-  "code": "TG4466bd5bdd3a7710b0af",
-  "name": "jewellery",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1c"
-  },
-  "code": "TG70d66dcbce59b274d18b",
-  "name": "collectables",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1d"
-  },
-  "code": "TGdc4628e22d07055f4bbb",
-  "name": "influencer",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1e"
-  },
-  "code": "TGc77610bb81cd3f84cdbf",
-  "name": "cars",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc1f"
-  },
-  "code": "TGdd7296ccee725c1ef7de",
-  "name": "VIP",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc20"
-  },
-  "code": "TG8422434fe283942e2152",
-  "name": "snkrs-day",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc21"
-  },
-  "code": "TG35d1fe925b66c20a2a86",
-  "name": "lego",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc22"
-  },
-  "code": "TG12c63755269ae3aefc3a",
-  "name": "hot-wheels",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300306"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
-    }
-  }
-},{
-  "_id": {
-    "$oid": "636c84ece4830d466abadc23"
-  },
-  "code": "TG348a090e8add8452a1a9",
-  "name": "trips",
-  "visible": false,
-  "position": "0",
-  "__v": 0,
-  "created_at": {
-    "$date": {
-      "$numberLong": "1668056300307"
-    }
-  },
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1668060779194"
     }
   }
 }]
