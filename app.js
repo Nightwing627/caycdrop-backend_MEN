@@ -19,7 +19,7 @@ var app = express();
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
-// app.use(express.static(path.join(__dirname, 'public')));
+
 
 // set middleware
 const corsOpts = {
@@ -36,6 +36,7 @@ app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   // set session for API request

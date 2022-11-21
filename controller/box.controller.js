@@ -110,6 +110,9 @@ const BoxController = {
         },
         ...aggreSort,
         {
+            $addFields: { "icon": { $concat: [`${process.env.LINK}/`, "$icon_path"] } }
+        },
+        {
           $project: {
             _id: 0, ancestor_box: 1, code: 1, name: 1, cost: 1, original_price: 1,
             currency: 1, icon: 1, level_required: 1, order: 1, slug: 1,
@@ -222,7 +225,7 @@ const BoxController = {
             is_authentic: item.user.account.is_authentic,
             level: item.user.user_progress.level,
           },
-          box: item.box,
+          box: item.box.toListJSON(),
           item: item.item,
           xpRewarded: item.xp_rewarded,
           pvpCode: item.pvp_code,
@@ -252,6 +255,8 @@ const getSuggestBoxs = async (_page = 1, _size = 50) => {
       }
     }, {
       $addFields: { "recommend": { $sum: ["$opened", "$popular"] } }
+    }, {
+      $addFields: { "icon": { $concat: [`${process.env.LINK}/`, "$icon_path"] } }
     }, {
       $sort: { "recommend": -1 }
     }, {

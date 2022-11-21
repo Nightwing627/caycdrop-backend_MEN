@@ -9,7 +9,7 @@ const BoxSchema = new Schema({
   cost: { type: SchemaTypes.Number },
   original_price: { type: SchemaTypes.Number },
   currency: { type: SchemaTypes.String },
-  icon: { type: SchemaTypes.String },
+  icon_path: { type: SchemaTypes.String },
   level_required: { type: SchemaTypes.Number },
   tags: [{
     type: SchemaTypes.ObjectId,
@@ -45,7 +45,7 @@ BoxSchema.set('toObject', { virtuals: true });
 
 BoxSchema.set('toJSON', { virtuals: true });
 
-BoxSchema.methods.toListJSON = function () { 
+BoxSchema.methods.toListJSON = function () {
   return {
     ancestor_box: this.ancestor_box,
     code: this.code,
@@ -53,14 +53,14 @@ BoxSchema.methods.toListJSON = function () {
     cost: this.cost,
     originalPrice: this.original_price,
     currency: this.currency,
-    icon: this.icon,
+    icon: `${process.env.LINK}/${this.icon_path}`,
     levelRequired: this.level_required,
     tags: this.tags,
     order: this.order,
   }
-}
+};
 
-BoxSchema.methods.toGetOneJSON = function() {
+BoxSchema.methods.toGetOneJSON = function () {
   return {
     ancestorBox: this.ancestor_box,
     code: this.code,
@@ -68,7 +68,7 @@ BoxSchema.methods.toGetOneJSON = function() {
     cost: this.cost,
     originalPrice: this.original_price,
     currency: this.currency,
-    icon: this.icon,
+    icon: `${process.env.LINK}/${this.icon_path}`,
     levelRequired: this.level_required,
     tags: this.tags,
     maxPurchaseDaily: this.max_purchase_daily,
@@ -82,8 +82,13 @@ BoxSchema.methods.toGetOneJSON = function() {
     bgImage: this.background_image,
     order: this.order,
   }
-}
+};
 
+BoxSchema.virtual('icon').get(function () {
+  return `${process.env.LINK}/${this.icon_path}`;
+});
+
+  
 BoxSchema.plugin(uniqueValidator, { message: " is already taken " });
 
 module.exports = mongoose.model('Box', BoxSchema);

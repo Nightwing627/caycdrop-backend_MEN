@@ -1,970 +1,849 @@
-
-const mongoose = require('mongoose');
-
-module.exports =
-[
+[{
+  "name": "vengeance",
+  "cost": 114,
+  "original_price": 114,
+  "currency": "USD",
+  "icon_path": "img/boxes/vengeance.png",
+  "level_required": 1,
+  "tags": [
     {
-        "cost": 1014.88,
-        "created_at": "2022-06-24T19:29:42.735Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Iced%20out_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Iced Out",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "iced-out",
-        "order": 85,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 1014.88
+      "$oid": "636c84ece4830d466abadc0a"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "description": "Vengeance CASE- Crazy battle case 90% super low volatility",
+  "slug": "vengeance",
+  "markets": [],
+  "order": 85,
+  "code": "B37e3003958b15a9d2a3e",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ecd"
+  },
+  "opened": 292,
+  "popular": 177
+},{
+  "name": "revenge",
+  "cost": 32,
+  "original_price": 32,
+  "currency": "USD",
+  "icon_path": "img/boxes/revenge-case.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
+    },{
+      "$oid": "636c84ece4830d466abadc0b"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "revenge",
+  "description": "Revenge CASE- $32 SUPER VOLATILE 25% WIN RATE CASE",
+  "markets": [],
+  "order": 145,
+  "code": "B8da9d27168fdd8306280",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ece"
+  },
+  "opened": 11,
+  "popular": 119
+},{
+  "name": "Angels vs Demons",
+  "cost": 229,
+  "original_price": 229,
+  "currency": "USD",
+  "icon_path": "img/boxes/angels-vs-demons.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0c"
     },
     {
-        "cost": 43.49,
-        "created_at": "2022-06-29T13:11:12.868Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Fruity_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Fruity",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "fruity",
-        "order": 145,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 43.49
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 773.21,
-        "created_at": "2022-07-06T07:39:09.560Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Lamborghini_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Lamborghini",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "lamborghini",
-        "order": 26,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e'),
-        ],
-        "original_price": 773.21
+      "$oid": "636c84ece4830d466abadc0d"
     },
     {
-        "cost": 645.57,
-        "created_at": "2022-07-09T09:12:48.172Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Rich%20influencer_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Rich influencer",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "rich-influencer",
-        "order": 58,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 645.57
+      "$oid": "636c84ece4830d466abadc0b"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "angels-vs-demons",
+  "markets": [],
+  "description": "Angels vs Demons- $229 80/20 good battle case",
+  "order": 26,
+  "code": "B9243b92b90d94b4da902",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ecf"
+  },
+  "opened": 61,
+  "popular": 227
+},{
+  "name": "10Off",
+  "cost": 53,
+  "original_price": 53,
+  "currency": "USD",
+  "icon_path": "img/boxes/10_off.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 144.43,
-        "created_at": "2022-07-09T09:28:16.877Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Nature_case_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Walk in the Park",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "walk-in-the-park",
-        "order": 134,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 144.43
+      "$oid": "636c84ece4830d466abadc0e"
     },
     {
-        "cost": 34.34,
-        "created_at": "2022-07-09T09:35:29.780Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/email/HypeDrop_Travis%20or%20not%20Box_Design.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Travis Scott",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "travis-scott",
-        "order": 159,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 34.34
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "10off",
+  "description": "10Off CASE! 10% case- $53",
+  "markets": [],
+  "order": 58,
+  "code": "B54ae0335601a77af5b6b",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed0"
+  },
+  "opened": 241,
+  "popular": 380
+},{
+  "name": "yay",
+  "cost": 268,
+  "original_price": 268,
+  "currency": "USD",
+  "icon_path": "img/boxes/yay-case.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "yay",
+  "description": "YAY CASE- $268 40/60 CASE",
+  "markets": [],
+  "order": 134,
+  "code": "Bbfe98160a56391ad7b7f",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed1"
+  },
+  "opened": 297,
+  "popular": 401
+},{
+  "name": "costly clash",
+  "cost": 577,
+  "original_price": 577,
+  "currency": "USD",
+  "icon_path": "img/boxes/costly-clash.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 22.31,
-        "created_at": "2022-07-21T12:34:25.201Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Harry%20potter_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Harry Potter",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "harry-potter",
-        "order": 43,
-        "tags": [        
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0f'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc17')
-        ],
-        "original_price": 22.31
+      "$oid": "636c84ece4830d466abadc0f"
     },
     {
-        "cost": 1334.93,
-        "created_at": "2022-07-25T10:28:18.859Z",
-        "currency": "USD",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "order": 144,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 1334.93
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "costly-clash",
+  "description": "Costly Clash Case- 70/30, Good battle case, $577",
+  "markets": [],
+  "order": 159,
+  "code": "B4c932bc63dcc21db0b00",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed2"
+  },
+  "opened": 473,
+  "popular": 283
+},{
+  "name": "Luxury Hoops",
+  "cost": 97,
+  "original_price": 97,
+  "currency": "USD",
+  "icon_path": "img/boxes/luxury-hoops.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc10"
     },
     {
-        "cost": 560.22,
-        "created_at": "2022-07-25T10:35:15.084Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Audi_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Audi",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "audi",
-        "order": 54,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e')
-        ],
-        "original_price": 560.22
+      "$oid": "636c84ece4830d466abadc0f"
     },
     {
-        "cost": 192.22,
-        "created_at": "2022-07-25T10:37:49.723Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Monochrome%20style_Box_Design_Export_new%20(1).png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Monochrome Style",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "monochrome-style",
-        "order": 162,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 192.22
+      "$oid": "636c84ece4830d466abadc0d"
     },
     {
-        "cost": 130.77,
-        "created_at": "2022-07-25T10:44:56.739Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/fire%20and%20ice.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Fire and Ice",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "fire-and-ice",
-        "order": 146,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 130.77
+      "$oid": "636c84ece4830d466abadc0a"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "luxury-hoops",
+  "description": "Luxury Hoops- 30/70 case- $97",
+  "markets": [],
+  "order": 43,
+  "code": "B40de746f7d44f475ca49",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed3"
+  },
+  "opened": 256,
+  "popular": 58
+},{
+  "name": "50% Storm",
+  "cost": 72,
+  "original_price": 72,
+  "currency": "USD",
+  "icon_path": "img/boxes/50_storms.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "50%-storm",
+  "description": "50% Storm Case- 50/50 case, $72",
+  "markets": [],
+  "order": 144,
+  "code": "Bc9a5aa51df1f8dc33085",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed4"
+  },
+  "opened": 263,
+  "popular": 358
+},{
+  "name": "Sicko Mode",
+  "cost": 26.5,
+  "original_price": 26.5,
+  "currency": "USD",
+  "icon_path": "img/boxes/sicko-case.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0e"
     },
     {
-        "cost": 1089.19,
-        "created_at": "2022-07-26T12:28:45.898Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Ibiza%20hr_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Ibiza Party",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "ibiza-party",
-        "order": 9,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 1089.19
+      "$oid": "636c84ece4830d466abadc0a"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "sicko-mode",
+  "description": "Sicko Mode 25/75 case $26.5",
+  "markets": [],
+  "order": 54,
+  "code": "B98359ec289f10775dd44",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed5"
+  },
+  "opened": 500,
+  "popular": 253
+},{
+  "name": "Supremely Fair",
+  "cost": 9,
+  "original_price": 9,
+  "currency": "USD",
+  "icon_path": "img/boxes/supremely-fair.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 198.37,
-        "created_at": "2022-07-26T12:28:56.292Z",
-        "currency": "USD",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Ibiza Nights",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "ibiza-nights",
-        "order": 17,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 198.37
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "supremely-fair",
+  "description": "Supremely Fair Case- 3% case very low odds crazy tickets $9",
+  "markets": [],
+  "order": 162,
+  "code": "B5f280062f66fa98bf255",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed6"
+  },
+  "opened": 446,
+  "popular": 321
+},{
+  "name": "Webbed",
+  "cost": 19.5,
+  "original_price": 19.5,
+  "currency": "USD",
+  "icon_path": "img/boxes/webbed.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "webbed",
+  "description": "Webbed Case- 10% case- $19.5",
+  "markets": [],
+  "order": 146,
+  "code": "B32f573ce33ef2da7df1a",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed7"
+  },
+  "opened": 360,
+  "popular": 491
+},{
+  "name": "50% Ape",
+  "cost": 91,
+  "original_price": 91,
+  "currency": "USD",
+  "icon_path": "img/boxes/half-ape.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
     },
     {
-        "cost": 109.46,
-        "created_at": "2022-07-27T18:22:10.941Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Lars_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Lars",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "lars",
-        "order": 74,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0f')
-        ],
-        "original_price": 109.46
+      "$oid": "636c84ece4830d466abadc12"
     },
     {
-        "cost": 803.94,
-        "created_at": "2022-07-30T13:24:24.055Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Rose%20Gold_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Rose Gold",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "rose-gold",
-        "order": 10,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 803.94
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "50%-ape",
+  "description": "50% Ape, 50/50 case, $91",
+  "markets": [],
+  "order": 9,
+  "code": "Baed6f3f364bada615709",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed8"
+  },
+  "opened": 487,
+  "popular": 189
+},{
+  "name": "Stars and Stripes",
+  "cost": 506,
+  "original_price": 506,
+  "currency": "USD",
+  "icon_path": "img/boxes/stars-and-stripes-case.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 43.93,
-        "created_at": "2022-08-02T16:12:09.176Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Yeezy%20day_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Yeezy Day",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "yeezy-day",
-        "order": 80,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 43.93
+      "$oid": "636c84ece4830d466abadc0e"
     },
     {
-        "cost": 1898.18,
-        "created_at": "2022-08-07T11:34:21.087Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Millionaire%202_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Millionaire",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "millionaire",
-        "order": 23,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 1898.18
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "stars-and-stripes",
+  "description": "Stars and Stripes, 80% hit, $506",
+  "markets": [],
+  "order": 17,
+  "code": "B00664d77434ab4fd9258",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ed9"
+  },
+  "opened": 203,
+  "popular": 1
+},{
+  "name": "Almost One",
+  "cost": 6.9,
+  "original_price": 6.9,
+  "currency": "USD",
+  "icon_path": "img/boxes/almost_1.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc13"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "almost-one",
+  "description": "Almost One (1% Case) $6.9",
+  "markets": [],
+  "order": 74,
+  "code": "B9e0a5e8778a3e6d24a9e",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eda"
+  },
+  "opened": 496,
+  "popular": 84
+},{
+  "name": "Lucky Penny",
+  "cost": 1.15,
+  "original_price": 1.15,
+  "currency": "USD",
+  "icon_path": "img/boxes/lucky-penny.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 48.67,
-        "created_at": "2022-08-11T15:44:30.313Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_SNKRS%20Day_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "SNKRS DAY",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "snkrs-day",
-        "order": 45,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc16')
-        ],
-        "original_price": 48.67
+      "$oid": "636c84ece4830d466abadc11"
     },
     {
-        "cost": 399.71,
-        "created_at": "2022-08-13T16:54:05.408Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Rich%20gvng_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Rich Gvng",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "rich-gvng",
-        "order": 55,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c')
-        ],
-        "original_price": 399.71
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "lucky-penny",
+  "description": "Lucky Penny (1% Case) $1.15",
+  "markets": [],
+  "order": 10,
+  "code": "B378bfd1b0be076f26e24",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edb"
+  },
+  "opened": 61,
+  "popular": 346
+},{
+  "name": "Summer Drip",
+  "cost": 16.5,
+  "original_price": 16.5,
+  "currency": "USD",
+  "icon_path": "img/boxes/summer-drip.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 2023.72,
-        "created_at": "2022-08-15T10:27:16.751Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Tudor_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Tudor",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "tudor",
-        "order": 8,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18')
-        ],
-        "original_price": 2023.72
+      "$oid": "636c84ece4830d466abadc0f"
     },
     {
-        "cost": 11.75,
-        "created_at": "2022-08-15T10:28:20.844Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Ibiza%20budget_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Ibiza Dreams",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "ibiza-dreams",
-        "order": 19,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 11.75
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "summer-drip",
+  "description": "Summer Drip Case (25/75) $16.5",
+  "markets": [],
+  "order": 80,
+  "code": "B9bb63af24412ea171fe0",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edc"
+  },
+  "opened": 129,
+  "popular": 477
+},{
+  "name": "Only Clothes",
+  "cost": 61.5,
+  "original_price": 61.5,
+  "currency": "USD",
+  "icon_path": "img/boxes/only-clothes.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "only-clothes",
+  "description": "Only Clothes Case (No Voucher, Good battle case/not volatile) $61.5",
+  "markets": [],
+  "order": 23,
+  "code": "B4239bfb8550cccd71290",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edd"
+  },
+  "opened": 238,
+  "popular": 190
+},{
+  "name": "Cheap Sneakers",
+  "cost": 68.37,
+  "original_price": 68.37,
+  "currency": "USD",
+  "icon_path": "img/boxes/cheap-sneakers.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "cheap-sneakers",
+  "description": "Cheap Sneakers (80/20, good battle case) $68.37",
+  "markets": [],
+  "order": 45,
+  "code": "B6ccceef6f6100c39ce03",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ede"
+  },
+  "opened": 213,
+  "popular": 319
+},{
+  "name": "Magic Monkey",
+  "cost": 0.2,
+  "original_price": 0.2,
+  "currency": "USD",
+  "icon_path": "img/boxes/magic_monkey.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc12"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "magic-monkey",
+  "description": "Magic Monkey (Funny cheap case, $0.20)",
+  "markets": [],
+  "order": 55,
+  "code": "B403945318eec71d4ddaf",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4edf"
+  },
+  "opened": 270,
+  "popular": 232
+},{
+  "name": "Joker",
+  "cost": 102.53,
+  "original_price": 102.53,
+  "currency": "USD",
+  "icon_path": "img/boxes/joker.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "joker",
+  "description": "Joker (60/40 Case, $102.53)",
+  "markets": [],
+  "order": 8,
+  "code": "B87ac59e94268c9f80e96",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee0"
+  },
+  "opened": 245,
+  "popular": 89
+},{
+  "name": "hallucination",
+  "cost": 0.16,
+  "original_price": 0.16,
+  "currency": "USD",
+  "icon_path": "img/boxes/hallucinate.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "hallucination",
+  "description": "Hallucination (0.1% $0.16 case)",
+  "markets": [],
+  "order": 19,
+  "code": "B1ab63ff6ea0b0ae41be8",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee1"
+  },
+  "opened": 193,
+  "popular": 210
+},{
+  "name": "Carbon",
+  "cost": 2.65,
+  "original_price": 2.65,
+  "currency": "USD",
+  "icon_path": "img/boxes/carbon.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "carbon",
+  "description": "Carbon (1% $2.65 case)",
+  "markets": [],
+  "order": 24,
+  "code": "B2ebea802f28763ea91b6",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee2"
+  },
+  "opened": 223,
+  "popular": 234
+},{
+  "name": "Flame",
+  "cost": 11.75,
+  "original_price": 11.75,
+  "currency": "USD",
+  "icon_path": "img/boxes/flame.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "flame",
+  "description": "Flame (40/60 Case $11.75)",
+  "markets": [],
+  "order": 1,
+  "code": "B9051330a817578246b66",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee3"
+  },
+  "opened": 178,
+  "popular": 187
+},{
+  "name": "Esports",
+  "cost": 14,
+  "original_price": 14,
+  "currency": "USD",
+  "icon_path": "img/boxes/picnic_box.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc13"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "esports",
+  "description": "Esports (40/60 Case $14.00)",
+  "markets": [],
+  "order": 3,
+  "code": "Bf494fade7eeb8010117d",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee4"
+  },
+  "opened": 229,
+  "popular": 484
+},{
+  "name": "Sicko",
+  "cost": 116.7,
+  "original_price": 116.7,
+  "currency": "USD",
+  "icon_path": "img/boxes/sicko-case.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0e"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "sicko",
+  "description": "Sicko (40/60 Case $116.70)",
+  "markets": [],
+  "order": 2,
+  "code": "B6d7a0f812f35b20d6a98",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee5"
+  },
+  "opened": 206,
+  "popular": 19
+},{
+  "name": "10% Off",
+  "cost": 19.73,
+  "original_price": 19.73,
+  "currency": "USD",
+  "icon_path": "img/boxes/10_off.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc0a"
     },
     {
-        "cost": 96.84,
-        "created_at": "2022-08-18T18:46:34.563Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_JORDAN%20I-IV-VI-XI_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Jordan I-IV-VI-XI",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "jordan-i-iv-vi-xi",
-        "order": 24,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 96.84
+      "$oid": "636c84ece4830d466abadc0e"
     },
     {
-        "cost": 3696.25,
-        "created_at": "2022-08-18T18:53:09.405Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Hublot_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Hublot",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "hublot",
-        "order": 1,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18')
-        ],
-        "original_price": 3696.25
-    },
+      "$oid": "636c84ece4830d466abadc0f"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "10%-off",
+  "description": "10% Off (10/90 Case $19.73)",
+  "markets": [],
+  "order": 2,
+  "code": "B2be30897faf925e313c6",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee6"
+  },
+  "opened": 435,
+  "popular": 240
+},{
+  "name": "Cabin",
+  "cost": 6.78,
+  "original_price": 6.78,
+  "currency": "USD",
+  "icon_path": "img/boxes/carbin_box.png",
+  "level_required": 1,
+  "tags": [
     {
-        "cost": 24.16,
-        "created_at": "2022-08-26T15:58:41.144Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Dubai%20memories_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dubai Memories",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dubai-memories",
-        "order": 3,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 24.16
-    },
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "cabin",
+  "description": "Cabin (40/60 Case $6.78)",
+  "markets": [],
+  "order": 0,
+  "code": "B2a62825c0298a082afb1",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee7"
+  },
+  "opened": 216,
+  "popular": 447
+},{
+  "name": "Steam",
+  "cost": 21.42,
+  "original_price": 21.42,
+  "currency": "USD",
+  "icon_path": "img/boxes/steam.png",
+  "level_required": 1,
+  "tags": [
     {
-        "cost": 4039.64,
-        "created_at": "2022-08-26T16:06:29.981Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Dubai%20fantasies_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dubai Fantasies",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dubai-fantasies",
-        "order": 2,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 4039.64
-    },
+      "$oid": "636c84ece4830d466abadc13"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "steam",
+  "description": "Steam (40/60 Case $21.42)",
+  "markets": [],
+  "order": 49,
+  "code": "Bdf520e739943b1772aed",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee8"
+  },
+  "opened": 296,
+  "popular": 46
+},{
+  "name": "Fresh",
+  "cost": 25.18,
+  "original_price": 25.18,
+  "currency": "USD",
+  "icon_path": "img/boxes/fresh.png",
+  "level_required": 1,
+  "tags": [
     {
-        "cost": 1813.66,
-        "created_at": "2022-08-26T16:14:15.697Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Dubai%20style_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dubai Style",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dubai-style",
-        "order": 2,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 1813.66
-    },
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "fresh",
+  "description": "Fresh (40/60 Case $25.18)",
+  "markets": [],
+  "order": 11,
+  "code": "B49b11f3f4644528dc943",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4ee9"
+  },
+  "opened": 360,
+  "popular": 344
+},{
+  "name": "Penguin",
+  "cost": 2.38,
+  "original_price": 2.38,
+  "currency": "USD",
+  "icon_path": "img/boxes/penguin_case.png",
+  "level_required": 1,
+  "tags": [
     {
-        "cost": 457.09,
-        "created_at": "2022-09-02T17:25:40.443Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_WatchgamesTV_Box_Design_Export%20(1).png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "WatchGamesTV",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "watchgamestv",
-        "order": 0,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc14'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1d')
-        ],
-        "original_price": 457.09
-    },
-    {
-        "cost": 360.71,
-        "created_at": "2022-09-05T20:42:33.475Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Prodigy_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Prodigy",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "prodigy",
-        "order": 49,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1d')
-        ],
-        "original_price": 360.71
-    },
-    {
-        "cost": 642.31,
-        "created_at": "2022-09-07T18:37:37.302Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Dubai_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dubai",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dubai",
-        "order": 11,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc23')
-        ],
-        "original_price": 642.31
-    },
-    {
-        "cost": 7893.77,
-        "created_at": "2022-08-18T18:59:54.646Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Watch%20this_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Watch This",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "watch-this",
-        "order": 160,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18')
-        ],
-        "original_price": 7893.77
-    },
-    {
-        "cost": 14695.69,
-        "created_at": "2022-08-13T16:49:59.370Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Billionaire_Box_Design_Export%20(1).png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Billionaire",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "billionaire",
-        "order": 53,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19')
-        ],
-        "original_price": 14695.69
-    },
-    {
-        "cost": 9066.35,
-        "created_at": "2022-09-07T18:38:10.726Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Rolex_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Rolex",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "rolex",
-        "order": 5,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18')
-        ],
-        "original_price": 9066.35
-    },
-    {
-        "cost": 130.35,
-        "created_at": "2022-04-26T19:14:39.113Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Half%20a%20dunk_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Half a dunk",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "half-a-dunk",
-        "order": 78,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 130.35
-    },
-    {
-        "cost": 231.95,
-        "created_at": "2022-05-29T11:22:40.091Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Off-white%20x%20nike_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Off-White x Nike",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "off-white-x-nike",
-        "order": 35,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 231.95
-    },
-    {
-        "cost": 3.64,
-        "created_at": "2022-07-21T17:05:28.377Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_10%25%20All%20in%20one_Box_Design_Export_2.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "10% all in one",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "10percent-all-in-one",
-        "order": 20,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc11'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19')
-        ],
-        "original_price": 3.64
-    },
-    {
-        "cost": 361.28,
-        "created_at": "2022-08-13T16:51:23.208Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_50-50%20all%20black_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "50-50 all black",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "50-50-all-black",
-        "order": 152,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c')
-        ],
-        "original_price": 361.28
-    },
-    {
-        "cost": 28.73,
-        "created_at": "2022-04-08T20:22:40.943Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Battle%20for%20Jordans_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Battle for Jordans",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "battle-for-jordans",
-        "order": 21,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 28.73
-    },
-    {
-        "cost": 35.73,
-        "created_at": "2022-09-07T18:34:18.949Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Hype%2050-50_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Hype 50-50",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "hype-50-50",
-        "order": 22,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1a')
-        ],
-        "original_price": 35.73
-    },
-    {
-        "cost": 2999.95,
-        "created_at": "2021-09-24T11:29:02.130Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Art%20investor_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Art Investor",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "art-investor",
-        "order": 155,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1c')
-        ],
-        "original_price": 2999.95
-    },
-    {
-        "cost": 26737.92,
-        "created_at": "2022-08-18T18:56:07.858Z",
-        "currency": "USD",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "order": 48,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e')
-        ],
-        "original_price": 26737.92
-    },
-    {
-        "cost": 981.45,
-        "created_at": "2022-06-17T08:05:45.724Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Dogecoin%20investor_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dogecoin Investor",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dogecoin-investor",
-        "order": 239,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19')
-        ],
-        "original_price": 981.45
-    },
-    {
-        "cost": 4882.29,
-        "created_at": "2022-02-23T14:35:54.625Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Rich%20b1ch_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Rich B",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "rich-b",
-        "order": 91,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 4882.29
-    },
-    {
-        "cost": 1379.58,
-        "created_at": "2022-06-17T08:02:42.222Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Gentleman_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Gentleman",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "gentleman",
-        "order": 131,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18')
-        ],
-        "original_price": 1379.58
-    },
-    {
-        "cost": 5517.51,
-        "created_at": "2022-07-09T09:20:47.928Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Celebrity_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Celebrity",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "celebrity",
-        "order": 142,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1e')
-        ],
-        "original_price": 5517.51
-    },
-    {
-        "cost": 1112.76,
-        "created_at": "2022-06-29T16:47:26.451Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_50%25_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "50%",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "50percent",
-        "order": 64,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc19')
-        ],
-        "original_price": 1112.76
-    },
-    {
-        "cost": 639.6,
-        "created_at": "2021-09-04T15:14:05.266Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Designer%20collabs_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Designer Collabs",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "designer-collabs",
-        "order": 87,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0c')
-        ],
-        "original_price": 639.6
-    },
-    {
-        "cost": 31.93,
-        "created_at": "2021-12-03T15:39:36.783Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_KAWS_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Kaws",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "kaws",
-        "order": 31,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc10'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1c')
-        ],
-        "original_price": 31.93
-    },
-    {
-        "cost": 8.73,
-        "created_at": "2021-11-04T18:53:15.956Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Console%2050-50_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Console 50-50",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "console-50-50",
-        "order": 127,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0e'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc11')
-        ],
-        "original_price": 8.73
-    },
-    {
-        "cost": 2507.98,
-        "created_at": "2022-02-23T14:36:37.088Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/HypeDrop_Accessories%20enthusiast_Box_Design_Export.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Accessories Enthusiast",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "accessories-enthusiast",
-        "order": 7,
-        "tags": [
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc0a'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc18'),
-            new mongoose.Types.ObjectId('636c84ece4830d466abadc1b')
-        ],
-        "original_price": 2507.98
-    },
-    {
-        "cost": 1018.57,
-        "created_at": "2022-07-25T10:29:02.783Z",
-        "currency": "USD",
-        "icon": "https://static.ancientgaming.io/images/Dior%202%20box%20design.png",
-        "level_required": 1,
-        "max_purchase_daily": 1000000,
-        "name": "Dior",
-        "openable": true,
-        "purchasable": true,
-        "sellable": true,
-        "slug": "dior",
-        "order": 97,
-        "tags": [
-           new mongoose.Types.ObjectId('636c84ece4830d466abadc0c')
-        ],
-        "original_price": 1018.57
-    }      
-];
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "penguin",
+  "description": "Penguin (40/60 Case $2.38)",
+  "markets": [],
+  "order": 160,
+  "code": "B5d8c8fd6218d1e4fa079",
+  "statistic": {
+    "$oid": "636d40fad7edc3d222fb4eea"
+  },
+  "opened": 93,
+  "popular": 192
+}]

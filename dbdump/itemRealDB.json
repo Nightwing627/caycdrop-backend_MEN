@@ -410,7 +410,7 @@
     "$oid": "637a43ffaded89b155ea3c9f"
   },
   "name": "10$ Voucher",
-  "icon_url": "https://drive.google.com/file/d/1IWbf9090fqK407HhlBn3cKfFR3IiiuX7/view?usp=share_link",
+  "icon_url": "http://185.188.249.152:5000/img/items/vouchers_/10.png",
   "description": "",
   "brand": "Supreme x Louis Vuitton",
   "value": 10,
@@ -990,7 +990,7 @@
     "$oid": "637a43ffaded89b155ea3cac"
   },
   "name": "0.01 VOUCHER",
-  "icon_url": "https://drive.google.com/file/d/1K_zD-Qy_1nXS1MQVnUV0HMU5ouurVbdK/view?usp=share_link",
+  "icon_url": "http://185.188.249.152:5000/img/items/vouchers_/penny.png",
   "description": "",
   "brand": "Jordan",
   "value": 0.01,
@@ -1701,7 +1701,7 @@
     "$oid": "637a43ffaded89b155ea3cbc"
   },
   "name": "1$ Voucher",
-  "icon_url": "https://drive.google.com/file/d/1gMzHW2j5iyhyQZAe55q5Zh3T1qCfgcRD/view?usp=share_link",
+  "icon_url": "http://185.188.249.152:5000/img/items/vouchers_/one.png",
   "description": "",
   "brand": "Jordan",
   "value": 1,
@@ -3119,7 +3119,7 @@
     "$oid": "637a43ffaded89b155ea3cdb"
   },
   "name": "100$ voucher",
-  "icon_url": "https://drive.google.com/file/d/1zkZ_yYDQLNSGIteMVOV-L_wdA12KxUVq/view?usp=share_link",
+  "icon_url": "http://185.188.249.152:5000/img/items/vouchers_/100.png",
   "description": "",
   "brand": "Jordan",
   "value": 100,
@@ -5417,7 +5417,7 @@
     "$oid": "637b4b30aded89b155ea3dd6"
   },
   "name": "Penny Voucher",
-  "icon_url": "https://drive.google.com/file/d/1K_zD-Qy_1nXS1MQVnUV0HMU5ouurVbdK/view?usp=share_link",
+  "icon_url": "http://185.188.249.152:5000/img/items/vouchers_/penny.png",
   "description": "",
   "brand": "Jordan",
   "value": 0.01,

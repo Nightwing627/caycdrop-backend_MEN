@@ -3,7 +3,7 @@
   "cost": 114,
   "original_price": 114,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1mv9Fw6N5DUYKIEJziYVXjpYTO90v1CYY/view?usp=share_link",
+  "icon_path": "img/boxes/vengeance.png",
   "level_required": 1,
   "tags": [
     {
@@ -29,7 +29,7 @@
   "cost": 32,
   "original_price": 32,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1tgqyVXL6hS1lWKoyLh8Bi3_zknQP0Juq/view?usp=share_link",
+  "icon_path": "img/boxes/revenge-case.png",
   "level_required": 1,
   "tags": [
     {
@@ -57,7 +57,7 @@
   "cost": 229,
   "original_price": 229,
   "currency": "USD",
-  "icon": "https://static.ancientgaming.io/images/HypeDrop_Lamborghini_Box_Design_Export.png",
+  "icon_path": "img/boxes/angels-vs-demons.png",
   "level_required": 1,
   "tags": [
     {
@@ -92,7 +92,7 @@
   "cost": 53,
   "original_price": 53,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1v5kjZ2ypP03iuzxfDRxPvabZx-D-uE3Q/view?usp=share_link",
+  "icon_path": "img/boxes/10_off.png",
   "level_required": 1,
   "tags": [
     {
@@ -124,7 +124,7 @@
   "cost": 268,
   "original_price": 268,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1DWBidmSPacQg0QDL0CulP4DDf5W6KIbZ/view?usp=share_link",
+  "icon_path": "img/boxes/yay-case.png",
   "level_required": 1,
   "tags": [
     {
@@ -150,7 +150,7 @@
   "cost": 577,
   "original_price": 577,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1E2YWXuNQROFaOiiA4xuu5QVmfNK9WSUF/view?usp=share_link",
+  "icon_path": "img/boxes/costly-clash.png",
   "level_required": 1,
   "tags": [
     {
@@ -182,7 +182,7 @@
   "cost": 97,
   "original_price": 97,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1E4PhAP_Q5_PejtlTbCFqNqTyJq8Z8ABN/view?usp=share_link",
+  "icon_path": "img/boxes/luxury-hoops.png",
   "level_required": 1,
   "tags": [
     {
@@ -217,7 +217,7 @@
   "cost": 72,
   "original_price": 72,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1iYlQG-MITXMs_rDOajJdUkoeRBPAY-tZ/view?usp=share_link",
+  "icon_path": "img/boxes/50_storms.png",
   "level_required": 1,
   "tags": [
     {
@@ -243,7 +243,7 @@
   "cost": 26.5,
   "original_price": 26.5,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1zL2bu2BUr6Wk2W7a-UsKvbxS0yDWJ1Wm/view?usp=share_link",
+  "icon_path": "img/boxes/sicko-case.png",
   "level_required": 1,
   "tags": [
     {
@@ -272,7 +272,7 @@
   "cost": 9,
   "original_price": 9,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1gCHEmtfF_Ljx-PqQhyPUFp27mlgf1P1u/view?usp=share_link",
+  "icon_path": "img/boxes/supremely-fair.png",
   "level_required": 1,
   "tags": [
     {
@@ -301,7 +301,7 @@
   "cost": 19.5,
   "original_price": 19.5,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1OjHgGr0XOE3b2FvOZ7aOq1NfZXBKhfAy/view?usp=share_link",
+  "icon_path": "img/boxes/webbed.png",
   "level_required": 1,
   "tags": [
     {
@@ -327,7 +327,7 @@
   "cost": 91,
   "original_price": 91,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1--zmSe6f4P-PjmhrNHoWRwSk-z5Ct2ZO/view?usp=share_link",
+  "icon_path": "img/boxes/half-ape.png",
   "level_required": 1,
   "tags": [
     {
@@ -359,7 +359,7 @@
   "cost": 506,
   "original_price": 506,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1jwF1wrfi3TX1qGEm7-sZNKRX_EIVR1Ef/view?usp=share_link",
+  "icon_path": "img/boxes/stars-and-stripes-case.png",
   "level_required": 1,
   "tags": [
     {
@@ -391,7 +391,7 @@
   "cost": 6.9,
   "original_price": 6.9,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1BxCD56BJ7MyJ8ypsJVAN1-BSZQuayOZN/view?usp=share_link",
+  "icon_path": "img/boxes/almost_1.png",
   "level_required": 1,
   "tags": [
     {
@@ -417,7 +417,7 @@
   "cost": 1.15,
   "original_price": 1.15,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1v_UFRyRNGOlVbE131s7_c5Xx-wTY-W5K/view?usp=share_link",
+  "icon_path": "img/boxes/lucky-penny.png",
   "level_required": 1,
   "tags": [
     {
@@ -449,7 +449,7 @@
   "cost": 16.5,
   "original_price": 16.5,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/16mAEEK0fOXiZkZBshQy9LuIy0K4Pnx08/view?usp=share_link",
+  "icon_path": "img/boxes/summer-drip.png",
   "level_required": 1,
   "tags": [
     {
@@ -481,7 +481,7 @@
   "cost": 61.5,
   "original_price": 61.5,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/185wPK6f8Q4xazlHagiIhPl5atkGYdsnU/view?usp=share_link",
+  "icon_path": "img/boxes/only-clothes.png",
   "level_required": 1,
   "tags": [
     {
@@ -507,7 +507,7 @@
   "cost": 68.37,
   "original_price": 68.37,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1BjlcFlX_cseUT0oPP1V8m_Mbr9XfU4iv/view?usp=share_link",
+  "icon_path": "img/boxes/cheap-sneakers.png",
   "level_required": 1,
   "tags": [
     {
@@ -533,7 +533,7 @@
   "cost": 0.2,
   "original_price": 0.2,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/12A-2kOZ5gje8Od7BPj3b0E5Gqu769ygR/view?usp=share_link",
+  "icon_path": "img/boxes/magic_monkey.png",
   "level_required": 1,
   "tags": [
     {
@@ -559,7 +559,7 @@
   "cost": 102.53,
   "original_price": 102.53,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1w3SHBRrFgQAYYQzUvWEJUUSfD8x0KAAt/view?usp=share_link",
+  "icon_path": "img/boxes/joker.png",
   "level_required": 1,
   "tags": [
     {
@@ -585,7 +585,7 @@
   "cost": 0.16,
   "original_price": 0.16,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1cotBJCNM8MQdTtu4wbsYcpH2wbK7ihQV/view?usp=share_link",
+  "icon_path": "img/boxes/hallucinate.png",
   "level_required": 1,
   "tags": [
     {
@@ -611,7 +611,7 @@
   "cost": 2.65,
   "original_price": 2.65,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1wKGGyD6Dy-xxXEXDsXMJQDYcPLmrwI7V/view?usp=share_link",
+  "icon_path": "img/boxes/carbon.png",
   "level_required": 1,
   "tags": [
     {
@@ -637,7 +637,7 @@
   "cost": 11.75,
   "original_price": 11.75,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1c4FBrVISFtzsU3qsbS3-pNlx0gDh-XtH/view?usp=share_link",
+  "icon_path": "img/boxes/flame.png",
   "level_required": 1,
   "tags": [
     {
@@ -663,7 +663,7 @@
   "cost": 14,
   "original_price": 14,
   "currency": "USD",
-  "icon": "https://static.ancientgaming.io/images/HypeDrop_Dubai%20memories_Box_Design_Export.png",
+  "icon_path": "img/boxes/picnic_box.png",
   "level_required": 1,
   "tags": [
     {
@@ -689,7 +689,7 @@
   "cost": 116.7,
   "original_price": 116.7,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1zL2bu2BUr6Wk2W7a-UsKvbxS0yDWJ1Wm/view?usp=share_link",
+  "icon_path": "img/boxes/sicko-case.png",
   "level_required": 1,
   "tags": [
     {
@@ -715,7 +715,7 @@
   "cost": 19.73,
   "original_price": 19.73,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1v5kjZ2ypP03iuzxfDRxPvabZx-D-uE3Q/view?usp=share_link",
+  "icon_path": "img/boxes/10_off.png",
   "level_required": 1,
   "tags": [
     {
@@ -747,7 +747,7 @@
   "cost": 6.78,
   "original_price": 6.78,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1loBPOLFPnhSlCcUY2iM172yz7CfRQ8MN/view?usp=share_link",
+  "icon_path": "img/boxes/carbin_box.png",
   "level_required": 1,
   "tags": [
     {
@@ -773,7 +773,7 @@
   "cost": 21.42,
   "original_price": 21.42,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/10qnPwPdpoLCl7V2KK0RGH_5KbiHpm2pZ/view?usp=share_link",
+  "icon_path": "img/boxes/steam.png",
   "level_required": 1,
   "tags": [
     {
@@ -799,7 +799,7 @@
   "cost": 25.18,
   "original_price": 25.18,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1FNrPQVi-D5Gp0H7YpvKwCtz1sIV416EJ/view?usp=share_link",
+  "icon_path": "img/boxes/fresh.png",
   "level_required": 1,
   "tags": [
     {
@@ -825,7 +825,7 @@
   "cost": 2.38,
   "original_price": 2.38,
   "currency": "USD",
-  "icon": "https://drive.google.com/file/d/1FrEZRYoek6CYkjaBhuBZ9QZms9LPvdo_/view?usp=share_link",
+  "icon_path": "img/boxes/penguin_case.png",
   "level_required": 1,
   "tags": [
     {

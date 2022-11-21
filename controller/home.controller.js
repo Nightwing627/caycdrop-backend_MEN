@@ -20,6 +20,8 @@ const HomeController = {
         }, {
             $addFields: { "length": { $size: "$tags" } }
         }, {
+            $addFields: { "icon": { $concat: [`${process.env.LINK}/`, "$icon_path"] } }
+        },{
             $sort: { "length": -1 }
         }, {
             $limit: 24
