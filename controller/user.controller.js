@@ -33,8 +33,8 @@ const UserController = {
     const { userCode } = req.body;
     
     try {
-      const user = getUserByCode(userCode);
-      
+      const user = await getUserByCode(userCode);
+      console.log(user);
       if (user == null) {
         return res.status(400).json({ error: "user not found" });  
       }
@@ -107,6 +107,9 @@ const UserController = {
     }
   },
 
+  getAllCountries: async (req, res) => {
+    return res.status(200).json({ data: await CountrySchema.find() })
+  }
 };
 
 const getUserByCode = async (code) => {

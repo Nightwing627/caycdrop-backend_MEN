@@ -13,7 +13,6 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const UserCartSchema = require('../model/UserCartSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
-const ItemSchema = require('../model/ItemSchema');
 
 module.exports = (io, socket) => {
   socket.on('box.open', async (payload, callback) => {
@@ -170,8 +169,7 @@ module.exports = (io, socket) => {
 
     const boxOpen = await BoxOpenSchema
       .find({ code: bol })
-      .populate('user')
-      .populate('item');
+      .populate('user');
     
     if (boxOpen == null) {
       return callback({ error: 'this is fake data' });
@@ -179,30 +177,8 @@ module.exports = (io, socket) => {
       return callback({ error: 'user not match' });
     }
 
-    const userWallet = await UserWalletSchema.findOne({ user_code: usercode });
-    if (method == process.env.UNBOX_ITEM_SELL) {
-      // Change user wallet ammont
-      userWallet.main += Number(boxOpen.cost - boxOpen.profit);
-      await userWallet.save();
-
-      // Log the exchange
-      const walletExchange = await WalletExchangeSchema.create({
-        user: boxOpen.user._id,
-        type: process.env.WALLET_EXCHANGE_ITEM,
-        value_change: Number(boxOpen.cost - boxOpen.profit),
-        changed_after: userWallet.main,
-        wallet: userWallet._id,
-        currency: 'USD',
-        target: boxOpen.item._id
-      });
-      walletExchange.code = Util.generateCode('wallexchange', walletExchange._id);
-      await walletExchange.save();
-
-      // Remove the user cart item
-      await UserCartSchema.findByIdAndDelete(boxOpen.user_item);
-
-      // Modify the BoxOpen's user_item
-      
+    if (method == process.env.UNBOX_ITEM_SELL) { 
+      const userWallet = user
     } else if (method == process.env.UNBOX_ITEM_TO_CART) {
 
     }
