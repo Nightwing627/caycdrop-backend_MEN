@@ -33,7 +33,7 @@ const UserController = {
     const { userCode } = req.body;
     
     try {
-      const user = getUserByCode(userCode);
+      const user = await getUserByCode(userCode);
       
       if (user == null) {
         return res.status(400).json({ error: "user not found" });  
@@ -65,7 +65,7 @@ const UserController = {
 
       }
 
-      res.status(200).json({ result: 'success', data: getUserByCode(userCode) });
+      res.status(200).json({ result: 'success', data: await getUserByCode(userCode) });
     } catch (error) {
       res.status(400).json({ error: "user not found" })
     }
@@ -101,7 +101,7 @@ const UserController = {
 
       await shippingInfo.save();
 
-      res.status(200).json({ result: 'success', data: getUserByCode(userCode) });
+      res.status(200).json({ result: 'success', data: await getUserByCode(userCode) });
     } catch (error) {
       return res.status(400).json({ error: "wrong parameter" });
     }
