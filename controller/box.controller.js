@@ -145,58 +145,45 @@ const BoxController = {
         });
       }
       
-      // let boxItems = await BoxItemSchema.aggregate([
-      //   { $match: { box_code: box.code } },
-      //   {
-      //     $project: {
-      //       _id: 0, __v: 0, created_at: 0, updated_at: 0
-      //     }
-      //   },
-      //   {
-      //     $lookup: {
-      //       from: 'items',
-      //       localField: 'item',
-      //       foreignField: '_id',
-      //       pipeline: [
-      //         {
-      //           $project: {
-      //             _id: 0, updated_at: 0
-      //           }
-      //         }, {
-      //           $lookup: {
-      //             from: 'tags',
-      //             localField: 'category',
-      //             foreignField: '_id',
-      //             pipeline: [
-      //               {
-      //                 $project: { _id: 0, __v: 0, created_at: 0, updated_at: 0 }
-      //               }
-      //             ],
-      //             as: 'category'
-      //           }
-      //         }
-      //       ],
-      //       as: 'item',
-      //     },
-      //   },
-      //   { $unwind: { path: "$item"} },
-      //   {
-      //     $sort: { "item.value": -1 }
-      //   }
-      // ]);
-
-
-      let boxItems = await BoxItemSchema
-        .find({ box_code: box.code })
-        .populate({
-          path: 'item',
-          populate: {
-            path: 'category',
-            select: '-_id -__v -created_at -updated_at'
+      let boxItems = await BoxItemSchema.aggregate([
+        { $match: { box_code: box.code } },
+        {
+          $project: {
+            _id: 0, __v: 0, created_at: 0, updated_at: 0
+          }
+        },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            pipeline: [
+              {
+                $project: {
+                  _id: 0, updated_at: 0
+                }
+              }, {
+                $lookup: {
+                  from: 'tags',
+                  localField: 'category',
+                  foreignField: '_id',
+                  pipeline: [
+                    {
+                      $project: { _id: 0, __v: 0, created_at: 0, updated_at: 0 }
+                    }
+                  ],
+                  as: 'category'
+                }
+              }
+            ],
+            as: 'item',
           },
-          select: '-_id -__v -created_at -updated_at'
-        })
-        .select('-_id -__v -created_at -updated_at');
+        },
+        { $unwind: { path: "$item"} },
+        {
+          $sort: { "item.value": -1 }
+        }
+      ]);
       
       boxItems = Util.setBoxItemRolls(boxItems);
       let data = {

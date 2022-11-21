@@ -202,7 +202,7 @@ module.exports = (io, socket) => {
       await UserCartSchema.findByIdAndDelete(boxOpen.user_item);
 
       // Modify the BoxOpen's user_item
-      
+
     } else if (method == process.env.UNBOX_ITEM_TO_CART) {
 
     }
@@ -237,9 +237,27 @@ const updateUserSeed = async (userSeed, clientValue, serverValue) => {
 
 const getItemAndXP = async (boxCode, rollValue) => {
   const box = await BoxSchema.findOne({ code: boxCode });
-  let boxItems = await BoxItemSchema
-    .find({ box_code: boxCode })
-    .populate('item');
+  
+  let boxItems = await BoxItemSchema.aggregate([
+        { $match: { box_code: boxCode } },
+        {
+          $project: {
+            _id: 0, __v: 0, created_at: 0, updated_at: 0
+          }
+        },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item',
+          },
+        },
+        { $unwind: { path: "$item"} },
+        {
+          $sort: { "item.value": -1 }
+        }
+      ]);
   
   const pickedItem = Util.getItemByRollValue(boxItems, rollValue);
   const profit = Number(box.original_price - pickedItem.item.value);
