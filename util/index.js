@@ -139,8 +139,6 @@ function getLevelXps(level) {
       2 * level)
     / 24
   );
-  
-
 }
 
 async function getCountryByReq(request) { 

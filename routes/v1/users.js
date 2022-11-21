@@ -11,6 +11,4 @@ router.post('/update/main', UserController.changeUserBasic);
 
 router.post('/update/shipping', UserController.changeUserShipping);
 
-router.get('/country', UserController.getAllCountries);
-
 module.exports = router;

@@ -107,9 +107,6 @@ const UserController = {
     }
   },
 
-  getAllCountries: async (req, res) => {
-    return res.status(200).json({ data: await CountrySchema.find() })
-  }
 };
 
 const getUserByCode = async (code) => {
