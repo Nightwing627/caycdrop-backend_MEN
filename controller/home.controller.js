@@ -4,12 +4,13 @@ const TagSchema = require('../model/TagSchema');
 
 const HomeController = {
   index: async (req, res) => {
-    const tag = await TagSchema.findOne({ name: 'featured' });
+    // const tag = await TagSchema.findOne({ name: 'featured' });
 
     const data = await BoxSchema.aggregate([
+        // {
+        //     $match: { tags: tag._id }
+        // },
         {
-            $match: { tags: tag._id }
-        }, {
             $lookup: {
                 from: 'tags',
                 localField: 'tags',
