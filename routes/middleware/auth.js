@@ -10,8 +10,8 @@ const verifyToken = function (req, res, next) {
   }
 
   try {
-    const userCode = jwt.verify(token, process.env.TOKEN_KEY);
-    req.body.userCode = userCode;
+    const userData = jwt.verify(token, process.env.TOKEN_KEY);
+    req.body.userCode = userData.userCode;
   } catch (error) {
     console.error('@@-- Token verification middleware', error);
     return res.status(401).json('Invalid Token');
