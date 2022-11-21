@@ -13,7 +13,6 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const UserCartSchema = require('../model/UserCartSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
-const ItemSchema = require('../model/ItemSchema');
 
 module.exports = (io, socket) => {
   socket.on('box.open', async (payload, callback) => {
@@ -170,8 +169,7 @@ module.exports = (io, socket) => {
 
     const boxOpen = await BoxOpenSchema
       .find({ code: bol })
-      .populate('user')
-      .populate('item');
+      .populate('user');
     
     if (boxOpen == null) {
       return callback({ error: 'this is fake data' });
