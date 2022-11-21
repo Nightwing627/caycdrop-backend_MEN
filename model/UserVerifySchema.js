@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema, SchemaTypes } = mongoose;
 const uniqueValidator = require('mongoose-unique-validator');
 
-const UserVerifyDocument = new Schema({
+const UserVerifySchema = new Schema({
   user_code: {
     type: SchemaTypes.String,
     index: true
@@ -15,6 +15,6 @@ const UserVerifyDocument = new Schema({
   },
 });
 
-UserVerifyDocument.plugin(uniqueValidator, { message: " is already exist" });
+UserVerifySchema.plugin(uniqueValidator, { message: " is already exist" });
 
-module.exports = mongoose.model('UserVerify', UserVerifyDocument);
+module.exports = mongoose.model('UserVerify', UserVerifySchema);

@@ -4,7 +4,7 @@
   },
   "code": "TGf22b9518474db3f01321",
   "name": "Clothing",
-  "visible": true,
+  "visible": false,
   "position": "0",
   "__v": 0,
   "created_at": {
@@ -24,7 +24,7 @@
   },
   "code": "TGdec0af6834fc8c591d4d",
   "name": "Combination",
-  "visible": true,
+  "visible": false,
   "position": "0",
   "__v": 0,
   "created_at": {
@@ -120,7 +120,7 @@
   },
   "code": "TG834a8a2f359613b1a906",
   "name": "Basketball",
-  "visible": true,
+  "visible": false,
   "position": "0",
   "__v": 0,
   "created_at": {

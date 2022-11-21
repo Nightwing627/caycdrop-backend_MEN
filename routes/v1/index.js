@@ -5,6 +5,7 @@ var verifyToken = require('../middleware/auth');
 const mongoose = require('mongoose');
 const util = require('../../util');
 const seed = require('../../seed');
+
 // define API router
 router.use("/player", /* verifyToken, */ require("./users"));
 router.use('/', require('./auth'));
