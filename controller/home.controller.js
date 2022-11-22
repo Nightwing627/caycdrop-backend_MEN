@@ -33,10 +33,6 @@ const HomeController = {
                 }
         }
     ]);
-    
-    // TODO: get latest battles x 4
-    
-    // TODO: get live drop items
 
     return res.status(200).json({ data })
   },

@@ -11,4 +11,6 @@ router.post('/update/main', UserController.changeUserBasic);
 
 router.post('/update/shipping', UserController.changeUserShipping);
 
+router.get('/cart', UserController.getUserCart);
+
 module.exports = router;

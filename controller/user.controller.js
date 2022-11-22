@@ -109,6 +109,49 @@ const UserController = {
 
   getAllCountries: async (req, res) => {
     return res.status(200).json({ data: await CountrySchema.find() })
+  },
+
+  getUserCart: async (req, res) => { 
+    const { userCode } = req.body;
+
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+
+      if (user == null) {
+        return res.status(400).json({ error: "user not found" });
+      }
+      const userCarts = await UserCartSchema.aggregate([
+        {
+          $match: { user_code: userCode }
+        },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item_code',
+            foreignField: 'code',
+            pipeline: [
+              {
+                $project: { _id: 0, __v: 0, created_at: 0, updated_at: 0, category: 0 }
+              }
+            ],
+            as: 'item'
+          }
+        },
+        {
+          $unwind: "$item"
+        },
+        {
+          $project: { _id: 0, user_code: 1, item: 1, }
+        },
+        {
+          $sort: { "item.value": 1 }
+        }
+      ]);
+        
+      res.status(200).json({ data: userCarts });
+    } catch (error) {
+      res.status(400).json({ error: "cart item not found" });
+    }
   }
 };
 
