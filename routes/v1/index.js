@@ -7,7 +7,7 @@ const util = require('../../util');
 const seed = require('../../seed');
 
 // define API router
-router.use("/player", /*verifyToken,*/ require("./users"));
+router.use("/player", verifyToken, require("./users"));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));

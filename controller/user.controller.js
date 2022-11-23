@@ -164,7 +164,7 @@ const getUserByCode = async (code) => {
     .populate('shipping_info', '-_id -__v -user_code')
     .select('-__v');
   
-  return user;
+  return user.toAuthJSON();
 }
 
 module.exports = UserController;
