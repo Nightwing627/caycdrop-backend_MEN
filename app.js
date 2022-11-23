@@ -6,6 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require("body-parser");
 var cors = require('cors');
+var util = require('./util');
 require('dotenv').config();
 
 
@@ -76,10 +77,10 @@ mongoose.connect(
     useUnifiedTopology: true,
     useNewUrlParser: true,
   },
-  () => {
+  async () => {
     console.log("connected to the database!");
     require('./model');
-    
+    await util.CryptoRate();
   }
 )
 
@@ -90,8 +91,11 @@ if (process.env.NODE_ENV == 'dev') {
   app.use(require('errorhandler')());
 }
 
+// Lookout the user's wallet address
+util.WalletManage.lookOut();
+
 const httpServer = http.createServer(app);
-require('./socket')(httpServer);
+require('./socket').init(httpServer);
 
 httpServer.listen(process.env.PORT, () => {
   console.log("Server is running on port: ", process.env.PORT)

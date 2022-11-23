@@ -31,5 +31,7 @@ require('./WalletExchangeSchema');
 require('./RollHistorySchema');
 require('./SeedSchema');
 require('./UserSeedSchema');
+require('./UserCryptoWalletSchema');
+
 
 console.log('loaded all collections!');

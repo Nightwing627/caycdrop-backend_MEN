@@ -67,6 +67,9 @@ function generateCode(type, text) {
       prefix = process.env.CODE_PREFIX_WALLET_EXCHANGE; break;
     case "usercart":
       prefix = process.env.CODE_PREFIX_USER_CART; break;
+    case "transaction":
+      prefix = process.env.CODE_PREFIX_TRANSACTION; break;
+    
   }
 
   return prefix + content;
@@ -190,6 +193,9 @@ function updateUserProgress(upData, newXp) {
 }
 
 const Seed = require('./seed');
+const WalletManage = require('./walletManage');
+const CryptoRate = require('./exchangeRate');
+require('./walletManage/ether').setFunctions(generateCode);
 
 module.exports = {
   generateCode,
@@ -201,5 +207,7 @@ module.exports = {
   getHashValue,
   getItemByRollValue,
   updateUserProgress,
-  Seed
+  Seed,
+  WalletManage,
+  CryptoRate
 }

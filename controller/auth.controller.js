@@ -9,6 +9,7 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const ForgetPasswordSchema = require('../model/ForgetPasswordSchema');
 const UserShippingInfoSchema = require('../model/UserShippingInfoSchema');
 const UserTagSchema = require('../model/UserTagSchema');
+const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
 
 const Util = require('../util');
 const UserSeedSchema = require("../model/UserSeedSchema");
@@ -206,7 +207,10 @@ const AuthController = {
         token: Util.getRandomToken()
       });
       await userVerify.save();
-      
+
+      // Create user crypto wallet
+      await Util.WalletManage.walletCreate(code);
+
       // TODO: fix issues
 
       // Util.sendEmail(

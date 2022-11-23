@@ -7,21 +7,18 @@ const TransactionSchema = new Schema({
     type: SchemaTypes.String,
     index: true
   },
+  user_code: { type: SchemaTypes.String },
   amount: { type: SchemaTypes.Number },
   currency: { type: SchemaTypes.String },
-  exchange_rate: {
-    type: SchemaTypes.ObjectId,
-    ref: 'ExchangeRate',
-  },
+  exchange_rate: { type: SchemaTypes.Number },
   exchanged_amount: { type: SchemaTypes.Number },
   method: { type: SchemaTypes.String },
-  status: { type: SchemaTypes.String }, // pending, completed, starting
-  crypto_address: { type: SchemaTypes.String },
+  status: { type: SchemaTypes.String }, // started, completed
   url: { type: SchemaTypes.String },
+  promo_code: { type: SchemaTypes.Number },
   bonus_percent: { type: SchemaTypes.Number },
   bonus_max_amount: { type: SchemaTypes.Number },
   bouns_amount: { type: SchemaTypes.Number },
-  promo_code: { type: SchemaTypes.Number },
   type: { type: SchemaTypes.String },
   ip_address: { type: SchemaTypes.String },
 }, {

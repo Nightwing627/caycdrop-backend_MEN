@@ -200,7 +200,10 @@ module.exports = (io, socket) => {
       await UserCartSchema.findByIdAndDelete(boxOpen.user_item);
 
       // Modify the BoxOpen's user_item
+      boxOpen.user_item = null;
+      await boxOpen.save();
 
+      callback({ result: 'success' });
     } else if (method == process.env.UNBOX_ITEM_TO_CART) {
 
     }

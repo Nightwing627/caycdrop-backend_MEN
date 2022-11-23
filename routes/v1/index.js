@@ -7,7 +7,7 @@ const util = require('../../util');
 const seed = require('../../seed');
 
 // define API router
-router.use("/player", verifyToken, require("./users"));
+router.use("/player", /*verifyToken,*/ require("./users"));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));
@@ -33,9 +33,9 @@ router.post('/testseed', function (req, res) {
 });
 
 // test funcs
-router.post('/testfunc', function (req, res) { 
-  
-  res.status(200).json(util.getLevelXps(1));
+router.post('/testfunc', async (req, res) => { 
+  const data = await util.CryptoRate();
+  res.status(200).json({ data });
 })
 
 router.use(function (err, req, res, next) { 
