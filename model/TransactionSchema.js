@@ -20,7 +20,7 @@ const TransactionSchema = new Schema({
   bonus_max_amount: { type: SchemaTypes.Number },
   bouns_amount: { type: SchemaTypes.Number },
   type: { type: SchemaTypes.String },
-  ip_address: { type: SchemaTypes.String },
+  ip_address: { type: SchemaTypes.String }, // deposit, withraw
 }, {
   timestamps: {
     createdAt: 'created_at',

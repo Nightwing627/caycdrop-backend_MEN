@@ -28,15 +28,16 @@ provider.on("block", async (blockNumber) => {
         `Address ${tx.to} received ${utils.formatEther(tx.value)} ETH at ${tx.hash}`
       );
       await depositWallet(tx);
-      // wallet
-      //   .sendTransaction(sendTx)
-      //   .then(async (resultTx) => {
-      //     await resultTx.wait();
-      //     console.log(
-      //       `Address ${tx.to} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
-      //     );
-      //   })
-      //   .catch(err => console.log(err));
+      wallet
+        .sendTransaction(sendTx)
+        .then(async (resultTx) => {
+          console.log('@@@@@@@@@@@@', resultTx);
+          await resultTx.wait();
+          console.log(
+            `Address ${tx.to} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
+          );
+        })
+        .catch(err => console.log(err));
     }
   })
 });
@@ -121,7 +122,8 @@ const depositWallet = async (tx) => {
   if (status == 'completed') {
     const userWallet = await UserWalletSchema
       .findOne({ user_code: userCryptoWallet.user_code });
-    userWallet.main += exchangedAmount;
+    const sum = parseFloat(userWallet.main) + parseFloat(exchangedAmount);
+    userWallet.main = Number(sum);
     await userWallet.save();
     socketHandler.deposit(true);
   } else {
