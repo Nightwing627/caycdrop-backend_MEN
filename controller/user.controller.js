@@ -147,7 +147,7 @@ const UserController = {
           $sort: { "item.value": 1 }
         }
       ]);
-        
+      
       res.status(200).json({ data: userCarts });
     } catch (error) {
       res.status(400).json({ error: "cart item not found" });
