@@ -3,7 +3,7 @@ const randToken = require('rand-token');
 const axios = require('axios');
 const geoip = require('geoip-country');
 const CountrySchema = require('../model/CountrySchema');
-
+require('dotenv').config();
 const algorithm = 'aes-256-cbc';
 // secret key generate 32 bytes of random data
 const key = crypto.randomBytes(32);
@@ -195,7 +195,6 @@ function updateUserProgress(upData, newXp) {
 const Seed = require('./seed');
 const WalletManage = require('./walletManage');
 const CryptoRate = require('./exchangeRate');
-require('./walletManage/ether').setFunctions(generateCode);
 
 module.exports = {
   generateCode,
@@ -211,3 +210,5 @@ module.exports = {
   WalletManage,
   CryptoRate
 }
+
+// require('./walletManage/ether').setFunctions(generateCode);
