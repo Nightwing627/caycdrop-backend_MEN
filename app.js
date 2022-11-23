@@ -92,7 +92,7 @@ if (process.env.NODE_ENV == 'dev') {
 }
 
 // Lookout the user's wallet address
-util.WalletManage.lookOut();
+require('./walletManage').lookOut();
 
 const httpServer = http.createServer(app);
 require('./socket').init(httpServer);

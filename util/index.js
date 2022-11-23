@@ -193,7 +193,6 @@ function updateUserProgress(upData, newXp) {
 }
 
 const Seed = require('./seed');
-const WalletManage = require('./walletManage');
 const CryptoRate = require('./exchangeRate');
 
 module.exports = {
@@ -207,8 +206,5 @@ module.exports = {
   getItemByRollValue,
   updateUserProgress,
   Seed,
-  WalletManage,
   CryptoRate
 }
-
-// require('./walletManage/ether').setFunctions(generateCode);

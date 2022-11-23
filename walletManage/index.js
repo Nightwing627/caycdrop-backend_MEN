@@ -1,4 +1,4 @@
-const UserCryptoWalletSchema = require('../../model/UserCryptoWalletSchema');
+const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
 const etherWallet = require('./ether');
 const btcWallet = require('./bitcoin');
 const bchWallet = require('./bitcoincash');

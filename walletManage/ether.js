@@ -1,11 +1,11 @@
 const { getDefaultProvider, Wallet, utils } = require('ethers');
 require('dotenv').config();
-const UserCryptoWalletSchema = require('../../model/UserCryptoWalletSchema');
-const TxSchema = require('../../model/TransactionSchema');
-const ExchangeRate = require('../../model/ExchangeRate');
-const UserWalletSchema = require('../../model/UserWalletSchema');
-const socketHandler = require('../../socket');
-var generateCode;
+const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
+const TxSchema = require('../model/TransactionSchema');
+const ExchangeRate = require('../model/ExchangeRate');
+const UserWalletSchema = require('../model/UserWalletSchema');
+const socketHandler = require('../socket');
+var Util = require('../util');
 
 const mnemonic = process.env.MNEMONIC;
 const watchList = {};
@@ -79,10 +79,6 @@ module.exports = {
       watchList[item.eth_address] = item.eth_privateKey;
     });
   },
-
-  setFunctions: (genCode) => {
-    generateCode = genCode;
-  },
 }
 
 const depositWallet = async (tx) => {
@@ -115,7 +111,7 @@ const depositWallet = async (tx) => {
     type: 'DEPOSIT'
   });
   await TxSchema.findByIdAndUpdate(txData._id, {
-    code: generateCode('transaction', txData._id)
+    code: Util.generateCode('transaction', txData._id)
   });
 
   // update user wallet
@@ -123,7 +119,7 @@ const depositWallet = async (tx) => {
     const userWallet = await UserWalletSchema
       .findOne({ user_code: userCryptoWallet.user_code });
     const sum = parseFloat(userWallet.main) + parseFloat(exchangedAmount);
-    userWallet.main = Number(sum);
+    userWallet.main = Number(parseFloat(sum).toFixed(2));
     await userWallet.save();
     socketHandler.deposit(true);
   } else {

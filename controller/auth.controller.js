@@ -9,10 +9,10 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const ForgetPasswordSchema = require('../model/ForgetPasswordSchema');
 const UserShippingInfoSchema = require('../model/UserShippingInfoSchema');
 const UserTagSchema = require('../model/UserTagSchema');
-const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
+const UserSeedSchema = require("../model/UserSeedSchema");
 
 const Util = require('../util');
-const UserSeedSchema = require("../model/UserSeedSchema");
+const walletManage = require('../walletManage');
 
 const AuthController = {
   login: async (req, res) => {
@@ -209,7 +209,7 @@ const AuthController = {
       await userVerify.save();
 
       // Create user crypto wallet
-      await Util.WalletManage.walletCreate(code);
+      await walletManage.walletCreate(code);
 
       // TODO: fix issues
 
