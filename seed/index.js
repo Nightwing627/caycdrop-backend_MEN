@@ -53,12 +53,13 @@ const init = async () => {
     await BoxOpenSchema.insertMany(boxOpenData);
   }
 
-  // items.forEach(async item => {
-    
-  //     item.code = Util.generateCode('item', item._id);
-  //     await item.save();
-    
+  // tags.forEach(async item => {
+  //   if (item.code == null) {
+  //     item.code = Util.generateCode('tag', item._id);
+  //     await item.save();  
+  //   }
   // })
+  
   // boxs.forEach(async item => {
   //   item.opened = Math.floor(Math.random() * 500);
   //   item.popular = Math.floor(Math.random() * 500);

@@ -21,21 +21,17 @@ const BoxController = {
   getFilterData: async (req, res) => {
     // visible tag list
     // const tags = await TagSchema.find({ visible: true }, { _id: 0, __v: 0 });
-    const tags = await TagSchema.find().select({ _id: 0, __v: 0 });
+    const tags = await TagSchema
+      .find({ visible: true })
+      .select({ _id: 0, __v: 0 });
+
     res.status(200).json({
       tags, orders
     })
   },
 
   getAllData: async (req, res) => {
-    const {
-      _q,
-      _sort = 'recommend',
-      _page = 1,
-      _size = 50,
-      _tag
-    } = req.body;
-    console.log(req.body)
+    const { _q, _sort, _page, _size, _tag } = req.body;
 
     const sort = _sort ? _sort : 'recommend';
     const page = Number(_page) ? Number(_page) : 1;
@@ -43,63 +39,24 @@ const BoxController = {
     const search = _q ? _q : '';
 
     try {
-      console.log('######### BOX FILTER PARAMS: ', sort, page, size, _tag);
-
-      let aggreSort;
-      if (sort == 'recommend') {
-        aggreSort = [
-          {
-            $addFields: { "recommend": { $sum: ["$opened", "$popular"] } }
-          },
-          {
-            $sort: { "recommend": -1 }
-          }
-        ];
-      } else if (_sort == 'm_open') {
-        aggreSort = [{ $sort: { "opened": -1 } }];
-      } else if (_sort == 'l_open') {
-        aggreSort = [{ $sort: { "opened": 1 } }];
-      } else if (_sort == 'm_popular') {
-        aggreSort = [{ $sort: { "popular": -1 } }];
-      } else if (_sort == 'l_popular') {
-        aggreSort = [{ $sort: { "popular": 1 } }];
-      } else if (_sort == 'p_to_high') {
-        aggreSort = [{ $sort: { "original_price": 1 } }];
-      } else if (_sort == 'p_to_low') {
-        aggreSort = [{ $sort: { "original_price": -1 } }];
-      } else if (_sort == 'new') {
-        aggreSort = [{ $sort: { "created_at": -1 } }];
-      } else if (_sort == 'old') {
-        aggreSort = [{ $sort: { "created_at": 1 } }];
-      } else {
-        aggreSort = [
-          {
-            $addFields: { "recommend": { $sum: ["$opened", "$popular"] } }
-          },
-          {
-            $sort: { "recommend": -1 }
-          }
-        ];
-      }
 
       let conditions;
-      let tagFilter;
-      if (_tag) {
-        tagFilter = await TagSchema.findOne({ code: _tag });
-        conditions = {
-          $and: [
-            { name: { $regex: '.*' + search + '.*', $options: 'i' } },
-            { tags: tagFilter._id }
-        ]}
-      } else {
-        conditions = { name: { $regex: '.*' + search + '.*', $options: 'i' } };
+      let nameMatch, tagMatch, aggreSort;
+      
+      nameMatch = { name: { $regex: '.*' + search + '.*', $options: 'i' } };
+      tagMatch = await getTagMatch(_tag);
+      aggreSort = getSortField(sort);
+
+      conditions = nameMatch;
+
+      if (tagMatch && tagMatch.or) {
+        conditions = { $or: [nameMatch, tagMatch.filter] };
+      } else if (tagMatch && !tagMatch.or) {
+        conditions = { $and: [nameMatch, tagMatch.filter] };
       }
 
-
       let data = await BoxSchema.aggregate([
-        {
-          $match: conditions
-        },
+        { $match: conditions },
         {
           $lookup: {
             from: 'tags',
@@ -123,7 +80,6 @@ const BoxController = {
         { $limit: size }
       ]);
 
-      // TODO: live drop items socket
       res.status(200).json({ data });
     } catch (error) {
       res.status(200).json({ data: [] });
@@ -272,6 +228,46 @@ const BoxController = {
     }
   }
 };
+
+const getTagMatch = async (_tag) => {
+  if (_tag == null || _tag == '')
+    return null;
+  
+  const tag = await TagSchema.findOne({ code: _tag });
+  if (tag == null) return null;
+  if (tag.name == 'Featured') {
+    return { or: true, filter: { tags: tag._id } };
+  } else {
+    return { or: false, filter: { tags: tag._id } };
+  }
+}
+
+const getSortField = (sort) => {
+  let sortPart = [
+    { $addFields: { "recommend": { $sum: ["$opened", "$popular"] } } },
+    { $sort: { "recommend": -1 } }
+  ]
+
+  if (sort == 'm_open') {
+    sortPart = [ { $sort: { "opened": -1 } } ];
+  } else if (sort == 'l_open') {
+    sortPart = [ { $sort: { "opened": 1 } } ];
+  } else if (sort == 'm_popular') {
+    sortPart = [ { $sort: { "popular": -1 } } ];
+  } else if (sort == 'l_popular') {
+    sortPart = [ { $sort: { "popular": 1 } } ];
+  } else if (sort == 'p_to_high') {
+    sortPart = [ { $sort: { "original_price": 1 } } ];
+  } else if (sort == 'p_to_low') {
+    sortPart = [ { $sort: { "original_price": -1 } } ];
+  } else if (sort == 'new') {
+    sortPart = [ { $sort: { "created_at": -1 } } ];
+  } else if (sort == 'old') {
+    sortPart = [ { $sort: { "created_at": 1 } } ];
+  }
+
+  return sortPart;
+}
 
 const getSuggestBoxs = async (_page = 1, _size = 50) => {
   let data = await BoxSchema.aggregate([

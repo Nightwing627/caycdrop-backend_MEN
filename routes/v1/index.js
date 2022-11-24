@@ -8,22 +8,17 @@ const seed = require('../../seed');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
+router.use('/pvp', /*verifyToken,*/ require('./pvp'));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));
-router.get('/', require('./other'));
+router.use('/', require('./other'));
 
-//** -- TEST functions via API --
+//** -- TEST functions via API -- */
 // test sending email
 router.post('/testEmail', function (req, res) {
-  util.sendEmail(
-    process.env.EMAIL_VERIFY,
-    {
-      userCode: 'code',
-      email: 'webdev0627@gmail.com',
-      token: '123123123'
-    }
-  );
+  // TODO
+  // util.sendEmail();
 });
 
 // test seed
@@ -37,6 +32,7 @@ router.post('/testfunc', async (req, res) => {
   const data = await util.CryptoRate();
   res.status(200).json({ data });
 })
+//** -- TEST END */
 
 router.use(function (err, req, res, next) { 
   // validations for API request
