@@ -6,4 +6,6 @@ router.get('/box/filters', PVPController.getFilters);
 
 router.post('/box/list', PVPController.getBoxList);
 
+router.post('/battle/create', PVPController.createBattle);
+
 module.exports = router;

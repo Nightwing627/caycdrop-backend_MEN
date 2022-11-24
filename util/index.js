@@ -45,16 +45,12 @@ function generateCode(type, text) {
   switch (type) {
     case "user":
       prefix = process.env.CODE_PREFIX_USER; break;
-    case "account":
-      prefix = process.env.CODE_PREFIX_ACCOUNT; break;
     case "box":
       prefix = process.env.CODE_PREFIX_BOX; break;
     case "item":
       prefix = process.env.CODE_PREFIX_ITEM; break;
     case "tag":
       prefix = process.env.CODE_PREFIX_TAG; break;
-    case "pvp":
-      prefix = process.env.CODE_PREFIX_PVP; break;
     case "boxopen":
       prefix = process.env.CODE_PREFIX_BOX_OPEN; break;
     case "userseed":
@@ -69,7 +65,8 @@ function generateCode(type, text) {
       prefix = process.env.CODE_PREFIX_USER_CART; break;
     case "transaction":
       prefix = process.env.CODE_PREFIX_TRANSACTION; break;
-    
+    case "pvpgame":
+      prefix = process.env.CODE_PREFIX_PVP_GAME; break;
   }
 
   return prefix + content;
