@@ -31,7 +31,7 @@ const UserController = {
 
   getCurrentUser: async (req, res) => {
     const { userCode } = req.body;
-    console.log(userCode);
+    
     try {
       const user = await getUserByCode(userCode);
       
