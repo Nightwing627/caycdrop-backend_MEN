@@ -38,7 +38,7 @@ const UserController = {
       if (user == null) {
         return res.status(400).json({ error: "user not found" });  
       }
-      res.status(200).json({ data: user.toAuthJSON() });
+      res.status(200).json({ data: user });
     } catch (error) {
       res.status(400).json({ error: "user not found" });
     }
