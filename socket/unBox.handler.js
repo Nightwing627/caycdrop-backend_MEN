@@ -168,7 +168,7 @@ module.exports = (io, socket) => {
     }
 
     const boxOpen = await BoxOpenSchema
-      .find({ code: bol })
+      .findOne({ code: bol })
       .populate('user');
     
     if (boxOpen == null) {
