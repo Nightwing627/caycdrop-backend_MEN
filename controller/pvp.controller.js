@@ -252,7 +252,7 @@ const PVPController = {
         .populate('player1_bet', '-_id -__v')
         .populate('player2_bet', '-_id -__v')
         .populate('box', '-_id -__v -tags -markets -opened -popular')
-        .select('-_id -pvpId');
+        .select('-_id -__v -pvpId');
       
       const responseData = {
         ...pvpGame.toGameJSON(),

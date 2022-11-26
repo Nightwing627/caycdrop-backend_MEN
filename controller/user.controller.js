@@ -23,8 +23,6 @@ const UserController = {
       .populate('next_server_seed', '-_id -__v')
       .populate('old_server_seed', '-_id -__v')
       .exec();
-
-    
     
     res.status(200).json({ data });
   },

@@ -29,6 +29,10 @@ module.exports = {
       socketIO = io;
       socketInstance = socket;
       UnBoxHandler(io, socket);
+
+      socket.on("disconnect", () => {
+        console.log(`${socket.id} Client disconnected`);
+      });
     });
 
     io.of('/pvp').on("connection", (socket) => {
@@ -42,14 +46,6 @@ module.exports = {
 };
 
 const Handler = (io, socket) => { 
-  
-  
   socket.emit("connected");
-  
-  PvpHandler(io, socket);
   LiveDropHandler(io, socket);
-
-  socket.on("disconnect", () => {
-    console.log(`${socket.id} Client disconnected`);
-  });
 }

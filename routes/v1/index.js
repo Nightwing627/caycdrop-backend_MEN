@@ -26,18 +26,15 @@ router.post('/testseed', function (req, res) {
   res.status(200).send('ss');
 });
 
-const mongoose = require('mongoose');
-const PvpGamePlayerSchema = require('../../model/PvpGamePlayerSchema');
-
 // test funcs
-router.post('/testfunc', async (req, res) => { 
+router.post('/testfunc', async (req, res) => {
   res.status(200).json({ data: [] });
-})
+});
 //** -- TEST END */
 
-router.use(function (err, req, res, next) { 
+router.use(function (err, req, res, next) {
   // validations for API request
-  if (err.name == "ValidationError") { 
+  if (err.name == "ValidationError") {
     return res.status(422).json({
       errors: Object.keys(err.errors).reduce(function (errors, key) {
         errors[key] = err.errors[key].message;
@@ -46,6 +43,6 @@ router.use(function (err, req, res, next) {
     });
   }
   return next(err);
-})
+});
 
 module.exports = router;

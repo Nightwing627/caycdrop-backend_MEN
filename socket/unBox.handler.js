@@ -109,7 +109,8 @@ module.exports = (io, socket) => {
         cost: box.original_price,
         profit: itemData.profit,
         xp_rewarded: itemData.xp,
-        roll_code: rollHis.code
+        roll_code: rollHis.code,
+        status: true
       });
       boxOpen.code = Util.generateCode('boxopen', boxOpen._id);
       await boxOpen.save();
@@ -171,6 +172,10 @@ module.exports = (io, socket) => {
       .findOne({ code: bol })
       .populate('user');
     
+    if (!boxOpen.status) {
+      return callback({ error: 'This action already processed' });
+    }
+    
     if (boxOpen == null) {
       return callback({ error: 'this is fake data' });
     } else if (boxOpen.user.code !== usercode) {
@@ -200,12 +205,15 @@ module.exports = (io, socket) => {
       await UserCartSchema.findByIdAndDelete(boxOpen.user_item);
 
       // Modify the BoxOpen's user_item
+      boxOpen.status = false;
       boxOpen.user_item = null;
       await boxOpen.save();
 
       callback({ result: 'success' });
     } else if (method == process.env.UNBOX_ITEM_TO_CART) {
-
+      boxOpen.status = false;
+      await boxOpen.save();
+      callback({ result: 'success' });
     }
   });
 }

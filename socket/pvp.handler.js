@@ -19,19 +19,24 @@ module.exports = (io, pvpSocket) => {
       return callback({ error: 'wrong battle id' });
     }
     let battleName = 'battle_' + pvpId;
-    console.log('@@@@@@@@@@', battles[battleName])
+
     if (battles[battleName] == undefined) {
-      battles[battleName] = [pvpSocket.id];
+      // first join to battle room
+      battles[battleName] = [ pvpSocket.id ];
       pvpSocket.join(battleName);
     } else {
       if (!battles[battleName].includes(pvpSocket.id)) {
+        // socket already joined 
         battles[battleName].push(pvpSocket.id);
         pvpSocket.join(battleName);
       }
     }
     
     console.log(`battle joined: ${pvpSocket.id}`);
-    sendBattleData(pvpSocket, pvpId, battleName);
+    console.log(`Pvp all sockets: ${io.sockets}`);
+    console.log(`All battles: ${battles}`);
+    
+    // sendBattleData(pvpSocket, pvpId, battleName);
     callback({ result: 'joined' });
 
   });
