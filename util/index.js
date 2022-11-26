@@ -67,6 +67,8 @@ function generateCode(type, text) {
       prefix = process.env.CODE_PREFIX_TRANSACTION; break;
     case "pvpgame":
       prefix = process.env.CODE_PREFIX_PVP_GAME; break;
+    case "pvpround":
+      prefix = process.env.CODE_PREFIX_PVP_ROUND; break;
   }
 
   return prefix + content;

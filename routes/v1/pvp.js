@@ -8,4 +8,6 @@ router.post('/box/list', PVPController.getBoxList);
 
 router.post('/battle/create', PVPController.createBattle);
 
+router.get('/battle/:gameCode', PVPController.getBattleByCode);
+
 module.exports = router;

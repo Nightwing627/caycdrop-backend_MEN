@@ -23,13 +23,16 @@ module.exports = {
     }
 
     io.on("connection", (socket) => {
-      var address = socket.handshake.address;
-      console.log('New connection from ' + address.address + ':' + address.port);
       var clientIp = socket.request.connection.remoteAddress;
       console.log('Remote address: ', clientIp);
+      console.log(`${socket.id} Sockect connected!`);
       socketIO = io;
       socketInstance = socket;
-      Handler(io, socket);
+      UnBoxHandler(io, socket);
+    });
+
+    io.of('/pvp').on("connection", (socket) => {
+      PvpHandler(io, socket);
     });
   },
 
@@ -40,14 +43,13 @@ module.exports = {
 
 const Handler = (io, socket) => { 
   
-  console.log(`${socket.id} Sockect connected!`);
+  
   socket.emit("connected");
-  UnBoxHandler(io, socket);
+  
   PvpHandler(io, socket);
   LiveDropHandler(io, socket);
 
   socket.on("disconnect", () => {
     console.log(`${socket.id} Client disconnected`);
-    // clearInterval(interval);
   });
 }

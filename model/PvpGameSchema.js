@@ -14,25 +14,18 @@ const PvpGameSchema = new Schema({
     enum: ['MAX_SUM', 'MIN_SUM'],
   },
   rounds: { type: SchemaTypes.Number },
-  total_cost: { type: SchemaTypes.Number },
+  total_bet: { type: SchemaTypes.Number },
   winner: {
     type: SchemaTypes.ObjectId,
     ref: 'User'
   },
-  status: { type: SchemaTypes.String },
+  status: { type: SchemaTypes.String }, /* created, started, completed */
   total_payout: { type: SchemaTypes.Number },
-  player1: {
-    type: SchemaTypes.ObjectId,
-    ref: 'User'
-  },
-  player2: {
-    type: SchemaTypes.ObjectId,
-    ref: 'User'
-  },
   box_list: [{
     type: SchemaTypes.ObjectId,
     ref: 'Box'
   }],
+  started_at: { type: SchemaTypes.Date },
   finished_at: { type: SchemaTypes.Date },
 }, {
   timestamps: {
@@ -42,5 +35,18 @@ const PvpGameSchema = new Schema({
 });
 
 PvpGameSchema.plugin(uniqueValidator, { message: " is already exist" });
+
+PvpGameSchema.methods.toGameJSON = function() {
+  return {
+    code: this.code,
+    isPrivate: this.is_private,
+    botEnable: this.botEnable,
+    strategy: this.strategy,
+    totalRounds: this.rounds,
+    totalBet: this.total_bet,
+    status: this.status.toUpperCase(),
+    totalPayout: this.total_payout,
+  }
+}
 
 module.exports = mongoose.model('PvpGame', PvpGameSchema);

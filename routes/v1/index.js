@@ -2,13 +2,12 @@ var express = require('express');
 var router = express.Router();
 var verifyToken = require('../middleware/auth');
 
-const mongoose = require('mongoose');
 const util = require('../../util');
 const seed = require('../../seed');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
-router.use('/pvp', verifyToken, require('./pvp'));
+router.use('/pvp', /* verifyToken, */ require('./pvp'));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));
@@ -27,10 +26,12 @@ router.post('/testseed', function (req, res) {
   res.status(200).send('ss');
 });
 
+const mongoose = require('mongoose');
+const PvpGamePlayerSchema = require('../../model/PvpGamePlayerSchema');
+
 // test funcs
 router.post('/testfunc', async (req, res) => { 
-  const data = await util.CryptoRate();
-  res.status(200).json({ data });
+  res.status(200).json({ data: [] });
 })
 //** -- TEST END */
 

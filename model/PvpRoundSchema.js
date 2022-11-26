@@ -7,7 +7,7 @@ const PvpRoundSchema = new Schema({
     type: SchemaTypes.String,
     index: true
   },
-  pvp: { 
+  pvpId: { 
     type: SchemaTypes.ObjectId,
     ref: 'PvpGame'
   },
@@ -26,11 +26,17 @@ const PvpRoundSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'PvpRoundBet'
   },
-  roll_code: { type: SchemaTypes.String }, // TODO: assign the Roll collection
+  roll_code: {
+  	type: SchemaTypes.ObjectId,
+    ref: 'RollHistory'
+  },
   startd_at: { type: SchemaTypes.Date },
   finished_at: { type: SchemaTypes.Date },
 }, {
-  timestamps: false,
+  timestamps: {
+  	createdAt: 'created_at',
+  	updatedAt: 'updated_at'
+  },
 });
 
 // PvpRoundSchema.plugin(uniqueValidator, { message: " is already exist" });

@@ -43,7 +43,7 @@ module.exports = {
     await etherWallet.lookout();
   },
 
-  removeEthEallet: async () => {
-    
-  },
+  getBlockInfo: async () => {
+    return await etherWallet.getBlockInfo();
+  }
 }

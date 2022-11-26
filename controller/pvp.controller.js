@@ -1,3 +1,4 @@
+const mongoose = require('mongoose');
 const UserSchema = require('../model/UserSchema');
 const UserWallet = require('../model/UserWalletSchema');
 const UserCartSchema = require('../model/UserCartSchema');
@@ -7,6 +8,10 @@ const BoxSchema = require('../model/BoxSchema');
 const TagSchema = require('../model/TagSchema');
 
 const PvpGameSchema = require('../model/PvpGameSchema');
+const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
+const PvpRoundSchema = require('../model/PvpRoundSchema');
+const PvpRoundBetSchema = require('../model/PvpRoundBetSchema');;
+
 const util = require('../util');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
@@ -108,24 +113,28 @@ const PVPController = {
     
     try {
       // validate params
-      if (!(userCode && isPrivate!= null && botEnable != null && strategy && boxData))
+      if (!(userCode && isPrivate != null && botEnable != null && strategy && boxData))
         return res.status(400).json({ error: 'params is wrong' });
       
       if (!Array.isArray(boxData))
-        return res.status(400).json({ error: 'box list\'s format is wrong ' });
+        return res.status(400).json({ error: 'box list\'s format is wrong ' });  
       
       const user = await UserSchema
         .findOne({ code: userCode })
-        .populate('wallets');      
-
+        .populate('wallets')
+        .populate('user_progress')
+        .populate('account');
+      
       // get total bet price
       let totalBet = 0;
       let betedBoxList = [];
-
       for (var index in boxData) {
         const item = boxData[index];
-        const box = await BoxSchema.findOne({ code: item.box }, { _id: 1, cost: 1 });
-        for (let i = 0; i < item.count; i++) betedBoxList.push(box._id)
+
+        const box = await BoxSchema.findOne({ code: item.box });
+        for (let i = 0; i < item.count; i++) { 
+          betedBoxList.push(box);
+        }
         totalBet += box.cost * Number(item.count);
       }
       
@@ -134,10 +143,7 @@ const PVPController = {
         return res.status(400).json({ error: 'tight budget' });
       
       // order boxlist by price
-      betedBoxList = await BoxSchema
-        .find({ _id: { $in: betedBoxList } })
-        .select('_id')
-        .sort({ cost: 1 });
+      betedBoxList.sort((a, b) => { return a.cost - b.cost });
       
       // create battle
       const pvpGame = await PvpGameSchema.create({
@@ -145,12 +151,10 @@ const PVPController = {
         bot_enable: botEnable,
         strategy: strategy == 'crazy' ? process.env.PVP_STRATEGY_MIN : process.env.PVP_STRATEGY_MAX,
         rounds: betedBoxList.length,
-        total_cost: totalBet,
+        total_bet: Number(totalBet.toFixed(2)),
         winner: null,
         status: process.env.PVP_GAME_CREATED,
         total_payout: 0,
-        player1: user._id,
-        player2: null,
         box_list: betedBoxList,
         finished_at: null
       });
@@ -159,8 +163,53 @@ const PVPController = {
         code: pvpGameCode
       });
 
+      // create battle player
+      const creatorInfo = {
+        code: userCode,
+        name: user.account.username,
+        avatar: user.account.avatar,
+        rank: user.account.g_rank,
+        xp: parseInt(user.user_progress.xp),
+        required_xp: user.user_progress.required_xp,
+        next_required_xp: user.user_progress.next_required_xp,
+        level: user.user_progress.level
+      };
+      const pvpGamePlayer = new PvpGamePlayerSchema({
+        pvpId: pvpGame._id,
+        creator: creatorInfo,
+        joiner: null
+      });
+      await pvpGamePlayer.save();
+
+      // create battle rounds and round bets - creator
+      for (var i = 0; i < betedBoxList.length; i++) {
+        let roundBet = await PvpRoundBetSchema.create({
+          player: userCode,
+          bet: betedBoxList[i].cost,
+          item: null,
+          currency: betedBoxList[i].currency,
+          payout: 0,
+          rewarded_xp: 0,
+          roll_value: null
+        });
+
+        let pvpRound = await PvpRoundSchema.create({
+          pvpId: pvpGame._id,
+          round_number: (i + 1),
+          box: betedBoxList[i]._id,
+          bet: betedBoxList[i].cost,
+          currency: betedBoxList[i].currency,
+          player1_bet: roundBet._id,
+          player2_bet: null,
+          roll_code: null,
+        });
+        await PvpRoundBetSchema.findByIdAndUpdate(pvpRound._id, {
+          code: util.generateCode('pvpround', pvpRound._id)
+        });
+      }
+
       // change user wallet
-      const changedAfter = user.wallets.main - Number(totalBet);
+      const changedAfter = Number((user.wallets.main - Number(totalBet)).toFixed(2));
       await UserWalletSchema.findByIdAndUpdate(user.wallets._id, {
         main: changedAfter
       });
@@ -169,7 +218,7 @@ const PVPController = {
       const walletExchange = await WalletExchangeSchema.create({
         user: user._id,
         type: process.env.WALLET_EXCHANGE_PVP,
-        value_change: totalBet,
+        value_change: Number(totalBet.toFixed(2)),
         changed_after: changedAfter,
         wallet: user.wallets._id,
         currency: 'USD',
@@ -183,6 +232,38 @@ const PVPController = {
     } catch (error) {
       console.log(error)
       res.status('400').json({ error: 'created failed' });
+    }
+  },
+
+  getBattleByCode: async (req, res) => {
+    const { userCode } = req.body;
+    const { gameCode } = req.params;
+    console.log(req.params)
+    console.log(req.query);
+    try {
+      const pvpGame = await PvpGameSchema.findOne({ code: gameCode });
+      if (pvpGame == null)
+        return res.status(400).json({ error: 'wrong battle info' });
+      
+      const players = await PvpGamePlayerSchema.findOne(
+        { pvpId: pvpGame._id }, { _id: 0, __v: 0, pvpId: 0 });
+      const rounds = await PvpRoundSchema
+        .find({ pvpId: pvpGame._id })
+        .populate('player1_bet', '-_id -__v')
+        .populate('player2_bet', '-_id -__v')
+        .populate('box', '-_id -__v -tags -markets -opened -popular')
+        .select('-_id -pvpId');
+      
+      const responseData = {
+        ...pvpGame.toGameJSON(),
+        players,
+        rounds
+      }
+
+      res.status(200).json({ data: responseData });
+    } catch (error) {
+      console.log(`Get Battle By Code Error: ${error}`);
+      res.status(400).json({ error: 'wrong battle info' });
     }
   }
 };

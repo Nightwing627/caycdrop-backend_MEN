@@ -16,6 +16,7 @@ const provider = getDefaultProvider("goerli", {
 
 provider.on("block", async (blockNumber) => {
   const blockData = await provider.getBlockWithTransactions(blockNumber);
+  
   blockData.transactions.forEach(async (tx) => {
     if (watchList[tx.to] && tx.value > 0) {
       const wallet = new Wallet(watchList[tx.to], provider);
@@ -79,6 +80,12 @@ module.exports = {
       watchList[item.eth_address] = item.eth_privateKey;
     });
   },
+
+  getBlockInfo: async () => {
+    const block = await provider.getBlock();
+    // console.log(block)
+    return block;
+  }
 }
 
 const depositWallet = async (tx) => {
