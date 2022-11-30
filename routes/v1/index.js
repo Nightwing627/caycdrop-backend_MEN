@@ -7,6 +7,7 @@ const walletManage = require('../../walletManage');
 const seed = require('../../seed');
 const BoxSchema = require('../../model/BoxSchema');
 const BoxItemSchema = require('../../model/BoxItemSchema');
+const mongoose = require('mongoose');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -31,6 +32,12 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
+  await mongoose.connection.db.dropCollection('pvpgames');
+  await mongoose.connection.db.dropCollection('pvproundbets');
+  await mongoose.connection.db.dropCollection('pvprounds');
+  await mongoose.connection.db.dropCollection('pvpgameplayers');
+  await mongoose.connection.db.dropCollection('rollhistories');
+
   const allbox = await BoxSchema.find();
   const data = [];
   for (var i = 0; i < allbox.length; i++) {
