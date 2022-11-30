@@ -8,7 +8,7 @@ const seed = require('../../seed');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
-router.use('/pvp', verifyToken, require('./pvp'));
+router.use('/pvp', require('./pvp'));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));   

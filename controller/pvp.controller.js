@@ -18,6 +18,7 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const SeedSchema = require('../model/SeedSchema');
 const RollHistorySchema = require('../model/RollHistorySchema');
+const BoxItemSchema = require('../model/BoxItemSchema');
 
 const filterPrices = [
   { value: '', label: 'All Prices' },
@@ -349,6 +350,54 @@ const PVPController = {
     } catch (error) {
       console.log(error);
       res.status(400).json({ error: 'wrong pvp id'})
+    }
+  },
+
+  getBoxItems: async (req, res) => {
+    const { code } = req.params;
+
+    try {
+      const box = await BoxSchema.findOne({ code });
+      if (box == null)
+        return res.status(400).send({ error: 'wrong box code' });
+      
+      let boxItems = await BoxItemSchema.aggregate([
+        { $match: { box_code: box.code } },
+        {
+          $project: {
+            _id: 0, __v: 0, created_at: 0, updated_at: 0
+          }
+        },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item',
+            pipeline: [
+              {
+                $project: {
+                  _id: 0, __v: 0, category: 0, market: 0
+              }}
+            ]
+          },
+        },
+        { $unwind: { path: "$item" } },
+        {
+          $sort: { "item.value": -1 }
+        }
+      ]);
+  
+      boxItems = util.setBoxItemRolls(boxItems);
+      res.status(200).json({
+        data: {
+          code: box.code,
+          name: box.name,
+          slots: boxItems
+        }
+      });
+    } catch (error) {
+      console.log(error);
     }
   }
 };
