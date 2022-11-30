@@ -9,7 +9,6 @@ const PvpRoundBetSchema = new Schema({
   currency: { type: SchemaTypes.String },
   payout: { type: SchemaTypes.Number },
   rewarded_xp: { type: SchemaTypes.Number },
-  roll_value: { type: SchemaTypes.Number }
 }, {
   timestamps: {
     createdAt: 'created_at',

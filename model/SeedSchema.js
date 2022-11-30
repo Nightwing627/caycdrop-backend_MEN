@@ -20,4 +20,13 @@ const SeedSchema = new Schema({
   },
 });
 
+SeedSchema.methods.toGameJSON = function() {
+	return {
+		code: this.code,
+		type: this.type,
+		value: this.value,
+		hash: this.hash
+	};
+}
+
 module.exports = mongoose.model('Seed', SeedSchema);

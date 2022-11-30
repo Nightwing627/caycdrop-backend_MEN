@@ -24,8 +24,8 @@ module.exports = {
 
     io.on("connection", (socket) => {
       var clientIp = socket.request.connection.remoteAddress;
-      console.log('Remote address: ', clientIp);
-      console.log(`${socket.id} Sockect connected!`);
+      // console.log('Remote address: ', clientIp);
+      // console.log(`${socket.id} Sockect connected!`);
       socketIO = io;
       socketInstance = socket;
       UnBoxHandler(io, socket);
@@ -36,6 +36,7 @@ module.exports = {
     });
 
     io.of('/pvp').on("connection", (socket) => {
+      console.log('pvp connected')
       PvpHandler(io, socket);
     });
   },

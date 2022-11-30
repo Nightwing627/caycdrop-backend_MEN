@@ -18,17 +18,13 @@ const PvpRoundSchema = new Schema({
   },
   bet: { type: SchemaTypes.Number },
   currency: { type: SchemaTypes.String },
-  player1_bet: {
+  creator_bet: {
     type: SchemaTypes.ObjectId,
     ref: 'PvpRoundBet'
   },
-  player2_bet: {
+  joiner_bet: {
     type: SchemaTypes.ObjectId,
     ref: 'PvpRoundBet'
-  },
-  roll_code: {
-  	type: SchemaTypes.ObjectId,
-    ref: 'RollHistory'
   },
   startd_at: { type: SchemaTypes.Date },
   finished_at: { type: SchemaTypes.Date },

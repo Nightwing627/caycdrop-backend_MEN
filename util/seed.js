@@ -1,16 +1,15 @@
 const crypto = require('crypto');
 
 var serverHashed;
-var clientHashed;
 var game = '';
-const max = process.env.ROLL_MAX;
+const max = Number(process.env.ROLL_MAX);
 
-function getRoll(type, clientValue, serverValue, nonce) {
-  serverHashed = crypto.createHash('sha3-256').update(clientValue).digest('hex');
-  clientHashed = crypto.createHash('sha3-256').update(serverValue).digest('hex');
-  if (type == 'PVP') { 
+function getRoll(type, clientHashed, serverValue, nonce) {
+  serverHashed = crypto.createHash('sha3-256').update(serverValue).digest('hex');
+  // clientHashed = crypto.createHash('sha3-256').update(clientValue).digest('hex');
+  if (type == process.env.GAME_PVP) { 
     game = process.env.COMBINE_SEED_PVP;
-  } else if (type == 'BOX') {
+  } else if (type == process.env.GAME_BOX) {
     game = process.env.COMBINE_SEED_BOX;
   }
   
@@ -49,6 +48,10 @@ function getCombinedSeed(game, serverSeed, clientSeed, nonce) {
 
   // Combine parameters to get seed value
   return seedParameters.join('-')
+}
+
+function getNonce() {
+
 }
 
 module.exports = {

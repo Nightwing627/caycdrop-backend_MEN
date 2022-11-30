@@ -83,7 +83,6 @@ module.exports = {
 
   getBlockInfo: async () => {
     const block = await provider.getBlock();
-    // console.log(block)
     return block;
   }
 }

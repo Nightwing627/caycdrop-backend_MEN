@@ -174,7 +174,7 @@ const BoxController = {
       const boxSrc = await BoxSchema.findOne({ slug });
       
       const data = await BoxOpenSchema
-        .find({ box: boxSrc._id })
+        .find({ box: boxSrc._id }, { status: false })
         .populate({
           path: 'user',
           select: '-_id code',

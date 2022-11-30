@@ -3,6 +3,7 @@ var router = express.Router();
 var verifyToken = require('../middleware/auth');
 
 const util = require('../../util');
+const walletManage = require('../../walletManage');
 const seed = require('../../seed');
 
 // define API router
@@ -10,9 +11,9 @@ router.use("/player", verifyToken, require("./users"));
 router.use('/pvp', /* verifyToken, */ require('./pvp'));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));
-router.use('/box', require('./box'));
+router.use('/box', require('./box'));   
 router.use('/', require('./other'));
-
+  
 //** -- TEST functions via API -- */
 // test sending email
 router.post('/testEmail', function (req, res) {
@@ -28,7 +29,9 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
-  res.status(200).json({ data: [] });
+  const data = util.getNonce(12);
+  // console.log(data.hash.slice(2, data.hash.length))
+  res.status(200).json({ data });                                                                                                                                                                  
 });
 //** -- TEST END */
 

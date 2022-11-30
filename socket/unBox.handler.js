@@ -71,19 +71,19 @@ module.exports = (io, socket) => {
 
       // Generate roll value
       const rollValue = Util.Seed.getRoll(
-        process.env.COMBINE_SEED_BOX,
+        process.env.GAME_BOX,
         clientHash,
         serverValue,
-        nonce
+        Util.getNonce(nonce)
       );
-
+      
       /// *** Log all informations RollHistory, BoxOpen, Box statistic, WalletExchange
       const itemData = await getItemAndXP(box.code, rollValue);
       // Roll History
       const rollHis = await RollHistorySchema.create({
         value: rollValue,
         nonce,
-        game: 'BOX',
+        game: process.env.GAME_BOX,
         server_seed: userSeed.server_seed,
         client_seed: userSeed.client_seed
       });

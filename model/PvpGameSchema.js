@@ -14,6 +14,7 @@ const PvpGameSchema = new Schema({
     enum: ['MAX_SUM', 'MIN_SUM'],
   },
   rounds: { type: SchemaTypes.Number },
+  current_round: { type: SchemaTypes.Number },
   total_bet: { type: SchemaTypes.Number },
   winner: {
     type: SchemaTypes.ObjectId,
@@ -25,6 +26,10 @@ const PvpGameSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'Box'
   }],
+  roll: {
+    type: SchemaTypes.ObjectId,
+    ref: 'RollHistory'
+  },
   started_at: { type: SchemaTypes.Date },
   finished_at: { type: SchemaTypes.Date },
 }, {

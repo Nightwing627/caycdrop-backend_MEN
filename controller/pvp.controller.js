@@ -10,11 +10,14 @@ const TagSchema = require('../model/TagSchema');
 const PvpGameSchema = require('../model/PvpGameSchema');
 const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
 const PvpRoundSchema = require('../model/PvpRoundSchema');
-const PvpRoundBetSchema = require('../model/PvpRoundBetSchema');;
+const PvpRoundBetSchema = require('../model/PvpRoundBetSchema');
 
 const util = require('../util');
+const walletManage = require('../walletManage');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
+const SeedSchema = require('../model/SeedSchema');
+const RollHistorySchema = require('../model/RollHistorySchema');
 
 const filterPrices = [
   { value: '', label: 'All Prices' },
@@ -144,13 +147,14 @@ const PVPController = {
       
       // order boxlist by price
       betedBoxList.sort((a, b) => { return a.cost - b.cost });
-      
+
       // create battle
       const pvpGame = await PvpGameSchema.create({
         is_private: isPrivate,
         bot_enable: botEnable,
         strategy: strategy == 'crazy' ? process.env.PVP_STRATEGY_MIN : process.env.PVP_STRATEGY_MAX,
         rounds: betedBoxList.length,
+        current_round: 0,
         total_bet: Number(totalBet.toFixed(2)),
         winner: null,
         status: process.env.PVP_GAME_CREATED,
@@ -161,6 +165,11 @@ const PVPController = {
       const pvpGameCode = util.generateCode('pvpgame', pvpGame._id);
       await PvpGameSchema.findByIdAndUpdate(pvpGame._id, {
         code: pvpGameCode
+      });
+
+      const rollData = await getPvpRoll(pvpGameCode);
+      await PvpGameSchema.findByIdAndUpdate(pvpGame._id, {
+        roll: rollData
       });
 
       // create battle player
@@ -190,7 +199,6 @@ const PVPController = {
           currency: betedBoxList[i].currency,
           payout: 0,
           rewarded_xp: 0,
-          roll_value: null
         });
 
         let pvpRound = await PvpRoundSchema.create({
@@ -199,11 +207,10 @@ const PVPController = {
           box: betedBoxList[i]._id,
           bet: betedBoxList[i].cost,
           currency: betedBoxList[i].currency,
-          player1_bet: roundBet._id,
-          player2_bet: null,
-          roll_code: null,
+          creator_bet: roundBet._id,
+          joiner_bet: null,
         });
-        await PvpRoundBetSchema.findByIdAndUpdate(pvpRound._id, {
+        await PvpRoundSchema.findByIdAndUpdate(pvpRound._id, {
           code: util.generateCode('pvpround', pvpRound._id)
         });
       }
@@ -222,7 +229,7 @@ const PVPController = {
         changed_after: changedAfter,
         wallet: user.wallets._id,
         currency: 'USD',
-        target: pvpGameCode._id
+        target: pvpGame._id
       });
       await WalletExchangeSchema.findByIdAndUpdate(walletExchange._id, {
         code: util.generateCode('walletexchange', walletExchange._id)
@@ -237,11 +244,11 @@ const PVPController = {
 
   getBattleByCode: async (req, res) => {
     const { userCode } = req.body;
-    const { gameCode } = req.params;
+    const { pvpId } = req.params;
     console.log(req.params)
     console.log(req.query);
     try {
-      const pvpGame = await PvpGameSchema.findOne({ code: gameCode });
+      const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
       if (pvpGame == null)
         return res.status(400).json({ error: 'wrong battle info' });
       
@@ -249,9 +256,9 @@ const PVPController = {
         { pvpId: pvpGame._id }, { _id: 0, __v: 0, pvpId: 0 });
       const rounds = await PvpRoundSchema
         .find({ pvpId: pvpGame._id })
-        .populate('player1_bet', '-_id -__v')
-        .populate('player2_bet', '-_id -__v')
-        .populate('box', '-_id -__v -tags -markets -opened -popular')
+        .populate('creator_bet', '-_id -__v')
+        .populate('joiner_bet', '-_id -__v')
+        .populate('box', '-_id code name cost currency icon_path slug')
         .select('-_id -__v -pvpId');
       
       const responseData = {
@@ -259,11 +266,89 @@ const PVPController = {
         players,
         rounds
       }
-
+      
       res.status(200).json({ data: responseData });
     } catch (error) {
       console.log(`Get Battle By Code Error: ${error}`);
       res.status(400).json({ error: 'wrong battle info' });
+    }
+  },
+
+  getBattleSeedByCode: async (req, res) => {
+    const { pvpId } = req.params;
+    
+    try {
+      const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
+      if (pvpGame == null)
+        return res.status(400).json({ error: 'wrong pvp id' });
+      
+      const rollHis = await RollHistorySchema.findById(pvpGame.roll);      
+      if (rollHis == null)
+        return res.status(400).json({ error: 'wrong pvp id' });
+      console.log(req.params);
+      const serverSeed = (await SeedSchema.findById(rollHis.server_seed)).toGameJSON();
+      const clientSeed = (await SeedSchema.findById(rollHis.client_seed)).toGameJSON();
+      
+      const creatorNonce = rollHis.nonce;
+      const joinerNonce = rollHis.nonce + pvpGame.rounds;
+
+      const rounds = await PvpRoundSchema
+        .find({ pvpId: pvpGame._id })
+        .populate('box', '-_id code name icon_path');
+      
+      var roundData = [];
+      rounds.forEach((item, index) => {
+        console.log('@@@@@@@@@', pvpGame)
+        const creatorRoll = item.round_number < pvpGame.current_round
+          ? util.Seed.getRoll(
+              process.env.GAME_PVP,
+              clientSeed.hash,
+              serverSeed.value,
+              creatorNonce + index
+          ) : null;
+        const joinerRoll = item.round_number < pvpGame.current_round
+          ? util.Seed.getRoll(
+              process.env.GAME_PVP,
+              clientSeed.hash,
+              serverSeed.value,
+              joinerNonce + index
+          ) : null;
+        
+        const itemJSON = {
+          code: item.code,
+          round_number: item.round_number,
+          box: item.box,
+          bet: item.bet,
+          currency: item.currency,
+          started_at: item.started_at,
+          finished_at: item.finished_at
+        }
+        roundData.push({
+          ...itemJSON,
+          creatorRoll: {
+            nonce: creatorNonce + index,
+            rollValue: creatorRoll,
+          },
+          joinerRoll: {
+            nonce: joinerNonce + index,
+            rollValue: joinerRoll,
+          }
+        });
+      });
+
+      var data = {
+        clientSeed,
+        serverSeed,
+        rounds: roundData
+      };
+      if (pvpGame.status != process.env.PVP_GAME_COMPLETED) {
+        data.serverSeed.value = null;
+      }
+      
+      res.status(200).json({ data });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: 'wrong pvp id'})
     }
   }
 };
@@ -321,6 +406,49 @@ const getSortField = (sort) => {
   }
 
   return sortPart;
+}
+
+const getPvpRoll = async (pvpCode) => {
+  // set the seed values - server, client(block id), nonce
+  // get server value, client hashed, nonce
+  const serverValue = util.getHashValue('server_' + pvpCode);
+  const serverHashed = util.getCryptoValue(serverValue);
+  const blockInfo = await walletManage.getBlockInfo();
+  const client = blockInfo.hash.slice(2, blockInfo.hash.length);
+
+  const pvpClientSeed = await SeedSchema.create({
+    type: process.env.SEED_TYPE_CLIENT,
+    future: false,
+    value: client,
+    hash: client
+  });
+  await SeedSchema.findByIdAndUpdate(pvpClientSeed._id, {
+    code: util.generateCode('seed', pvpClientSeed._id)
+  });
+
+  const pvpServerSeed = await SeedSchema.create({
+    type: process.env.SEED_TYPE_SERVER,
+    future: false,
+    value: serverValue,
+    hash: serverHashed
+  });
+  await SeedSchema.findByIdAndUpdate(pvpServerSeed._id, {
+    code: util.generateCode('seed', pvpServerSeed._id)
+  });
+
+  const rollHistory = await RollHistorySchema.create({
+    value: null,
+    nonce: util.getNonce(blockInfo.number),
+    game: process.env.GAME_PVP,
+    server_seed: pvpServerSeed._id,
+    client_seed: pvpClientSeed._id
+  });
+  
+  await RollHistorySchema.findByIdAndUpdate(rollHistory._id, {
+    code: util.generateCode('rollhistory', rollHistory._id)
+  });
+
+  return rollHistory._id;
 }
 
 module.exports = PVPController;

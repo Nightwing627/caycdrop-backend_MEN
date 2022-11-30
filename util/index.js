@@ -178,6 +178,18 @@ function getHashValue(type) {
   return hashed;
 }
 
+function getCryptoValue(value) {
+  return crypto.createHash('sha3-256').update(value).digest('hex');
+}
+
+function hexToDecimal(hex) {
+  return parseInt(hex, 16);
+}
+
+function getNonce(value) {  
+  return Number(process.env.ROLL_MAX) + value;
+}
+
 function updateUserProgress(upData, newXp) {
   upData.xp += newXp;
   var upLevel = false;
@@ -204,6 +216,9 @@ module.exports = {
   getHashValue,
   getItemByRollValue,
   updateUserProgress,
+  getCryptoValue,
+  hexToDecimal,
+  getNonce,
   Seed,
   CryptoRate
 }
