@@ -3,6 +3,9 @@ const randToken = require('rand-token');
 const axios = require('axios');
 const geoip = require('geoip-country');
 const CountrySchema = require('../model/CountrySchema');
+const BoxSchema = require('../model/BoxSchema');
+const BoxItemSchema = require('../model/BoxItemSchema');
+const UserSchema = require('../model/UserSchema');
 require('dotenv').config();
 const algorithm = 'aes-256-cbc';
 // secret key generate 32 bytes of random data
@@ -171,6 +174,42 @@ function getItemByRollValue(data, rollValue) {
   return item;
 }
 
+async function getItemAndXP(boxCode, rollValue) {
+  const box = await BoxSchema.findOne({ code: boxCode });
+  
+  let boxItems = await BoxItemSchema.aggregate([
+        { $match: { box_code: boxCode } },
+        {
+          $project: {
+            _id: 0, __v: 0, created_at: 0, updated_at: 0
+          }
+        },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item',
+          },
+        },
+        { $unwind: { path: "$item"} },
+        {
+          $sort: { "item.value": -1 }
+        }
+      ]);
+  
+  const pickedItem = getItemByRollValue(boxItems, rollValue);
+  
+  const profit = Number(box.original_price - pickedItem.item.value);
+  let xpRewarded = 0;
+  if (profit > 0) {
+    xpRewarded = profit * process.env.XP_CALC_VALUE;
+  }
+  
+  return { item: pickedItem.item, xp: xpRewarded, profit };
+}
+
+
 function getHashValue(type) {
   let value = "" + type + "_" + Date.now();
   const hashed = crypto.createHash('sha3-256').update(value).digest('hex');
@@ -203,6 +242,23 @@ function updateUserProgress(upData, newXp) {
   return upData;
 }
 
+function getRandomWinner() { 
+  const time = Date.now();
+  const value = Math.floor(Math.random() * time);
+  return Math.floor(value % 2);
+}
+
+async function getUserByCode(code) {
+  const user = await UserSchema
+    .findOne({ code })
+    .populate('account', '-_id -__v -user_code')
+    .populate('user_progress', '-_id -__v -user_code -bet_count')
+    .populate('wallets', '-_id -__v -user_code')
+    .populate('shipping_info', '-_id -__v -user_code')
+    .select('-__v');
+  return user.toAuthJSON();
+}
+
 const Seed = require('./seed');
 const CryptoRate = require('./exchangeRate');
 
@@ -215,10 +271,13 @@ module.exports = {
   setBoxItemRolls,
   getHashValue,
   getItemByRollValue,
+  getItemAndXP,
   updateUserProgress,
   getCryptoValue,
   hexToDecimal,
   getNonce,
   Seed,
-  CryptoRate
+  CryptoRate,
+  getRandomWinner,
+  getUserByCode
 }

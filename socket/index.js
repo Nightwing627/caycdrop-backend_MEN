@@ -11,7 +11,7 @@ module.exports = {
     const io = SocketIO(server, {
       // path: '/caycdrop_socket/',
       serveClient: false,
-      connectTimeout: 60000,
+      connectTimeout: 24 * 60 * 60 * 1000,
       maxHttpBufferSize: 1e8,
       cors: {
         origin: "*"

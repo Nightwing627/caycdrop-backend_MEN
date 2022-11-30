@@ -8,6 +8,7 @@ const UserShippingInfoSchema = require('../model/UserShippingInfoSchema');
 const UserTagSchema = require('../model/UserTagSchema');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const CountrySchema = require('../model/CountrySchema');
+const Util = require('../util');
 
 const UserController = {
   getUserSeed: async (req, res) => {
@@ -31,7 +32,7 @@ const UserController = {
     const { userCode } = req.body;
     
     try {
-      const user = await getUserByCode(userCode);
+      const user = await Util.getUserByCode(userCode);
       
       if (user == null) {
         return res.status(400).json({ error: "user not found" });  
@@ -63,7 +64,7 @@ const UserController = {
 
       }
 
-      res.status(200).json({ result: 'success', data: await getUserByCode(userCode) });
+      res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
     } catch (error) {
       res.status(400).json({ error: "user not found" })
     }
@@ -99,7 +100,7 @@ const UserController = {
 
       await shippingInfo.save();
 
-      res.status(200).json({ result: 'success', data: await getUserByCode(userCode) });
+      res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
     } catch (error) {
       return res.status(400).json({ error: "wrong parameter" });
     }
@@ -153,16 +154,5 @@ const UserController = {
   }
 };
 
-const getUserByCode = async (code) => {
-  const user = await UserSchema
-    .findOne({ code })
-    .populate('account', '-_id -__v -user_code')
-    .populate('user_progress', '-_id -__v -user_code -bet_count')
-    .populate('wallets', '-_id -__v -user_code')
-    .populate('shipping_info', '-_id -__v -user_code')
-    .select('-__v');
-  
-  return user.toAuthJSON();
-}
 
 module.exports = UserController;

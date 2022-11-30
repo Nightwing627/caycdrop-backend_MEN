@@ -26,7 +26,7 @@ const PvpRoundSchema = new Schema({
     type: SchemaTypes.ObjectId,
     ref: 'PvpRoundBet'
   },
-  startd_at: { type: SchemaTypes.Date },
+  started_at: { type: SchemaTypes.Date },
   finished_at: { type: SchemaTypes.Date },
 }, {
   timestamps: {
@@ -36,5 +36,16 @@ const PvpRoundSchema = new Schema({
 });
 
 // PvpRoundSchema.plugin(uniqueValidator, { message: " is already exist" });
+PvpRoundSchema.methods.toGameJSON = function () {
+  return {
+    code: this.code,
+    round_number: this.round_number,
+    box: this.box,
+    bet: this.bet,
+    currency: this.currency,
+    started_at: this.started_at,
+    finished_at: this.finished_at
+  }
+}
 
 module.exports = mongoose.model('PvpRound', PvpRoundSchema);

@@ -1,5 +1,3 @@
-const BoxSchema = require('../model/BoxSchema');
-const BoxItemSchema = require('../model/BoxItemSchema');
 const PvpGameSchema = require('../model/PvpGameSchema');
 const Util = require('../util');
 const UserSchema = require('../model/UserSchema');
@@ -9,6 +7,10 @@ const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const PvpRoundSchema = require('../model/PvpRoundSchema');
 const PvpRoundBetSchema = require('../model/PvpRoundBetSchema');
+const UserCartSchema = require('../model/UserCartSchema');
+const UserProgressSchema = require('../model/UserProgressSchema');
+const BoxOpenSchema = require('../model/BoxOpenSchema');
+const BoxSchema = require('../model/BoxSchema');
 
 var pvpIO;
 let battles = {};
@@ -32,7 +34,6 @@ module.exports = (io, pvpSocket) => {
     roomUsers.forEach(rsId => liveUsers.push(rsId));
     battles[battleName] = liveUsers;
 
-    // sendBattleData(pvpSocket, pvpId, battleName);
     callback({ result: 'joined' });
   });
 
@@ -48,10 +49,10 @@ module.exports = (io, pvpSocket) => {
     if (pvpGame == null)
       return callback({ error: 'wrong battle id' });
     // check the battle status
-    if (pvpGame.status != process.env.PVP_GAME_CREATED)
-      return callback({ error: 'this battle already finished' });
-     
-    const joiner = await UserSchema.findOne({ code: userCode })
+    // if (pvpGame.status != process.env.PVP_GAME_CREATED)
+    //   return callback({ error: 'this battle already started or finished' });
+    
+    let joiner = await UserSchema.findOne({ code: userCode })
       .populate('wallets').populate('account').populate('user_progress');
     // check user exist       
     if (joiner == null)
@@ -59,7 +60,7 @@ module.exports = (io, pvpSocket) => {
     
     // check user data with creator
     const player = await PvpGamePlayerSchema.findOne({ pvpId: pvpGame._id });
-    if (player.creator && player.creator.code == userCode)
+    if (player.creator == null || player.creator.get('code') == userCode)
       return callback({ error: 'user info is same with opponent' });
     // check user wallet
     if (joiner.wallets.main < pvpGame.total_bet)
@@ -68,7 +69,7 @@ module.exports = (io, pvpSocket) => {
     // update pvpgame
     pvpGame.status = process.env.PVP_GAME_STARTED;
     pvpGame.started_at = new Date();
-    await pvpGame.save();  
+    await pvpGame.save();
 
     // update pvp players
     const joinerInfo = {
@@ -121,18 +122,20 @@ module.exports = (io, pvpSocket) => {
     await WalletExchangeSchema.findByIdAndUpdate(walletExchange._id, {
       code: Util.generateCode('walletexchange', walletExchange._id)
     });
+    
+    const creator = await Util.getUserByCode(player.creator.get('code'));
+    joiner = await Util.getUserByCode(joiner.code);
 
-    pvpIO.in('battle_' + pvpId).emit('started');
+    callback({ result: 'ready' });
+    pvpIO.in('battle_' + pvpId).emit('battle:started', {
+      data: {
+        ...pvpGame.toGameJSON(),
+        creator,
+        joiner
+      }
+    });
 
-    // encounting 3s
-    var count = 0;
-    const timeId = setInterval(() => {
-      if (count != 3)
-        pvpIO.in('battle_' + pvpId).emit('battle:counting', (count + 1));
-      else
-        clearInterval(timeId);
-      count ++;
-    }, 1000);
+    encounting(pvpId);
   });
 
   pvpSocket.conn.on("close", (reason) => {
@@ -145,41 +148,212 @@ module.exports = (io, pvpSocket) => {
   });
 };
 
-const sendBattleData = async (pvpSocket, pvpId, battle) => {
-  console.log('called sendbattledata function')
-  const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
-  const boxList = await BoxSchema.find(
-    { _id: { $in: pvpGame.box_list } }
-  );
-  
-  let boxData = [];
-  
-  for (var i = 0; i < boxList.length; i ++) {
-    const item = boxList[i];
+const encounting = (pvpId) => {
+  // encounting 3s
+  var count = 0;
+  const timeId = setInterval(() => {
+    if (count != 3) { 
+      pvpIO.in('battle_' + pvpId).emit('battle:counting', (count + 1));
+    } else {
+      clearInterval(timeId);
+      startBattle(pvpId);
+    }
+    count ++;
+  }, 1000);
+}
 
-    let boxItems = await BoxItemSchema.aggregate([
-      { $match: { box_code: item.code } },
-      {
-        $project: {
-          _id: 0, __v: 0, created_at: 0, updated_at: 0
-        }
-      },
-      {
-        $lookup: {
-          from: 'items',
-          localField: 'item',
-          foreignField: '_id',
-          as: 'item',
-        },
-      },
-      { $unwind: { path: "$item"} },
-      {
-        $sort: { "item.value": -1 }
-      }
-    ]);
-    boxItems = Util.setBoxItemRolls(boxItems);
-    boxData.push({ ...item.toGetOneJSON(), slots: boxItems })
-  }
+const startBattle = async (pvpId) => {
+  let roundNumber = 0;
+  const pvpGame = await PvpGameSchema
+    .findOne({ code: pvpId })
+    .populate('box_list')
+    .populate('roll');
   
-  pvpSocket.emit('battle:data', boxData);
+  const serverSeed = await SeedSchema.findById(pvpGame.roll.server_seed);
+  const clientSeed = await SeedSchema.findById(pvpGame.roll.client_seed);
+  const rounds = await PvpRoundSchema.find({ pvpId: pvpGame._id });
+  const cNonce = pvpGame.roll.nonce;
+  const jNonce = cNonce + rounds.length;
+  
+  const timeId = setInterval(async () => {
+    // generate roll value - creator, joiner
+    const creatorRoll = Util.Seed.getRoll(
+      process.env.GAME_PVP, clientSeed.hash, serverSeed.value, cNonce + roundNumber
+    );
+    const joinerRoll = Util.Seed.getRoll(
+      process.env.GAME_PVP, clientSeed.hash, serverSeed.value, jNonce + roundNumber
+    );
+    
+    // store picked item each user per battle
+    const creatorItem = await Util.getItemAndXP(pvpGame.box_list[roundNumber].code, creatorRoll);
+    const joinerItem = await Util.getItemAndXP(pvpGame.box_list[roundNumber].code, joinerRoll);
+    const round = rounds[roundNumber];
+    await PvpRoundBetSchema.findByIdAndUpdate(round.creator_bet, {
+      item: creatorItem.item._id,
+      payout: creatorItem.item.value,
+      rewarded_xp: creatorItem.xp
+    });
+    await PvpRoundBetSchema.findByIdAndUpdate(round.joiner_bet, {
+      item: joinerItem.item._id,
+      payout: joinerItem.item.value,
+      rewarded_xp: joinerItem.xp
+    });
+    
+    // emit round roll values
+    pvpIO.in('battle_' + pvpId).emit('battle:picked', {
+      roundNumber: roundNumber + 1,
+      creatorRollValue: creatorRoll,
+      joinerRollValue: joinerRoll
+    });
+
+    // increase round number
+    roundNumber += 1;
+
+    // update pvp game
+    pvpGame.current_round = roundNumber;
+    await pvpGame.save();
+
+    // broadcast updated pvp game data
+    await broadCastingGames();
+
+    // check round number
+    if (roundNumber == round) {
+      clearInterval(timeId);
+      // finish the battle
+      finishBattle(pvpGame._id);
+    }
+    // broadcast the game list
+
+  }, process.env.PVP_ROUND_TIME);
+}
+
+const finishBattle = async(pvpId) => {
+  const rounds = await PvpRoundSchema.find({ pvpId })
+    .populate('box').populate('creator_bet').populate('joiner_bet');
+
+  // get picked items in battle
+  let creatorResult = { sum: 0, items: [], xp: 0 };
+  let joinerResult = { sum: 0, items: [], xp: 0 };
+
+  rounds.forEach(round => {
+    creatorResult.sum += round.creator_bet.payout;
+    joinerResult.sum += round.joiner_bet.payout;
+    creatorResult.items.push(round.creator_bet.item);
+    joinerResult.items.push(round.joiner_bet.item);
+    creatorResult.xp += round.creator_bet.rewarded_xp;
+    joinerResult.xp += round.creator_bet.rewarded_xp;
+  });
+
+  // calc the sum to decide the winner
+  let winner, loser;
+  const gamePlayers = await PvpGamePlayerSchema.findOne({ pvpId });
+  
+  if (creatorResult.sum > joinerResult.sum) {
+    winner = gamePlayers.creator.get('code');
+    loser = gamePlayers.joiner.get('code');
+  } else if (joinerResult.sum > creatorResult.sum) {
+    winner = gamePlayers.joiner.get('code');
+    loser = gamePlayers.creator.get('code');
+  } else {
+    // decide winner when sum values are same
+    if (Util.getRandomWinner()) {
+      winner = gamePlayers.joiner.get('code');
+      loser = gamePlayers.creator.get('code');
+    } else {
+      winner = gamePlayers.creator.get('code');
+      loser = gamePlayers.joiner.get('code');
+    }
+  }
+
+  // update usercarts and log box open
+  const creator = await UserSchema.findOne({ code: gamePlayers.creator.get('code') });
+  const joiner = await UserSchema.findOne({ code: gamePlayers.joiner.get('code') });
+  const pvpGame = await PvpGameSchema.findById(pvpId);
+
+  for (var i = 0; i < creatorResult.items; i++) {
+    // move all picked items to winner's cart
+    let userCart1 = await UserCartSchema.create({
+      user_code: winner,
+      item_code: creatorResult.items[i],
+      status: true,
+    });
+    await UserCartSchema.findByIdAndUpdate(userCart1._id, {
+      code: Util.generateCode('usercart', userCart1._id)
+    });
+
+    let userCart2 = await UserCartSchema.create({
+      user_code: winner,
+      item_code: joinerResult.items[i],
+      status: true,
+    });
+    await UserCartSchema.findByIdAndUpdate(userCart2._id, {
+      code: Util.generateCode('usercart', userCart2._id)
+    });
+
+    // log all items and box into boxopen
+    let boxOpen1 = await BoxOpenSchema.create({
+      user: creator._id,
+      box: rounds[i].box._id,
+      item: rounds[i].creator_bet.item,
+      pvp_code: pvpGame.code,
+      user_item: null,
+      cost: rounds[i].box.original_price,
+      profit: Number((rounds[i].box.original_price - rounds[i].creator_bet.payout).toFixed(2)),
+      xp_rewarded: rounds[i].creator_bet.rewarded_xp,
+      roll_code: null,
+      status: false
+    });
+    await BoxOpenSchema.findByIdAndUpdate(boxOpen1._id, {
+      code: Util.generateCode('boxopen', boxOpen1._id)
+    });
+
+    let boxOpen2 = await BoxOpenSchema.create({
+      user: joiner._id,
+      box: rounds[i].box._id,
+      item: rounds[i].joiner_bet.item,
+      pvp_code: pvpGame.code,
+      user_item: null,
+      cost: rounds[i].box.original_price,
+      profit: Number((rounds[i].box.original_price - rounds[i].joiner_bet.payout).toFixed(2)),
+      xp_rewarded: rounds[i].joiner_bet.rewarded_xp,
+      roll_code: null,
+      status: false
+    });
+    await BoxOpenSchema.findByIdAndUpdate(boxOpen2._id, {
+      code: Util.generateCode('boxopen', boxOpen2._id)
+    });
+  }
+
+  // update the loser's xp
+  let loserProgress = await UserProgressSchema.findOne({ user_code: loser });
+  if (loser == gamePlayers.creator.get('code')) {
+    loserProgress = Util.updateUserProgress(loserProgress, creatorResult.xp);
+  } else {
+    loserProgress = Util.updateUserProgress(loserProgress, joinerResult.xp);
+  }
+  await loserProgress.save();
+
+  // update all boxe's popular
+  rounds.forEach(async round => {
+    let box = await BoxSchema.findById(round.box._id);
+    box.popular += 1;
+    await box.save();
+  });
+
+  // update pvpgame status and date
+  pvpGame.winner = winner == gamePlayers.creator.get('code') ? creator._id : joiner._id;
+  pvpGame.status = process.env.PVP_GAME_COMPLETED;
+  pvpGame.finished_at = new Date();
+  pvpGame.total_payout = Number((creatorResult.sum + joinerResult.sum).toFixed(2));
+  await pvpGame.save();
+
+
+  pvpIO.in('battle_' + pvpGame.code).emit('battle:finished', {
+    ...pvpGame.toGameJSON(),
+    winner
+  });
+}
+
+const broadCastingGames = async () => {
+
 }

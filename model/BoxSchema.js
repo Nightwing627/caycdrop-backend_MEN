@@ -32,8 +32,8 @@ const BoxSchema = new Schema({
   },
   order: { type: SchemaTypes.Number },
   /// statistic data
-  opened: { type: SchemaTypes.Number },
-  popular: { type: SchemaTypes.Number }
+  opened: { type: SchemaTypes.Number },	// amount of unboxing
+  popular: { type: SchemaTypes.Number } // picked count in battle
 }, {
   timestamps: {
     createdAt: 'created_at',

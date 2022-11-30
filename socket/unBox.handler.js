@@ -78,7 +78,7 @@ module.exports = (io, socket) => {
       );
       
       /// *** Log all informations RollHistory, BoxOpen, Box statistic, WalletExchange
-      const itemData = await getItemAndXP(box.code, rollValue);
+      const itemData = await Util.getItemAndXP(box.code, rollValue);
       // Roll History
       const rollHis = await RollHistorySchema.create({
         value: rollValue,
@@ -130,6 +130,8 @@ module.exports = (io, socket) => {
 
       box.opened += 1;
       await box.save();
+
+      // update user progress
       userProgress.bet_count += 1;
       if (itemData.xp) { 
         userProgress = Util.updateUserProgress(userProgress, itemData.xp);
@@ -242,38 +244,4 @@ const updateUserSeed = async (userSeed, clientValue, serverValue) => {
   userSeed.server_seed = serverSeed._id;
 
   await userSeed.save();
-}
-
-const getItemAndXP = async (boxCode, rollValue) => {
-  const box = await BoxSchema.findOne({ code: boxCode });
-  
-  let boxItems = await BoxItemSchema.aggregate([
-        { $match: { box_code: boxCode } },
-        {
-          $project: {
-            _id: 0, __v: 0, created_at: 0, updated_at: 0
-          }
-        },
-        {
-          $lookup: {
-            from: 'items',
-            localField: 'item',
-            foreignField: '_id',
-            as: 'item',
-          },
-        },
-        { $unwind: { path: "$item"} },
-        {
-          $sort: { "item.value": -1 }
-        }
-      ]);
-  
-  const pickedItem = Util.getItemByRollValue(boxItems, rollValue);
-  const profit = Number(box.original_price - pickedItem.item.value);
-  let xpRewarded = 0;
-  if (profit > 0) {
-    xpRewarded = profit * process.env.XP_CALC_VALUE;
-  }
-  
-  return { item: pickedItem.item, xp: xpRewarded, profit };
 }

@@ -5,6 +5,8 @@ var verifyToken = require('../middleware/auth');
 const util = require('../../util');
 const walletManage = require('../../walletManage');
 const seed = require('../../seed');
+const BoxSchema = require('../../model/BoxSchema');
+const BoxItemSchema = require('../../model/BoxItemSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -29,9 +31,36 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
-  const data = util.getNonce(12);
-  // console.log(data.hash.slice(2, data.hash.length))
-  res.status(200).json({ data });                                                                                                                                                                  
+  const allbox = await BoxSchema.find();
+  const data = [];
+  for (var i = 0; i < allbox.length; i++) {
+    let boxItems = await BoxItemSchema.aggregate([
+      { $match: { box_code: allbox[i].code } },
+      {
+        $lookup: {
+          from: 'items',
+          localField: 'item',
+          foreignField: '_id',
+          as: 'item',
+        },
+      },
+      { $unwind: { path: "$item"} },
+      {
+        $sort: { "item.value": -1 }
+      },
+      {
+        $group: {
+          _id: "$box_code",
+          totalRate: { $sum: "$rate"}
+        }
+      }
+    ]);
+    data.push({
+      boxName: allbox[i].name,
+      slots: boxItems
+    })
+  }
+  res.status(200).json({ data });
 });
 //** -- TEST END */
 

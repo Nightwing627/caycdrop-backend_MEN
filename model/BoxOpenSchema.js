@@ -24,7 +24,7 @@ const BoxOpenSchema = new Schema({
   profit: { type: SchemaTypes.Number },
   xp_rewarded: { type: SchemaTypes.Number },
   roll_code: { type: SchemaTypes.String }, // roll history code
-  status: { type: SchemaTypes.Boolean }  // true, false - ended handle 
+  status: { type: SchemaTypes.Boolean }  // true: process available, false: process ended 
 }, {
   timestamps: {
     createdAt: 'created_at',
