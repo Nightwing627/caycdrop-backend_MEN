@@ -761,7 +761,7 @@
   "cost": 14,
   "original_price": 14,
   "currency": "USD",
-  "icon_path": "img/boxes/picnic_box.png",
+  "icon_path": "img/boxes/esport.png",
   "level_required": 1,
   "tags": [
     {
@@ -790,7 +790,7 @@
   "cost": 116.7,
   "original_price": 116.7,
   "currency": "USD",
-  "icon_path": "img/boxes/sicko-case.png",
+  "icon_path": "img/boxes/sicko.png",
   "level_required": 1,
   "tags": [
     {

@@ -8,6 +8,7 @@ const seed = require('../../seed');
 const BoxSchema = require('../../model/BoxSchema');
 const BoxItemSchema = require('../../model/BoxItemSchema');
 const mongoose = require('mongoose');
+const ItemSchema = require('../../model/ItemSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -39,35 +40,30 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('pvpgameplayers');
   // await mongoose.connection.db.dropCollection('rollhistories');
 
-  const allbox = await BoxSchema.find();
-  const data = [];
-  for (var i = 0; i < allbox.length; i++) {
-    let boxItems = await BoxItemSchema.aggregate([
-      { $match: { box_code: allbox[i].code } },
-      {
-        $lookup: {
-          from: 'items',
-          localField: 'item',
-          foreignField: '_id',
-          as: 'item',
-        },
-      },
-      { $unwind: { path: "$item"} },
-      {
-        $sort: { "item.value": -1 }
-      },
-      {
-        $group: {
-          _id: "$box_code",
-          totalRate: { $sum: "$rate"}
-        }
-      }
-    ]);
-    data.push({
-      boxName: allbox[i].name,
-      slots: boxItems
-    })
-  }
+  const item = await ItemSchema.create({
+    name: "2.50 VOUCHER",
+    icon_url: "http://185.188.249.152:5000/img/items/vouchers_/2.5.png",
+    description: "",
+    brand: "",
+    value: 2.5,
+    usable: true,
+    obtainable: true,
+    withdrawable: true,
+    rarity: "common",
+    currency: "USD",
+    released_at: null,
+    type: "IRL",
+    category: null,
+    min_value: 2.5,
+    max_value: 2.5,
+    min_rarity: "common",
+    max_rarity: "common",
+    variants: [],
+    market: null
+  });
+  await ItemSchema.findByIdAndUpdate(item._id, {
+    code: util.generateCode('item', item._id)
+  })
   res.status(200).json({ data });
 });
 //** -- TEST END */
