@@ -105,7 +105,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -129,8 +129,8 @@
   ],
   "min_value": 101.2,
   "max_value": 101.2,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -157,7 +157,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -175,8 +175,8 @@
   ],
   "min_value": 103.5,
   "max_value": 103.5,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -203,7 +203,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -214,8 +214,8 @@
   "category": [],
   "min_value": 94.3,
   "max_value": 94.3,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -242,7 +242,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -260,8 +260,8 @@
   ],
   "min_value": 90.85,
   "max_value": 90.85,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -288,7 +288,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -303,8 +303,8 @@
   ],
   "min_value": 89.7,
   "max_value": 89.7,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -331,7 +331,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -346,8 +346,8 @@
   ],
   "min_value": 312.8,
   "max_value": 312.8,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -374,7 +374,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -389,8 +389,8 @@
   ],
   "min_value": 473.8,
   "max_value": 473.8,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -417,7 +417,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -432,8 +432,8 @@
   ],
   "min_value": 10,
   "max_value": 10,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -460,7 +460,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -475,8 +475,8 @@
   ],
   "min_value": 189.75,
   "max_value": 189.75,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -503,7 +503,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -518,8 +518,8 @@
   ],
   "min_value": 166.75,
   "max_value": 166.75,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -546,7 +546,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -561,8 +561,8 @@
   ],
   "min_value": 120.75,
   "max_value": 120.75,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -589,7 +589,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -604,8 +604,8 @@
   ],
   "min_value": 118.45,
   "max_value": 118.45,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -632,7 +632,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -647,8 +647,8 @@
   ],
   "min_value": 124.2,
   "max_value": 124.2,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -675,7 +675,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -693,8 +693,8 @@
   ],
   "min_value": 161,
   "max_value": 161,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -721,7 +721,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -748,8 +748,8 @@
   ],
   "min_value": 75.9,
   "max_value": 75.9,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -776,7 +776,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -791,8 +791,8 @@
   ],
   "min_value": 66.7,
   "max_value": 66.7,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -819,7 +819,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -834,8 +834,8 @@
   ],
   "min_value": 75.9,
   "max_value": 75.9,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -862,7 +862,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -883,8 +883,8 @@
   ],
   "min_value": 86.25,
   "max_value": 86.25,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -997,7 +997,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1012,8 +1012,8 @@
   ],
   "min_value": 0.01,
   "max_value": 0.01,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1105,7 +1105,7 @@
   "min_value": 253,
   "max_value": 253,
   "min_rarity": "epic",
-  "max_rarity": "rare",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1310,7 +1310,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1325,8 +1325,8 @@
   ],
   "min_value": 57.5,
   "max_value": 57.5,
-  "min_rarity": "legendary",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1353,7 +1353,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1369,8 +1369,8 @@
   "shipping_cost": 0,
   "min_value": 58.65,
   "max_value": 58.65,
-  "min_rarity": "epic",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1397,7 +1397,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1414,7 +1414,7 @@
   "min_value": 230,
   "max_value": 230,
   "min_rarity": "epic",
-  "max_rarity": "rare",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1441,7 +1441,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "epic",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1457,8 +1457,8 @@
   "shipping_cost": 0,
   "min_value": 1170.7,
   "max_value": 1170.7,
-  "min_rarity": "epic",
-  "max_rarity": "epic",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1708,7 +1708,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1724,8 +1724,8 @@
   "shipping_cost": 0,
   "min_value": 1,
   "max_value": 1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1752,7 +1752,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "legendary",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1768,8 +1768,8 @@
   "shipping_cost": 0,
   "min_value": 346.15,
   "max_value": 346.15,
-  "min_rarity": "epic",
-  "max_rarity": "legendary",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1788,7 +1788,7 @@
   "_id": {
     "$oid": "637a43ffaded89b155ea3cbe"
   },
-  "name": "Paint Splat Arrow Skate Crewneck Orangeade Black ",
+  "name": "Paint Splat Arrow Skate Crewneck Orangeade Black",
   "icon_url": "https://images.stockx.com/images/OFF-WHITE-Spray-Paint-Diag-Logo-Print-Crewneck-Black-White.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1651063128&q=57",
   "description": "",
   "brand": "Supreme",
@@ -1796,7 +1796,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1812,8 +1812,8 @@
   "shipping_cost": 0,
   "min_value": 626.75,
   "max_value": 626.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -1928,7 +1928,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "epic",
+  "rarity": "rare",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -1944,8 +1944,8 @@
   "shipping_cost": 0,
   "min_value": 494.5,
   "max_value": 494.5,
-  "min_rarity": "epic",
-  "max_rarity": "epic",
+  "min_rarity": "rare",
+  "max_rarity": "rare",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2113,7 +2113,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2129,8 +2129,8 @@
   "shipping_cost": 0,
   "min_value": 665.85,
   "max_value": 665.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2157,7 +2157,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2173,8 +2173,8 @@
   "shipping_cost": 0,
   "min_value": 1207.5,
   "max_value": 1207.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2201,7 +2201,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2217,8 +2217,8 @@
   "shipping_cost": 0,
   "min_value": 517.5,
   "max_value": 517.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2245,7 +2245,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2261,8 +2261,8 @@
   "shipping_cost": 0,
   "min_value": 2357.5,
   "max_value": 2357.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2289,7 +2289,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2305,8 +2305,8 @@
   "shipping_cost": 0,
   "min_value": 3162.5,
   "max_value": 3162.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2333,7 +2333,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2349,8 +2349,8 @@
   "shipping_cost": 0,
   "min_value": 941.85,
   "max_value": 941.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2377,7 +2377,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2393,8 +2393,8 @@
   "shipping_cost": 0,
   "min_value": 879.75,
   "max_value": 879.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2562,7 +2562,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2581,8 +2581,8 @@
   "shipping_cost": 0,
   "min_value": 104.65,
   "max_value": 104.65,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2609,7 +2609,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2628,8 +2628,8 @@
   "shipping_cost": 0,
   "min_value": 87.4,
   "max_value": 87.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2656,7 +2656,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2675,8 +2675,8 @@
   "shipping_cost": 0,
   "min_value": 120.75,
   "max_value": 120.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2750,7 +2750,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2769,8 +2769,8 @@
   "shipping_cost": 0,
   "min_value": 113.85,
   "max_value": 113.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2797,7 +2797,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2816,8 +2816,8 @@
   "shipping_cost": 0,
   "min_value": 116.15,
   "max_value": 116.15,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2844,7 +2844,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2863,8 +2863,8 @@
   "shipping_cost": 0,
   "min_value": 96.6,
   "max_value": 96.6,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2891,7 +2891,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -2910,8 +2910,8 @@
   "shipping_cost": 0,
   "min_value": 188.6,
   "max_value": 188.6,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -2985,7 +2985,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3004,8 +3004,8 @@
   "shipping_cost": 0,
   "min_value": 543.95,
   "max_value": 543.95,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3032,7 +3032,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3051,8 +3051,8 @@
   "shipping_cost": 0,
   "min_value": 8050,
   "max_value": 8050,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3079,7 +3079,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3098,8 +3098,8 @@
   "shipping_cost": 0,
   "min_value": 14950,
   "max_value": 14950,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3126,7 +3126,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3145,8 +3145,8 @@
   "shipping_cost": 0,
   "min_value": 100,
   "max_value": 100,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3173,7 +3173,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3192,8 +3192,8 @@
   "shipping_cost": 0,
   "min_value": 546.25,
   "max_value": 546.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3220,7 +3220,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3239,8 +3239,8 @@
   "shipping_cost": 0,
   "min_value": 589.95,
   "max_value": 589.95,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3267,7 +3267,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3286,8 +3286,8 @@
   "shipping_cost": 0,
   "min_value": 1582.4,
   "max_value": 1582.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3314,7 +3314,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3333,8 +3333,8 @@
   "shipping_cost": 0,
   "min_value": 1311,
   "max_value": 1311,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3361,7 +3361,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3380,8 +3380,8 @@
   "shipping_cost": 0,
   "min_value": 1109.75,
   "max_value": 1109.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3408,7 +3408,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3427,8 +3427,8 @@
   "shipping_cost": 0,
   "min_value": 1190.25,
   "max_value": 1190.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3455,7 +3455,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3474,8 +3474,8 @@
   "shipping_cost": 0,
   "min_value": 1185.65,
   "max_value": 1185.65,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3502,7 +3502,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3521,7 +3521,7 @@
   "shipping_cost": 0,
   "min_value": 4704.65,
   "max_value": 4704.65,
-  "min_rarity": "rare",
+  "min_rarity": "legendary",
   "max_rarity": "rare",
   "variants": [],
   "market": null,
@@ -3549,7 +3549,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3568,8 +3568,8 @@
   "shipping_cost": 0,
   "min_value": 2012.5,
   "max_value": 2012.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3596,7 +3596,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3615,8 +3615,8 @@
   "shipping_cost": 0,
   "min_value": 948.75,
   "max_value": 948.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3690,7 +3690,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3709,8 +3709,8 @@
   "shipping_cost": 0,
   "min_value": 868.25,
   "max_value": 868.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3737,7 +3737,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3756,8 +3756,8 @@
   "shipping_cost": 0,
   "min_value": 4025,
   "max_value": 4025,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "__v": 0,
@@ -3784,7 +3784,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3794,7 +3794,7 @@
   "type": "IRL",
   "category": [
     {
-      "$oid": "636c84ece4830d466abadc16"
+      "$oid": "636c84ece4830d466abadc0b"
     },
     {
       "$oid": "636c84ece4830d466abadc17"
@@ -3803,8 +3803,8 @@
   "shipping_cost": 0,
   "min_value": 11212.5,
   "max_value": 11212.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "I1d6c3b2baca79265c7eb",
@@ -3907,7 +3907,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -3926,8 +3926,8 @@
   "shipping_cost": 0,
   "min_value": 1053.4,
   "max_value": 1053.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ibdb91024520c7faaeef9",
@@ -3989,7 +3989,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4008,8 +4008,8 @@
   "shipping_cost": 0,
   "min_value": 527.85,
   "max_value": 527.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I0a82a0240916a052554a",
@@ -4030,7 +4030,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4049,8 +4049,8 @@
   "shipping_cost": 0,
   "min_value": 621,
   "max_value": 621,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I0e7f4ec65d89628acd40",
@@ -4071,7 +4071,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4090,8 +4090,8 @@
   "shipping_cost": 0,
   "min_value": 2990,
   "max_value": 2990,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ifb6edd7669060dd54549",
@@ -4112,7 +4112,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4131,8 +4131,8 @@
   "shipping_cost": 0,
   "min_value": 9775,
   "max_value": 9775,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "I6f700d860fda3a5fc5b4",
@@ -4153,7 +4153,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4172,8 +4172,8 @@
   "shipping_cost": 0,
   "min_value": 920,
   "max_value": 920,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I27e5dcedbcae3a92ac0d",
@@ -4194,7 +4194,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4213,8 +4213,8 @@
   "shipping_cost": 0,
   "min_value": 52.9,
   "max_value": 52.9,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "If902e97f6326d3aef66a",
@@ -4235,7 +4235,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4254,8 +4254,8 @@
   "shipping_cost": 0,
   "min_value": 35.65,
   "max_value": 35.65,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I7111598a847180d82afc",
@@ -4276,7 +4276,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4295,8 +4295,8 @@
   "shipping_cost": 0,
   "min_value": 920,
   "max_value": 920,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "Ib4d082980cd8e204ad49",
@@ -4317,7 +4317,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4336,8 +4336,8 @@
   "shipping_cost": 0,
   "min_value": 2415,
   "max_value": 2415,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ic8b792a8c9f6dc9775f8",
@@ -4358,7 +4358,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -4377,8 +4377,8 @@
   "shipping_cost": 0,
   "min_value": 262.2,
   "max_value": 262.2,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "I5fe05e190fa279efe800",
@@ -5219,7 +5219,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5238,8 +5238,8 @@
   "shipping_cost": 0,
   "min_value": 92,
   "max_value": 92,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I8766402ec0d3f933f74f",
@@ -5260,7 +5260,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5279,8 +5279,8 @@
   "shipping_cost": 0,
   "min_value": 92,
   "max_value": 92,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I089dcbc23432fc40722e",
@@ -5301,7 +5301,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5320,8 +5320,8 @@
   "shipping_cost": 0,
   "min_value": 85,
   "max_value": 85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ibc44fcf70d9980df656f",
@@ -5342,7 +5342,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5361,8 +5361,8 @@
   "shipping_cost": 0,
   "min_value": 92,
   "max_value": 92,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I14db098680a495af8c7e",
@@ -5383,7 +5383,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5402,8 +5402,8 @@
   "shipping_cost": 0,
   "min_value": 97.75,
   "max_value": 97.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I1bb45cfa5bac95679c8e",
@@ -5424,7 +5424,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -5443,8 +5443,8 @@
   "shipping_cost": 0,
   "min_value": 0.01,
   "max_value": 0.01,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I3caca27e8dbf99df2453",
@@ -6121,7 +6121,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6140,8 +6140,8 @@
   "shipping_cost": 0,
   "min_value": 105.8,
   "max_value": 105.8,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I7f5f3da743d724ffae5f",
@@ -6203,7 +6203,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6222,8 +6222,8 @@
   "shipping_cost": 0,
   "min_value": 5405,
   "max_value": 5405,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ia4e2ee1275845c6f03b1",
@@ -6244,7 +6244,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6263,8 +6263,8 @@
   "shipping_cost": 0,
   "min_value": 156.4,
   "max_value": 156.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I3333d20fdc34fa856526",
@@ -6285,7 +6285,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6304,8 +6304,8 @@
   "shipping_cost": 0,
   "min_value": 180.55,
   "max_value": 180.55,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I8043d8eda5a9741357ae",
@@ -6326,7 +6326,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6345,8 +6345,8 @@
   "shipping_cost": 0,
   "min_value": 135.7,
   "max_value": 135.7,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I69e12d475feb80ed6c86",
@@ -6367,7 +6367,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6386,8 +6386,8 @@
   "shipping_cost": 0,
   "min_value": 159.85,
   "max_value": 159.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I467352f500b0fecf1c52",
@@ -6408,7 +6408,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6427,8 +6427,8 @@
   "shipping_cost": 0,
   "min_value": 158.7,
   "max_value": 158.7,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I06afb07eb5e6d574fa16",
@@ -6449,7 +6449,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6468,8 +6468,8 @@
   "shipping_cost": 0,
   "min_value": 132.25,
   "max_value": 132.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I8dd4ad575ef5a6149cf1",
@@ -6531,7 +6531,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6550,8 +6550,8 @@
   "shipping_cost": 0,
   "min_value": 109.25,
   "max_value": 109.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Iee1343a6577733ba5115",
@@ -6613,7 +6613,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6632,8 +6632,8 @@
   "shipping_cost": 0,
   "min_value": 18.4,
   "max_value": 18.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I4c73fa090ec0f9c6fc81",
@@ -6654,7 +6654,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6673,8 +6673,8 @@
   "shipping_cost": 0,
   "min_value": 1955,
   "max_value": 1955,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "I47503208b9858cbeabe5",
@@ -6695,7 +6695,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6714,8 +6714,8 @@
   "shipping_cost": 0,
   "min_value": 3910,
   "max_value": 3910,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Iee3d65375f8f59dff045",
@@ -6736,7 +6736,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6755,8 +6755,8 @@
   "shipping_cost": 0,
   "min_value": 2990,
   "max_value": 2990,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Iba74383d5de23a35eb37",
@@ -6777,7 +6777,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6796,8 +6796,8 @@
   "shipping_cost": 0,
   "min_value": 460,
   "max_value": 460,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I95f181e60cf6413f310a",
@@ -6818,7 +6818,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6837,8 +6837,8 @@
   "shipping_cost": 0,
   "min_value": 2300,
   "max_value": 2300,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ie6bf10b9d43aeaef1513",
@@ -6859,7 +6859,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6878,8 +6878,8 @@
   "shipping_cost": 0,
   "min_value": 868.25,
   "max_value": 868.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I9b8e3ff66ee5321b7b7b",
@@ -6900,7 +6900,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6919,8 +6919,8 @@
   "shipping_cost": 0,
   "min_value": 6325,
   "max_value": 6325,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ia643800a7eea787b9f8d",
@@ -6941,7 +6941,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -6960,8 +6960,8 @@
   "shipping_cost": 0,
   "min_value": 1012,
   "max_value": 1012,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ib5b0726d8162adc7971f",
@@ -6982,7 +6982,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7001,8 +7001,8 @@
   "shipping_cost": 0,
   "min_value": 2185,
   "max_value": 2185,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ie7e749ef195076118008",
@@ -7023,7 +7023,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7042,8 +7042,8 @@
   "shipping_cost": 0,
   "min_value": 632.5,
   "max_value": 632.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I681e20cf8451261ebbc0",
@@ -7064,7 +7064,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7083,8 +7083,8 @@
   "shipping_cost": 0,
   "min_value": 1792.85,
   "max_value": 1792.85,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ide16e6e2f64f4e5cc015",
@@ -7146,7 +7146,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7165,8 +7165,8 @@
   "shipping_cost": 0,
   "min_value": 828,
   "max_value": 828,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I759c3548a1fc7ab7a865",
@@ -7187,7 +7187,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7206,8 +7206,8 @@
   "shipping_cost": 0,
   "min_value": 995.9,
   "max_value": 995.9,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Icabeea1dc24666240670",
@@ -7228,7 +7228,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7247,8 +7247,8 @@
   "shipping_cost": 0,
   "min_value": 531.3,
   "max_value": 531.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "Ice48fd78416e64987eaa",
@@ -7269,7 +7269,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7288,8 +7288,8 @@
   "shipping_cost": 0,
   "min_value": 577.3,
   "max_value": 577.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I3eeb8a9a7ab938a0a83c",
@@ -7351,7 +7351,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7370,8 +7370,8 @@
   "shipping_cost": 0,
   "min_value": 2990,
   "max_value": 2990,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ia0038f99f2e5f6cbb827",
@@ -7392,7 +7392,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7411,8 +7411,8 @@
   "shipping_cost": 0,
   "min_value": 1054.55,
   "max_value": 1054.55,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Ib437d78cb01198377078",
@@ -7433,7 +7433,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7452,8 +7452,8 @@
   "shipping_cost": 0,
   "min_value": 690,
   "max_value": 690,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "Ib3e39bc7037e5f261a2c",
@@ -7474,7 +7474,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7493,8 +7493,8 @@
   "shipping_cost": 0,
   "min_value": 977.5,
   "max_value": 977.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "If6bc4265799f5a4ac0fc",
@@ -7556,7 +7556,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7575,8 +7575,8 @@
   "shipping_cost": 0,
   "min_value": 707.25,
   "max_value": 707.25,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I03904ba14cde24b4e008",
@@ -7597,7 +7597,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7616,8 +7616,8 @@
   "shipping_cost": 0,
   "min_value": 152.95,
   "max_value": 152.95,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I72f73d3f326b8672df8a",
@@ -7638,7 +7638,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7657,8 +7657,8 @@
   "shipping_cost": 0,
   "min_value": 75.9,
   "max_value": 75.9,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I750ff6aec8dc41463c12",
@@ -7679,7 +7679,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7698,8 +7698,8 @@
   "shipping_cost": 0,
   "min_value": 80.5,
   "max_value": 80.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I049e9431a88ecabf193e",
@@ -7720,7 +7720,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7739,8 +7739,8 @@
   "shipping_cost": 0,
   "min_value": 82.8,
   "max_value": 82.8,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I59aef095e4a9c1214c25",
@@ -7761,7 +7761,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7780,8 +7780,8 @@
   "shipping_cost": 0,
   "min_value": 517.5,
   "max_value": 517.5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "Id9b860b828715e3aa65f",
@@ -7843,7 +7843,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7862,8 +7862,8 @@
   "shipping_cost": 0,
   "min_value": 62.1,
   "max_value": 62.1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Id91aaf7e9c4acbab3e50",
@@ -7884,7 +7884,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7903,8 +7903,8 @@
   "shipping_cost": 0,
   "min_value": 108.1,
   "max_value": 108.1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Idafecfe938d9c0c06e97",
@@ -7925,7 +7925,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7944,8 +7944,8 @@
   "shipping_cost": 0,
   "min_value": 163.3,
   "max_value": 163.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I87cf3322d4cc73a7fe9b",
@@ -7966,7 +7966,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -7985,8 +7985,8 @@
   "shipping_cost": 0,
   "min_value": 92,
   "max_value": 92,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I43c594086e19713da4b3",
@@ -8007,7 +8007,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8026,8 +8026,8 @@
   "shipping_cost": 0,
   "min_value": 23,
   "max_value": 23,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I0192eb7e73da66324d66",
@@ -8048,7 +8048,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8067,8 +8067,8 @@
   "shipping_cost": 0,
   "min_value": 920,
   "max_value": 920,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "I4020a0909a87ba66f340",
@@ -8089,7 +8089,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8108,8 +8108,8 @@
   "shipping_cost": 0,
   "min_value": 79.35,
   "max_value": 79.35,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I3ce863d3eddf8b7f40c7",
@@ -8130,7 +8130,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8149,8 +8149,8 @@
   "shipping_cost": 0,
   "min_value": 123.05,
   "max_value": 123.05,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I8a2804e7ec68e9a122be",
@@ -8171,7 +8171,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8190,8 +8190,8 @@
   "shipping_cost": 0,
   "min_value": 74.75,
   "max_value": 74.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Iea10e8c1dfdf2345973d",
@@ -8212,7 +8212,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8231,8 +8231,8 @@
   "shipping_cost": 0,
   "min_value": 102.35,
   "max_value": 102.35,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I6f6e9f0e263d1454333c",
@@ -8294,7 +8294,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8313,8 +8313,8 @@
   "shipping_cost": 0,
   "min_value": 82.8,
   "max_value": 82.8,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I3d43e98c446e606d716c",
@@ -8335,7 +8335,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8354,8 +8354,8 @@
   "shipping_cost": 0,
   "min_value": 51.75,
   "max_value": 51.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I7ef089055cd00e348a9b",
@@ -8376,7 +8376,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8395,8 +8395,8 @@
   "shipping_cost": 0,
   "min_value": 104.65,
   "max_value": 104.65,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ide38036ffbd010be7fc9",
@@ -8417,7 +8417,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8436,8 +8436,8 @@
   "shipping_cost": 0,
   "min_value": 110.4,
   "max_value": 110.4,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I65af316dda7b56238720",
@@ -8458,7 +8458,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8477,8 +8477,8 @@
   "shipping_cost": 0,
   "min_value": 124.2,
   "max_value": 124.2,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ifb520f85a04ed762aabf",
@@ -8499,7 +8499,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8518,8 +8518,8 @@
   "shipping_cost": 0,
   "min_value": 163.3,
   "max_value": 163.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I789d600e2da0e64192bb",
@@ -8540,7 +8540,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8559,8 +8559,8 @@
   "shipping_cost": 0,
   "min_value": 161,
   "max_value": 161,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I495609918e5ada2db80b",
@@ -8704,7 +8704,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8723,8 +8723,8 @@
   "shipping_cost": 0,
   "min_value": 143.75,
   "max_value": 143.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I16ac34b431d2d6a88d3e",
@@ -8745,7 +8745,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8764,8 +8764,8 @@
   "shipping_cost": 0,
   "min_value": 124.2,
   "max_value": 124.2,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I1182e9365ac20aa0ea96",
@@ -8786,7 +8786,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8805,8 +8805,8 @@
   "shipping_cost": 0,
   "min_value": 120.75,
   "max_value": 120.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I62fa131ab082e25a84fd",
@@ -8827,7 +8827,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8846,8 +8846,8 @@
   "shipping_cost": 0,
   "min_value": 188.6,
   "max_value": 188.6,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ic95316b1a164b6f6af17",
@@ -8868,7 +8868,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8887,8 +8887,8 @@
   "shipping_cost": 0,
   "min_value": 154.1,
   "max_value": 154.1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ib9f9a1e62c5b3ad8804b",
@@ -8909,7 +8909,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8928,8 +8928,8 @@
   "shipping_cost": 0,
   "min_value": 163.3,
   "max_value": 163.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ibe73771ebc51d212228d",
@@ -8950,7 +8950,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -8969,8 +8969,8 @@
   "shipping_cost": 0,
   "min_value": 139.15,
   "max_value": 139.15,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I28c10ec3bd91789a72f3",
@@ -8991,7 +8991,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "epic",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9010,8 +9010,8 @@
   "shipping_cost": 0,
   "min_value": 534.75,
   "max_value": 534.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "epic",
+  "max_rarity": "epic",
   "variants": [],
   "market": null,
   "code": "Ie6f4c66a96e338b0d993",
@@ -9032,7 +9032,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9051,8 +9051,8 @@
   "shipping_cost": 0,
   "min_value": 24.15,
   "max_value": 24.15,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I9e6d00e90882e31d1ee4",
@@ -9073,7 +9073,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9092,8 +9092,8 @@
   "shipping_cost": 0,
   "min_value": 36.8,
   "max_value": 36.8,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I8efb6aad2d82d0916cf4",
@@ -9114,7 +9114,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9133,8 +9133,8 @@
   "shipping_cost": 0,
   "min_value": 51.75,
   "max_value": 51.75,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ib48f986eda32c29f51e3",
@@ -9155,7 +9155,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9174,8 +9174,8 @@
   "shipping_cost": 0,
   "min_value": 85.1,
   "max_value": 85.1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I0e19afddfaa9a4f64437",
@@ -9196,7 +9196,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9215,8 +9215,8 @@
   "shipping_cost": 0,
   "min_value": 81.65,
   "max_value": 81.65,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I7b8fbd85dfc5bd49a5a2",
@@ -9237,7 +9237,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9256,8 +9256,8 @@
   "shipping_cost": 0,
   "min_value": 121.9,
   "max_value": 121.9,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I03d5239ef8360b8c9d9a",
@@ -9278,7 +9278,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9297,8 +9297,8 @@
   "shipping_cost": 0,
   "min_value": 148.35,
   "max_value": 148.35,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I962b1dc334a458b3a1d9",
@@ -9319,7 +9319,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "legendary",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9338,8 +9338,8 @@
   "shipping_cost": 0,
   "min_value": 1700,
   "max_value": 1700,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
   "variants": [],
   "market": null,
   "code": "Iaeb56c3b2f33d9845d18",
@@ -9360,7 +9360,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9379,8 +9379,8 @@
   "shipping_cost": 0,
   "min_value": 9,
   "max_value": 9,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I08443c2a7ed84a402f3f",
@@ -9442,7 +9442,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9461,8 +9461,8 @@
   "shipping_cost": 0,
   "min_value": 135.7,
   "max_value": 135.7,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I8ac39574b3c0bd1f5985",
@@ -9524,7 +9524,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9543,8 +9543,8 @@
   "shipping_cost": 0,
   "min_value": 26.45,
   "max_value": 26.45,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I120462bc5f4cf50aa8d2",
@@ -9565,7 +9565,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9584,8 +9584,8 @@
   "shipping_cost": 0,
   "min_value": 32.2,
   "max_value": 32.2,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "Ic6f2c8ae0cc1607c8433",
@@ -9647,7 +9647,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9666,8 +9666,8 @@
   "shipping_cost": 0,
   "min_value": 186.3,
   "max_value": 186.3,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I72a08c875b7f7b07a10c",
@@ -9688,7 +9688,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9707,8 +9707,8 @@
   "shipping_cost": 0,
   "min_value": 16.1,
   "max_value": 16.1,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "Ie0b0349e2713a2e62da7",
@@ -9729,7 +9729,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9748,8 +9748,8 @@
   "shipping_cost": 0,
   "min_value": 50,
   "max_value": 50,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "I4013d756f1ade3aafe16",
@@ -9770,7 +9770,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "uncommon",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9789,8 +9789,8 @@
   "shipping_cost": 0,
   "min_value": 59.8,
   "max_value": 59.8,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
   "variants": [],
   "market": null,
   "code": "Ia825d4c8e3e4e5477a9c",
@@ -9811,7 +9811,7 @@
   "usable": true,
   "obtainable": true,
   "withdrawable": true,
-  "rarity": "rare",
+  "rarity": "common",
   "currency": "USD",
   "released_at": {
     "$date": {
@@ -9830,8 +9830,8 @@
   "shipping_cost": 0,
   "min_value": 5,
   "max_value": 5,
-  "min_rarity": "rare",
-  "max_rarity": "rare",
+  "min_rarity": "common",
+  "max_rarity": "common",
   "variants": [],
   "market": null,
   "code": "I24792ffa61b22b8fed32",

@@ -32,11 +32,12 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
-  await mongoose.connection.db.dropCollection('pvpgames');
-  await mongoose.connection.db.dropCollection('pvproundbets');
-  await mongoose.connection.db.dropCollection('pvprounds');
-  await mongoose.connection.db.dropCollection('pvpgameplayers');
-  await mongoose.connection.db.dropCollection('rollhistories');
+  // when test the battle
+  // await mongoose.connection.db.dropCollection('pvpgames');
+  // await mongoose.connection.db.dropCollection('pvproundbets');
+  // await mongoose.connection.db.dropCollection('pvprounds');
+  // await mongoose.connection.db.dropCollection('pvpgameplayers');
+  // await mongoose.connection.db.dropCollection('rollhistories');
 
   const allbox = await BoxSchema.find();
   const data = [];

@@ -1,4 +1,7 @@
 [{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f73"
+  },
   "name": "vengeance",
   "cost": 114,
   "original_price": 114,
@@ -22,9 +25,17 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ecd"
   },
-  "opened": 292,
-  "popular": 177
+  "opened": 293,
+  "popular": 177,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669205565698"
+    }
+  }
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f74"
+  },
   "name": "revenge",
   "cost": 32,
   "original_price": 32,
@@ -34,7 +45,8 @@
   "tags": [
     {
       "$oid": "636c84ece4830d466abadc0a"
-    },{
+    },
+    {
       "$oid": "636c84ece4830d466abadc0b"
     }
   ],
@@ -53,6 +65,9 @@
   "opened": 11,
   "popular": 119
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f75"
+  },
   "name": "Angels vs Demons",
   "cost": 229,
   "original_price": 229,
@@ -88,6 +103,9 @@
   "opened": 61,
   "popular": 227
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f76"
+  },
   "name": "10Off",
   "cost": 53,
   "original_price": 53,
@@ -120,6 +138,9 @@
   "opened": 241,
   "popular": 380
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f77"
+  },
   "name": "yay",
   "cost": 268,
   "original_price": 268,
@@ -146,6 +167,9 @@
   "opened": 297,
   "popular": 401
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f78"
+  },
   "name": "costly clash",
   "cost": 577,
   "original_price": 577,
@@ -175,9 +199,17 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed2"
   },
-  "opened": 473,
-  "popular": 283
+  "opened": 475,
+  "popular": 283,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669062687544"
+    }
+  }
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f79"
+  },
   "name": "Luxury Hoops",
   "cost": 97,
   "original_price": 97,
@@ -213,6 +245,9 @@
   "opened": 256,
   "popular": 58
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7a"
+  },
   "name": "50% Storm",
   "cost": 72,
   "original_price": 72,
@@ -239,6 +274,9 @@
   "opened": 263,
   "popular": 358
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7b"
+  },
   "name": "Sicko Mode",
   "cost": 26.5,
   "original_price": 26.5,
@@ -268,6 +306,9 @@
   "opened": 500,
   "popular": 253
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7c"
+  },
   "name": "Supremely Fair",
   "cost": 9,
   "original_price": 9,
@@ -297,6 +338,9 @@
   "opened": 446,
   "popular": 321
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7d"
+  },
   "name": "Webbed",
   "cost": 19.5,
   "original_price": 19.5,
@@ -321,8 +365,16 @@
     "$oid": "636d40fad7edc3d222fb4ed7"
   },
   "opened": 360,
-  "popular": 491
+  "popular": 494,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669836598293"
+    }
+  }
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7e"
+  },
   "name": "50% Ape",
   "cost": 91,
   "original_price": 91,
@@ -355,6 +407,9 @@
   "opened": 487,
   "popular": 189
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f7f"
+  },
   "name": "Stars and Stripes",
   "cost": 506,
   "original_price": 506,
@@ -387,6 +442,9 @@
   "opened": 203,
   "popular": 1
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f80"
+  },
   "name": "Almost One",
   "cost": 6.9,
   "original_price": 6.9,
@@ -413,6 +471,9 @@
   "opened": 496,
   "popular": 84
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f81"
+  },
   "name": "Lucky Penny",
   "cost": 1.15,
   "original_price": 1.15,
@@ -443,8 +504,16 @@
     "$oid": "636d40fad7edc3d222fb4edb"
   },
   "opened": 61,
-  "popular": 346
+  "popular": 349,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669836598289"
+    }
+  }
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f82"
+  },
   "name": "Summer Drip",
   "cost": 16.5,
   "original_price": 16.5,
@@ -477,6 +546,9 @@
   "opened": 129,
   "popular": 477
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f83"
+  },
   "name": "Only Clothes",
   "cost": 61.5,
   "original_price": 61.5,
@@ -503,6 +575,9 @@
   "opened": 238,
   "popular": 190
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f84"
+  },
   "name": "Cheap Sneakers",
   "cost": 68.37,
   "original_price": 68.37,
@@ -527,8 +602,16 @@
     "$oid": "636d40fad7edc3d222fb4ede"
   },
   "opened": 213,
-  "popular": 319
+  "popular": 322,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669836598300"
+    }
+  }
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f85"
+  },
   "name": "Magic Monkey",
   "cost": 0.2,
   "original_price": 0.2,
@@ -555,6 +638,9 @@
   "opened": 270,
   "popular": 232
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f86"
+  },
   "name": "Joker",
   "cost": 102.53,
   "original_price": 102.53,
@@ -581,6 +667,9 @@
   "opened": 245,
   "popular": 89
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f87"
+  },
   "name": "hallucination",
   "cost": 0.16,
   "original_price": 0.16,
@@ -607,6 +696,9 @@
   "opened": 193,
   "popular": 210
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f88"
+  },
   "name": "Carbon",
   "cost": 2.65,
   "original_price": 2.65,
@@ -633,6 +725,9 @@
   "opened": 223,
   "popular": 234
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f89"
+  },
   "name": "Flame",
   "cost": 11.75,
   "original_price": 11.75,
@@ -659,6 +754,9 @@
   "opened": 178,
   "popular": 187
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8a"
+  },
   "name": "Esports",
   "cost": 14,
   "original_price": 14,
@@ -685,6 +783,9 @@
   "opened": 229,
   "popular": 484
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8b"
+  },
   "name": "Sicko",
   "cost": 116.7,
   "original_price": 116.7,
@@ -711,6 +812,9 @@
   "opened": 206,
   "popular": 19
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8c"
+  },
   "name": "10% Off",
   "cost": 19.73,
   "original_price": 19.73,
@@ -743,6 +847,9 @@
   "opened": 435,
   "popular": 240
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8d"
+  },
   "name": "Cabin",
   "cost": 6.78,
   "original_price": 6.78,
@@ -769,6 +876,9 @@
   "opened": 216,
   "popular": 447
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8e"
+  },
   "name": "Steam",
   "cost": 21.42,
   "original_price": 21.42,
@@ -795,6 +905,9 @@
   "opened": 296,
   "popular": 46
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f8f"
+  },
   "name": "Fresh",
   "cost": 25.18,
   "original_price": 25.18,
@@ -821,6 +934,9 @@
   "opened": 360,
   "popular": 344
 },{
+  "_id": {
+    "$oid": "637b9095aded89b155ea3f90"
+  },
   "name": "Penguin",
   "cost": 2.38,
   "original_price": 2.38,
