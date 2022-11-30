@@ -49,8 +49,8 @@ module.exports = (io, pvpSocket) => {
     if (pvpGame == null)
       return callback({ error: 'wrong battle id' });
     // check the battle status
-    // if (pvpGame.status != process.env.PVP_GAME_CREATED)
-    //   return callback({ error: 'this battle already started or finished' });
+    if (pvpGame.status != process.env.PVP_GAME_CREATED)
+      return callback({ error: 'this battle already started or finished' });
     
     let joiner = await UserSchema.findOne({ code: userCode })
       .populate('wallets').populate('account').populate('user_progress');
