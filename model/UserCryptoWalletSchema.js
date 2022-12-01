@@ -29,4 +29,14 @@ const UserCryptoWalletSchema = new Schema({
   },
 });
 
+UserCryptoWalletSchema.methods.toGetJSON = function() {
+	return {
+		userCode: this.user_code,
+		ethWallet: this.eth_address,
+		btcWallet: this.btc_address,
+		ltcWallet: this.ltc_address,
+		bchWallet: this.bch_address
+	}
+}
+
 module.exports = mongoose.model('UserCryptoWallet', UserCryptoWalletSchema);

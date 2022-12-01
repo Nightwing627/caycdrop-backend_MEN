@@ -39,31 +39,6 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('pvprounds');
   // await mongoose.connection.db.dropCollection('pvpgameplayers');
   // await mongoose.connection.db.dropCollection('rollhistories');
-
-  const item = await ItemSchema.create({
-    name: "2.50 VOUCHER",
-    icon_url: "http://185.188.249.152:5000/img/items/vouchers_/2.5.png",
-    description: "",
-    brand: "",
-    value: 2.5,
-    usable: true,
-    obtainable: true,
-    withdrawable: true,
-    rarity: "common",
-    currency: "USD",
-    released_at: null,
-    type: "IRL",
-    category: null,
-    min_value: 2.5,
-    max_value: 2.5,
-    min_rarity: "common",
-    max_rarity: "common",
-    variants: [],
-    market: null
-  });
-  await ItemSchema.findByIdAndUpdate(item._id, {
-    code: util.generateCode('item', item._id)
-  })
   res.status(200).json({ data });
 });
 //** -- TEST END */

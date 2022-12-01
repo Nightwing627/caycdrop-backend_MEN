@@ -9,6 +9,7 @@ const UserTagSchema = require('../model/UserTagSchema');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const CountrySchema = require('../model/CountrySchema');
 const Util = require('../util');
+const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
 
 const UserController = {
   getUserSeed: async (req, res) => {
@@ -151,6 +152,15 @@ const UserController = {
     } catch (error) {
       res.status(400).json({ error: "cart item not found" });
     }
+  },
+
+  getUserCryptoWallet: async (req, res) => {
+    const { userCode } = req.body;
+    const data = await UserCryptoWalletSchema.findOne({ user_code: userCode });
+    if (data == null)
+      res.status(400).json({ error: 'wrong user code' });
+    else
+      res.status(200).json({ data: data.toGetJSON() });
   }
 };
 
