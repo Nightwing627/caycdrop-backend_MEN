@@ -28,7 +28,7 @@ module.exports = {
     io.on('battle:sort', async (payload) => {
       const { sort } = payload;
       sortName = sort;
-      await broadcastingList();
+      await bcastList();
     });
 
     // user observe the battle
@@ -160,15 +160,15 @@ module.exports = {
     });
   },
   
-  initBraodcasting: async (io) => {
+  initBCAST: async (io) => {
     socketIO = io;
-    await broadcastingHome();
-    await broadcastingList();
+    await bcastHome();
+    await bcastList();
   },
 
   broadcasting: async () => {
-    await broadcastingHome();
-    await broadcastingList();
+    await bcastHome();
+    await bcastList();
   }
 };
 
@@ -260,8 +260,8 @@ const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jN
   }
 
   // broadcast updated pvp game data
-  await broadcastingHome();
-  await broadcastingList();
+  await bcastHome();
+  await bcastList();
 
   return roundNumber;
 }
@@ -393,7 +393,7 @@ const finishBattle = async(pvpId) => {
   });
 }
 
-const broadcastingHome = async () => {
+const bcastHome = async () => {
   // home page latest 4 battles
   const battles = await PvpGameSchema
     .find({ status: { $ne: process.env.PVP_GAME_COMPLETED } })
@@ -407,7 +407,7 @@ const broadcastingHome = async () => {
   socketIO.emit('home:battles', { data: homeData });
 }
 
-const broadcastingList = async () => {
+const bcastList = async () => {
   if (sortName == "time") {
     sortField = { created_at: -1 };
   }

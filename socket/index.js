@@ -31,7 +31,7 @@ module.exports = {
 
       UnBoxHandler(io, socket);
 
-      PvpHandler.initBraodcasting(io);
+      PvpHandler.initBCAST(io);
 
       socket.on("disconnect", () => {
         console.log(`${socket.id} Client disconnected`);
