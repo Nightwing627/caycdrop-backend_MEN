@@ -160,6 +160,12 @@ module.exports = {
     });
   },
   
+  initBraodcasting: async (io) => {
+    socketIO = io;
+    await broadcastingHome();
+    await broadcastingList();
+  },
+
   broadcasting: async () => {
     await broadcastingHome();
     await broadcastingList();

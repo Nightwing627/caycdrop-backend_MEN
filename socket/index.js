@@ -7,7 +7,7 @@ const LiveDropHandler = require('./liveDrop.handler');
 let socketIO, socketInstance;
 
 module.exports = {
-  init: (server) => {
+  init: async (server) => {
     const io = SocketIO(server, {
       // path: '/caycdrop_socket/',
       serveClient: false,
@@ -30,6 +30,8 @@ module.exports = {
       socketInstance = socket;
 
       UnBoxHandler(io, socket);
+
+      PvpHandler.initBraodcasting(io);
 
       socket.on("disconnect", () => {
         console.log(`${socket.id} Client disconnected`);
