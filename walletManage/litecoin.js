@@ -7,5 +7,9 @@ module.exports = {
       address: null,
       pk: null
     };
+  },
+
+  withraw: async (amount, address) => {
+    console.log('LTC withraw')
   }
 }

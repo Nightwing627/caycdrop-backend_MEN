@@ -28,6 +28,7 @@ module.exports = {
       // console.log(`${socket.id} Sockect connected!`);
       socketIO = io;
       socketInstance = socket;
+
       UnBoxHandler(io, socket);
 
       socket.on("disconnect", () => {
@@ -37,12 +38,17 @@ module.exports = {
 
     io.of('/pvp').on("connection", (socket) => {
       console.log('pvp connected')
-      PvpHandler(io, socket);
+      PvpHandler.listeners(io, socket);
     });
   },
 
   deposit: (result) => {
+    // TODO: get user who deposited the money
     socketInstance.emit("player.wallet.deposit", { result });
+  },
+
+  braodcasting: async () => {
+    await PvpHandler.broadcasting();
   }
 };
 
@@ -50,3 +56,4 @@ const Handler = (io, socket) => {
   socket.emit("connected");
   LiveDropHandler(io, socket);
 }
+

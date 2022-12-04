@@ -10,6 +10,8 @@ const UserWalletSchema = require('../model/UserWalletSchema');
 const CountrySchema = require('../model/CountrySchema');
 const Util = require('../util');
 const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
+const Wallet = require('../walletManage');
+const ExchangeRateSchema = require('../model/ExchangeRate');
 
 const UserController = {
   getUserSeed: async (req, res) => {
@@ -111,7 +113,7 @@ const UserController = {
     return res.status(200).json({ data: await CountrySchema.find() })
   },
 
-  getUserCart: async (req, res) => { 
+  getUserCart: async (req, res) => {
     const { userCode } = req.body;
 
     try {
@@ -151,16 +153,88 @@ const UserController = {
       res.status(200).json({ data: userCarts });
     } catch (error) {
       res.status(400).json({ error: "cart item not found" });
-    }
+    } 
   },
 
   getUserCryptoWallet: async (req, res) => {
     const { userCode } = req.body;
     const data = await UserCryptoWalletSchema.findOne({ user_code: userCode });
+    const rates = await ExchangeRateSchema.find();
+
+    let txLimit = [];
+    const depositMin = Number(process.env.DEPOSIT_MIN);
+    const withrawMin = Number(process.env.WITHRAW_MIN);
+    rates.forEach(rate => {
+
+      var _dMin = Number((depositMin / rate.value).toFixed(4));
+      var _wMin = Number((withrawMin / rate.value).toFixed(4));
+      txLimit.push({ coin: rate.coinType, depositMin: _dMin, withrawMin: _wMin });
+    });
     if (data == null)
       res.status(400).json({ error: 'wrong user code' });
     else
-      res.status(200).json({ data: data.toGetJSON() });
+      res.status(200).json({ data: { ...data.toGetJSON(), txLimit } });
+  },
+
+  withrawItem: async (req, res) => {
+    const { userCode, items, method, address } = req.body;
+
+    // verify user info
+    const user = await UserSchema.findOne({ code: userCode });
+    if (user == null)
+      return res.status(400).json({ error: 'wrong user info ' });
+    
+    // validate items
+    if (!Array.isArray(items))
+      return res.status(400).json({ error: 'wrong items formart' });
+    if (items.length == 0)
+      return res.status(200).json({ error: 'no item data' });
+
+    // match the user info and items
+    const cart = await UserCartSchema.find({ user_code: userCode });
+    if (cart == null)
+      return res.status(200).json({ error: 'no user cart data' });
+    
+    // get user cart items and calc the total amount
+    const userCarts = await UserCartSchema.aggregate([
+      {
+        $match: { code: { $in: items }, user_code: userCode }
+      },
+      {
+        $lookup: {
+          from: 'items',
+          localField: 'item_code',
+          foreignField: 'code',
+          as: 'item'
+        }
+      },
+      { $unwind: { path: "$item" } },
+      {
+        $group: {
+          _id: null,
+          total: { $sum: "$item.value" }
+        }
+      }
+    ]);
+    
+    // get exchange rate and calc the coin value
+    const rate = await ExchangeRateSchema.findOne({ coinType: method });
+    if (rate == null)
+      return res.status(400).json({ error: `${method} is not supported` });
+    
+    if (userCarts.total < Number(process.env.WITHRAW_MIN))
+      return res.status(400).json({ error: 'Withraw amount must be greater than Minimum' });
+    
+    const withrawAmount = Number((userCarts.total / process.env.WITHRAW_MIN).toFixed(4));    
+
+    // withraw amount
+    Wallet.withraw(withrawAmount, address)
+      .then(response => {
+        // remove item user cart
+      })
+      .catch(error => {
+      
+      });
   }
 };
 

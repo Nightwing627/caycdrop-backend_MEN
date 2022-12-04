@@ -45,5 +45,10 @@ module.exports = {
 
   getBlockInfo: async () => {
     return await etherWallet.getBlockInfo();
+  },
+
+  withraw: async (amount, address, method) => {
+    if (method == 'ETH')
+      return await etherWallet.withraw(amount, address);
   }
 }

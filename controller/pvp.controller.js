@@ -1,24 +1,19 @@
-const mongoose = require('mongoose');
 const UserSchema = require('../model/UserSchema');
-const UserWallet = require('../model/UserWalletSchema');
-const UserCartSchema = require('../model/UserCartSchema');
-const UserProgress = require('../model/UserProgressSchema');
-
 const BoxSchema = require('../model/BoxSchema');
 const TagSchema = require('../model/TagSchema');
-
 const PvpGameSchema = require('../model/PvpGameSchema');
 const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
 const PvpRoundSchema = require('../model/PvpRoundSchema');
 const PvpRoundBetSchema = require('../model/PvpRoundBetSchema');
-
-const util = require('../util');
-const walletManage = require('../walletManage');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const SeedSchema = require('../model/SeedSchema');
 const RollHistorySchema = require('../model/RollHistorySchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
+
+const util = require('../util');
+const walletManage = require('../walletManage');
+const socket = require('../socket');
 
 const filterPrices = [
   { value: '', label: 'All Prices' },
@@ -235,6 +230,8 @@ const PVPController = {
       await WalletExchangeSchema.findByIdAndUpdate(walletExchange._id, {
         code: util.generateCode('walletexchange', walletExchange._id)
       });
+      // broadcasting
+      await socket.braodcasting();
 
       res.status('200').json({ data: pvpGameCode });
     } catch (error) {
@@ -399,7 +396,7 @@ const PVPController = {
     } catch (error) {
       console.log(error);
     }
-  }
+  },
 };
 
 const getPriceMatch = (value) => {

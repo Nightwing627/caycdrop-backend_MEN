@@ -2,12 +2,12 @@ const CoinGecko = require('coingecko-api');
 const ExchangeRateSchema = require('../model/ExchangeRate');
   
 module.exports = async () => {
-  setInterval(() => {
-    setExchangeRate();
+  const timeId = setInterval(() => {
+    setExchangeRate(timeId);
   }, Number(process.env.EXCHANGE_RATE_RECYCLE));
 }
 
-const setExchangeRate = async () => {
+const setExchangeRate = async (timeId) => {
   console.log('called setExchangeRate!!!!')
   try {
     const coinGeckoClient = new CoinGecko();
@@ -27,9 +27,17 @@ const setExchangeRate = async () => {
     const dbData = await ExchangeRateSchema.find();
     if (dbData != null && dbData.length > 0) {
       ['BTC', 'ETH', 'XRP', 'LTC'].forEach(async coinType => {
-        await ExchangeRateSchema.findOneAndUpdate(
-          { coinType },
-          { value: _coinList[coinType] });
+        const rateItem = await ExchangeRateSchema.findOne({ coinType });
+        if (rateItem != null) {
+          rateItem.value = _coinList[coinType];
+          await rateItem.save();
+        } else {
+          await ExchangeRateSchema.create({
+            coinType,
+            rateType: 'USD',
+            value: _coinList[coinType]
+          });
+        }
       });
     } else {
       let rateData = [];
@@ -45,5 +53,6 @@ const setExchangeRate = async () => {
     }  
   } catch (error) {
     console.log(error);
+    clearInterval(timeId);
   } 
 }

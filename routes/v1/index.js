@@ -3,12 +3,8 @@ var router = express.Router();
 var verifyToken = require('../middleware/auth');
 
 const util = require('../../util');
-const walletManage = require('../../walletManage');
-const seed = require('../../seed');
-const BoxSchema = require('../../model/BoxSchema');
-const BoxItemSchema = require('../../model/BoxItemSchema');
+const socket = require('../../socket');
 const mongoose = require('mongoose');
-const ItemSchema = require('../../model/ItemSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -39,6 +35,8 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('pvprounds');
   // await mongoose.connection.db.dropCollection('pvpgameplayers');
   // await mongoose.connection.db.dropCollection('rollhistories');
+
+  await socket.braodcasting();
   res.status(200).json({ data });
 });
 //** -- TEST END */

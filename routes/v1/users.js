@@ -13,6 +13,8 @@ router.post('/update/shipping', UserController.changeUserShipping);
 
 router.get('/cart', UserController.getUserCart);
 
-router.get('/wallet', UserController.getUserCryptoWallet)
+router.get('/wallet', UserController.getUserCryptoWallet);
+
+router.post('/wallet/withraw', UserController.withrawItem);
 
 module.exports = router;

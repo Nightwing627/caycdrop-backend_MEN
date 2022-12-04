@@ -84,6 +84,10 @@ module.exports = {
   getBlockInfo: async () => {
     const block = await provider.getBlock();
     return block;
+  },
+
+  withraw: async (amount, address) => {
+    
   }
 }
 
@@ -133,5 +137,3 @@ const depositWallet = async (tx) => {
   }
 }
 
-// mnemonic: boat slam weapon fringe law green monitor matrix hub approve dinner science
-// alchemy_key: -7iQQrp5_vL6j0cfJzP-osdNvyHm57u-
