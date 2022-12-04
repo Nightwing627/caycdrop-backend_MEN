@@ -87,7 +87,23 @@ module.exports = {
   },
 
   withraw: async (amount, address) => {
-    
+    const wallet = new Wallet(process.env.TARGET_PRIVATE_KEY, provider);
+    const sendTx = {
+      to: address,
+      value: utils.parseEther(amount)
+    };
+
+    wallet
+      .sendTransaction(sendTx)
+      .then(async (resultTx) => {
+        console.log('### Withraw', resultTx);
+        await resultTx.wait();
+        console.log(
+          `Address ${address} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
+        );
+        return resultTx;
+      })
+      .catch(err => console.log(err));
   }
 }
 

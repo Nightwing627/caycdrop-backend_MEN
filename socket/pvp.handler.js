@@ -445,41 +445,43 @@ const getResponseData = async (battles) => {
   return homeData;
 }
 
-
 const getCurrentPayout = async (pvpId) => {
-    const rounds = await PvpRoundSchema.aggregate([
-      { $match: { pvpId } },
-      {
-        $lookup: {
-          from: 'pvproundbets',
-          localField: 'creator_bet',
-          foreignField: '_id',
-          as: 'creator_bet'
+  const rounds = await PvpRoundSchema.aggregate([
+    { $match: { pvpId } },
+    {
+      $lookup: {
+        from: 'pvproundbets',
+        localField: 'creator_bet',
+        foreignField: '_id',
+        as: 'creator_bet'
+      }
+    },
+    {
+      $lookup: {
+        from: 'pvproundbets',
+        localField: 'joiner_bet',
+        foreignField: '_id',
+        as: 'joiner_bet'
+      }
+    },
+    { $unwind: { path: '$creator_bet' } },
+    { $unwind: { path: '$joiner_Bet' } },
+    {
+      $set: {
+        "roundCurPayout": { $add: ["$creator_bet.payout", "$joiner_bet.payout"] }
+      }
+    },
+    {
+      $group: {
+        _id: null,
+        "currentPayout": {
+          $sum: "$roundCurPayout"
         }
-      },
-      {
-        $lookup: {
-          from: 'pvproundbets',
-          localField: 'joiner_bet',
-          foreignField: '_id',
-          as: 'joiner_bet'
-        }
-      },
-      { $unwind: { path: '$creator_bet' } },
-      { $unwind: { path: '$joiner_Bet' } },
-      {
-        $set: {
-          "roundCurPayout": { $add: ["$creator_bet.payout", "$joiner_bet.payout"] }
-        }
-      },
-      {
-        $group: {
-          _id: null,
-          "currentPayout": {
-            $sum: "$roundCurPayout"
-          }
-      }}
-    ]);
+    }}
+  ]);
 
-    return rounds.currentPayout;
+  if (rounds.length == 0) {
+    return 0;
+  }
+  return rounds[0].currentPayout;
 }

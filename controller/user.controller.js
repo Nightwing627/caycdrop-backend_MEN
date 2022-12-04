@@ -215,22 +215,23 @@ const UserController = {
           total: { $sum: "$item.value" }
         }
       }
-    ]);
-    
+    ]).exec();
+    console.log(userCarts[0]);
     // get exchange rate and calc the coin value
     const rate = await ExchangeRateSchema.findOne({ coinType: method });
     if (rate == null)
       return res.status(400).json({ error: `${method} is not supported` });
     
-    if (userCarts.total < Number(process.env.WITHRAW_MIN))
+    if (userCarts[0].total < Number(process.env.WITHRAW_MIN))
       return res.status(400).json({ error: 'Withraw amount must be greater than Minimum' });
     
-    const withrawAmount = Number((userCarts.total / process.env.WITHRAW_MIN).toFixed(4));    
-
+    const withrawAmount = Number((userCarts[0].total / rate.value).toFixed(4));  
+  
     // withraw amount
-    Wallet.withraw(withrawAmount, address)
+    Wallet.withraw(withrawAmount, address, method)
       .then(response => {
         // remove item user cart
+        console.log(response);
       })
       .catch(error => {
       

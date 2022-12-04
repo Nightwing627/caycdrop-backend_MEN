@@ -37,7 +37,7 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('rollhistories');
 
   await socket.braodcasting();
-  res.status(200).json({ data });
+  res.status(200).json({ data: '' });
 });
 //** -- TEST END */
 

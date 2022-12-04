@@ -230,6 +230,7 @@ const PVPController = {
       await WalletExchangeSchema.findByIdAndUpdate(walletExchange._id, {
         code: util.generateCode('walletexchange', walletExchange._id)
       });
+      
       // broadcasting
       await socket.braodcasting();
 
