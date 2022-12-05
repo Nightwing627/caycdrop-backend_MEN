@@ -97,13 +97,13 @@ require('./walletManage').lookOut();
 const httpServer = http.createServer(app);
 require('./socket').init(httpServer);
 
-httpServer.listen(process.env.PORT, () => {
-  console.log("Server is running on port: ", process.env.PORT)
-});
-
 process.on("uncaughtException", (error, origin) => {
   console.log("----- Uncaught exception -----");
   console.log(error);
   console.log("----- Exception origin -----");
   console.log(origin);
+});
+
+httpServer.listen(process.env.PORT, () => {
+  console.log("Server is running on port: ", process.env.PORT)
 });

@@ -45,7 +45,7 @@ PvpGameSchema.methods.toGameJSON = function() {
   return {
     code: this.code,
     isPrivate: this.is_private,
-    botEnable: this.botEnable,
+    botEnable: this.bot_enable,
     strategy: this.strategy,
     totalRounds: this.rounds,
     totalBet: this.total_bet,

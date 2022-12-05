@@ -3,15 +3,17 @@ const uuid = require('uuid');
 const UnBoxHandler = require('./unBox.handler');
 const PvpHandler = require('./pvp.handler');
 const LiveDropHandler = require('./liveDrop.handler');
+const jwt = require('jsonwebtoken');
 
 let socketIO, socketInstance;
 
 module.exports = {
-  init: async (server) => {
+  init: (server) => {
     const io = SocketIO(server, {
       // path: '/caycdrop_socket/',
-      serveClient: false,
-      connectTimeout: 24 * 60 * 60 * 1000,
+      serveClient: true,
+      connectTimeout: Number(24 * 60 * 60 * 1000),
+      pingTimeout: 30000,
       maxHttpBufferSize: 1e8,
       cors: {
         origin: "*"
@@ -23,9 +25,23 @@ module.exports = {
     }
 
     io.on("connection", (socket) => {
-      var clientIp = socket.request.connection.remoteAddress;
-      // console.log('Remote address: ', clientIp);
-      // console.log(`${socket.id} Sockect connected!`);
+      // io.use((socket, next) => {
+      //   console.log(socket.data);
+      //   const token = socket.handshake.auth.token;
+      //   if (token) {
+      //     const result = validaToken(token);
+      //     if (result) { 
+            
+      //     } else {
+      //       const err = new Error('token is expired');
+      //       err.data = { content: "Please retry later" };
+      //       return next(err);
+      //     }
+      //   }
+      //   next();
+      // }); 
+
+      // console.log(`${socket.id} - ${socket.client.conn.id} Sockect connected!`);
       socketIO = io;
       socketInstance = socket;
 
@@ -34,6 +50,10 @@ module.exports = {
       socket.on("disconnect", () => {
         console.log(`${socket.id} Client disconnected`);
       });
+
+      socket.on('connect_error', (error) => {
+        console.log('Connect Error: ', error);
+      })
     });
 
     io.of('/pvp').on("connection", (socket) => {
@@ -52,8 +72,11 @@ module.exports = {
   }
 };
 
-const Handler = (io, socket) => { 
-  socket.emit("connected");
-  LiveDropHandler(io, socket);
+const validaToken = (token) => {
+  try {
+    const userData = jwt.verify(token, process.env.TOKEN_KEY);
+    return userData.userCode;
+  } catch (error) {
+    return null;
+  }
 }
-

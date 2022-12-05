@@ -16,6 +16,7 @@ const BoxItemSchema = require('../model/BoxItemSchema');
 
 module.exports = (io, socket) => {
   socket.on('box.open', async (payload, callback) => {
+    console.log(io);
     try {
       if (typeof callback !== "function") {
         socket.emit('box.open.fail', { error: 'callback error' });
