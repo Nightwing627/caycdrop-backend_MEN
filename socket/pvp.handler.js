@@ -427,7 +427,6 @@ const bcastList = async () => {
 }
 
 const getResponseData = async (battles) => {
-  console.log('###### RESPONSE DATA', battles, typeof battles);
   let homeData = [];
   for (var item of battles) { 
     const players = await PvpGamePlayerSchema.findOne({ pvpId: item._id }, { _id: 0, __v: 0, pvpId: 0 });

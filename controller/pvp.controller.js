@@ -242,10 +242,8 @@ const PVPController = {
   },
 
   getBattleByCode: async (req, res) => {
-    const { userCode } = req.body;
     const { pvpId } = req.params;
-    console.log(req.params)
-    console.log(req.query);
+    console.log('@@@@@@ Battle By Code');
     try {
       const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
       if (pvpGame == null)
@@ -398,6 +396,52 @@ const PVPController = {
       console.log(error);
     }
   },
+
+  getBattleList: async (req, res) => {
+    const { limit } = req.body;
+    console.log('@@@@@@ Battle list');
+    let battles, data = [];
+    try {
+      if (limit == undefined) {
+        battles = await PvpGameSchema
+          .find({ status: { $ne: process.env.PVP_GAME_COMPLETED } })
+          .populate('box_list', '-_id code name cost currency icon_path slug')
+          .sort({ created_at: -1 })
+          .select('-__v -roll');
+      } else {
+        battles = await PvpGameSchema
+          .find({ status: { $ne: process.env.PVP_GAME_COMPLETED } })
+          .populate('box_list', '-_id code name cost currency icon_path slug')
+          .sort({ created_at: -1 })
+          .limit(Number(limit))
+          .select('-__v -roll');
+      }
+
+      for (var item of battles) { 
+        const players = await PvpGamePlayerSchema.findOne({ pvpId: item._id }, { _id: 0, __v: 0, pvpId: 0 });
+        const currentPayout = await getCurrentPayout(item._id);
+        data.push({
+          code: item.code,
+          isPrivate: item.is_private,
+          botEnable: item.bot_enable,
+          strategy: item.strategy,
+          rounds: item.rounds,
+          currentRound: item.current_round,
+          totalBet: item.total_bet,
+          status: item.status,
+          totalPayout: item.total_payout,
+          boxList: item.box_list,
+          currentPayout,
+          players
+        });
+      }
+
+      res.status(200).json({ data });
+    } catch (error) {
+      console.log(error)
+      res.status(400).json({ error: "server has a problem" });
+    }
+  }
 };
 
 const getPriceMatch = (value) => {
@@ -496,6 +540,47 @@ const getPvpRoll = async (pvpCode) => {
   });
 
   return rollHistory._id;
+}
+
+const getCurrentPayout = async (pvpId) => {
+  const rounds = await PvpRoundSchema.aggregate([
+    { $match: { pvpId } },
+    {
+      $lookup: {
+        from: 'pvproundbets',
+        localField: 'creator_bet',
+        foreignField: '_id',
+        as: 'creator_bet'
+      }
+    },
+    {
+      $lookup: {
+        from: 'pvproundbets',
+        localField: 'joiner_bet',
+        foreignField: '_id',
+        as: 'joiner_bet'
+      }
+    },
+    { $unwind: { path: '$creator_bet' } },
+    { $unwind: { path: '$joiner_Bet' } },
+    {
+      $set: {
+        "roundCurPayout": { $add: ["$creator_bet.payout", "$joiner_bet.payout"] }
+      }
+    },
+    {
+      $group: {
+        _id: null,
+        "currentPayout": {
+          $sum: "$roundCurPayout"
+        }
+    }}
+  ]);
+
+  if (rounds.length == 0) {
+    return 0;
+  }
+  return rounds[0].currentPayout;
 }
 
 module.exports = PVPController;

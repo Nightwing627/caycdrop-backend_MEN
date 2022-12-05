@@ -9,6 +9,8 @@ router.post('/box/list', verifyToken, PVPController.getBoxList);
 
 router.post('/battle/create', verifyToken, PVPController.createBattle);
 
+router.get('/battle/list', PVPController.getBattleList);
+
 router.get('/battle/:pvpId', PVPController.getBattleByCode);
 
 router.get('/battle/:pvpId/seed', PVPController.getBattleSeedByCode);
