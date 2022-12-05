@@ -388,8 +388,7 @@ const bcasting = async (pvpId) => {
   
   const data = await getResponseData(battle);
 
-  socketIO.emit('home:battles', { data });
-  socketIO.emit('battle:list', { data });
+  socketIO.emit('battle:updated', { data });
 }
 
 const getResponseData = async (battle) => {
