@@ -13,7 +13,6 @@ const BoxOpenSchema = require('../model/BoxOpenSchema');
 const BoxSchema = require('../model/BoxSchema');
 
 let socketIO, pvpIO, pvpSocket;
-let sortName = 'time', sortField = { created_at: -1 };
 let battles = {};
 
 module.exports = {
@@ -23,13 +22,6 @@ module.exports = {
     pvpSocket = socket;
 
     // TODO: set the socket middleware to verify the user status with token
-
-    // sort battle list
-    io.on('battle:sort', async (payload) => {
-      const { sort } = payload;
-      sortName = sort;
-      await bcastList();
-    });
 
     // user observe the battle
     pvpSocket.on('battle:joined', async (payload, callback) => {
@@ -159,16 +151,9 @@ module.exports = {
       console.log('PVP socket disconnected')
     });
   },
-  
-  initBCAST: async (io) => {
-    socketIO = io;
-    await bcastHome();
-    await bcastList();
-  },
 
-  broadcasting: async () => {
-    await bcastHome();
-    await bcastList();
+  broadcasting: async (pvpId) => {
+    await bcasting(pvpId);
   }
 };
 
@@ -256,12 +241,10 @@ const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jN
   if (roundNumber == rounds.length) {
     // finish the battle
     finishBattle(pvpGame._id);
-    // broadcast the game list
   }
 
   // broadcast updated pvp game data
-  await bcastHome();
-  await bcastList();
+  await bcasting(pvpGame._id);
 
   return roundNumber;
 }
@@ -391,68 +374,28 @@ const finishBattle = async(pvpId) => {
     ...pvpGame.toGameJSON(),
     winner
   });
+
+  await bcasting(pvpId);
 }
 
-const bcastHome = async () => {
+const bcasting = async (pvpId) => {
   // home page latest 4 battles
-  const battles = await PvpGameSchema
-    .find({ status: { $ne: process.env.PVP_GAME_COMPLETED } })
+  const battle = await PvpGameSchema
+    .findById(pvpId)
     .populate('box_list', '-_id code name cost currency icon_path slug')
     .sort({ created_at: -1 })
-    .limit(4)
     .select('-__v -roll');
   
-  const homeData = await getResponseData(battles);
+  const data = await getResponseData(battle);
 
-  socketIO.emit('home:battles', { data: homeData });
+  socketIO.emit('home:battles', { data });
+  socketIO.emit('battle:list', { data });
 }
 
-const bcastList = async () => {
-  if (sortName == "time") {
-    sortField = { created_at: -1 };
-  }
-  if (sortName == "price") {
-    sortField = { total_bet: -1 };
-  }
-
-  const battles = await PvpGameSchema
-    .find({ status: { $ne: process.env.PVP_GAME_COMPLETED } })
-    .populate('box_list', '-_id code name cost currency icon_path slug')
-    .sort(sortField)
-    .limit(20);
-  
-  const listData = await getResponseData(battles);
-  
-  socketIO.emit('battle:list', { data: listData });
-}
-
-const getResponseData = async (battles) => {
-  let homeData = [];
-  for (var item of battles) { 
-    const players = await PvpGamePlayerSchema.findOne({ pvpId: item._id }, { _id: 0, __v: 0, pvpId: 0 });
-    const currentPayout = await getCurrentPayout(item._id);
-    homeData.push({
-      code: item.code,
-      isPrivate: item.is_private,
-      botEnable: item.bot_enable,
-      strategy: item.strategy,
-      rounds: item.rounds,
-      currentRound: item.current_round,
-      totalBet: item.total_bet,
-      status: item.status,
-      totalPayout: item.total_payout,
-      boxList: item.box_list,
-      currentPayout,
-      players
-    })
-  }
-
-  return homeData;
-}
-
-const getCurrentPayout = async (pvpId) => {
+const getResponseData = async (battle) => {
+  const players = await PvpGamePlayerSchema.findOne({ pvpId: battle._id }, { _id: 0, __v: 0, pvpId: 0 });
   const rounds = await PvpRoundSchema.aggregate([
-    { $match: { pvpId } },
+    { $match: { pvpId: battle._id } },
     {
       $lookup: {
         from: 'pvproundbets',
@@ -485,8 +428,23 @@ const getCurrentPayout = async (pvpId) => {
     }}
   ]);
 
-  if (rounds.length == 0) {
-    return 0;
+  let currentPayout = 0;
+  if (rounds.length != 0) {
+    currentPayout = rounds[0].currentPayout;
   }
-  return rounds[0].currentPayout;
+
+  return {
+    code: battle.code,
+    isPrivate: battle.is_private,
+    botEnable: battle.bot_enable,
+    strategy: battle.strategy,
+    rounds: battle.rounds,
+    currentRound: battle.current_round,
+    totalBet: battle.total_bet,
+    status: battle.status,
+    totalPayout: battle.total_payout,
+    boxList: battle.box_list,
+    currentPayout,
+    players
+  };
 }

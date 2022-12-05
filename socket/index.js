@@ -31,8 +31,6 @@ module.exports = {
 
       UnBoxHandler(io, socket);
 
-      PvpHandler.initBCAST(io);
-
       socket.on("disconnect", () => {
         console.log(`${socket.id} Client disconnected`);
       });
@@ -49,8 +47,8 @@ module.exports = {
     socketInstance.emit("player.wallet.deposit", { result });
   },
 
-  braodcasting: async () => {
-    await PvpHandler.broadcasting();
+  braodcasting: async (pvpId) => {
+    await PvpHandler.broadcasting(pvpId);
   }
 };
 

@@ -232,7 +232,7 @@ const PVPController = {
       });
       
       // broadcasting
-      await socket.braodcasting();
+      await socket.braodcasting(pvpGame._id);
 
       res.status('200').json({ data: pvpGameCode });
     } catch (error) {
