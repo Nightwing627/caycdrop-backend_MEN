@@ -141,7 +141,7 @@ module.exports = {
 
       encounting(pvpId);
     });
-
+    
     pvpSocket.conn.on("close", (reason) => {
       // called when the underlying connection is closed
       console.log(`${pvpSocket.id} is closed, reason is ${reason}`);
@@ -159,10 +159,10 @@ module.exports = {
 
 const encounting = (pvpId) => {
   // encounting 3s
-  var count = 0;
+  var count = 3;
   const timeId = setInterval(() => {
-    if (count != 3) { 
-      pvpIO.in('battle_' + pvpId).emit('battle:counting', (count + 1));
+    if (count != 0) { 
+      pvpIO.in('battle_' + pvpId).emit('battle:counting', (count));
     } else {
       clearInterval(timeId);
       const delayTime = setTimeout(() => {
@@ -170,7 +170,7 @@ const encounting = (pvpId) => {
         clearTimeout(delayTime);
       }, 1000);
     }
-    count ++;
+    count --;
   }, 1000);
 }
 
@@ -194,7 +194,9 @@ const startBattle = async (pvpId) => {
     if (roundNumber < rounds.length) {
       roundNumber = await runningBattle(
         pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber);
-    } else { 
+    } else {
+      // finish the battle
+      finishBattle(pvpGame._id);
       clearInterval(timeId);
     }
   }, process.env.PVP_ROUND_TIME);
@@ -238,14 +240,8 @@ const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jN
   pvpGame.current_round = roundNumber;
   await pvpGame.save();
 
-  if (roundNumber == rounds.length) {
-    // finish the battle
-    finishBattle(pvpGame._id);
-  }
-
   // broadcast updated pvp game data
   await bcasting(pvpGame._id);
-
   return roundNumber;
 }
 
