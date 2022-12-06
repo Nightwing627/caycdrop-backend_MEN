@@ -106,7 +106,7 @@
   "_id": {
     "$oid": "637b9095aded89b155ea3f76"
   },
-  "name": "10Off",
+  "name": "10Off CASE",
   "cost": 53,
   "original_price": 53,
   "currency": "USD",
@@ -127,7 +127,7 @@
   "purchasable": true,
   "sellable": true,
   "openable": true,
-  "slug": "10off",
+  "slug": "10off-case",
   "description": "10Off CASE! 10% case- $53",
   "markets": [],
   "order": 58,

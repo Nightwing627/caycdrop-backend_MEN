@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var verifyToken = require('../middleware/auth');
 
+const seed = require('../../seed');
 const util = require('../../util');
 const socket = require('../../socket');
 const mongoose = require('mongoose');
@@ -24,56 +25,21 @@ router.post('/testEmail', function (req, res) {
 
 // test seed
 router.post('/testseed', function (req, res) {
-  seed();
-  res.status(200).send('ss');
+  seed.init();
+  res.status(200).send('success');
 });
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
-  // when test the battle
-  // await mongoose.connection.db.dropCollection('pvpgames');
-  // await mongoose.connection.db.dropCollection('pvproundbets');
-  // await mongoose.connection.db.dropCollection('pvprounds');
-  // await mongoose.connection.db.dropCollection('pvpgameplayers');
-  // await mongoose.connection.db.dropCollection('rollhistories');
   try {
-    const playersPayout = await PvpRoundSchema.aggregate([
-        { $match: { pvpId: new mongoose.Types.ObjectId('638be89124231bd764f46622')  } },
-        {
-          $lookup: {
-            from: "pvproundbets",
-            localField: 'creator_bet',
-            foreignField: '_id',
-            as: 'creatorBet'
-          }
-        },
-        {
-          $lookup: {
-            from: "pvproundbets",
-            localField: 'joiner_bet',
-            foreignField: '_id',
-            as: 'joinerBet'
-          }
-        },
-        { $unwind: { path: "$creatorBet" } },
-        { $unwind: { path: "$joinerBet" } },
-        {
-          $group: {
-            _id: null,
-            totalCreatorPayout: {
-              $sum: "$creatorBet.payout"
-            },
-            totaljoinerPayout: {
-              $sum: "$joinerBet.payout"
-            }
-          }
-        }
-    ]);
-    let a = 1;
-    console.log(playersPayout)
-    if (playersPayout.length == 0 )
-      a = 0;
-    res.status(200).json({ data: playersPayout, a });  
+    //// when test the battle
+    // await mongoose.connection.db.dropCollection('pvpgames');
+    // await mongoose.connection.db.dropCollection('pvproundbets');
+    // await mongoose.connection.db.dropCollection('pvprounds');
+    // await mongoose.connection.db.dropCollection('pvpgameplayers');
+    // await mongoose.connection.db.dropCollection('rollhistories');
+    
+    res.status(200).json({ data: [] });  
   } catch (error) {
     res.status(400).json({ error });
   }

@@ -1,0 +1,236 @@
+[{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0a"
+  },
+  "code": "TGf22b9518474db3f01321",
+  "name": "Clothing",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300302"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  },
+  "color": "#3d789d"
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0b"
+  },
+  "code": "TGdec0af6834fc8c591d4d",
+  "name": "Combination",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  },
+  "color": "#3d9d43"
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0c"
+  },
+  "code": "TG9d3f29b313802861a481",
+  "name": "Jewelry",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0d"
+  },
+  "code": "TGa4508678dfdb41226ff0",
+  "name": "Toys",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0e"
+  },
+  "code": "TG24b29f90c093ef3d2f90",
+  "name": "Accessories",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc0f"
+  },
+  "code": "TGccba9eb8db66ce4df1fb",
+  "name": "Shoes",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc10"
+  },
+  "code": "TG834a8a2f359613b1a906",
+  "name": "Basketball",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300304"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  },
+  "color": "#db3232"
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc11"
+  },
+  "code": "TG02b77becaf76e910c4f3",
+  "name": "Misc",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300305"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc12"
+  },
+  "code": "TGfe4fe73f51bce068524e",
+  "name": "NFT",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300305"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "636c84ece4830d466abadc13"
+  },
+  "code": "TG2f3d54538fb38768f593",
+  "name": "Electronics",
+  "visible": false,
+  "position": "0",
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668056300305"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668060779193"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6c9f"
+  },
+  "name": "Featured",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGf61e6f01a750f270c6ff",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122969"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6ca0"
+  },
+  "name": "Hot",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGc75832b10c6215787d58",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122970"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6ca1"
+  },
+  "name": "Updated",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGc68679db0d0f6b82a8d0",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122970"
+    }
+  }
+}]

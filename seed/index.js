@@ -1,32 +1,21 @@
-const TagSchema = require('../model/TagSchema');
 const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
-const SeedSchema = require('../model/SeedSchema');
-const RollHistorySchema = require('../model/RollHistorySchema');
-const BoxOpenSchema = require('../model/BoxOpenSchema');
-const UserSchema = require('../model/UserSchema');
+const CountrySchema = require('../model/CountrySchema');
+const TagSchema = require('../model/TagSchema');
 
 const Util = require('../util');
-const tagData = require('./tag.json');
-const boxData = require('./box');
-const itemData = require('./item');
-const boxItemData = require('./boxItem');
-const seedData = require('./seed.json');
-const rollData = require('./rollHistory');
-const boxOpenData = require('./boxOpen')
+const boxData = require('./boxes.json');
+const itemData = require('./items.json');
+const boxItemData = require('./boxItems.json');
+const countryData = require('./country.json');
+const tagData = require('./tags.json');
 
 const init = async () => {
-  
-  const tags = await TagSchema.find();
-  if (tags == null || tags.length == 0) {
-    await TagSchema.insertMany(tagData);
-  }
-
   const boxs = await BoxSchema.find();
   if (boxs == null || boxs.length == 0) {
     await BoxSchema.insertMany(boxData);
-  } 
+  }
 
   const items = await ItemSchema.find();
   if (items == null || items.length == 0) {
@@ -38,19 +27,14 @@ const init = async () => {
     await BoxItemSchema.insertMany(boxItemData);
   }
 
-  const seeds = await SeedSchema.find();
-  if (seeds == null || seeds.length == 0) {
-    await SeedSchema.insertMany(seedData);
+  const countries = await CountrySchema.find();
+  if (countries == null || countries.length == 0) {
+    await CountrySchema.insertMany(countryData);
   }
 
-  const rollHistory = await RollHistorySchema.find();
-  if (rollHistory == null || rollHistory.length == 0) {
-    await RollHistorySchema.insertMany(rollData);
-  }
-
-  const boxOpens = await BoxOpenSchema.find();
-  if (boxOpens == null || boxOpens.length == 0) {
-    await BoxOpenSchema.insertMany(boxOpenData);
+  const tags = await TagSchema.find();
+  if (tags == null || tags.length == 0) {
+    await TagSchema.insertMany(tagData);
   }
 
   // tags.forEach(async item => {
@@ -59,17 +43,8 @@ const init = async () => {
   //     await item.save();  
   //   }
   // })
-  
-  // boxs.forEach(async item => {
-  //   item.opened = Math.floor(Math.random() * 500);
-  //   item.popular = Math.floor(Math.random() * 500);
-  //   await item.save();
-  // })
-
-  // boxs.forEach(async item => {
-  //   item.code = Util.generateCode('item', item._id);
-  //   await item.save();
-  // })
 }
 
-module.exports = init;
+module.exports = {
+  init
+};
