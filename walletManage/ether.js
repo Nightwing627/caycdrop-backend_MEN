@@ -45,11 +45,12 @@ provider.on("block", async (blockNumber) => {
 
 module.exports = {
   getWalletInfo: async () => {
-    let maxIndex = await UserCryptoWalletSchema.findOne({ eth_index: 1 }).sort({ eth_index: 1 });
-    if (maxIndex == null || maxIndex == 0) {
+    const ethWallet = await UserCryptoWalletSchema.findOne().sort({ eth_index: -1 });
+    let maxIndex;
+    if (ethWallet == null) {
       maxIndex = Number(process.env.CRYPTO_WALLET_INDEX_START);
     } else {
-      maxIndex += 1;
+      maxIndex = ethWallet.eth_index + 1;
     }
     
     const wallet = Wallet.fromMnemonic(mnemonic, "m/44'/60'/0'/0/" + maxIndex);

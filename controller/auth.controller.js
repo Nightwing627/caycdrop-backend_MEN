@@ -210,7 +210,7 @@ const AuthController = {
 
       // Create user crypto wallet
       await walletManage.walletCreate(code);
-
+      
       // TODO: fix issues
 
       // Util.sendEmail(
