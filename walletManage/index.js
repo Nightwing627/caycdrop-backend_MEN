@@ -49,7 +49,7 @@ module.exports = {
 
   withraw: async (amount, address, method) => {
     if (method == 'ETH')
-      return await etherWallet.withraw(amount, address);
+      return etherWallet.withraw(amount, address);
     if (method == 'BTC')
       return await btcWallet.withraw(amount, address);
     if (method == 'LTC')

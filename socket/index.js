@@ -11,9 +11,8 @@ module.exports = {
   init: (server) => {
     const io = SocketIO(server, {
       // path: '/caycdrop_socket/',
-      serveClient: true,
-      connectTimeout: Number(24 * 60 * 60 * 1000),
-      pingTimeout: 30000,
+      serveClient: false,
+      connectTimeout: 24 * 60 * 60 * 1000,
       maxHttpBufferSize: 1e8,
       cors: {
         origin: "*"
@@ -41,23 +40,28 @@ module.exports = {
       //   next();
       // }); 
 
-      // console.log(`${socket.id} - ${socket.client.conn.id} Sockect connected!`);
+      // console.log(`${socket.id} Client Connected`);
       socketIO = io;
       socketInstance = socket;
 
       UnBoxHandler(io, socket);
 
       socket.on("disconnect", () => {
-        console.log(`${socket.id} Client disconnected`);
+        // console.log(`${socket.id} Client disconnected`);
+      });
+
+      socket.conn.on("close", (reason) => {
+        // called when the underlying connection is closed
+        // console.log(`${socket.id} is closed, reason is ${reason}`);
       });
 
       socket.on('connect_error', (error) => {
         console.log('Connect Error: ', error);
-      })
+      });
     });
 
     io.of('/pvp').on("connection", (socket) => {
-      console.log('pvp connected')
+      // console.log(`${socket.id} is connected on PVP`)
       PvpHandler.listeners(io, socket);
     });
   },

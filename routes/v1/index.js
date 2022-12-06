@@ -5,6 +5,7 @@ var verifyToken = require('../middleware/auth');
 const util = require('../../util');
 const socket = require('../../socket');
 const mongoose = require('mongoose');
+const { utils } = require('ethers');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -35,9 +36,17 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('pvprounds');
   // await mongoose.connection.db.dropCollection('pvpgameplayers');
   // await mongoose.connection.db.dropCollection('rollhistories');
-
-  await socket.braodcasting();
-  res.status(200).json({ data: '' });
+  try {
+    const sendTx = {
+      to: "0x67b8c2a31401beA416b030E4eB8c91712AD718C8",
+      value: utils.parseEther('0.1158')
+    };
+  
+    res.status(200).json({ data: sendTx });  
+  } catch (error) {
+    res.status(400).json({ data: error });
+  }
+  
 });
 //** -- TEST END */
 

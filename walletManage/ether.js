@@ -86,24 +86,29 @@ module.exports = {
     return block;
   },
 
-  withraw: async (amount, address) => {
+  withraw: (amount, address) => {
     const wallet = new Wallet(process.env.TARGET_PRIVATE_KEY, provider);
     const sendTx = {
       to: address,
-      value: utils.parseEther(amount)
+      value: utils.parseEther(amount + '')
     };
 
-    wallet
-      .sendTransaction(sendTx)
-      .then(async (resultTx) => {
-        console.log('### Withraw', resultTx);
-        await resultTx.wait();
-        console.log(
-          `Address ${address} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
-        );
-        return resultTx;
-      })
-      .catch(err => console.log(err));
+    return new Promise((resolve, reject) => {
+      wallet
+        .sendTransaction(sendTx)
+        .then(async (resultTx) => {
+          console.log('### Withraw', resultTx);
+          console.log(
+            `Address ${address} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
+          );
+          resolve(resultTx);
+          await resultTx.wait();
+        })
+        .catch(err => { 
+          console.log(err);
+          reject(err);
+        });
+    });
   }
 }
 

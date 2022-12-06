@@ -229,12 +229,20 @@ const UserController = {
   
     // withraw amount
     Wallet.withraw(withrawAmount, address, method)
-      .then(response => {
-        // remove item user cart
-        console.log(response);
+      .then(async response => {
+        console.log('Wallet Withraw Result:', response);
+        if (response && response.hash) { 
+          // success withraw & remove item user cart
+          await UserCartSchema.deleteMany({ code: { $in: items }, user_code: userCode });
+          return res.status(200).json({ result: 'success' });
+        } else {
+          // fail withraw
+          return res.status(400).json({ error: 'transaction failed' });
+        }
       })
       .catch(error => {
-      
+        console.log('Wallet Withraw Error:', error);
+        res.status(400).json({ error });
       });
   }
 };
