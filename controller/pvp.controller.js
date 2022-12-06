@@ -258,10 +258,52 @@ const PVPController = {
         .populate('box', '-_id code name cost currency icon_path slug')
         .select('-_id -__v -pvpId');
       
+      let creatorPayout = 0, joinerPayout = 0;
+      if (pvpGame.status != process.env.PVP_GAME_CREATED) {
+        const playersPayout = await PvpRoundSchema.aggregate([
+          { $match: { pvpId: pvpGame._id } },
+          {
+            $lookup: {
+              from: "pvproundbets",
+              localField: 'creator_bet',
+              foreignField: '_id',
+              as: 'creatorBet'
+            }
+          },
+          {
+            $lookup: {
+              from: "pvproundbets",
+              localField: 'joiner_bet',
+              foreignField: '_id',
+              as: 'joinerBet'
+            }
+          },
+          { $unwind: { path: "$creatorBet" } },
+          { $unwind: { path: "$joinerBet" } },
+          {
+            $group: {
+              _id: null,
+              totalCreatorPayout: {
+                $sum: "$creatorBet.payout"
+              },
+              totaljoinerPayout: {
+                $sum: "$joinerBet.payout"
+              }
+            }
+          }
+        ]);
+
+        creatorPayout = playersPayout[0].totalCreatorPayout;
+        joinerPayout = playersPayout[0].totaljoinerPayout;
+      }
+
       const responseData = {
         ...pvpGame.toGameJSON(),
         players,
-        rounds
+        rounds,
+        playerPayouts: {
+          creatorPayout, joinerPayout
+        }
       }
       
       res.status(200).json({ data: responseData });

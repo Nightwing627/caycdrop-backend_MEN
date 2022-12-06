@@ -5,8 +5,7 @@ var verifyToken = require('../middleware/auth');
 const util = require('../../util');
 const socket = require('../../socket');
 const mongoose = require('mongoose');
-const { utils } = require('ethers');
-const UserCryptoWalletSchema = require('../../model/UserCryptoWalletSchema');
+const PvpRoundSchema = require('../../model/PvpRoundSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -38,16 +37,45 @@ router.post('/testfunc', async (req, res) => {
   // await mongoose.connection.db.dropCollection('pvpgameplayers');
   // await mongoose.connection.db.dropCollection('rollhistories');
   try {
-    const sendTx = {
-      to: "0x67b8c2a31401beA416b030E4eB8c91712AD718C8",
-      value: utils.parseEther('0.1158')
-    };
-
-    let maxIndex = await UserCryptoWalletSchema.findOne().sort({ eth_index: -1 });
-    
-    res.status(200).json({ data: sendTx, maxIndex });  
+    const playersPayout = await PvpRoundSchema.aggregate([
+        { $match: { pvpId: new mongoose.Types.ObjectId('638be89124231bd764f46622')  } },
+        {
+          $lookup: {
+            from: "pvproundbets",
+            localField: 'creator_bet',
+            foreignField: '_id',
+            as: 'creatorBet'
+          }
+        },
+        {
+          $lookup: {
+            from: "pvproundbets",
+            localField: 'joiner_bet',
+            foreignField: '_id',
+            as: 'joinerBet'
+          }
+        },
+        { $unwind: { path: "$creatorBet" } },
+        { $unwind: { path: "$joinerBet" } },
+        {
+          $group: {
+            _id: null,
+            totalCreatorPayout: {
+              $sum: "$creatorBet.payout"
+            },
+            totaljoinerPayout: {
+              $sum: "$joinerBet.payout"
+            }
+          }
+        }
+    ]);
+    let a = 1;
+    console.log(playersPayout)
+    if (playersPayout.length == 0 )
+      a = 0;
+    res.status(200).json({ data: playersPayout, a });  
   } catch (error) {
-    res.status(400).json({ data: error });
+    res.status(400).json({ error });
   }
   
 });
