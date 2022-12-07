@@ -17,4 +17,6 @@ router.get('/wallet', UserController.getUserCryptoWallet);
 
 router.post('/wallet/withraw', UserController.withrawItem);
 
+router.get('/statistic/:code', UserController.getStatistic);
+
 module.exports = router;

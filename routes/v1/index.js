@@ -7,6 +7,8 @@ const util = require('../../util');
 const socket = require('../../socket');
 const mongoose = require('mongoose');
 const PvpRoundSchema = require('../../model/PvpRoundSchema');
+const BoxOpenSchema = require('../../model/BoxOpenSchema');
+const WalletExchangeSchema = require('../../model/WalletExchangeSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -38,9 +40,27 @@ router.post('/testfunc', async (req, res) => {
     // await mongoose.connection.db.dropCollection('pvprounds');
     // await mongoose.connection.db.dropCollection('pvpgameplayers');
     // await mongoose.connection.db.dropCollection('rollhistories');
-    
-    res.status(200).json({ data: [] });  
+    const totalExchanged = await BoxOpenSchema.aggregate([
+      {
+        $match: {
+          user: new mongoose.Types.ObjectId('637d9214ac246aab6818f27b')
+        }
+      },
+      {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item'
+          }
+        },
+        { $unwind: { path: "$item" } },
+        { $sort: { "item.value": -1 } },
+        { $limit: 1 }
+    ]).exec(); 
+    res.status(200).json({ data: totalExchanged });  
   } catch (error) {
+    console.log(error)
     res.status(400).json({ error });
   }
   

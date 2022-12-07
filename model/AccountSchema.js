@@ -15,7 +15,8 @@ const AccountSchema = new Schema({
   team_id: { type: SchemaTypes.String },
   is_trader: { type: SchemaTypes.Boolean },
   suspected_trader: { type: SchemaTypes.Boolean },
-  is_authentic: { type: SchemaTypes.Boolean }
+  is_authentic: { type: SchemaTypes.Boolean },
+  is_hide_stats: { type: SchemaTypes.Boolean },
 }, {
   timestamps: {
     createdAt: 'created_at',

@@ -12,6 +12,11 @@ const Util = require('../util');
 const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
 const Wallet = require('../walletManage');
 const ExchangeRateSchema = require('../model/ExchangeRate');
+const UserVerifySchema = require('../model/UserVerifySchema');
+const BoxOpenSchema = require('../model/BoxOpenSchema');
+const WalletExchangeSchema = require('../model/WalletExchangeSchema');
+const BoxSchema = require('../model/BoxSchema');
+const ItemSchema = require('../model/ItemSchema');
 
 const UserController = {
   getUserSeed: async (req, res) => {
@@ -63,8 +68,12 @@ const UserController = {
       await account.save();
 
       if (email != user.email) {
-        // send verification to original email
+        const userVerify = await UserVerifySchema.create({
+          user_code: userCode,
+          token: Util.getRandomToken()
+        });
 
+        Util.sendEmail('emailChange', { userCode, token: userVerify.token });
       }
 
       res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
@@ -244,6 +253,154 @@ const UserController = {
         console.log('Wallet Withraw Error:', error);
         res.status(400).json({ error });
       });
+  },
+
+  getStatistic: async (req, res) => {
+    const { userCode } = req.body;
+    const { code } = req.params;
+
+    try {
+      let user;
+      if (userCode != code) {
+        user = await UserSchema.findOne({ code }).populate('account');
+        if (user.account.is_hide_stats) {
+          return res.status(200).json({ data: null });
+        }
+      } else {
+        user = await UserSchema.findOne({ code: userCode }).populate('account');
+      }
+      
+      if (user == null) {
+        res.status(400).json({ error: 'user not found'});
+      }
+      
+      // get total unboxed value
+      const unboxedData = await BoxOpenSchema.aggregate([
+        { $match: { user: user._id } },
+        {
+          $group: {
+            _id: null,
+            totalValue: { $sum: "$cost" }
+        }}
+      ]);
+      let unboxedValue = 0;
+      if (unboxedData.length > 0) {
+        unboxedValue = unboxedData[0].totalValue;
+      }
+
+      // get most favorite box - best opened
+      const favoriteBoxInfo = await BoxOpenSchema.aggregate([
+        { $match: { user: user._id } },
+        {
+          $group: {
+            _id: "$box",
+            totalCount: { $sum: 1 }
+          }
+        },
+        { $sort: { "totalCount": -1 } },
+        { $limit: 1 }
+      ]);
+      let favoBox = null;
+      if (favoriteBoxInfo.length > 0) {
+        favoBox = await BoxSchema.findById(favoriteBoxInfo[0]._id);
+        favoBox = favoBox.toGetOneJSON();
+        favoBox.openTimes = favoriteBoxInfo[0].totalCount;
+        delete favoBox.tags;
+      }
+
+      // get best unboxied item
+      const itemId = await BoxOpenSchema.aggregate([
+        { $match: { user: user._id } },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item'
+          }
+        },
+        { $unwind: { path: "$item" } },
+        { $sort: { "item.value": -1 } },
+        { $limit: 1 }
+      ]);
+      
+      let bestItem = null
+      if (itemId.length > 0) {
+        const box = await BoxSchema.findById(itemId[0].box);
+        bestItem = {
+          box: box.code,
+          item: {
+            code: itemId[0].item.code,
+            name: itemId[0].item.name,
+            iconUrl: itemId[0].item.icon_url,
+            value: itemId[0].item.value,
+            rarity: itemId[0].item.rarity
+          }
+        }
+      }
+
+      // get total items exchanged
+      const totalExchangedData = await WalletExchangeSchema.aggregate([
+        { $match: { user: user._id, type: process.env.WALLET_EXCHANGE_ITEM } },
+        {
+          $group: {
+            _id: null,
+            totalValue: { $sum: '$value_change' }
+          }
+        }
+      ]);
+      let totalExchanged = 0;
+      if (totalExchangedData.length > 0) {
+        totalExchanged = totalExchangedData[0].totalValue;
+      }
+
+
+      // get luckiest box - max total picked / open times
+      const luckiestBox = await BoxOpenSchema.aggregate([
+        { $match: { user: user._id } },
+        {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item'
+          }
+        },
+        { $unwind: { path: "$item" } },
+        {
+          $group: {
+            _id: "$box",
+            totalSum: { $sum: "$item.value" },
+            totalCount: { $sum: 1 }
+        
+          }
+        },
+        { $sort: { "totalCount": -1 } },
+        { $set: { luckBox: { $divide: ["$totalSum", "$totalCount"] } } },
+        { $sort: { "luckBox": -1 } },
+        { $limit: 1 }
+      ]);
+      let luckBox = null;
+      if (luckiestBox.length > 0) {
+        luckBox = await BoxSchema.findById(luckiestBox[0]._id);
+        luckBox = luckBox.toGetOneJSON();
+        luckBox.openTimes = luckiestBox[0].totalCount;
+        delete luckBox.tags;
+      }
+
+      res.status(200).json({
+        data: {
+          totalUnboxedValue: unboxedValue,
+          mostFavoriteBox: favoBox,
+          bestUnboxedItem: bestItem,
+          totalItemExchanged: totalExchanged,
+          luckiestBox: luckBox
+      }})
+
+    } catch (error) {
+      console.log('User get statistic: ', error);
+      res.status(400).json({ error: 'user not found'});
+    }
   }
 };
 

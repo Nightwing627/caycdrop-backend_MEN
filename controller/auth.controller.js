@@ -131,6 +131,7 @@ const AuthController = {
         is_trader: false,
         suspected_trader: false,
         is_authentic: false,
+        is_hide_stats: false,
       });
       await account.save();
 
