@@ -122,19 +122,48 @@ const UserController = {
     return res.status(200).json({ data: await CountrySchema.find() })
   },
 
+  getCartFilters: (req, res) => {
+    res.status(200).json({
+      filters: [
+        { label: 'Price High to Low', value: 'p-htl' },
+        { label: 'Price Low to High', value: 'p-lth' },
+        { label: 'Newest first', value: 'new' },
+        { label: 'Oldest first', value: 'old' },
+        { label: 'Recently updated first', value: 'ru' },
+        { label: 'Oldest update first', value: 'ou' },
+      ]
+    })
+  },
+
   getUserCart: async (req, res) => {
     const { userCode } = req.body;
+    const { query, sort } = req.params;
 
     try {
       const user = await UserSchema.findOne({ code: userCode });
+      let sortField = { "item.value": -1 };
+      if (sort != undefined) {
+        if (sort == 'p-htl')
+          sortField = { "item.value": -1 };
+        else if (sort == 'p-lth')
+          sortField = { "item.value": 1 };
+        else if (sort == 'new')
+          sortField = { "created_at": -1 };
+        else if (sort == 'old')
+          sortField = { "created_at": 1 };
+        else if (sort == 'ru')
+          sortField = { "updated_at": -1 };
+        else if (sort == 'ou')
+          sortField = { "created_at": 1 };
+      }
 
       if (user == null) {
         return res.status(400).json({ error: "user not found" });
       }
+
+      let search = query == undefined ? '' : query;
+
       const userCarts = await UserCartSchema.aggregate([
-        {
-          $match: { user_code: userCode }
-        },
         {
           $lookup: {
             from: 'items',
@@ -152,10 +181,13 @@ const UserController = {
           $unwind: "$item"
         },
         {
-          $project: { _id: 0, user_code: 1, item: 1, }
+          $match: { user_code: userCode, "item.name": { $regex: `.*${search}.*` } }
         },
         {
-          $sort: { "item.value": 1 }
+          $sort: sortField
+        },
+        {
+          $project: { _id: 0, user_code: 1, item: 1 }
         }
       ]);
       
@@ -273,7 +305,7 @@ const UserController = {
       if (user == null) {
         res.status(400).json({ error: 'user not found'});
       }
-      
+
       // get total unboxed value
       const unboxedData = await BoxOpenSchema.aggregate([
         { $match: { user: user._id } },

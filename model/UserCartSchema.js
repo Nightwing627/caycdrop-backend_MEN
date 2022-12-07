@@ -7,7 +7,10 @@ const UserCartSchema = new Schema({
   item_code: { type: SchemaTypes.String },
   status: { type: SchemaTypes.Number }
 }, {
-  timestamps: true
+  timestamps: {
+  	createdAt: 'created_at',
+  	updatedAt: 'updated_at'
+  }
 });
 
 module.exports = mongoose.model('UserCart', UserCartSchema);
