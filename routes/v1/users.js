@@ -3,8 +3,6 @@ const router = express.Router();
 const UserController = require('../../controller/user.controller');
 
 /* GET users listing. */
-router.get('/:code/fairness', UserController.getUserSeed);
-
 router.get('/current_user', UserController.getCurrentUser);
 
 router.post('/update/main', UserController.changeUserBasic);
@@ -24,5 +22,7 @@ router.post('/wallet/withraw', UserController.withrawItem);
 router.get('/statistic/:code', UserController.getStatistic);
 
 router.post('/document', UserController.saveDocument);
+
+router.get('/fairness', UserController.getUserSeed);
 
 module.exports = router;

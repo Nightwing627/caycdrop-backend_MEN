@@ -9875,4 +9875,45 @@
   },
   "__v": 0,
   "code": "I07213bc01ca37b30f227"
+},{
+  "_id": {
+    "$oid": "6391e7d3aeb9a1d038b6414f"
+  },
+  "name": "2022 Corvette C8 Stingray",
+  "icon_url": "https://images.stockx.com/images/Louis-Vuitton-Leather-Embroidered-Varsity-Black.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1642713800&q=57",
+  "description": "",
+  "brand": "Jordan",
+  "value": 100000,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1596682800000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc0b"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc17"
+    }
+  ],
+  "shipping_cost": 0,
+  "min_value": 100000,
+  "max_value": 100000,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I1d6c3b2baca79265c7eb",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669044643330"
+    }
+  }
 }]

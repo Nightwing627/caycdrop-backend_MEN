@@ -1497,7 +1497,7 @@
   "item": {
     "$oid": "637a43ffaded89b155ea3cdc"
   },
-  "rate": 7,
+  "rate": 4,
   "status": true,
   "__v": 0,
   "created_at": {
@@ -1518,7 +1518,7 @@
   "item": {
     "$oid": "637a43ffaded89b155ea3cdd"
   },
-  "rate": 7,
+  "rate": 4,
   "status": true,
   "__v": 0,
   "created_at": {
@@ -1560,7 +1560,7 @@
   "item": {
     "$oid": "637a43ffaded89b155ea3cdf"
   },
-  "rate": 5,
+  "rate": 1,
   "status": true,
   "__v": 0,
   "created_at": {
@@ -1707,7 +1707,7 @@
   "item": {
     "$oid": "637a43ffaded89b155ea3ce6"
   },
-  "rate": 26.15,
+  "rate": 24.15,
   "status": true,
   "__v": 0,
   "created_at": {
@@ -1728,7 +1728,7 @@
   "item": {
     "$oid": "637a43ffaded89b155ea3ce7"
   },
-  "rate": 7,
+  "rate": 4,
   "status": true,
   "__v": 0,
   "created_at": {
@@ -1785,13 +1785,34 @@
   }
 },{
   "_id": {
+    "$oid": "6391e95daeb9a1d038b64156"
+  },
+  "box_code": "B4c932bc63dcc21db0b00",
+  "item": {
+    "$oid": "6391e7d3aeb9a1d038b6414f"
+  },
+  "rate": 0.001,
+  "status": true,
+  "__v": 0,
+  "created_at": {
+    "$date": {
+      "$numberLong": "1668442125469"
+    }
+  },
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1668442125469"
+    }
+  }
+},{
+  "_id": {
     "$oid": "637b754eaded89b155ea3e9c"
   },
   "box_code": "B4c932bc63dcc21db0b00",
   "item": {
-    "$oid": "637a43ffaded89b155ea3cac"
+    "$oid": "637b4b30aded89b155ea3dd6"
   },
-  "rate": 30,
+  "rate": 44.999,
   "status": true,
   "__v": 0,
   "created_at": {

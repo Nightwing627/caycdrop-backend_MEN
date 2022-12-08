@@ -57,7 +57,7 @@ module.exports = (io, socket) => {
       } else {
         clientHash = Util.getHashValue('client');
         serverValue = Util.getHashValue('server');
-        updateUserSeed(userSeed, clientHash, serverValue);
+        // updateUserSeed(userSeed, clientHash, serverValue);
       }
 
       // Get user nonce and update it when this is first experience

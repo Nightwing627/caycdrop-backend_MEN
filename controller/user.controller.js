@@ -23,23 +23,6 @@ const multer = require('multer');
 const uuid = require('uuid');
 
 const UserController = {
-  getUserSeed: async (req, res) => {
-    let data;
-    const userCode = req.params.code;
-
-    const user = await UserSchema.findOne({ code: userCode });
-    const seeds = await UserSeedSchema
-      .findOne({ userId: user._id })
-      .populate('client_seed', '-_id -__v')
-      .populate('old_client_seed', '-_id -__v')
-      .populate('server_seed', '-_id -__v')
-      .populate('next_server_seed', '-_id -__v')
-      .populate('old_server_seed', '-_id -__v')
-      .exec();
-    
-    res.status(200).json({ data });
-  },
-
   getCurrentUser: async (req, res) => {
     const { userCode } = req.body;
     
@@ -521,13 +504,38 @@ const UserController = {
       return res.status(200).json({ result: 'success' });
     } catch (error) {
       console.log(error);
-
       if (error.code === "LIMIT_UNEXPECTED_FILE") {
-        return res.send("Too many files to upload.");
+        return res.status(400).json({ error: "Too many files to upload." });
       }
-      return res.send(`Error when trying upload many files: ${error}`);
+      return res.status(400).json({ error: `Error when trying upload many files: ${error}`});
     }
-  }
+  },
+
+  getUserSeed: async (req, res) => {
+    const { userCode } = req.body;
+
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+
+      const seeds = await UserSeedSchema
+        .findOne({ userId: user._id })
+        .populate('client_seed', '-_id -__v')
+        .populate('old_client_seed', '-_id -__v')
+        .populate('server_seed', '-_id -__v')
+        .populate('next_server_seed', '-_id -__v')
+        .populate('old_server_seed', '-_id -__v')
+        .exec();
+      
+      
+      res.status(200).json({ data });  
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: 'wrong user info' })
+    }
+  },
 };
 
 var storage = multer.diskStorage({

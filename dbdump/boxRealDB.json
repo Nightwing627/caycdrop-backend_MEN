@@ -26,10 +26,10 @@
     "$oid": "636d40fad7edc3d222fb4ecd"
   },
   "opened": 293,
-  "popular": 177,
+  "popular": 178,
   "updated_at": {
     "$date": {
-      "$numberLong": "1669205565698"
+      "$numberLong": "1670118862061"
     }
   }
 },{
@@ -63,7 +63,12 @@
     "$oid": "636d40fad7edc3d222fb4ece"
   },
   "opened": 11,
-  "popular": 119
+  "popular": 120,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670317815164"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f75"
@@ -136,7 +141,12 @@
     "$oid": "636d40fad7edc3d222fb4ed0"
   },
   "opened": 241,
-  "popular": 380
+  "popular": 381,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670317815170"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f77"
@@ -171,8 +181,8 @@
     "$oid": "637b9095aded89b155ea3f78"
   },
   "name": "costly clash",
-  "cost": 577,
-  "original_price": 577,
+  "cost": 605,
+  "original_price": 605,
   "currency": "USD",
   "icon_path": "img/boxes/costly-clash.png",
   "level_required": 1,
@@ -200,10 +210,10 @@
     "$oid": "636d40fad7edc3d222fb4ed2"
   },
   "opened": 475,
-  "popular": 283,
+  "popular": 284,
   "updated_at": {
     "$date": {
-      "$numberLong": "1669062687544"
+      "$numberLong": "1670118862619"
     }
   }
 },{
@@ -243,7 +253,12 @@
     "$oid": "636d40fad7edc3d222fb4ed3"
   },
   "opened": 256,
-  "popular": 58
+  "popular": 60,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670118862617"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f7a"
@@ -336,7 +351,12 @@
     "$oid": "636d40fad7edc3d222fb4ed6"
   },
   "opened": 446,
-  "popular": 321
+  "popular": 322,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670317815157"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f7d"
@@ -504,10 +524,10 @@
     "$oid": "636d40fad7edc3d222fb4edb"
   },
   "opened": 61,
-  "popular": 349,
+  "popular": 350,
   "updated_at": {
     "$date": {
-      "$numberLong": "1669836598289"
+      "$numberLong": "1670118862627"
     }
   }
 },{
@@ -665,7 +685,12 @@
     "$oid": "636d40fad7edc3d222fb4ee0"
   },
   "opened": 245,
-  "popular": 89
+  "popular": 90,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670118862631"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f87"
@@ -694,7 +719,12 @@
     "$oid": "636d40fad7edc3d222fb4ee1"
   },
   "opened": 193,
-  "popular": 210
+  "popular": 211,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670316441281"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f88"
@@ -845,7 +875,12 @@
     "$oid": "636d40fad7edc3d222fb4ee6"
   },
   "opened": 435,
-  "popular": 240
+  "popular": 241,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670316441267"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8d"
@@ -931,8 +966,13 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ee9"
   },
-  "opened": 360,
-  "popular": 344
+  "opened": 373,
+  "popular": 345,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670316441272"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f90"
