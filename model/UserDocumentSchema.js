@@ -7,15 +7,29 @@ const UserDocumentSchema = new Schema({
     type: SchemaTypes.String,
     index: true
   },
-  doc_type: { type: SchemaTypes.String },
-  file_path1: { type: SchemaTypes.String },
-  file_path2: { type: SchemaTypes.String },
+  doc_type: { 
+  	type: SchemaTypes.String,
+  	enum: ['identity', 'residence']
+  },
+  files: { type: SchemaTypes.Array },
 }, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   },
 });
+
+UserDocumentSchema.methods.toGetJSON = function () {
+  let filePaths = [];
+  this.files.forEach(item => {
+    filePaths.push(process.env.LINK + process.env.DOC_PATH + item);
+  });
+
+  return {
+    userCode: this.user_code,
+    files: filePaths
+  }
+}
 
 UserDocumentSchema.plugin(uniqueValidator, { message: " is already exist" });
 

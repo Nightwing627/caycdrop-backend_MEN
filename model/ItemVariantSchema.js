@@ -21,7 +21,10 @@ const ItemVariantSchema = new Schema({
   }],
   estimated_delivery_in_hrs: { type: SchemaTypes.String },
 }, {
-  timestamps: true,
+  timestamps: {
+  	createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  }
 });
 
 ItemVariantSchema.plugin(uniqueValidator, { message: " is already exist" });

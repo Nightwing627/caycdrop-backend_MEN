@@ -201,7 +201,7 @@ module.exports = (io, socket) => {
         currency: 'USD',
         target: boxOpen.item._id
       });
-      walletExchange.code = Util.generateCode('wallexchange', walletExchange._id);
+      walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
       await walletExchange.save();
 
       // Remove the user cart item

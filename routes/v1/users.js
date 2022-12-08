@@ -11,14 +11,18 @@ router.post('/update/main', UserController.changeUserBasic);
 
 router.post('/update/shipping', UserController.changeUserShipping);
 
+router.get('/cart', UserController.getUserCart);
+
 router.get('/cart/filters', UserController.getCartFilters);
 
-router.get('/cart', UserController.getUserCart);
+router.post('/cart/sell', UserController.sellUserItem);
 
 router.get('/wallet', UserController.getUserCryptoWallet);
 
 router.post('/wallet/withraw', UserController.withrawItem);
 
 router.get('/statistic/:code', UserController.getStatistic);
+
+router.post('/document', UserController.saveDocument);
 
 module.exports = router;

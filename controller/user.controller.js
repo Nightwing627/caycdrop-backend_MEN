@@ -17,6 +17,10 @@ const BoxOpenSchema = require('../model/BoxOpenSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
+const util = require('util');
+const path = require('path');
+const multer = require('multer');
+const uuid = require('uuid');
 
 const UserController = {
   getUserSeed: async (req, res) => {
@@ -136,8 +140,7 @@ const UserController = {
   },
 
   getUserCart: async (req, res) => {
-    const { userCode } = req.body;
-    const { query, sort } = req.params;
+    const { userCode, query, sort } = req.body;
 
     try {
       const user = await UserSchema.findOne({ code: userCode });
@@ -178,7 +181,7 @@ const UserController = {
           }
         },
         {
-          $unwind: "$item"
+          $unwind: { path: "$item" }
         },
         {
           $match: { user_code: userCode, "item.name": { $regex: `.*${search}.*` } }
@@ -195,6 +198,52 @@ const UserController = {
     } catch (error) {
       res.status(400).json({ error: "cart item not found" });
     } 
+  },
+
+  sellUserItem: async (req, res) => {
+    const { userCode, itemId } = req.body;
+
+    try {
+      const userCart = await UserCartSchema.findOne({ code: itemId });
+      if (userCart == null || userCart.user_code != userCode) {
+        return res.status(400).json({ error: 'wrong item info' });
+      }
+
+      // get item info
+      const item = await ItemSchema.findOne({ code: userCart.item_code });
+
+      // change user walle amount
+      const userWallet = await UserWalletSchema.findOne({ user_code: userCode });
+      userWallet.main += Number(item.value);
+      await userWallet.save();
+
+      // log the exchange
+      const user = await UserSchema.findOne({ code: userCode });
+      const walletExchange = await WalletExchangeSchema.create({
+        user: user._id,
+        type: process.env.WALLET_EXCHANGE_ITEM,
+        value_change: Number(item.value),
+        changed_after: userWallet.main,
+        currency: 'USD',
+        target: item._id
+      });
+      walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
+      await walletExchange.save();
+
+      // modify the boxOpen's user item
+      const boxOpen = await BoxOpenSchema.findOne({ user: user._id, user_item: userCart._id })
+      if (boxOpen != null) {
+        boxOpen.user_item = null;
+        await boxOpen.save();
+      }
+      // remove the user cart item
+      await UserCartSchema.findByIdAndDelete(userCart._id);
+
+      res.status(200).json({ result: 'success' });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: 'item sell failed' });
+    }
   },
 
   getUserCryptoWallet: async (req, res) => {
@@ -433,8 +482,74 @@ const UserController = {
       console.log('User get statistic: ', error);
       res.status(400).json({ error: 'user not found'});
     }
+  },
+
+  saveDocument: async (req, res) => {
+    const { userCode, type } = req.body;
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+      // if (type != process.env.TYPE_IDENTITY || type != process.env.TYPE_RESIDENCE) {
+      //   return res.status(400).json({ error: 'wrong type info' });
+      // }
+      
+      await uploadFFiles(req, res);
+      
+      if (req.files.length <= 0) {
+        return res.status(400).json({ error: `You must select at least 1 file.`});
+      }
+      
+      let fileNames = [];
+      req.files.forEach(item => {
+        fileNames.push(item.filename);
+      })
+
+      let document = await UserDocumentSchema.findOne({ user_code: userCode });
+      if (document != null) {
+        fileNames.forEach(name => {
+          document.files.push(name);
+        });
+        await document.save();
+      } else {
+        await UserDocumentSchema.create({
+          user_code: userCode,
+          files: fileNames
+        });
+      }
+      return res.status(200).json({ result: 'success' });
+    } catch (error) {
+      console.log(error);
+
+      if (error.code === "LIMIT_UNEXPECTED_FILE") {
+        return res.send("Too many files to upload.");
+      }
+      return res.send(`Error when trying upload many files: ${error}`);
+    }
   }
 };
 
+var storage = multer.diskStorage({
+  destination: (req, file, callback) => {
+    callback(null, path.join(__dirname + '/../public/uploads/documents/'));
+  },
+  filename: (req, file, callback) => {
+    // const match = ['image/png', 'image/jpge'];
+
+    // if (match.indexOf(file.mimetype) === -1) {
+    //   var message = `${file.originalname} is invalid. Only accept png/jpeg.`;
+    //   return callback(message, null);
+    // }
+    var extArr = file.originalname.split('.');
+    var extension = extArr[extArr.length - 1];
+
+    var filename = `${Date.now()}_${uuid.v4()}.${extension}`;
+    callback(null, filename);
+  }
+});
+
+var upload = multer({ storage }).array('documents', 10);
+var uploadFFiles = util.promisify(upload);
 
 module.exports = UserController;

@@ -7,7 +7,10 @@ const AssetSchema = new Schema({
   background_color: { type: SchemaTypes.String },
   mime_type: { type: SchemaTypes.String },
 }, {
-  timestamps: true
+  timestamps: {
+  	createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  }
 });
 
 module.exports = mongoose.model('Asset', AssetSchema);

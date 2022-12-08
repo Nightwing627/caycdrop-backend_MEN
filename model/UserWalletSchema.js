@@ -26,10 +26,12 @@ const UserWalletSchema = new Schema({
   gem_currency: {
     type: SchemaTypes.String,
     enum: ['USD', 'EUR', 'ETH', 'BTC', 'LTC', 'BCH', 'TKN']
-  },
-  updated_at: { type: SchemaTypes.Date }
+  }
 }, {
-  timestamps: true
+  timestamps: {
+  	createdAt: 'created_at',
+    updatedAt: 'updated_at'
+  }
 });
 
 module.exports = mongoose.model('UserWallet', UserWalletSchema);

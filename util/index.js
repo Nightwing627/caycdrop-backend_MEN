@@ -7,6 +7,10 @@ const BoxSchema = require('../model/BoxSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
 const UserSchema = require('../model/UserSchema');
 require('dotenv').config();
+const multer = require('multer');
+const uuid = require('uuid');
+const path = require('path');
+
 const algorithm = 'aes-256-cbc';
 // secret key generate 32 bytes of random data
 const key = crypto.randomBytes(32);
@@ -279,5 +283,5 @@ module.exports = {
   Seed,
   CryptoRate,
   getRandomWinner,
-  getUserByCode
+  getUserByCode,
 }
