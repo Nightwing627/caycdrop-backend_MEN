@@ -27,7 +27,8 @@ UserDocumentSchema.methods.toGetJSON = function () {
 
   return {
     userCode: this.user_code,
-    files: filePaths
+    files: filePaths,
+    createdAt: this.created_at
   }
 }
 

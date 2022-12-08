@@ -491,9 +491,9 @@ const UserController = {
       if (user == null) {
         return res.status(400).json({ error: 'wrong user info' });
       }
-      // if (type != process.env.TYPE_IDENTITY || type != process.env.TYPE_RESIDENCE) {
-      //   return res.status(400).json({ error: 'wrong type info' });
-      // }
+      if (type != process.env.TYPE_IDENTITY || type != process.env.TYPE_RESIDENCE) {
+        return res.status(400).json({ error: 'wrong type info' });
+      }
       
       await uploadFFiles(req, res);
       
