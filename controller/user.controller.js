@@ -188,43 +188,60 @@ const UserController = {
   },
 
   sellUserItem: async (req, res) => {
-    const { userCode, itemId } = req.body;
+    const { userCode, itemIds } = req.body;
 
     try {
-      const userCart = await UserCartSchema.findOne({ code: itemId });
-      if (userCart == null || userCart.user_code != userCode) {
-        return res.status(400).json({ error: 'wrong item info' });
+      if (!Array.isArray(itemIds)) {
+        return res.status(400).json({ error: 'item info must be array' });
       }
 
-      // get item info
-      const item = await ItemSchema.findOne({ code: userCart.item_code });
+      const userCarts = await UserCartSchema.find({ code: { $in: itemIds } });
+      if (userCarts == null) {
+        return res.status(400).json({ error: "wrong user cart info" });
+      }
 
-      // change user walle amount
-      const userWallet = await UserWalletSchema.findOne({ user_code: userCode });
-      userWallet.main += Number(item.value);
-      await userWallet.save();
+      var isUserOwn = true;
+      for (var uCart of userCarts) {
+        if (uCart.user_code != userCode)
+          isUserOwn = false;
+      }
 
-      // log the exchange
+      if (!isUserOwn) {
+        return res.status(400).json({ error: "this items is not for user" });
+      }
+
       const user = await UserSchema.findOne({ code: userCode });
-      const walletExchange = await WalletExchangeSchema.create({
-        user: user._id,
-        type: process.env.WALLET_EXCHANGE_ITEM,
-        value_change: Number(item.value),
-        changed_after: userWallet.main,
-        currency: 'USD',
-        target: item._id
-      });
-      walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
-      await walletExchange.save();
+      
+      for (var userCart of userCarts) {
+        // get item info
+        const item = await ItemSchema.findOne({ code: userCart.item_code })
 
-      // modify the boxOpen's user item
-      const boxOpen = await BoxOpenSchema.findOne({ user: user._id, user_item: userCart._id })
-      if (boxOpen != null) {
-        boxOpen.user_item = null;
-        await boxOpen.save();
+        // change user walle amount
+        const userWallet = await UserWalletSchema.findOne({ user_code: userCode });
+        userWallet.main += Number(item.value);
+        await userWallet.save();
+
+        // log the exchange
+        const walletExchange = await WalletExchangeSchema.create({
+          user: user._id,
+          type: process.env.WALLET_EXCHANGE_ITEM,
+          value_change: Number(item.value),
+          changed_after: userWallet.main,
+          currency: 'USD',
+          target: item._id
+        });
+        walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
+        await walletExchange.save();
+
+        // modify the boxOpen's user item
+        const boxOpen = await BoxOpenSchema.findOne({ user: user._id, user_item: userCart._id })
+        if (boxOpen != null) {
+          boxOpen.user_item = null;
+          await boxOpen.save();
+        }
+        // remove the user cart item
+        await UserCartSchema.findByIdAndDelete(userCart._id);
       }
-      // remove the user cart item
-      await UserCartSchema.findByIdAndDelete(userCart._id);
 
       res.status(200).json({ result: 'success' });
     } catch (error) {
