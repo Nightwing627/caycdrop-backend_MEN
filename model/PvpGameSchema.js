@@ -50,7 +50,7 @@ PvpGameSchema.methods.toGameJSON = function() {
     totalRounds: this.rounds,
     totalBet: this.total_bet,
     status: this.status.toUpperCase(),
-    totalPayout: this.total_payout,
+    totalPayout: this.total_payout
   }
 }
 

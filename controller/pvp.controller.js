@@ -251,6 +251,18 @@ const PVPController = {
       
       const players = await PvpGamePlayerSchema.findOne(
         { pvpId: pvpGame._id }, { _id: 0, __v: 0, pvpId: 0 });
+      
+      let winner = {};
+      if (pvpGame.winner != null) {
+        const winUser = await UserSchema.findById(pvpGame.winner).populate('account');
+        winner = {
+          code: winUser.code,
+          name: winUser.account.username,
+          avatar: winUser.account.avatar,
+        }
+      }
+      
+      
       const rounds = await PvpRoundSchema
         .find({ pvpId: pvpGame._id })
         .populate('creator_bet', '-_id -__v')
@@ -299,6 +311,7 @@ const PVPController = {
 
       const responseData = {
         ...pvpGame.toGameJSON(),
+        winner,
         players,
         rounds,
         playerPayouts: {

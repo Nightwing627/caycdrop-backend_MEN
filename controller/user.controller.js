@@ -17,11 +17,14 @@ const BoxOpenSchema = require('../model/BoxOpenSchema');
 const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
+const SeedSchema = require('../model/SeedSchema');
+const TxSchema = require('../model/TransactionSchema');
+
 const util = require('util');
 const path = require('path');
 const multer = require('multer');
 const uuid = require('uuid');
-const SeedSchema = require('../model/SeedSchema');
+
 
 const UserController = {
   getCurrentUser: async (req, res) => {
@@ -290,7 +293,7 @@ const UserController = {
         }
       }
     ]).exec();
-    console.log(userCarts[0]);
+    
     // get exchange rate and calc the coin value
     const rate = await ExchangeRateSchema.findOne({ coinType: method });
     if (rate == null)
@@ -308,6 +311,25 @@ const UserController = {
         if (response && response.hash) { 
           // success withraw & remove item user cart
           await UserCartSchema.deleteMany({ code: { $in: items }, user_code: userCode });
+          // log txs
+          const txData = await TxSchema.create({
+            user_code: userCode,
+            amount: withrawAmount,
+            currency: method,
+            exchange_rate: rate.value,
+            exchanged_amount: Number((userCarts[0].total).toFixed(2)),
+            method,
+            status: 'completed',
+            url: response.hash,
+            promo_code: null,
+            bonus_percent: 0,
+            bonus_max_amount: 0,
+            bouns_amount: 0,
+            type: 'WITHRAW'
+          });
+          txData.code = Util.generateCode('transaction', txData._id);
+          await txData.save();
+          
           return res.status(200).json({ result: 'success' });
         } else {
           // fail withraw
@@ -608,6 +630,16 @@ const UserController = {
       console.log(error);
       res.status(400).json({ error: 'wrong user info' })
     }
+  },
+
+  getGameHistory: async (req, res) => {
+    const { useCode, pvpId, createdMin, createdMax, sort, gameType, strategy } = req.body;
+
+
+  },
+
+  getUnboxingHistory: async (req, res) => {
+    
   }
 };
 
