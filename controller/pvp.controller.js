@@ -544,7 +544,7 @@ const getSortField = (sort) => {
 const getPvpRoll = async (pvpCode) => {
   // set the seed values - server, client(block id), nonce
   // get server value, client hashed, nonce
-  const serverValue = util.getHashValue('server_' + pvpCode);
+  const serverValue = util.getHashValue('server_' + pvpCode + "_" + Date.now());
   const serverHashed = util.getCryptoValue(serverValue);
   const blockInfo = await walletManage.getBlockInfo();
   const client = blockInfo.hash.slice(2, blockInfo.hash.length);

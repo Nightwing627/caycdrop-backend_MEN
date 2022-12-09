@@ -21,6 +21,7 @@ const util = require('util');
 const path = require('path');
 const multer = require('multer');
 const uuid = require('uuid');
+const SeedSchema = require('../model/SeedSchema');
 
 const UserController = {
   getCurrentUser: async (req, res) => {
@@ -513,29 +514,101 @@ const UserController = {
 
   getUserSeed: async (req, res) => {
     const { userCode } = req.body;
-
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
         return res.status(400).json({ error: 'wrong user info' });
       }
-
+      
       const seeds = await UserSeedSchema
         .findOne({ userId: user._id })
-        .populate('client_seed', '-_id -__v')
-        .populate('old_client_seed', '-_id -__v')
-        .populate('server_seed', '-_id -__v')
-        .populate('next_server_seed', '-_id -__v')
-        .populate('old_server_seed', '-_id -__v')
+        .populate('client_seed')
+        .populate('old_client_seed')
+        .populate('server_seed')
+        .populate('next_server_seed')
+        .populate('old_server_seed')
         .exec();
       
-      
-      res.status(200).json({ data });  
+      res.status(200).json({ data: seeds.toGetJSON() });
     } catch (error) {
       console.log(error);
       res.status(400).json({ error: 'wrong user info' })
     }
   },
+
+  changeUserSeed: async (req, res) => {
+    const { userCode, value } = req.body;
+  
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+      if (value == '') {
+        return res.status(400).json({ error: 'wrong client value' });
+      }
+
+      const userSeeds = await UserSeedSchema.findOne({ userId: user._id });
+
+      // change current client seed and save old client seed
+      let ccd = await SeedSchema.findById(userSeeds.client_seed);
+      if (ccd) {
+        let ocd = await SeedSchema.findById(userSeeds.old_client_seed);
+        if (ocd) {
+          ocd.value = ccd.value; ocd.hash = ccd.hash;
+          await ocd.save();
+        } else {
+          ocd = await SeedSchema.create({
+            type: process.env.SEED_TYPE_CLIENT,
+            future: false, value: ccd.value, hash: ccd.hash
+          });
+          ocd.code = Util.generateCode('seed', ocd._id);
+          await ocd.save();
+          userSeeds.old_client_seed = ocd._id;
+          await userSeeds.save();
+        }
+
+        ccd.value = value; ccd.hash = Util.getHashValue(value);
+        await ccd.save();
+      } else {
+        ccd = await SeedSchema.create({
+          type: process.env.SEED_TYPE_CLIENT,
+          future: false, value: value, hash: Util.getHashValue(value)
+        });
+        ccd.code = Util.generateCode('seed', ccd._id);
+        await ccd.save();
+        userSeeds.client_seed = ccd._id;
+        await userSeeds.save();
+      }
+      
+      // change current, future, old server seed
+      await changeServerSeed(user._id, userCode);
+
+      res.status(200).json({ result: 'success' });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: 'wrong user info' })
+    }
+  },
+
+  revalUserSeed: async (req, res) => {
+    const { userCode } = req.body;
+  
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+      
+      // change current, future, old server seed
+      await changeServerSeed(user._id, userCode);
+
+      res.status(200).json({ result: 'success' });
+    } catch (error) {
+      console.log(error);
+      res.status(400).json({ error: 'wrong user info' })
+    }
+  }
 };
 
 var storage = multer.diskStorage({
@@ -559,5 +632,64 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage }).array('documents', 10);
 var uploadFFiles = util.promisify(upload);
+
+const changeServerSeed = async (userId, userCode) => {
+  try {
+    const userSeeds = await UserSeedSchema.findOne({ userId: userId });
+    let nsd = await SeedSchema.findById(userSeeds.next_server_seed);
+    let csd = await SeedSchema.findById(userSeeds.server_seed);
+    let osd = await SeedSchema.findById(userSeeds.old_server_seed);
+
+    const nsdValue = Util.getHashValue(`server_next_${userCode}_${Date.now}`);
+
+    if (nsd) {
+      osd.hash = csd.hash;
+      osd.value = csd.value;
+      await osd.save();
+
+      csd.value = nsd.value;
+      csd.hash = nsd.hash;
+      await csd.save();
+
+      nsd.value = nsdValue;
+      nsd.hash = Util.getHashValue(nsdValue);
+      await nsd.save();
+    } else {
+      const csdValue = Util.getHashValue(`server_${userCode}_${Date.now}`);
+      
+      nsd = await SeedSchema.create({
+        type: process.env.SEED_TYPE_SERVER,
+        future: true,
+        value: nsdValue,
+        hash: Util.getHashValue(nsdValue)
+      });
+      nsd.code = Util.generateCode('seed', nsd._id);
+      await nsd.save();
+
+      csd = await SeedSchema.create({
+        type: process.env.SEED_TYPE_SERVER,
+        future: false,
+        value: csdValue,
+        hash: Util.getHashValue(csdValue)
+      });
+      csd.code = Util.generateCode('seed', csd._id);
+      await csd.save();
+      
+      osd = await SeedSchema.create({
+        type: process.env.SEED_TYPE_SERVER,
+        future: false,
+      });
+      osd.code = Util.generateCode('seed', osd._id);
+      await osd.save();
+
+      userSeeds.next_server_seed = nsd._id;
+      userSeeds.server_seed = csd._id;
+      userSeeds.old_server_seed = osd._id;
+      await userSeeds.save();
+    } 
+  } catch (error) {
+    console.log('Change Server Seed', error);
+  }
+}
 
 module.exports = UserController;

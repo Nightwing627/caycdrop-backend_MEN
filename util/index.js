@@ -214,10 +214,9 @@ async function getItemAndXP(boxCode, rollValue) {
 }
 
 
-function getHashValue(type) {
-  let value = "" + type + "_" + Date.now();
+function getHashValue(value) {
   const hashed = crypto.createHash('sha3-256').update(value).digest('hex');
-  console.log(`${type}: ${hashed}`);
+  console.log(`${value} hashed: ${hashed}`);
   return hashed;
 }
 

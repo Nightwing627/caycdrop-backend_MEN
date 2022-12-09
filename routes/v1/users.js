@@ -25,4 +25,8 @@ router.post('/document', UserController.saveDocument);
 
 router.get('/fairness', UserController.getUserSeed);
 
+router.post('/fairness/change', UserController.changeUserSeed);
+
+router.post('/fairness/reval', UserController.revalUserSeed);
+
 module.exports = router;

@@ -55,8 +55,8 @@ module.exports = (io, socket) => {
         clientHash = userSeed.client_seed.hash;
         serverValue = userSeed.server_seed.value;
       } else {
-        clientHash = Util.getHashValue('client');
-        serverValue = Util.getHashValue('server');
+        clientHash = Util.getHashValue('client_' + Date.now());
+        serverValue = Util.getHashValue('server_' + Date.now());
         // updateUserSeed(userSeed, clientHash, serverValue);
       }
 

@@ -40,24 +40,7 @@ router.post('/testfunc', async (req, res) => {
     // await mongoose.connection.db.dropCollection('pvprounds');
     // await mongoose.connection.db.dropCollection('pvpgameplayers');
     // await mongoose.connection.db.dropCollection('rollhistories');
-    const totalExchanged = await BoxOpenSchema.aggregate([
-      {
-        $match: {
-          user: new mongoose.Types.ObjectId('637d9214ac246aab6818f27b')
-        }
-      },
-      {
-          $lookup: {
-            from: 'items',
-            localField: 'item',
-            foreignField: '_id',
-            as: 'item'
-          }
-        },
-        { $unwind: { path: "$item" } },
-        { $sort: { "item.value": -1 } },
-        { $limit: 1 }
-    ]).exec(); 
+    const totalExchanged = await BoxOpenSchema.findById(null);
     res.status(200).json({ data: totalExchanged });  
   } catch (error) {
     console.log(error)
