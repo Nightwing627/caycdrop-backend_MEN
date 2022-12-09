@@ -14,6 +14,7 @@ const BoxItemSchema = require('../model/BoxItemSchema');
 const util = require('../util');
 const walletManage = require('../walletManage');
 const socket = require('../socket');
+const ItemSchema = require('../model/ItemSchema');
 
 const filterPrices = [
   { value: '', label: 'All Prices' },
@@ -262,13 +263,33 @@ const PVPController = {
         }
       }
       
-      
       const rounds = await PvpRoundSchema
         .find({ pvpId: pvpGame._id })
         .populate('creator_bet', '-_id -__v')
         .populate('joiner_bet', '-_id -__v')
         .populate('box', '-_id code name cost currency icon_path slug')
         .select('-_id -__v -pvpId');
+      
+      let roundData = [];
+      for (var item of rounds) {
+        var roundItem = item.toJSON();
+        let creatorItem = await ItemSchema.findById(item.creator_bet.item);
+        let joinerItem = await ItemSchema.findById(item.joiner_bet.item);
+
+        if (creatorItem) {
+          roundItem.creator_bet.item = creatorItem.code;
+        } else {
+          roundItem.creator_bet.item = null;
+        }
+        
+        if (joinerItem) {
+          roundItem.joiner_bet.item = joinerItem.code;
+        } else {
+          roundItem.joiner_bet.item = null;
+        }
+
+        roundData.push(roundItem);
+      }
       
       let creatorPayout = 0, joinerPayout = 0;
       if (pvpGame.status != process.env.PVP_GAME_CREATED) {
@@ -313,7 +334,7 @@ const PVPController = {
         ...pvpGame.toGameJSON(),
         winner,
         players,
-        rounds,
+        rounds: roundData,
         playerPayouts: {
           creatorPayout, joinerPayout
         }
