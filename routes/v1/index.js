@@ -9,6 +9,10 @@ const mongoose = require('mongoose');
 const PvpRoundSchema = require('../../model/PvpRoundSchema');
 const BoxOpenSchema = require('../../model/BoxOpenSchema');
 const WalletExchangeSchema = require('../../model/WalletExchangeSchema');
+const PvpGamePlayerSchema = require('../../model/PvpGamePlayerSchema');
+const PvpGameSchema = require('../../model/PvpGameSchema');
+const BoxSchema = require('../../model/BoxSchema');
+const ItemSchema = require('../../model/ItemSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -40,8 +44,25 @@ router.post('/testfunc', async (req, res) => {
     // await mongoose.connection.db.dropCollection('pvprounds');
     // await mongoose.connection.db.dropCollection('pvpgameplayers');
     // await mongoose.connection.db.dropCollection('rollhistories');
-    const totalExchanged = await BoxOpenSchema.findById(null);
-    res.status(200).json({ data: totalExchanged });  
+    const battle = await PvpGameSchema.findOne({ code: 'VG96489179ae479c851e13' });
+    
+
+    var result = {
+      code: battle.code,
+      isPrivate: battle.is_private,
+      botEnable: battle.bot_enable,
+      strategy: battle.strategy,
+      rounds: roundData,
+      currentRound: battle.current_round,
+      totalBet: battle.total_bet,
+      status: battle.status,
+      totalPayout: battle.total_payout,
+      boxList,
+      currentPayout,
+      players
+    };
+    
+    res.status(200).json({ data: result });  
   } catch (error) {
     console.log(error)
     res.status(400).json({ error });

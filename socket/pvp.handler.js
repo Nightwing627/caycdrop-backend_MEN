@@ -388,8 +388,9 @@ const bcasting = async (pvpId) => {
 }
 
 const getResponseData = async (battle) => {
-  const players = await PvpGamePlayerSchema.findOne({ pvpId: battle._id }, { _id: 0, __v: 0, pvpId: 0 });
-  const rounds = await PvpRoundSchema.aggregate([
+  const players = await PvpGamePlayerSchema
+      .findOne({ pvpId: battle._id }, { _id: 0, __v: 0, pvpId: 0 });
+  const roundsPayout = await PvpRoundSchema.aggregate([
     { $match: { pvpId: battle._id } },
     {
       $lookup: {
@@ -408,7 +409,7 @@ const getResponseData = async (battle) => {
       }
     },
     { $unwind: { path: '$creator_bet' } },
-    { $unwind: { path: '$joiner_Bet' } },
+    { $unwind: { path: '$joiner_bet' } },
     {
       $set: {
         "roundCurPayout": { $add: ["$creator_bet.payout", "$joiner_bet.payout"] }
@@ -422,10 +423,46 @@ const getResponseData = async (battle) => {
         }
     }}
   ]);
-
+  
   let currentPayout = 0;
-  if (rounds.length != 0) {
-    currentPayout = rounds[0].currentPayout;
+  if (roundsPayout.length != 0) {
+    currentPayout =  Number((roundsPayout[0].currentPayout).toFixed(2));
+  }
+  
+  const rounds = await PvpRoundSchema
+    .find({ pvpId: battle._id })
+    .populate('creator_bet', '-_id -__v')
+    .populate('joiner_bet', '-_id -__v')
+    .populate('box', '-_id code name cost currency icon_path slug')
+    .select('-_id -__v -pvpId');
+    
+  let roundData = [];
+  for (var item of rounds) {
+    var roundItem = item.toJSON();
+    let creatorItem = await ItemSchema.findById(item.creator_bet.item);
+    let joinerItem = await ItemSchema.findById(item.joiner_bet.item);
+
+    if (creatorItem) {
+      roundItem.creator_bet.item = creatorItem.code;
+    } else {
+      roundItem.creator_bet.item = null;
+    }
+    
+    if (joinerItem) {
+      roundItem.joiner_bet.item = joinerItem.code;
+    } else {
+      roundItem.joiner_bet.item = null;
+    }
+
+    roundData.push(roundItem);
+  }
+
+  let boxList = [];
+  for (var boxId of battle.box_list) {
+    const box = await BoxSchema
+      .findById(boxId)
+      .select('-_id code name cost currency icon_path slug');
+    boxList.push(box);
   }
 
   return {
@@ -433,12 +470,12 @@ const getResponseData = async (battle) => {
     isPrivate: battle.is_private,
     botEnable: battle.bot_enable,
     strategy: battle.strategy,
-    rounds: battle.rounds,
+    rounds: roundData,
     currentRound: battle.current_round,
     totalBet: battle.total_bet,
     status: battle.status,
     totalPayout: battle.total_payout,
-    boxList: battle.box_list,
+    boxList,
     currentPayout,
     players
   };
