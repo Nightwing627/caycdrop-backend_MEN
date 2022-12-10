@@ -652,7 +652,7 @@ const UserController = {
   getGameHistory: async (req, res) => {
     const { useCode, pvpId, createdMin, createdMax, sort, gameType, strategy } = req.body;
 
-
+    
   },
 
   getUnboxingHistory: async (req, res) => {

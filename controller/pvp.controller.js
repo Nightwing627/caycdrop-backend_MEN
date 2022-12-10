@@ -342,7 +342,8 @@ const PVPController = {
       
       res.status(200).json({ data: responseData });
     } catch (error) {
-      console.log(`Get Battle By Code Error: ${error}`);
+      console.log(`Get Battle By Code Error`);
+      console.log(error);
       res.status(400).json({ error: 'wrong battle info' });
     }
   },
