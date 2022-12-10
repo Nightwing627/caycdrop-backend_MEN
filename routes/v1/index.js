@@ -44,8 +44,79 @@ router.post('/testfunc', async (req, res) => {
     // await mongoose.connection.db.dropCollection('pvprounds');
     // await mongoose.connection.db.dropCollection('pvpgameplayers');
     // await mongoose.connection.db.dropCollection('rollhistories');
-    const battle = await PvpGameSchema.findOne({ code: 'VG96489179ae479c851e13' });
+    const battle = await PvpGameSchema.findOne({ code: 'VG560a9fb2615c665c51ce' });
     
+   const players = await PvpGamePlayerSchema
+      .findOne({ pvpId: battle._id }, { _id: 0, __v: 0, pvpId: 0 });
+    const roundsPayout = await PvpRoundSchema.aggregate([
+      { $match: { pvpId: battle._id } },
+      {
+        $lookup: {
+          from: 'pvproundbets',
+          localField: 'creator_bet',
+          foreignField: '_id',
+          as: 'creator_bet'
+        }
+      },
+      {
+        $lookup: {
+          from: 'pvproundbets',
+          localField: 'joiner_bet',
+          foreignField: '_id',
+          as: 'joiner_bet'
+        }
+      },
+      { $unwind: { path: '$creator_bet' } },
+      { $unwind: { path: '$joiner_bet' } },
+      {
+        $set: {
+          "roundCurPayout": { $add: ["$creator_bet.payout", "$joiner_bet.payout"] }
+        }
+      },
+      {
+        $group: {
+          _id: null,
+          "currentPayout": {
+            $sum: "$roundCurPayout"
+          }
+      }}
+    ]);
+    
+    let currentPayout = 0;
+    if (roundsPayout.length != 0) {
+      currentPayout =  Number((roundsPayout[0].currentPayout).toFixed(2));
+    }
+    
+    const rounds = await PvpRoundSchema
+      .find({ pvpId: battle._id })
+      .populate('creator_bet', '-_id -__v')
+      .populate('joiner_bet', '-_id -__v')
+      .populate('box', '-_id code name cost currency icon_path slug')
+      .select('-_id -__v -pvpId');
+      
+    let roundData = [];
+    for (var item of rounds) {
+      var roundItem = item.toJSON();
+
+      if (roundItem.creator_bet) {
+        const creatorItem = await ItemSchema.findById(item.creator_bet.item);
+        roundItem.creator_bet.item = creatorItem ? creatorItem.code : null;
+      }
+      if (roundItem.joiner_bet) {
+        const joinerItem = await ItemSchema.findById(item.joiner_bet.item);
+        roundItem.joiner_bet.item = joinerItem ? joinerItem.code : null;
+      }
+
+      roundData.push(roundItem);
+    }
+
+    let boxList = [];
+    for (var boxId of battle.box_list) {
+      const box = await BoxSchema
+        .findById(boxId)
+        .select('-_id code name cost currency icon_path slug');
+      boxList.push(box);
+    }
 
     var result = {
       code: battle.code,
@@ -61,7 +132,6 @@ router.post('/testfunc', async (req, res) => {
       currentPayout,
       players
     };
-    
     res.status(200).json({ data: result });  
   } catch (error) {
     console.log(error)
