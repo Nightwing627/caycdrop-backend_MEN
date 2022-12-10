@@ -97,7 +97,7 @@ const UserController = {
       shippingInfo.zipcode = zipCode;
       shippingInfo.state = state;
       shippingInfo.city = city;
-      shippingInfo.country = countryItem.id;
+      shippingInfo.country = countryItem ? countryItem.id : country;
       shippingInfo.phone = phone;
       // shippingInfo.birthday =
 

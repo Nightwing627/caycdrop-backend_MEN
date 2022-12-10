@@ -24,27 +24,15 @@ module.exports = {
     }
 
     io.on("connection", (socket) => {
-      // io.use((socket, next) => {
-      //   console.log(socket.data);
-      //   const token = socket.handshake.auth.token;
-      //   if (token) {
-      //     const result = validaToken(token);
-      //     if (result) { 
-            
-      //     } else {
-      //       const err = new Error('token is expired');
-      //       err.data = { content: "Please retry later" };
-      //       return next(err);
-      //     }
-      //   }
-      //   next();
-      // }); 
-
       // console.log(`${socket.id} Client Connected`);
       socketIO = io;
       socketInstance = socket;
 
       UnBoxHandler(io, socket);
+
+      socket.on('user:loggedin', (data) => {
+        
+      });
 
       socket.on("disconnect", () => {
         // console.log(`${socket.id} Client disconnected`);

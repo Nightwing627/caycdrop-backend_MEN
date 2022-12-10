@@ -11,6 +11,7 @@ const UserCartSchema = require('../model/UserCartSchema');
 const UserProgressSchema = require('../model/UserProgressSchema');
 const BoxOpenSchema = require('../model/BoxOpenSchema');
 const BoxSchema = require('../model/BoxSchema');
+const ItemSchema = require('../model/ItemSchema');
 
 let socketIO, pvpIO, pvpSocket;
 let battles = {};
