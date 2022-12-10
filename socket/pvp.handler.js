@@ -377,18 +377,8 @@ const finishBattle = async(pvpId) => {
 
 const bcasting = async (pvpId) => {
   // home page latest 4 battles
-  const battle = await PvpGameSchema
-    .findById(pvpId)
-    .populate('box_list', '-_id code name cost currency icon_path slug')
-    .sort({ created_at: -1 })
-    .select('-__v -roll');
-  
-  const data = await getResponseData(battle);
-
-  socketIO.emit('battle:updated', { data });
-}
-
-const getResponseData = async (battle) => {
+  console.log('Broadcasting called', pvpId);
+  const battle = await PvpGameSchema.findById(pvpId);
   const players = await PvpGamePlayerSchema
       .findOne({ pvpId: battle._id }, { _id: 0, __v: 0, pvpId: 0 });
   const roundsPayout = await PvpRoundSchema.aggregate([
@@ -461,7 +451,7 @@ const getResponseData = async (battle) => {
     boxList.push(box);
   }
 
-  return {
+  const data = {
     code: battle.code,
     isPrivate: battle.is_private,
     botEnable: battle.bot_enable,
@@ -475,4 +465,6 @@ const getResponseData = async (battle) => {
     currentPayout,
     players
   };
+
+  socketIO.emit('battle:updated', { data });
 }
