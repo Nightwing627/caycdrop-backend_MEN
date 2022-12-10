@@ -273,19 +273,14 @@ const PVPController = {
       let roundData = [];
       for (var item of rounds) {
         var roundItem = item.toJSON();
-        let creatorItem = await ItemSchema.findById(item.creator_bet.item);
-        let joinerItem = await ItemSchema.findById(item.joiner_bet.item);
 
-        if (creatorItem) {
-          roundItem.creator_bet.item = creatorItem.code;
-        } else {
-          roundItem.creator_bet.item = null;
+        if (roundItem.creator_bet) {
+          const creatorItem = await ItemSchema.findById(item.creator_bet.item);
+          roundItem.creator_bet.item = creatorItem ? creatorItem.code : null;
         }
-        
-        if (joinerItem) {
-          roundItem.joiner_bet.item = joinerItem.code;
-        } else {
-          roundItem.joiner_bet.item = null;
+        if (roundItem.joiner_bet) {
+          const joinerItem = await ItemSchema.findById(item.joiner_bet.item);
+          roundItem.joiner_bet.item = joinerItem ? joinerItem.code : null;
         }
 
         roundData.push(roundItem);
