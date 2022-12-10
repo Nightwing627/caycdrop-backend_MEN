@@ -57,7 +57,6 @@ module.exports = (io, socket) => {
       } else {
         clientHash = Util.getHashValue('client_' + Date.now());
         serverValue = Util.getHashValue('server_' + Date.now());
-        // updateUserSeed(userSeed, clientHash, serverValue);
       }
 
       // Get user nonce and update it when this is first experience
@@ -219,30 +218,4 @@ module.exports = (io, socket) => {
       callback({ result: 'success' });
     }
   });
-}
-
-// Insert seed info to Seed, and update User seed
-const updateUserSeed = async (userSeed, clientValue, serverValue) => { 
-  const clientSeed = await SeedSchema.create({
-    type: process.env.SEED_TYPE_CLIENT,
-    future: false,
-    value: '',
-    hash: clientValue
-  });
-  clientSeed.code = Util.generateCode('seed', clientSeed._id);
-  await clientSeed.save();
-  
-  const serverSeed = await SeedSchema.create({
-    type: process.env.SEED_TYPE_SERVER,
-    future: false,
-    value: serverValue,
-    hash: crypto.createHash('sha3-256').update(serverValue).digest('hex')
-  });
-  serverSeed.code = Util.generateCode('seed', serverSeed._id);
-  await serverSeed.save();
-  
-  userSeed.client_seed = clientSeed._id;
-  userSeed.server_seed = serverSeed._id;
-
-  await userSeed.save();
 }

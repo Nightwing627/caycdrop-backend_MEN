@@ -4,6 +4,14 @@ const BoxOpenSchema = require('../model/BoxOpenSchema');
 const BoxStatisticsSchema = require('../model/BoxStatisticsSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
 const Util = require('../util');
+const UserSchema = require('../model/UserSchema');
+const UserWalletSchema = require('../model/UserWalletSchema');
+const UserProgressSchema = require('../model/UserProgressSchema');
+const UserSeedSchema = require('../model/UserSeedSchema');
+const crypto = require('crypto');
+const RollHistorySchema = require('../model/RollHistorySchema');
+const UserCartSchema = require('../model/UserCartSchema');
+const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 
 const orders = [
   { value: 'recommend', label: 'Recommended'},
@@ -226,6 +234,120 @@ const BoxController = {
       console.log(err);
       return res.status(400).json({ error: 'no data'});
     }
+  },
+
+  verifyBoxStatus: async (req, res) => {
+    const { usercode, boxcode } = req.body;
+
+    if (!(usercode && boxcode)) {
+      return res.status(400).json({ error: "params must be filled" });
+    }
+    // validate params
+    const user = await UserSchema.findOne({ code: usercode });
+    if (user == null) {
+      return res.status(400).json({ error: "user doesn't exist" });
+    }
+
+    const box = await BoxSchema.findOne({ code: boxcode });
+    if (box == null) {
+      return res.status(400).json({ error: "wrong box info" });
+    }
+
+    // get basic information for verifying
+    const userWallet = await UserWalletSchema.findById(user.wallets);
+    let userProgress = await UserProgressSchema.findById(user.user_progress);
+    
+    // compare user wallet and box cost
+    if (userWallet.main < box.original_price) {
+      return res.status(400).json({ error: "please check your balance. it must be greater than bet" });
+    }
+
+    // get verify box roll value
+    const userSeed = await UserSeedSchema
+      .findOne({ userId: user._id })
+      .populate('client_seed').populate('server_seed');
+
+    const nonce = userProgress.bet_count;
+    const max = Number(process.env.ROLL_MAX);
+    const combined = [
+      process.env.COMBINE_SEED_BOX,
+      userSeed.server_seed.value,
+      userSeed.client_seed.hash,
+      nonce
+    ].join('-');
+
+    let hashed = crypto.createHmac('sha3-256', combined).digest('hex');
+    hashed = Math.floor(Math.random() * Number(process.env.VERIFY_SEED_LEN))
+      + hashed.slice(0, Number(process.env.VERIFY_SEED_LEN));
+    const valueFromHash = Number.parseInt(hashed, 16);
+    const verifyValue = Math.floor(valueFromHash / Math.pow(2, 52) * max);
+    
+    // get item data
+    const itemData = await Util.getItemAndXP(box.code, verifyValue);
+    const rollData = await RollHistorySchema.create({
+      value: verifyValue,
+      nonce,
+      game: process.env.GAME_BOX,
+      server_seed: userSeed.server_seed,
+      client_seed: userSeed.client_seed
+    });
+    await RollHistorySchema.findByIdAndUpdate(rollData._id, {
+      code: Util.generateCode('rollhistory', rollData._id)
+    });
+
+    const cart = await UserCartSchema.create({
+      user_code: user.code,
+      item_code: itemData.code,
+      status: true,
+    });
+    await UserCartSchema.findByIdAndUpdate(cart._id, {
+      code: Util.generateCode('usercart', cart._id)
+    });
+
+    // box history
+    let boxOpen = await BoxOpenSchema.create({
+      user: user._id,
+      box: box._id,
+      item: itemData.item._id,
+      pvp_code: null,
+      user_item: cart._id,
+      cost: box.original_price,
+      profit: itemData.profit,
+      xp_rewarded: itemData.xp,
+      roll_code: rollData.code,
+      status: true
+    });
+    boxOpen.code = Util.generateCode('boxopen', boxOpen._id);
+    await boxOpen.save();
+
+    // Wallet Exchange History
+    const walletExchange = await WalletExchangeSchema.create({
+      user: user._id,
+      type: process.env.WALLET_EXCHANGE_BOX,
+      value_change: box.original_price,
+      changed_after: userWallet.main - box.original_price,
+      wallet: userWallet._id,
+      currency: 'USD',
+      target: box._id
+    });
+    walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
+    await walletExchange.save();
+
+    box.opened += 1; await box.save();
+
+    // user progress
+    userProgress.bet_count += 1;
+    if (itemData.xp) { 
+      userProgress = Util.updateUserProgress(userProgress, itemData.xp);
+    }
+    await userProgress.save();
+    
+    // user wallet
+    await UserWalletSchema.findByIdAndUpdate(userWallet._id, {
+      main: userWallet.main - box.original_price
+    });
+
+    return res.status(200).json({ result: 'success', data: { verifyValue, box: boxOpen.code } });
   }
 };
 

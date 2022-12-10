@@ -12,4 +12,6 @@ router.post('/recommended', BoxController.getRecommendedBoxs);
 
 router.get('/view/:slug/top_opening', BoxController.getBoxTopOpen);
 
+router.post('/verify/status', BoxController.verifyBoxStatus);
+
 module.exports = router;
