@@ -177,7 +177,7 @@ const UserController = {
           $sort: sortField
         },
         {
-          $project: { _id: 0, user_code: 1, item: 1 }
+          $project: { _id: 0, code: 1, user_code: 1, item: 1 }
         }
       ]);
       
@@ -652,7 +652,7 @@ const UserController = {
   getGameHistory: async (req, res) => {
     const { useCode, pvpId, createdMin, createdMax, sort, gameType, strategy } = req.body;
 
-    
+
   },
 
   getUnboxingHistory: async (req, res) => {
