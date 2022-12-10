@@ -291,18 +291,20 @@ const finishBattle = async(pvpId) => {
 
   for (var i = 0; i < creatorResult.items.length; i++) {
     // move all picked items to winner's cart
+    let item = await ItemSchema.findById(creatorResult.items[i]);
     let userCart1 = await UserCartSchema.create({
       user_code: winner,
-      item_code: creatorResult.items[i],
+      item_code: item.code,
       status: true,
     });
     await UserCartSchema.findByIdAndUpdate(userCart1._id, {
       code: Util.generateCode('usercart', userCart1._id)
     });
 
+    item = await ItemSchema.findById(joinerResult.items[i]);
     let userCart2 = await UserCartSchema.create({
       user_code: winner,
-      item_code: joinerResult.items[i],
+      item_code: item.code,
       status: true,
     });
     await UserCartSchema.findByIdAndUpdate(userCart2._id, {

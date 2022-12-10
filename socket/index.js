@@ -30,7 +30,7 @@ module.exports = {
 
       UnBoxHandler(io, socket);
 
-      socket.on('user:loggedin', (data) => {
+      socket.on('user:loggedin', (payload) => {
         
       });
 
