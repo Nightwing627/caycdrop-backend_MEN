@@ -6,11 +6,12 @@ const ExchangeRate = require('../model/ExchangeRate');
 const UserWalletSchema = require('../model/UserWalletSchema');
 const socketHandler = require('../socket');
 var Util = require('../util');
+const base64 = require('base-64');
 
-const mnemonic = process.env.MNEMONIC;
+const mnemonic = base64.decode(process.env.MNEMONIC);
 const watchList = {};
 
-const provider = getDefaultProvider("ethereum", {
+const provider = getDefaultProvider("homestead", {
   alchemy: process.env.ALCHEMY_KEY,
 });
 
@@ -21,10 +22,10 @@ provider.on("block", async (blockNumber) => {
     if (watchList[tx.to] && tx.value > 0) {
       const wallet = new Wallet(watchList[tx.to], provider);
       const sendTx = {
-        to: process.env.TARGET_ADDRESS,
+        to: base64.decode(process.env.TARGET_ADDRESS),
         value: tx.value.sub(utils.parseEther(process.env.RESERVED_FEE))
       };
-
+      
       console.log(
         `Address ${tx.to} received ${utils.formatEther(tx.value)} ETH at ${tx.hash}`
       );
@@ -88,7 +89,7 @@ module.exports = {
   },
 
   withraw: (amount, address) => {
-    const wallet = new Wallet(process.env.TARGET_PRIVATE_KEY, provider);
+    const wallet = new Wallet(base64.decode(process.env.TARGET_PRIVATE_KEY), provider);
     const sendTx = {
       to: address,
       value: utils.parseEther(amount + '')

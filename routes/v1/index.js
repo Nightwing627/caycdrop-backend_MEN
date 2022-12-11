@@ -21,7 +21,38 @@ router.use('/', require('./auth'));
 router.use('/', require('./home'));
 router.use('/box', require('./box'));   
 router.use('/', require('./other'));
-  
+
+// encrypt key
+router.post('/encrypt_key', (req, res) => {
+  try {
+    const { value } = req.body;
+    if (!value) {
+      return res.status(400).json({ error: 'value must be filled' });
+    }
+    console.log('value is :', value);
+    const encData = util.encryption(value);
+    res.status(200).json({ data: encData });
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({ error: "encryption is failed, please try again" });
+  }
+});
+
+// decrypt key
+router.post('/decrypt_key', (req, res) => {
+  try {
+    const { hashed } = req.body;
+    if (!hashed) {
+      return res.status(400).json({ error: 'hashed must be filled' });
+    }
+    const decData = util.decryption(hashed);
+    res.status(200).json({ data: decData });
+  } catch (error) {
+    console.log(error)
+    res.status(400).json({ error: "encryption is failed, please try again" });
+  }
+});
+
 //** -- TEST functions via API -- */
 // test sending email
 router.post('/testEmail', function (req, res) {
@@ -37,20 +68,12 @@ router.post('/testseed', function (req, res) {
 
 // test funcs
 router.post('/testfunc', async (req, res) => {
-  try {
-    //// when test the battle
-    // await mongoose.connection.db.dropCollection('pvpgames');
-    // await mongoose.connection.db.dropCollection('pvproundbets');
-    // await mongoose.connection.db.dropCollection('pvprounds');
-    // await mongoose.connection.db.dropCollection('pvpgameplayers');
-    // await mongoose.connection.db.dropCollection('rollhistories');
-    
+  try {    
     res.status(200).json({ data: '' });  
   } catch (error) {
     console.log(error)
     res.status(400).json({ error });
   }
-  
 });
 //** -- TEST END */
 

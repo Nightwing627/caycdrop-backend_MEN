@@ -17,7 +17,6 @@ const key = crypto.randomBytes(32);
 // generate 16 bytes of random data
 const iv = crypto.randomBytes(16);
 
-
 function encrypt(text) { 
   try {
     let cipher = crypto.createCipheriv(algorithm, Buffer.from(key), iv);
@@ -30,9 +29,9 @@ function encrypt(text) {
   }
 }
 
-function decrypt(text) { 
-  let iv = Buffer.from(text.iv, 'hex');
-  let encryptedText = Buffer.from(text.encryptedData, 'hex')
+function decrypt(data) { 
+  let iv = Buffer.from(data.iv, 'hex');
+  let encryptedText = Buffer.from(data.encryptedData, 'hex')
   let decipher = crypto.createDecipheriv(algorithm, Buffer.from(key), iv);
   let decrypted = decipher.update(encryptedText);
   decrypted = Buffer.concat([ decrypted, decipher.final() ]);
@@ -265,7 +264,28 @@ async function getUserByCode(code) {
 const Seed = require('./seed');
 const CryptoRate = require('./exchangeRate');
 
+const base64 = require('base-64');
+
+const encryption = (text) => {
+  return base64.encode(text);
+}
+
+const decryption = (text) => {
+  // let textParts = text.split('.');
+  // let iv = Buffer.from(textParts.shift(), 'hex');
+  // let encryptedText = Buffer.from(textParts.join('.'), 'hex');
+  // let decipher = crypto.createDecipheriv(algorithm,
+  //   Buffer.from(process.env.ENCRYPT_KEY), iv);
+  // let decrypted = decipher.update(encryptedText);
+
+  // decrypted = Buffer.concat([decrypted, decipher.final()]);
+
+  return base64.decode(text);
+}
+
 module.exports = {
+  encryption,
+  decryption,
   generateCode,
   sendEmail,
   getCountryByReq,
