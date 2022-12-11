@@ -262,7 +262,7 @@ const UserController = {
 
       var _dMin = Number((depositMin / rate.value).toFixed(4));
       var _wMin = Number((withrawMin / rate.value).toFixed(4));
-      txLimit.push({ coin: rate.coinType, depositMin: _dMin, withrawMin: _wMin });
+      txLimit.push({ coin: rate.coinType, rate: rate.value, depositMin: _dMin, withrawMin: _wMin });
     });
     if (data == null)
       res.status(400).json({ error: 'wrong user code' });
