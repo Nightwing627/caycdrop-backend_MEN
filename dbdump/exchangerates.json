@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "638b16a8a62989194bedb491"
+  },
+  "coinType": "BTC",
+  "rateType": "USD",
+  "value": 17195,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638b16a8a62989194bedb492"
+  },
+  "coinType": "ETH",
+  "rateType": "USD",
+  "value": 1272.8,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638b16a8a62989194bedb493"
+  },
+  "coinType": "XRP",
+  "rateType": "USD",
+  "value": 0.38774,
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "638b16a8a62989194bedb494"
+  },
+  "coinType": "LTC",
+  "rateType": "USD",
+  "value": 76.768,
+  "__v": 0
+}]
