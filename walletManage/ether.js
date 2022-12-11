@@ -10,7 +10,7 @@ var Util = require('../util');
 const mnemonic = process.env.MNEMONIC;
 const watchList = {};
 
-const provider = getDefaultProvider("goerli", {
+const provider = getDefaultProvider("ethereum", {
   alchemy: process.env.ALCHEMY_KEY,
 });
 
