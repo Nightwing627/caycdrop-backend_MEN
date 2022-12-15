@@ -24,6 +24,8 @@ const util = require('util');
 const path = require('path');
 const multer = require('multer');
 const uuid = require('uuid');
+const PvpGameSchema = require('../model/PvpGameSchema');
+const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
 
 
 const UserController = {
@@ -650,9 +652,34 @@ const UserController = {
   },
 
   getGameHistory: async (req, res) => {
-    const { useCode, pvpId, createdMin, createdMax, sort, gameType, strategy } = req.body;
+    console.log(req.body);
+    const { userCode, pvpId, createdMin, createdMax, sort, strategy } = req.body;
 
+    try {
+      const battleIds = await PvpGamePlayerSchema.find({
+        $or: [
+          { "creator.code": userCode },
+          { "joiner.code": userCode },
+        ]
+      }).select({ pvpId: 1, _id: 0 });
 
+      let pvpIds = [];
+      battleIds.forEach(pvp => pvpIds.push(pvp.pvpId));
+
+      const battles = await PvpGameSchema.aggregate([
+        {
+          $match: { _id: { $in: pvpIds } }
+        },
+      ]);
+
+      
+
+      res.status(200).json({ data: battles });
+    } catch (error) {
+      
+    }
+
+    
   },
 
   getUnboxingHistory: async (req, res) => {

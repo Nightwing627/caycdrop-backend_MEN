@@ -29,6 +29,6 @@ router.post('/fairness/change', UserController.changeUserSeed);
 
 router.post('/fairness/reval', UserController.revalUserSeed);
 
-
+router.get('/history/pvp', UserController.getGameHistory);
 
 module.exports = router;
