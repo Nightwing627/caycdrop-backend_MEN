@@ -467,6 +467,8 @@ const bcasting = async (pvpId) => {
     currentPayout,
     players
   };
-
-  socketIO.emit('battle:updated', { data });
+  
+  if (socketIO != undefined) {
+    socketIO.emit('battle:updated', { data });
+  }
 }
