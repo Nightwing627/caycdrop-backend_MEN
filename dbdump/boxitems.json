@@ -2330,6 +2330,9 @@
     }
   }
 },{
+  "_id": {
+    "$oid": "6391f1fdb125bf2c79f3a7fb"
+  },
   "box_code": "Bc9a5aa51df1f8dc33085",
   "item": {
     "$oid": "637b4b30aded89b155ea3dd6"
