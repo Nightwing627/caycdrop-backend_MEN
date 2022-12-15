@@ -191,4 +191,46 @@
       "$numberLong": "1668060779193"
     }
   }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6c9f"
+  },
+  "name": "Featured",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGf61e6f01a750f270c6ff",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122969"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6ca0"
+  },
+  "name": "Hot",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGc75832b10c6215787d58",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122970"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "637e429b1e7ebe60f8ca6ca1"
+  },
+  "name": "Updated",
+  "visible": true,
+  "position": 0,
+  "color": "#eee",
+  "code": "TGc68679db0d0f6b82a8d0",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1669219122970"
+    }
+  }
 }]

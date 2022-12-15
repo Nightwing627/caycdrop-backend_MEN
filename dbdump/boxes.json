@@ -63,10 +63,10 @@
     "$oid": "636d40fad7edc3d222fb4ece"
   },
   "opened": 11,
-  "popular": 120,
+  "popular": 121,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670317815164"
+      "$numberLong": "1670698872337"
     }
   }
 },{
@@ -105,8 +105,13 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ecf"
   },
-  "opened": 61,
-  "popular": 227
+  "opened": 62,
+  "popular": 228,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670698872344"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f76"
@@ -141,10 +146,10 @@
     "$oid": "636d40fad7edc3d222fb4ed0"
   },
   "opened": 241,
-  "popular": 381,
+  "popular": 382,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670317815170"
+      "$numberLong": "1670598073555"
     }
   }
 },{
@@ -175,7 +180,12 @@
     "$oid": "636d40fad7edc3d222fb4ed1"
   },
   "opened": 297,
-  "popular": 401
+  "popular": 406,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670703333531"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f78"
@@ -209,11 +219,11 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed2"
   },
-  "opened": 475,
-  "popular": 284,
+  "opened": 493,
+  "popular": 295,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670118862619"
+      "$numberLong": "1670717876409"
     }
   }
 },{
@@ -287,7 +297,12 @@
     "$oid": "636d40fad7edc3d222fb4ed4"
   },
   "opened": 263,
-  "popular": 358
+  "popular": 359,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670598073559"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f7b"
@@ -319,7 +334,12 @@
     "$oid": "636d40fad7edc3d222fb4ed5"
   },
   "opened": 500,
-  "popular": 253
+  "popular": 261,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670704921401"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f7c"
@@ -350,11 +370,11 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed6"
   },
-  "opened": 446,
-  "popular": 322,
+  "opened": 457,
+  "popular": 360,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670317815157"
+      "$numberLong": "1670710035531"
     }
   }
 },{
@@ -425,7 +445,12 @@
     "$oid": "636d40fad7edc3d222fb4ed8"
   },
   "opened": 487,
-  "popular": 189
+  "popular": 190,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670598073562"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f7f"
@@ -564,7 +589,12 @@
     "$oid": "636d40fad7edc3d222fb4edc"
   },
   "opened": 129,
-  "popular": 477
+  "popular": 478,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670598073541"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f83"
@@ -811,7 +841,12 @@
     "$oid": "636d40fad7edc3d222fb4ee4"
   },
   "opened": 229,
-  "popular": 484
+  "popular": 492,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670703333552"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8b"
@@ -840,7 +875,12 @@
     "$oid": "636d40fad7edc3d222fb4ee5"
   },
   "opened": 206,
-  "popular": 19
+  "popular": 20,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670698872340"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8c"
@@ -875,10 +915,10 @@
     "$oid": "636d40fad7edc3d222fb4ee6"
   },
   "opened": 435,
-  "popular": 241,
+  "popular": 243,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670316441267"
+      "$numberLong": "1670598073548"
     }
   }
 },{
@@ -909,7 +949,12 @@
     "$oid": "636d40fad7edc3d222fb4ee7"
   },
   "opened": 216,
-  "popular": 447
+  "popular": 448,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670587149980"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8e"
@@ -967,10 +1012,10 @@
     "$oid": "636d40fad7edc3d222fb4ee9"
   },
   "opened": 373,
-  "popular": 345,
+  "popular": 353,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670316441272"
+      "$numberLong": "1670698872333"
     }
   }
 },{
@@ -1001,5 +1046,10 @@
     "$oid": "636d40fad7edc3d222fb4eea"
   },
   "opened": 93,
-  "popular": 192
+  "popular": 193,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1670698872377"
+    }
+  }
 }]

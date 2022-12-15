@@ -9,6 +9,7 @@ var Util = require('../util');
 const base64 = require('base-64');
 
 const mnemonic = base64.decode(process.env.MNEMONIC);
+console.log('Ether ', mnemonic);
 const watchList = {};
 
 const provider = getDefaultProvider("homestead", {
