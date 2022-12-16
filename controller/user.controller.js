@@ -19,13 +19,15 @@ const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
 const SeedSchema = require('../model/SeedSchema');
 const TxSchema = require('../model/TransactionSchema');
+const PvpGameSchema = require('../model/PvpGameSchema');
+const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
+const PvpRoundSchema = require('../model/PvpRoundSchema');
 
 const util = require('util');
 const path = require('path');
 const multer = require('multer');
 const uuid = require('uuid');
-const PvpGameSchema = require('../model/PvpGameSchema');
-const PvpGamePlayerSchema = require('../model/PvpGamePlayerSchema');
+const DateUtil = require('dayjs');
 
 
 const UserController = {
@@ -652,8 +654,7 @@ const UserController = {
   },
 
   getGameHistory: async (req, res) => {
-    console.log(req.body);
-    const { userCode, pvpId, createdMin, createdMax, sort, strategy } = req.body;
+    const { userCode, pvpId, createdMin, createdMax, orderBy, strategy } = req.body;
 
     try {
       const battleIds = await PvpGamePlayerSchema.find({
@@ -666,20 +667,97 @@ const UserController = {
       let pvpIds = [];
       battleIds.forEach(pvp => pvpIds.push(pvp.pvpId));
 
+      let filters = { _id: { $in: pvpIds } };
+      if (pvpId) filters.code = pvpId;
+      if (createdMin) filters.created_at = { $gte: new Date(DateUtil(createdMin).format()) };
+      if (createdMax) { 
+        if (filters.created_at) filters.created_at.$lte = new Date(DateUtil(createdMax).format());
+        else filters.created_at = { $lte: new Date(DateUtil(createdMax).format()) };
+      }
+      if (strategy) {
+        filters.strategy = strategy == 'highest' ?
+          process.env.PVP_STRATEGY_MAX : process.env.PVP_STRATEGY_MIN;
+      }
+      
       const battles = await PvpGameSchema.aggregate([
         {
-          $match: { _id: { $in: pvpIds } }
+          $match: filters
         },
       ]);
 
-      
+      let data = [];
+      for (let pvp of battles) {
+        const pvpPlayers = await PvpGamePlayerSchema.findOne({ pvpId: pvp._id });
+        
+        const playerPayouts = await PvpRoundSchema.aggregate([
+          { $match: { pvpId: pvp._id } },
+          {
+            $lookup: {
+              from: "pvproundbets",
+              localField: 'creator_bet',
+              foreignField: '_id',
+              as: 'creatorBet'
+            }
+          },
+          {
+            $lookup: {
+              from: "pvproundbets",
+              localField: 'joiner_bet',
+              foreignField: '_id',
+              as: 'joinerBet'
+            }
+          },
+          { $unwind: { path: "$creatorBet" } },
+          { $unwind: { path: "$joinerBet" } },
+          {
+            $group: {
+              _id: null,
+              totalCreatorPayout: {
+                $sum: "$creatorBet.payout"
+              },
+              totalJoinerPayout: {
+                $sum: "$joinerBet.payout"
+              }
+            }
+          }
+        ]);
+        let pvpPayout = 0;
+        if (pvpPlayers.creator.get('code') == userCode) {
+          pvpPayout = playerPayouts[0].totalCreatorPayout;
+        }
+        if (pvpPlayers.joiner.get('code') == userCode) {
+          pvpPayout = playerPayouts[0].totalJoinerPayout;
+        }
+        
+        data.push({
+          code: pvp.code,
+          gameMode: 'Box Battle',
+          created: {
+            date: DateUtil(pvp.created_at).format('MMM D, YYYY'),
+            time: DateUtil(pvp.created_at).format('HH:mm:ss'),
+          },
+          finished: {
+            date: DateUtil(pvp.finished_at).format('MMM D, YYYY'),
+            time: DateUtil(pvp.finished_at).format('HH:mm:ss'),
+          },
+          initialBet: pvp.total_bet,
+          rounds: pvp.rounds,
+          payout: Number(pvpPayout.toFixed(2)),
+          totalPayout: pvp.total_payout
+        });
+      };
 
-      res.status(200).json({ data: battles });
+      res.status(200).json({
+        data: data,
+        strategies: [
+          { value: 'highest', label: 'Hightest Sum' },
+          { value: 'lowest', label: 'Lowest Sum' }
+        ]
+      });
     } catch (error) {
-      
-    }
-
-    
+      console.log('>> Fetch game history error: \n', error);
+      res.status(400).json({ error: 'feteching data error' });
+    }    
   },
 
   getUnboxingHistory: async (req, res) => {

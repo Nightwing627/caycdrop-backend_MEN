@@ -314,7 +314,7 @@ const PVPController = {
               totalCreatorPayout: {
                 $sum: "$creatorBet.payout"
               },
-              totaljoinerPayout: {
+              totalJoinerPayout: {
                 $sum: "$joinerBet.payout"
               }
             }
@@ -322,7 +322,7 @@ const PVPController = {
         ]);
 
         creatorPayout = playersPayout[0].totalCreatorPayout;
-        joinerPayout = playersPayout[0].totaljoinerPayout;
+        joinerPayout = playersPayout[0].totalJoinerPayout;
       }
 
       const responseData = {

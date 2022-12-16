@@ -249,6 +249,7 @@ const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jN
 const finishBattle = async(pvpId) => {
   const rounds = await PvpRoundSchema.find({ pvpId })
     .populate('box').populate('creator_bet').populate('joiner_bet');
+  const pvpGame = await PvpGameSchema.findById(pvpId);
 
   // get picked items in battle
   let creatorResult = { sum: 0, items: [], xp: 0 };
@@ -267,27 +268,41 @@ const finishBattle = async(pvpId) => {
   let winner, loser;
   const gamePlayers = await PvpGamePlayerSchema.findOne({ pvpId });
   
-  if (creatorResult.sum > joinerResult.sum) {
-    winner = gamePlayers.creator.get('code');
-    loser = gamePlayers.joiner.get('code');
-  } else if (joinerResult.sum > creatorResult.sum) {
-    winner = gamePlayers.joiner.get('code');
-    loser = gamePlayers.creator.get('code');
-  } else {
-    // decide winner when sum values are same
-    if (Util.getRandomWinner()) {
+  if (pvpGame.strategy == process.env.PVP_STRATEGY_MAX) {
+    // strategy is highest sum
+    if (creatorResult.sum > joinerResult.sum) {
+      winner = gamePlayers.creator.get('code');
+      loser = gamePlayers.joiner.get('code');
+    } else if (joinerResult.sum > creatorResult.sum) {
       winner = gamePlayers.joiner.get('code');
       loser = gamePlayers.creator.get('code');
-    } else {
+    }
+  } else {
+    // strategy is lowest sum
+    if (creatorResult.sum > joinerResult.sum) {
+      // creator's sum is greator than joiner's sum
+      winner = gamePlayers.joiner.get('code');
+      loser = gamePlayers.creator.get('code');
+    } else if (creatorResult.sum < joinerResult.sum) {
+      // creator's sum is less than joiner's sum
       winner = gamePlayers.creator.get('code');
       loser = gamePlayers.joiner.get('code');
     }
   }
 
+  if (creatorResult.sum == joinerResult.sum) {
+     if (Util.getRandomWinner()) {
+        winner = gamePlayers.joiner.get('code');
+        loser = gamePlayers.creator.get('code');
+      } else {
+        winner = gamePlayers.creator.get('code');
+        loser = gamePlayers.joiner.get('code');
+      }
+  }
+
   // update usercarts and log box open
   const creator = await UserSchema.findOne({ code: gamePlayers.creator.get('code') });
   const joiner = await UserSchema.findOne({ code: gamePlayers.joiner.get('code') });
-  const pvpGame = await PvpGameSchema.findById(pvpId);
 
   for (var i = 0; i < creatorResult.items.length; i++) {
     // move all picked items to winner's cart
