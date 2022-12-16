@@ -107,8 +107,8 @@ module.exports = (io, socket) => {
         pvp_code: null,
         user_item: userCart._id,
         cost: box.original_price,
-        profit: itemData.profit,
-        xp_rewarded: itemData.xp,
+        profit: Number(itemData.profit.toFixed(2)),
+        xp_rewarded: Number(itemData.xp.toFixed(2)),
         roll_code: rollHis.code,
         status: true
       });

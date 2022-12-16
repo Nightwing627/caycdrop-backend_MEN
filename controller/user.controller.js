@@ -654,9 +654,11 @@ const UserController = {
   },
 
   getGameHistory: async (req, res) => {
-    const { userCode, pvpId, createdMin, createdMax, orderBy, strategy } = req.body;
+    const { userCode, pvpId, createdMin, createdMax, orderBy, strategy, pageNum } = req.body;
 
     try {
+      const pageNumber = pageNum ? Number(pageNum) : 0;
+
       const battleIds = await PvpGamePlayerSchema.find({
         $or: [
           { "creator.code": userCode },
@@ -670,7 +672,7 @@ const UserController = {
       let filters = { _id: { $in: pvpIds } };
       if (pvpId) filters.code = pvpId;
       if (createdMin) filters.created_at = { $gte: new Date(DateUtil(createdMin).format()) };
-      if (createdMax) { 
+      if (createdMax) {
         if (filters.created_at) filters.created_at.$lte = new Date(DateUtil(createdMax).format());
         else filters.created_at = { $lte: new Date(DateUtil(createdMax).format()) };
       }
@@ -678,11 +680,19 @@ const UserController = {
         filters.strategy = strategy == 'highest' ?
           process.env.PVP_STRATEGY_MAX : process.env.PVP_STRATEGY_MIN;
       }
+
+      let sort = { created_at: -1 };
+      if (orderBy == 'asc') sort = { created_at: 1 };
       
       const battles = await PvpGameSchema.aggregate([
         {
           $match: filters
         },
+        {
+          $sort: sort
+        },
+        { $skip: (pageNumber - 1) * 50 },
+        { $limit: 50 }
       ]);
 
       let data = [];
@@ -752,6 +762,10 @@ const UserController = {
         strategies: [
           { value: 'highest', label: 'Hightest Sum' },
           { value: 'lowest', label: 'Lowest Sum' }
+        ],
+        orders: [
+          { value: 'asc', label: 'Created At' },
+          { value: 'desc', label: 'Created At Desc' },
         ]
       });
     } catch (error) {
@@ -761,6 +775,68 @@ const UserController = {
   },
 
   getUnboxingHistory: async (req, res) => {
+    const { userCode, search, pageNum } = req.body;
+    
+    const pageNumber = pageNum ? Number(pageNum) : 0;
+
+    const query = search || '';
+    
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+
+      if (!user) 
+        return res.status(400).json({ error: 'User information is wrong' });
+      
+      const data = await BoxOpenSchema.aggregate([
+        {
+          $lookup: {
+            from: 'boxes',
+            localField: 'box',
+            foreignField: '_id',
+            as: 'box'
+          }
+        }, {
+          $lookup: {
+            from: 'items',
+            localField: 'item',
+            foreignField: '_id',
+            as: 'item'
+          }
+        }, {
+          $unwind: { path: '$box' }
+        }, {
+          $unwind: { path: '$item' }
+        }, {
+          $match: {
+            user: user._id,
+            pvp_code: null,
+            $or: [
+              { "item.name": { $regex: `.*${query}.*`, $options: 'i' } },
+              { "box.name": { $regex: `.*${query}.*`, $options: 'i' } }
+            ]
+          }
+        }, {
+          $sort: { created_at: -1 }
+        }, {
+          $project: {
+            _id: 0, code: 1, cost: 1, profit: 1, xp_rewarded: 1, status: 1,
+            "box.code": 1, "box.name": 1, "box.cost": 1, "box.currency": 1, "box.slug": 1,
+            "box.icon": { $concat: [process.env.LINK, '/', "$box.icon_path"] },
+            "item.code": 1, "item.name": 1, "itm.value": 1, "item.rarity": 1, "item.currency": 1, "item.icon_url": 1
+          }
+        },
+        { $skip: (pageNumber - 1) * 50 },
+        { $limit: 50 }
+      ]);
+
+      res.status(200).json({ data });
+    } catch (error) {
+      console.log('>> Fetching unboxing history error: \n', error);
+      res.status(400).json({ error: 'fetching data error' });
+    }
+  },
+
+  getTxHistory: async (req, res) => {
     
   }
 };

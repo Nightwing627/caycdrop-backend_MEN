@@ -312,7 +312,7 @@ const BoxController = {
       pvp_code: null,
       user_item: cart._id,
       cost: box.original_price,
-      profit: itemData.profit,
+      profit: Number(itemData.profit.toFixed(2)),
       xp_rewarded: itemData.xp,
       roll_code: rollData.code,
       status: true

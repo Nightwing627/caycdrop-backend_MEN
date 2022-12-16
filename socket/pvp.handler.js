@@ -12,6 +12,7 @@ const UserProgressSchema = require('../model/UserProgressSchema');
 const BoxOpenSchema = require('../model/BoxOpenSchema');
 const BoxSchema = require('../model/BoxSchema');
 const ItemSchema = require('../model/ItemSchema');
+const RollHistorySchema = require('../model/RollHistorySchema');
 
 let socketIO, pvpIO, pvpSocket;
 let battles = {};
@@ -177,24 +178,33 @@ const encounting = (pvpId) => {
 
 const startBattle = async (pvpId) => {
   let roundNumber = 0;
+  
+  // get basic infos
   const pvpGame = await PvpGameSchema
     .findOne({ code: pvpId })
     .populate('box_list')
     .populate('roll');
-  
   const serverSeed = await SeedSchema.findById(pvpGame.roll.server_seed);
   const clientSeed = await SeedSchema.findById(pvpGame.roll.client_seed);
   const rounds = await PvpRoundSchema.find({ pvpId: pvpGame._id });
   const cNonce = pvpGame.roll.nonce;
   const jNonce = cNonce + rounds.length;
+  const gamePlayers = await PvpGamePlayerSchema.findOne({ pvpId: pvpGame._id });
+  const creator = await UserSchema.findOne({ code: gamePlayers.creator.get('code') });
+  const joiner = await UserSchema.findOne({ code: gamePlayers.joiner.get('code') });
+
+  const playersInfo = {
+    creator: { id: creator._id, code: creator.code },
+    joiner: { id: joiner._id, code: joiner.code}
+  }
 
   roundNumber = await runningBattle(
-    pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber);
+    playersInfo, pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber);
 
   const timeId = setInterval(async () => {
     if (roundNumber < rounds.length) {
       roundNumber = await runningBattle(
-        pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber);
+        playersInfo, pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber);
     } else {
       // finish the battle
       finishBattle(pvpGame._id);
@@ -203,7 +213,7 @@ const startBattle = async (pvpId) => {
   }, process.env.PVP_ROUND_TIME);
 }
 
-const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber) => {
+const runningBattle = async (playersInfo, pvpGame, serverSeed, clientSeed, rounds, cNonce, jNonce, roundNumber) => {
   // generate roll value - creator, joiner
   const creatorRoll = Util.Seed.getRoll(
     process.env.GAME_PVP, clientSeed.hash, serverSeed.value, cNonce + roundNumber
@@ -225,6 +235,39 @@ const runningBattle = async (pvpGame, serverSeed, clientSeed, rounds, cNonce, jN
     item: joinerItem.item._id,
     payout: joinerItem.item.value,
     rewarded_xp: joinerItem.xp
+  });
+
+  // create rollhis and log boxopening
+  const creatorBoxOpen = await BoxOpenSchema.create({
+    user: playersInfo.creator._id,
+    box: round.box,
+    item: creatorItem.item._id,
+    pvp_code: pvpGame.code,
+    user_item: null,
+    cost: round.bet,
+    profit: Number((round.bet - creatorItem.item.value).toFixed(2)),
+    xp_rewarded: creatorItem.xp,
+    roll_code: null,
+    status: false
+  });
+  await BoxOpenSchema.findByIdAndUpdate(creatorBoxOpen._id, {
+    code: Util.generateCode('boxopen', creatorBoxOpen._id)
+  });
+
+  const joinerBoxOpen = await BoxOpenSchema.create({
+    user: playersInfo.joiner._id,
+    box: round.box,
+    item: joinerItem.item._id,
+    pvp_code: pvpGame.code,
+    user_item: null,
+    cost: round.bet,
+    profit: Number((round.bet - joinerItem.item.value).toFixed(2)),
+    xp_rewarded: joinerItem.xp,
+    roll_code: null,
+    status: false
+  });
+  await BoxOpenSchema.findByIdAndUpdate(joinerBoxOpen._id, {
+    code: Util.generateCode('boxopen', joinerBoxOpen._id)
   });
   
   // emit round roll values
@@ -324,39 +367,6 @@ const finishBattle = async(pvpId) => {
     });
     await UserCartSchema.findByIdAndUpdate(userCart2._id, {
       code: Util.generateCode('usercart', userCart2._id)
-    });
-
-    // log all items and box into boxopen
-    let boxOpen1 = await BoxOpenSchema.create({
-      user: creator._id,
-      box: rounds[i].box._id,
-      item: rounds[i].creator_bet.item,
-      pvp_code: pvpGame.code,
-      user_item: null,
-      cost: rounds[i].box.original_price,
-      profit: Number((rounds[i].box.original_price - rounds[i].creator_bet.payout).toFixed(2)),
-      xp_rewarded: rounds[i].creator_bet.rewarded_xp,
-      roll_code: null,
-      status: false
-    });
-    await BoxOpenSchema.findByIdAndUpdate(boxOpen1._id, {
-      code: Util.generateCode('boxopen', boxOpen1._id)
-    });
-
-    let boxOpen2 = await BoxOpenSchema.create({
-      user: joiner._id,
-      box: rounds[i].box._id,
-      item: rounds[i].joiner_bet.item,
-      pvp_code: pvpGame.code,
-      user_item: null,
-      cost: rounds[i].box.original_price,
-      profit: Number((rounds[i].box.original_price - rounds[i].joiner_bet.payout).toFixed(2)),
-      xp_rewarded: rounds[i].joiner_bet.rewarded_xp,
-      roll_code: null,
-      status: false
-    });
-    await BoxOpenSchema.findByIdAndUpdate(boxOpen2._id, {
-      code: Util.generateCode('boxopen', boxOpen2._id)
     });
   }
 
