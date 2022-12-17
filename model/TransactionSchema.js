@@ -18,15 +18,34 @@ const TransactionSchema = new Schema({
   promo_code: { type: SchemaTypes.Number },
   bonus_percent: { type: SchemaTypes.Number },
   bonus_max_amount: { type: SchemaTypes.Number },
-  bouns_amount: { type: SchemaTypes.Number },
-  type: { type: SchemaTypes.String },
-  ip_address: { type: SchemaTypes.String }, // deposit, withraw
+  bonus_amount: { type: SchemaTypes.Number },
+  type: { type: SchemaTypes.String }, // deposit, withraw
+  ip_address: { type: SchemaTypes.String }
 }, {
   timestamps: {
     createdAt: 'created_at',
     updatedAt: 'updated_at'
   },
 });
+
+TransactionSchema.methods.toDataJSON = function () {
+  return {
+    code: this.code,
+    userCode: this.user_code,
+    amount: this.amount,
+    currency: this.currency,
+    exchanged: this.exchanged_amount,
+    method: this.method,
+    status: this.status,
+    url: this.url,
+    promoCode: this.promo_code,
+    bonusPercent: this.bonus_percent,
+    bonusMaxAmount: this.bonus_max_amount,
+    bonusAmount: this.bonus_amount,
+    type: this.type,
+    ipAddress: this.ip_address
+  }
+}
 
 TransactionSchema.plugin(uniqueValidator, { message: " is already exist" });
 

@@ -345,7 +345,7 @@ const UserController = {
             promo_code: null,
             bonus_percent: 0,
             bonus_max_amount: 0,
-            bouns_amount: 0,
+            bonus_amount: 0,
             type: 'WITHRAW'
           });
           txData.code = Util.generateCode('transaction', txData._id);
@@ -836,8 +836,94 @@ const UserController = {
     }
   },
 
+  getTxHisFilters: (req, res) => {
+    res.status(200).json({
+      walletMethods: [
+        { value: '', label: 'Show All' },
+        { value: 'main', label: 'USD Main' },
+        { value: 'bonus', label: 'USD Bonus' }
+      ],
+      types: [
+        { value: '', label: 'Show All' },
+        { value: 'boxing', label: 'Box Purchase' },
+        { value: 'item_exchange', label: 'Item Exchange' },
+        { value: 'item_withdraw', label: 'Item Withdraw' },
+        { value: 'pvp_bet', label: 'Pvp Bet' },
+        { value: 'pvp_win', label: 'Pvp Win' },
+        { value: 'affilate', label: 'Affilate' },
+        { value: 'deposit', label: 'Deposit' }
+      ]
+    })
+  },
+
   getTxHistory: async (req, res) => {
-    
+    const { userCode, type, walletMethod, minDate, maxDate } = req.body;
+    // type, wallet method, min date, max date
+    // date, code, method, amount, closing balance, reference, ip address
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+
+      // set filters
+      let filters = { user: user._id };
+      if (type) {
+        if (type == 'boxing') filters.type = process.env.WALLET_EXCHANGE_BOX;
+        if (type == 'item_exchange') filters.type = process.env.WALLET_EXCHANGE_ITEM;
+        if (type == 'pvp_bet') filters.type = process.env.WALLET_EXCHANGE_PVP;
+        if (type == 'deposit') filters.type = process.env.WALLET_EXCHANGE_DEPOSIT;
+      }
+      if (walletMethod == 'main') filters.currency = 'USD';
+      if (minDate) filters.created_at = { $gte: new Date(DateUtil(minDate).format()) };
+      if (maxDate) {
+        if (filters.created_at) filters.created_at.$lte = new Date(DateUtil(maxDate).format());
+        else filters.created_at = { $lte: new Date(DateUtil(maxDate).format()) };
+      }
+      
+      const logs = await WalletExchangeSchema.find(filters);
+      let data = [];
+      for (const log of logs) {
+        let method, detail, target;
+        if (log.type == process.env.WALLET_EXCHANGE_ITEM) {
+          target = await ItemSchema.findById(log.target).select({ _id: 0, code: 1, name: 1 });
+          method = 'Item Sold';
+          detail = target ? target.name : '';
+
+        } else if (log.type == process.env.WALLET_EXCHANGE_BOX) {
+          target = await BoxSchema.findById(log.target).select({ _id: 0, code: 1, name: 1 });
+          method = 'UnBoxing Purchase';
+          detail = target ? target.name : '';
+
+        } else if (log.type == process.env.WALLET_EXCHANGE_PVP) {
+          target = await PvpGameSchema.findById(log.target);
+          target = target ?  target.toGameJSON() : null;
+          method = 'PVP Game Bet';
+          detail = target? target.code : '';
+
+        } else if (log.type == process.env.WALLET_EXCHANGE_DEPOSIT) {
+          target = await TransactionSchema.findById(log.target);
+          target = target ? target.toDataJSON() : null;
+          method = 'Deposit';
+          detail = target ? target.url : '';
+        }
+ 
+        data.push({
+          code: log.code,
+          user: userCode,
+          amount: log.value_change,
+          closing: log.changed_after,
+          method,
+          detail,
+          target
+        });
+      };
+      
+      res.status(200).json({ data });
+    } catch (error) {
+      console.log('>> Fetch transaction history error: \n', error);
+      res.status(400).json({ error: 'feteching data error' });
+    }
   }
 };
 

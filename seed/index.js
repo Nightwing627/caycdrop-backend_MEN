@@ -17,24 +17,10 @@ const init = async () => {
     await BoxSchema.insertMany(boxData);
   }
 
-  boxs.forEach(async item => {
-    if (item.code == null) {
-      item.code = Util.generateCode('box', item._id);
-      await item.save();  
-    }
-  })
-
   const items = await ItemSchema.find();
   if (items == null || items.length == 0) {
     await ItemSchema.insertMany(itemData);
   }
-
-  items.forEach(async item => {
-    if (item.code == null) {
-      item.code = Util.generateCode('item', item._id);
-      await item.save();  
-    }
-  })
 
   // const boxItems = await BoxItemSchema.find();
   // if (boxItems == null || boxItems.length == 0) {

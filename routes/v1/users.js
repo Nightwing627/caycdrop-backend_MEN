@@ -33,6 +33,8 @@ router.get('/history/pvp', UserController.getGameHistory);
 
 router.get('/history/box', UserController.getUnboxingHistory);
 
+router.get('/history/txs/filters', UserController.getTxHisFilters);
+
 router.get('/history/txs', UserController.getTxHistory);
 
 module.exports = router;

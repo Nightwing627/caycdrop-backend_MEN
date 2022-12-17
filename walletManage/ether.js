@@ -4,9 +4,11 @@ const UserCryptoWalletSchema = require('../model/UserCryptoWalletSchema');
 const TxSchema = require('../model/TransactionSchema');
 const ExchangeRate = require('../model/ExchangeRate');
 const UserWalletSchema = require('../model/UserWalletSchema');
+const WalletExchangeSchema = require('../model/WalletExchangeSchema');
 const socketHandler = require('../socket');
 var Util = require('../util');
 const base64 = require('base-64');
+const UserSchema = require('../model/UserSchema');
 
 const mnemonic = base64.decode(process.env.MNEMONIC);
 console.log('Ether ', mnemonic);
@@ -123,7 +125,7 @@ const depositWallet = async (tx) => {
   const exchange = await ExchangeRate.findOne({ coinType: 'ETH' });
   
   let status = 'started';
-  let exchangedAmount = Number.parseFloat(amount * exchange.value).toFixed(2);
+  let exchangedAmount = Number((amount * exchange.value).toFixed(2));
   if (amount >= Number(process.env.MIN_DEPOSTI)) {
     status = 'completed';
   }
@@ -141,8 +143,8 @@ const depositWallet = async (tx) => {
     promo_code: null,
     bonus_percent: 0,
     bonus_max_amount: 0,
-    bouns_amount: 0,
-    type: 'DEPOSIT'
+    bonus_amount: 0,
+    type: 'DEPOSIT',
   });
   await TxSchema.findByIdAndUpdate(txData._id, {
     code: Util.generateCode('transaction', txData._id)
@@ -152,9 +154,23 @@ const depositWallet = async (tx) => {
   if (status == 'completed') {
     const userWallet = await UserWalletSchema
       .findOne({ user_code: userCryptoWallet.user_code });
-    const sum = parseFloat(userWallet.main) + parseFloat(exchangedAmount);
+    const sum = parseFloat(userWallet.main) + exchangedAmount;
     userWallet.main = Number(parseFloat(sum).toFixed(2));
     await userWallet.save();
+    
+    const user = await UserSchema.findOne({ code: userCryptoWallet.user_code });
+    // log the exchange
+    const walletExchange = await WalletExchangeSchema.create({
+      user: user._id,
+      type: process.env.WALLET_EXCHANGE_DEPOSIT,
+      value_change: exchangedAmount,
+      changed_after: userWallet.main,
+      currency: 'USD',
+      target: txData._id
+    });
+    walletExchange.code = Util.generateCode('walletexchange', walletExchange._id);
+    await walletExchange.save();
+
     socketHandler.deposit(true);
   } else {
     socketHandler.deposit(false);
