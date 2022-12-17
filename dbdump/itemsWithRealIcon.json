@@ -9916,4 +9916,1044 @@
       "$numberLong": "1669044643330"
     }
   }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c0"
+  },
+  "name": "Gallery Dept Paint Hoodie Grey",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/gallery_dept_paint_hoodie_grey.png",
+  "description": "",
+  "brand": "",
+  "value": 950,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 950,
+  "max_value": 950,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "I93e11a7a7f4fb26946f1",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130352"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c1"
+  },
+  "name": "Supreme Side Bag Orange",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/supreme_side_bag_orange.png",
+  "description": "",
+  "brand": "",
+  "value": 175,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "uncommon",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 175,
+  "max_value": 175,
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
+  "variants": [],
+  "market": null,
+  "code": "I2c11c237453e9b2ba5a0",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130352"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c2"
+  },
+  "name": "Neighborhood x Wind and Sea Hawaiian Shirt",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/neighborhood_x_wind_and_sea_hawaiian_shirt.png",
+  "description": "",
+  "brand": "",
+  "value": 420,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 420,
+  "max_value": 420,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "code": "Ic718d0a6f21131cda541",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130352"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c3"
+  },
+  "name": "RHUDE SNAP HAWAIIAN SHIRT - MULTI",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/rhude_snap_hawaiian_shirt-multi.png",
+  "description": "",
+  "brand": "",
+  "value": 515,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 515,
+  "max_value": 515,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "Id734025f000745f20354",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130353"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c4"
+  },
+  "name": "RHUDE Silk Doodle Printed Shirt",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/rhude_silk_doodle_printed_shirt.png",
+  "description": "",
+  "brand": "",
+  "value": 976,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 976,
+  "max_value": 976,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "I1b92427d3c78a90bec76",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130353"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c5"
+  },
+  "name": "Eric Emanuel EE Miami Exclusive Basic Short Pink",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/eric_emanuel_ee_miami_exclusive_basic_short_pink.png",
+  "description": "",
+  "brand": "",
+  "value": 238,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 238,
+  "max_value": 238,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "code": "I05c657e1fc3baebcde94",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130353"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c6"
+  },
+  "name": "Louis Vuitton 1.1 Evidence Sunglasses Black",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/louis_vuitton_1-1_evidence_sunglasses_black.png",
+  "description": "",
+  "brand": "",
+  "value": 775,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 775,
+  "max_value": 775,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "If9ab8ec37b1eef759190",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130353"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c7"
+  },
+  "name": "Swatch x Omega Bioceramic Moon Top 10 Set of 10",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/swatch_x_omega_bioceramic_moon_top_10_set_of_10.png",
+  "description": "",
+  "brand": "",
+  "value": 4825,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 4825,
+  "max_value": 4825,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I05b85fa18bc7fc697d3c",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c8"
+  },
+  "name": "Swatch x Omega Bioceramic Moon Top 3 Set Uranus, Venus & Pluto",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/swatch_x_omega_bioceramic_moon_top_3_set_uranus_venus-pluto.png",
+  "description": "",
+  "brand": "",
+  "value": 1285,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 1285,
+  "max_value": 1285,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I4d1c918fcadcd734650b",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9c9"
+  },
+  "name": "GTA Vice City",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/gta_vice_city.png",
+  "description": "",
+  "brand": "",
+  "value": 15,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "common",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 15,
+  "max_value": 15,
+  "min_rarity": "common",
+  "max_rarity": "common",
+  "variants": [],
+  "market": null,
+  "code": "Ie7b9d57eb68a6ef061f3",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9ca"
+  },
+  "name": "2023 VANDERHALL CARMEL GTS Black",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/2023_vanderhall_carmel_gts_black.png",
+  "description": "",
+  "brand": "",
+  "value": 65000,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 65000,
+  "max_value": 65000,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I70bf84952a6fd12c0d61",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9cb"
+  },
+  "name": "2023 VANDERHALL CARMEL BLACKJACK Bosco Blue",
+  "icon_url": "http://185.188.249.152:5000/img/items/miami_lifestyle/2023_vanderhall_carmel_blackjack_bosco_blue.png",
+  "description": "",
+  "brand": "",
+  "value": 52000,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 52000,
+  "max_value": 52000,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "Iad918f3fc81f85992482",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9cc"
+  },
+  "name": "2022 BUELL 1190 SX",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/2022_buell_1190_sx.png",
+  "description": "",
+  "brand": "",
+  "value": 27500,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 27500,
+  "max_value": 27500,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I00e0caee739a6d018a4f",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9cd"
+  },
+  "name": "2022 BUELL HAMMERHEAD 1190",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/2022_buell_hammerhead_1190.png",
+  "description": "",
+  "brand": "",
+  "value": 31200,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 31200,
+  "max_value": 31200,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I16bbac8e7e7b993dd960",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9ce"
+  },
+  "name": "CyberPunk 2077 PC",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/cyberpunk_2077_pc.png",
+  "description": "",
+  "brand": "",
+  "value": 45,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "common",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 45,
+  "max_value": 45,
+  "min_rarity": "common",
+  "max_rarity": "common",
+  "variants": [],
+  "market": null,
+  "code": "I05a510f1400559fa9225",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9cf"
+  },
+  "name": "Hot Wheels x Tesla Cybertruck 1:10 Scale RC Car (2021 Version w/ Cyberquad)",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/hot_wheels_x_tesla_cybertruck_110_scale_rc_car_2021_version_w_cyberquad.png",
+  "description": "",
+  "brand": "",
+  "value": 95,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "common",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 95,
+  "max_value": 95,
+  "min_rarity": "common",
+  "max_rarity": "common",
+  "variants": [],
+  "market": null,
+  "code": "Ia284f71f209e802dbb45",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d0"
+  },
+  "name": "Bearbrick Daft Punk (2 Pack) 400%",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/bearbrick_daft_punk_2_pack_400.png",
+  "description": "",
+  "brand": "",
+  "value": 1225,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 1225,
+  "max_value": 1225,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "Iadece5ac9a1c44a44658",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d1"
+  },
+  "name": "Rick Owens DRKSHDW Strobe Hexa Black",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/rick_owens_drkshdw_strobe_hexa_black.png",
+  "description": "",
+  "brand": "",
+  "value": 775,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 775,
+  "max_value": 775,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "Id303880a396191bea5a6",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d2"
+  },
+  "name": "New Era Colorado Rockies Capsule Park Collection 25 Seasons 59Fifty Fitted Hat Purple/Pink",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/new_era_colorado_rockies_capsule_park_collection_25_seasons_59fifty_fitted_hat_purplepink.png",
+  "description": "",
+  "brand": "",
+  "value": 155,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "uncommon",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 155,
+  "max_value": 155,
+  "min_rarity": "uncommon",
+  "max_rarity": "uncommon",
+  "variants": [],
+  "market": null,
+  "code": "Ie2b6569b5c7a6f9fba24",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d3"
+  },
+  "name": "A Bathing Ape Bape SK8 Sta Hajime Sorayama",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/a_bathing_ape_bape_sk8_sta_hajime_sorayama.png",
+  "description": "",
+  "brand": "",
+  "value": 497,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 497,
+  "max_value": 497,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "code": "Ic88661c0f3c12a8f7d46",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d4"
+  },
+  "name": "Futura Laboratories FL-001 Pointman Figure Red",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/futura_laboratories_fl-001_pointman_figure_red.png",
+  "description": "",
+  "brand": "",
+  "value": 925,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 925,
+  "max_value": 925,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "Ifeb2f667d3e10552c442",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d5"
+  },
+  "name": "Spider Worldwide Cross Country Hoodie White",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/spider_worldwide_cross_country_hoodie_white.png",
+  "description": "",
+  "brand": "",
+  "value": 350,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 350,
+  "max_value": 350,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "code": "Ib03b1bd5bfce017abaf5",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d6"
+  },
+  "name": "Spider Worldwide P*NK Sweatpants Pink",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/spider_worldwide_pnk_sweatpants_pink.png",
+  "description": "",
+  "brand": "",
+  "value": 300,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "rare",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 300,
+  "max_value": 300,
+  "min_rarity": "rare",
+  "max_rarity": "rare",
+  "variants": [],
+  "market": null,
+  "code": "I363cc2a9ef031f778b5f",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d7"
+  },
+  "name": "NVIDIA MSI GeForce RTX 4090 SUPRIM LIQUID X 24G Graphics Card",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/nvidia_msi_geforce_rtx_4090_suprim_liquid_x_24g_graphics_card.png",
+  "description": "",
+  "brand": "",
+  "value": 2780,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 2780,
+  "max_value": 2780,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "Ia4391fc0513af16030d2",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d8"
+  },
+  "name": "Palace Y-3 Needle Punch Nylon Wool Coach Jacket Black",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/palace_y-3_needle_punch_nylon_wool_coach_jacket_black.png",
+  "description": "",
+  "brand": "",
+  "value": 855,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "epic",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 855,
+  "max_value": 855,
+  "min_rarity": "epic",
+  "max_rarity": "epic",
+  "variants": [],
+  "market": null,
+  "code": "If0e3f17ff52c4c11181d",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d72ec10115822aa5be9d9"
+  },
+  "name": "Chrome Hearts Matty Boy Vanity Affair L/S T-shirt Pink",
+  "icon_url": "http://185.188.249.152:5000/img/items/cyberpunk/chrome_hearts_matty_boy_vanity_affair_ls_t-shirt_pink.png",
+  "description": "",
+  "brand": "",
+  "value": 1195,
+  "usable": true,
+  "obtainable": true,
+  "withdrawable": true,
+  "rarity": "legendary",
+  "currency": "USD",
+  "released_at": {
+    "$date": {
+      "$numberLong": "1504926000000"
+    }
+  },
+  "type": "IRL",
+  "category": [
+    {
+      "$oid": "636c84ece4830d466abadc1e"
+    },
+    {
+      "$oid": "636c84ece4830d466abadc22"
+    }
+  ],
+  "min_value": 1195,
+  "max_value": 1195,
+  "min_rarity": "legendary",
+  "max_rarity": "legendary",
+  "variants": [],
+  "market": null,
+  "code": "I48d56b9631ba3aa5add3",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130355"
+    }
+  }
 }]

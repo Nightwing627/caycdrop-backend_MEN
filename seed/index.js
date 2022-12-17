@@ -17,25 +17,39 @@ const init = async () => {
     await BoxSchema.insertMany(boxData);
   }
 
+  boxs.forEach(async item => {
+    if (item.code == null) {
+      item.code = Util.generateCode('box', item._id);
+      await item.save();  
+    }
+  })
+
   const items = await ItemSchema.find();
   if (items == null || items.length == 0) {
     await ItemSchema.insertMany(itemData);
   }
 
-  const boxItems = await BoxItemSchema.find();
-  if (boxItems == null || boxItems.length == 0) {
-    await BoxItemSchema.insertMany(boxItemData);
-  }
+  items.forEach(async item => {
+    if (item.code == null) {
+      item.code = Util.generateCode('item', item._id);
+      await item.save();  
+    }
+  })
 
-  const countries = await CountrySchema.find();
-  if (countries == null || countries.length == 0) {
-    await CountrySchema.insertMany(countryData);
-  }
+  // const boxItems = await BoxItemSchema.find();
+  // if (boxItems == null || boxItems.length == 0) {
+  //   await BoxItemSchema.insertMany(boxItemData);
+  // }
 
-  const tags = await TagSchema.find();
-  if (tags == null || tags.length == 0) {
-    await TagSchema.insertMany(tagData);
-  }
+  // const countries = await CountrySchema.find();
+  // if (countries == null || countries.length == 0) {
+  //   await CountrySchema.insertMany(countryData);
+  // }
+
+  // const tags = await TagSchema.find();
+  // if (tags == null || tags.length == 0) {
+  //   await TagSchema.insertMany(tagData);
+  // }
 
   // tags.forEach(async item => {
   //   if (item.code == null) {

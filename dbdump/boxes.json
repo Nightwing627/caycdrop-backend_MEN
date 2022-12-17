@@ -63,10 +63,10 @@
     "$oid": "636d40fad7edc3d222fb4ece"
   },
   "opened": 11,
-  "popular": 121,
+  "popular": 120,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670698872337"
+      "$numberLong": "1670317815164"
     }
   }
 },{
@@ -105,13 +105,8 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ecf"
   },
-  "opened": 62,
-  "popular": 228,
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1670698872344"
-    }
-  }
+  "opened": 61,
+  "popular": 227
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f76"
@@ -146,10 +141,10 @@
     "$oid": "636d40fad7edc3d222fb4ed0"
   },
   "opened": 241,
-  "popular": 382,
+  "popular": 381,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670598073555"
+      "$numberLong": "1670317815170"
     }
   }
 },{
@@ -180,12 +175,7 @@
     "$oid": "636d40fad7edc3d222fb4ed1"
   },
   "opened": 297,
-  "popular": 406,
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1670703333531"
-    }
-  }
+  "popular": 401
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f78"
@@ -219,11 +209,11 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed2"
   },
-  "opened": 493,
-  "popular": 295,
+  "opened": 476,
+  "popular": 284,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670717876409"
+      "$numberLong": "1670656249777"
     }
   }
 },{
@@ -297,10 +287,10 @@
     "$oid": "636d40fad7edc3d222fb4ed4"
   },
   "opened": 263,
-  "popular": 359,
+  "popular": 361,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670598073559"
+      "$numberLong": "1671207423664"
     }
   }
 },{
@@ -334,10 +324,10 @@
     "$oid": "636d40fad7edc3d222fb4ed5"
   },
   "opened": 500,
-  "popular": 261,
+  "popular": 254,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670704921401"
+      "$numberLong": "1671210138672"
     }
   }
 },{
@@ -370,11 +360,11 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4ed6"
   },
-  "opened": 457,
-  "popular": 360,
+  "opened": 446,
+  "popular": 324,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670710035531"
+      "$numberLong": "1671207423660"
     }
   }
 },{
@@ -405,10 +395,10 @@
     "$oid": "636d40fad7edc3d222fb4ed7"
   },
   "opened": 360,
-  "popular": 494,
+  "popular": 497,
   "updated_at": {
     "$date": {
-      "$numberLong": "1669836598293"
+      "$numberLong": "1671210138666"
     }
   }
 },{
@@ -445,10 +435,10 @@
     "$oid": "636d40fad7edc3d222fb4ed8"
   },
   "opened": 487,
-  "popular": 190,
+  "popular": 192,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670598073562"
+      "$numberLong": "1671068240390"
     }
   }
 },{
@@ -485,7 +475,12 @@
     "$oid": "636d40fad7edc3d222fb4ed9"
   },
   "opened": 203,
-  "popular": 1
+  "popular": 3,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671210138673"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f80"
@@ -549,10 +544,10 @@
     "$oid": "636d40fad7edc3d222fb4edb"
   },
   "opened": 61,
-  "popular": 350,
+  "popular": 353,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670118862627"
+      "$numberLong": "1671068240386"
     }
   }
 },{
@@ -589,10 +584,10 @@
     "$oid": "636d40fad7edc3d222fb4edc"
   },
   "opened": 129,
-  "popular": 478,
+  "popular": 479,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670598073541"
+      "$numberLong": "1671068810783"
     }
   }
 },{
@@ -622,8 +617,13 @@
   "statistic": {
     "$oid": "636d40fad7edc3d222fb4edd"
   },
-  "opened": 238,
-  "popular": 190
+  "opened": 240,
+  "popular": 192,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671204017774"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f84"
@@ -715,10 +715,10 @@
     "$oid": "636d40fad7edc3d222fb4ee0"
   },
   "opened": 245,
-  "popular": 90,
+  "popular": 95,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670118862631"
+      "$numberLong": "1671068587066"
     }
   }
 },{
@@ -749,10 +749,10 @@
     "$oid": "636d40fad7edc3d222fb4ee1"
   },
   "opened": 193,
-  "popular": 211,
+  "popular": 212,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670316441281"
+      "$numberLong": "1671068372148"
     }
   }
 },{
@@ -783,7 +783,12 @@
     "$oid": "636d40fad7edc3d222fb4ee2"
   },
   "opened": 223,
-  "popular": 234
+  "popular": 236,
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671068587061"
+    }
+  }
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f89"
@@ -841,10 +846,10 @@
     "$oid": "636d40fad7edc3d222fb4ee4"
   },
   "opened": 229,
-  "popular": 492,
+  "popular": 485,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670703333552"
+      "$numberLong": "1671068372157"
     }
   }
 },{
@@ -875,12 +880,7 @@
     "$oid": "636d40fad7edc3d222fb4ee5"
   },
   "opened": 206,
-  "popular": 20,
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1670698872340"
-    }
-  }
+  "popular": 19
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8c"
@@ -915,10 +915,10 @@
     "$oid": "636d40fad7edc3d222fb4ee6"
   },
   "opened": 435,
-  "popular": 243,
+  "popular": 241,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670598073548"
+      "$numberLong": "1670316441267"
     }
   }
 },{
@@ -949,12 +949,7 @@
     "$oid": "636d40fad7edc3d222fb4ee7"
   },
   "opened": 216,
-  "popular": 448,
-  "updated_at": {
-    "$date": {
-      "$numberLong": "1670587149980"
-    }
-  }
+  "popular": 447
 },{
   "_id": {
     "$oid": "637b9095aded89b155ea3f8e"
@@ -1012,10 +1007,10 @@
     "$oid": "636d40fad7edc3d222fb4ee9"
   },
   "opened": 373,
-  "popular": 353,
+  "popular": 345,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670698872333"
+      "$numberLong": "1670316441272"
     }
   }
 },{
@@ -1049,7 +1044,69 @@
   "popular": 193,
   "updated_at": {
     "$date": {
-      "$numberLong": "1670698872377"
+      "$numberLong": "1671068372155"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d4b4010115822aa5be9bd"
+  },
+  "name": "Miami Lifestyle",
+  "cost": 73.23,
+  "original_price": 73.23,
+  "currency": "USD",
+  "icon_path": "img/boxes/miami-lifestyle.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "miami-lifestyle",
+  "description": "3% Hitrate, $73.23",
+  "markets": [],
+  "order": 160,
+  "opened": 90,
+  "popular": 23,
+  "code": "B113599bea083f49b2bbf",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130229"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "639d4b4010115822aa5be9be"
+  },
+  "name": "CyberPunk",
+  "cost": 230.84,
+  "original_price": 230.84,
+  "currency": "USD",
+  "icon_path": "img/boxes/cyberpunk.png",
+  "level_required": 1,
+  "tags": [
+    {
+      "$oid": "636c84ece4830d466abadc11"
+    }
+  ],
+  "max_purchase_daily": 1000000,
+  "purchasable": true,
+  "sellable": true,
+  "openable": true,
+  "slug": "miami-lifestyle",
+  "description": "3% Hitrate, $73.23",
+  "markets": [],
+  "order": 160,
+  "opened": 90,
+  "popular": 23,
+  "code": "B37407608494a938c4812",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1671263130229"
     }
   }
 }]
