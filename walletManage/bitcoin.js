@@ -9,7 +9,7 @@ module.exports = {
     };
   },
 
-  withraw: async (amount, address) => {
-    console.log('BTC withraw')
+  withdraw: async (amount, address) => {
+    console.log('BTC withdraw')
   }
 }

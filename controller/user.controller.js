@@ -261,12 +261,12 @@ const UserController = {
 
     let txLimit = [];
     const depositMin = Number(process.env.DEPOSIT_MIN);
-    const withrawMin = Number(process.env.WITHRAW_MIN);
+    const withdrawMin = Number(process.env.WITHDRAW_MIN);
     rates.forEach(rate => {
 
       var _dMin = Number((depositMin / rate.value).toFixed(4));
-      var _wMin = Number((withrawMin / rate.value).toFixed(4));
-      txLimit.push({ coin: rate.coinType, rate: rate.value, depositMin: _dMin, withrawMin: _wMin });
+      var _wMin = Number((withdrawMin / rate.value).toFixed(4));
+      txLimit.push({ coin: rate.coinType, rate: rate.value, depositMin: _dMin, withdrawMin: _wMin });
     });
     if (data == null)
       res.status(400).json({ error: 'wrong user code' });
@@ -274,7 +274,7 @@ const UserController = {
       res.status(200).json({ data: { ...data.toGetJSON(), txLimit } });
   },
 
-  withrawItem: async (req, res) => {
+  withdrawItem: async (req, res) => {
     const { userCode, items, method, address } = req.body;
 
     // verify user info
@@ -320,22 +320,22 @@ const UserController = {
     if (rate == null)
       return res.status(400).json({ error: `${method} is not supported` });
     
-    if (userCarts[0].total < Number(process.env.WITHRAW_MIN))
-      return res.status(400).json({ error: 'Withraw amount must be greater than Minimum' });
+    if (userCarts[0].total < Number(process.env.WITHDRAW_MIN))
+      return res.status(400).json({ error: 'WithDraw amount must be greater than Minimum' });
     
-    const withrawAmount = Number((userCarts[0].total / rate.value).toFixed(4));  
+    const withdrawAmount = Number((userCarts[0].total / rate.value).toFixed(4));  
   
-    // withraw amount
-    Wallet.withraw(withrawAmount, address, method)
+    // withdraw amount
+    Wallet.withdraw(withdrawAmount, address, method)
       .then(async response => {
-        console.log('Wallet Withraw Result:', response);
+        console.log('Wallet WithDraw Result:', response);
         if (response && response.hash) { 
-          // success withraw & remove item user cart
+          // success withdraw & remove item user cart
           await UserCartSchema.deleteMany({ code: { $in: items }, user_code: userCode });
           // log txs
           const txData = await TxSchema.create({
             user_code: userCode,
-            amount: withrawAmount,
+            amount: withdrawAmount,
             currency: method,
             exchange_rate: rate.value,
             exchanged_amount: Number((userCarts[0].total).toFixed(2)),
@@ -346,19 +346,19 @@ const UserController = {
             bonus_percent: 0,
             bonus_max_amount: 0,
             bonus_amount: 0,
-            type: 'WITHRAW'
+            type: 'withdraw'
           });
           txData.code = Util.generateCode('transaction', txData._id);
           await txData.save();
           
           return res.status(200).json({ result: 'success' });
         } else {
-          // fail withraw
+          // fail withdraw
           return res.status(400).json({ error: 'transaction failed' });
         }
       })
       .catch(error => {
-        console.log('Wallet Withraw Error:', error);
+        console.log('Wallet WithDraw Error:', error);
         res.status(400).json({ error });
       });
   },
@@ -858,8 +858,7 @@ const UserController = {
 
   getTxHistory: async (req, res) => {
     const { userCode, type, walletMethod, minDate, maxDate } = req.body;
-    // type, wallet method, min date, max date
-    // date, code, method, amount, closing balance, reference, ip address
+    
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
@@ -902,7 +901,7 @@ const UserController = {
           detail = target? target.code : '';
 
         } else if (log.type == process.env.WALLET_EXCHANGE_DEPOSIT) {
-          target = await TransactionSchema.findById(log.target);
+          target = await TxSchema.findById(log.target);
           target = target ? target.toDataJSON() : null;
           method = 'Deposit';
           detail = target ? target.url : '';
@@ -922,6 +921,53 @@ const UserController = {
       res.status(200).json({ data });
     } catch (error) {
       console.log('>> Fetch transaction history error: \n', error);
+      res.status(400).json({ error: 'feteching data error' });
+    }
+  },
+
+  getTopUpsHistory: async (req, res) => {
+    const { userCode, type, minDate, maxDate } = req.body;
+
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+      if (user == null) {
+        return res.status(400).json({ error: 'wrong user info' });
+      }
+
+      let filters = { user_code: userCode };
+      if (type) filters.type = type.toUpperCase();
+      if (minDate) filters.created_at = { $gte: new Date(DateUtil(minDate).format()) };
+      if (maxDate) {
+        if (filters.created_at) filters.created_at.$lte = new Date(DateUtil(maxDate).format());
+        else filters.created_at = { $lte: new Date(DateUtil(maxDate).format()) };
+      }
+      const txs = await TxSchema.find(filters).sort({ created_at: -1 });
+
+      let data = [];
+      txs.forEach(tx => {
+        data.push({
+          code: tx.code,
+          amount: tx.amount,
+          exchanged: tx.exchanged_amount,
+          method: tx.method,
+          status: tx.status,
+          verified: tx.url,
+          type: tx.type,
+          ipAddress: tx.ip_address,
+          createdAt: {
+            date: DateUtil(tx.created_at).format('MMM D, YYYY'),
+            time: DateUtil(tx.created_at).format('HH:mm:ss'),
+          },
+          updatedAt: {
+            date: DateUtil(tx.updated_at).format('MMM D, YYYY'),
+            time: DateUtil(tx.updated_at).format('HH:mm:ss'),
+          }
+        })
+      });
+
+      res.status(200).json({ data });
+    } catch (error) {
+       console.log('>> Fetch top-up history error: \n', error);
       res.status(400).json({ error: 'feteching data error' });
     }
   }

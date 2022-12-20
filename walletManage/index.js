@@ -47,14 +47,14 @@ module.exports = {
     return await etherWallet.getBlockInfo();
   },
 
-  withraw: async (amount, address, method) => {
+  withdraw: async (amount, address, method) => {
     if (method == 'ETH')
-      return etherWallet.withraw(amount, address);
+      return etherWallet.withdraw(amount, address);
     if (method == 'BTC')
-      return await btcWallet.withraw(amount, address);
+      return await btcWallet.withdraw(amount, address);
     if (method == 'LTC')
-      return await ltcWallet.withraw(amount, address);
+      return await ltcWallet.withdraw(amount, address);
     if (method == 'BCH')
-      return await bchWallet.withraw(amount, address);
+      return await bchWallet.withdraw(amount, address);
   }
 }

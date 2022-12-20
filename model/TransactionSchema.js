@@ -19,7 +19,7 @@ const TransactionSchema = new Schema({
   bonus_percent: { type: SchemaTypes.Number },
   bonus_max_amount: { type: SchemaTypes.Number },
   bonus_amount: { type: SchemaTypes.Number },
-  type: { type: SchemaTypes.String }, // deposit, withraw
+  type: { type: SchemaTypes.String }, // deposit, withdraw
   ip_address: { type: SchemaTypes.String }
 }, {
   timestamps: {

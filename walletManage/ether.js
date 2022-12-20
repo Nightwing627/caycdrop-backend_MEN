@@ -91,7 +91,7 @@ module.exports = {
     return block;
   },
 
-  withraw: (amount, address) => {
+  withdraw: (amount, address) => {
     const wallet = new Wallet(base64.decode(process.env.TARGET_PRIVATE_KEY), provider);
     const sendTx = {
       to: address,
@@ -102,7 +102,7 @@ module.exports = {
       wallet
         .sendTransaction(sendTx)
         .then(async (resultTx) => {
-          console.log('### Withraw', resultTx);
+          console.log('### Withdraw', resultTx);
           console.log(
             `Address ${address} deposited ${utils.formatEther(resultTx.value)} ETH at ${resultTx.hash}`
           );
@@ -144,7 +144,7 @@ const depositWallet = async (tx) => {
     bonus_percent: 0,
     bonus_max_amount: 0,
     bonus_amount: 0,
-    type: 'DEPOSIT',
+    type: 'deposit',
   });
   await TxSchema.findByIdAndUpdate(txData._id, {
     code: Util.generateCode('transaction', txData._id)
