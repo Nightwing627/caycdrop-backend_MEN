@@ -256,7 +256,16 @@ async function getUserByCode(code) {
     .populate('account', '-_id -__v -user_code')
     .populate('user_progress', '-_id -__v -user_code -bet_count')
     .populate('wallets', '-_id -__v -user_code')
-    .populate('shipping_info', '-_id -__v -user_code')
+    .populate({
+      path: 'shipping_info',
+      select: '-_id -__v -user_code',
+      populate: [
+        {
+          path: 'country',
+          select: '-_id -__v'
+        }
+      ]
+    })
     .select('-__v');
   return user.toAuthJSON();
 }

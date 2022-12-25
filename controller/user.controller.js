@@ -88,16 +88,19 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       const shippingInfo = await UserShippingInfoSchema.findOne({ user_code: userCode });
-
       if (user == null || shippingInfo == null) {
-        return res.status(400).json({ error: "wrong parameter" });
+        return res.status(400).json({ error: "User Info doesn't exist" });
       }
+
       const countryItem = await CountrySchema.findOne({ code: country });
+      if (!countryItem) {
+        return res.status(400).json({ error: "Country is wrong data" });
+      }
 
       shippingInfo.first_name = firstName;
       shippingInfo.last_name = lastName;
       shippingInfo.address = address1;
-      shippingInfo.address2 = shippingInfo.address2 || address2;
+      shippingInfo.address2 = address2 || shippingInfo.address2;
       shippingInfo.zipcode = zipCode;
       shippingInfo.state = state;
       shippingInfo.city = city;
@@ -109,6 +112,7 @@ const UserController = {
 
       res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
     } catch (error) {
+      console.log('>> Update User Shipping Info: ', error);
       return res.status(400).json({ error: "wrong parameter" });
     }
   },
