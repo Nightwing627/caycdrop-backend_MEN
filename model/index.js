@@ -32,6 +32,8 @@ require('./RollHistorySchema');
 require('./SeedSchema');
 require('./UserSeedSchema');
 require('./UserCryptoWalletSchema');
-
+require('./TierSchema');
+require('./AffliateTxsSchema');
+require('./PromoCodeSchema');
 
 console.log('loaded all collections!');

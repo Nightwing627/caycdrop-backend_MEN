@@ -114,7 +114,7 @@ module.exports = {
           reject(err);
         });
     });
-  }
+  },
 }
 
 const depositWallet = async (tx) => {

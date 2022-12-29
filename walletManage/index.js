@@ -56,5 +56,16 @@ module.exports = {
       return await ltcWallet.withdraw(amount, address);
     if (method == 'BCH')
       return await bchWallet.withdraw(amount, address);
+  },
+
+  generateWallet: async (method) => {
+    if (method == 'ETH')
+      return await etherWallet.getWalletInfo();
+    if (method == 'BTC')
+      return await btcWallet.getWalletInfo();
+    if (method == 'LTC')
+      return await ltcWallet.getWalletInfo();
+    if (method == 'BCH')
+      return await bchWallet.getWalletInfo();
   }
 }

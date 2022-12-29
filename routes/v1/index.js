@@ -16,6 +16,7 @@ const ItemSchema = require('../../model/ItemSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
+router.use('/affliate', verifyToken, require('./affliate'));
 router.use('/pvp', require('./pvp'));
 router.use('/', require('./auth'));
 router.use('/', require('./home'));

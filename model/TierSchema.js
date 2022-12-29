@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema, SchemaTypes } = mongoose;
 const uniqueValidator = require('mongoose-unique-validator');
 
-const TagSchema = new Schema({
+const TierSchema = new Schema({
   code: {
     type: SchemaTypes.String,
     index: true
@@ -10,8 +10,10 @@ const TagSchema = new Schema({
   commission: { type: SchemaTypes.Number },
   min_claim: { type: SchemaTypes.Number },
   min_active_claim: { type: SchemaTypes.Number },
-  code_count: { type: SchemaTypes.Number },
+  assignable: { type: SchemaTypes.Number },
   available_loan: { type: SchemaTypes.Number },
+  required_deposit: { type: SchemaTypes.Number },
+  currency: { type: SchemaTypes.String }
 }, {
   timestamps: {
     createdAt: 'created_at',
@@ -19,6 +21,6 @@ const TagSchema = new Schema({
   },
 });
 
-TagSchema.plugin(uniqueValidator, { message: " is already exist" });
+TierSchema.plugin(uniqueValidator, { message: " is already exist" });
 
-module.exports = mongoose.model('Tag', TagSchema);
+module.exports = mongoose.model('Tier', TierSchema);

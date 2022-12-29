@@ -28,6 +28,7 @@ const path = require('path');
 const multer = require('multer');
 const uuid = require('uuid');
 const DateUtil = require('dayjs');
+const walletManage = require('../walletManage');
 
 
 const UserController = {
@@ -276,6 +277,58 @@ const UserController = {
       res.status(400).json({ error: 'wrong user code' });
     else
       res.status(200).json({ data: { ...data.toGetJSON(), txLimit } });
+  },
+
+  generateWallet: async (req, res) => {
+    const { userCode, type } = req.body;
+
+    try {
+      const user = await UserSchema.findOne({ code: userCode });
+
+      if (!user)
+        return res.status(400).json({ error: 'wrong user info' });
+      
+      if (!(type == 'ETH' || type == 'BTC' || type == 'LTC' || type == 'BCH'))
+        return res.status(400).json({ error: `Crypto ${type} is not supported` });
+      
+      // get new wallet address
+      const data = await walletManage.generateWallet(type);
+
+      let userCrypto = await UserCryptoWalletSchema.findOne({ user_code: userCode });
+
+      if (!userCrypto) {
+        await walletManage.walletCreate(userCode);
+        userCrypto = await UserCryptoWalletSchema.findOne({ user_code: userCode });
+      } else {
+        if (type == 'ETH') {
+          userCrypto.eth_address = data.address;
+          userCrypto.eth_privateKey = data.pk;
+          userCrypto.eth_index = data.index;
+          userCrypto.eth_status = true;
+        } else if (type == 'BTC') {
+          userCrypto.btc_address = data.address;
+          userCrypto.btc_privateKey = data.pk;
+          userCrypto.btc_index = data.index;
+          userCrypto.btc_status = true;
+        } else if (type == 'LTC') {
+          userCrypto.ltc_address = data.address;
+          userCrypto.ltc_privateKey = data.pk;
+          userCrypto.ltc_index = data.index;
+          userCrypto.ltc_status = true;
+        } else if (type == 'BCH') {
+          userCrypto.bch_address = data.address;
+          userCrypto.bch_privateKey = data.pk;
+          userCrypto.bch_index = data.index;
+          userCrypto.bch_status = true;
+        }
+
+        await userCrypto.save();
+      }
+      return res.status(200).json({ result: 'success', data: userCrypto.toGetJSON() });
+    } catch (error) {
+      console.log('>> Generate Wallet Error: ', error);
+      res.status(400).json({ error: 'New Wallet Generating is failed' });
+    }
   },
 
   withdrawItem: async (req, res) => {

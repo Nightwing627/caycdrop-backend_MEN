@@ -1,0 +1,161 @@
+[{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e985e"
+  },
+  "commission": 0.6,
+  "min_claim": 10,
+  "min_active_claim": 3,
+  "assignable": 1,
+  "available_loan": 0,
+  "required_deposit": 0,
+  "code": "ATee5fbda3e80eef3b7316",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400387"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e985f"
+  },
+  "commission": 1.2,
+  "min_claim": 10,
+  "min_active_claim": 4,
+  "assignable": 1,
+  "available_loan": 0,
+  "required_deposit": 2000,
+  "code": "AT4eac7f0860a3deda0b75",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400387"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9860"
+  },
+  "commission": 1.8,
+  "min_claim": 10,
+  "min_active_claim": 5,
+  "assignable": 1,
+  "available_loan": 0,
+  "required_deposit": 5000,
+  "code": "ATd36c065d9391d72bbd2c",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400387"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9861"
+  },
+  "commission": 2.4,
+  "min_claim": 10,
+  "min_active_claim": 6,
+  "assignable": 1,
+  "available_loan": 0,
+  "required_deposit": 7500,
+  "code": "ATb18b2e957698feef6268",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9862"
+  },
+  "commission": 3,
+  "min_claim": 10,
+  "min_active_claim": 7,
+  "assignable": 5,
+  "available_loan": 0,
+  "required_deposit": 10000,
+  "code": "AT836f6f08d05a09c141bb",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9863"
+  },
+  "commission": 3.6,
+  "min_claim": 10,
+  "min_active_claim": 8,
+  "assignable": 5,
+  "available_loan": 100,
+  "required_deposit": 20000,
+  "code": "ATfb584a60975ffdac1c6f",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9864"
+  },
+  "commission": 4.2,
+  "min_claim": 10,
+  "min_active_claim": 9,
+  "assignable": 5,
+  "available_loan": 200,
+  "required_deposit": 40000,
+  "code": "AT4abc23b8a76c7a749f4a",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9865"
+  },
+  "commission": 4.8,
+  "min_claim": 10,
+  "min_active_claim": 10,
+  "assignable": 5,
+  "available_loan": 400,
+  "required_deposit": 60000,
+  "code": "AT9d9cf381224dc4733172",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9866"
+  },
+  "commission": 5.4,
+  "min_claim": 10,
+  "min_active_claim": 5,
+  "assignable": 5,
+  "available_loan": 600,
+  "required_deposit": 80000,
+  "code": "AT65430ea060c2bc7967f9",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63a93741e43fa2d6ec0e9867"
+  },
+  "commission": 6,
+  "min_claim": 10,
+  "min_active_claim": 20,
+  "assignable": 5,
+  "available_loan": 800,
+  "required_deposit": 100000,
+  "code": "AT40ebf6e643f0a6c94865",
+  "updated_at": {
+    "$date": {
+      "$numberLong": "1672034400388"
+    }
+  }
+}]

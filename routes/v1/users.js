@@ -17,6 +17,8 @@ router.post('/cart/sell', UserController.sellUserItem);
 
 router.get('/wallet', UserController.getUserCryptoWallet);
 
+router.post('/generate/wallet', UserController.generateWallet);
+
 // router.post('/wallet/withdraw', UserController.withdrawItem);
 
 router.get('/statistic/:code', UserController.getStatistic);

@@ -3,6 +3,7 @@ const ItemSchema = require('../model/ItemSchema');
 const BoxItemSchema = require('../model/BoxItemSchema');
 const CountrySchema = require('../model/CountrySchema');
 const TagSchema = require('../model/TagSchema');
+const TierSchema = require('../model/TierSchema');
 
 const Util = require('../util');
 const boxData = require('./boxes.json');
@@ -10,6 +11,7 @@ const itemData = require('./items.json');
 const boxItemData = require('./boxItems.json');
 const countryData = require('./country.json');
 const tagData = require('./tags.json');
+const tierData = require('./tiers.json');
 
 const init = async () => {
   const boxs = await BoxSchema.find();
@@ -21,6 +23,12 @@ const init = async () => {
   if (items == null || items.length == 0) {
     await ItemSchema.insertMany(itemData);
   }
+
+  const tiers = await TierSchema.find();
+  if (tiers == null || tiers.length == 0) {
+    await TierSchema.insertMany(tierData);
+  }
+
 
   // const boxItems = await BoxItemSchema.find();
   // if (boxItems == null || boxItems.length == 0) {
