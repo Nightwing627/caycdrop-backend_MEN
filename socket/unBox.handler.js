@@ -19,18 +19,18 @@ module.exports = (io, socket) => {
     console.log(io);
     try {
       if (typeof callback !== "function") {
-        socket.emit('box.open.fail', { error: 'callback error' });
+        socket.emit('box.open.fail', { error: 'Callback error' });
         return socket.disconnect();
       }
       // Validate params and user info
       const { usercode, token, boxcode, time } = payload;
       if (!(usercode && token && boxcode && time)) {
-        return callback({ error: 'params must be filled' });
+        return callback({ error: 'Params must be filled' });
       }
       // verify user
       const userData = jwt.verify(token, process.env.TOKEN_KEY);
       if (!usercode == userData.userCode) {
-        return callback({ error: 'wrong token' });
+        return callback({ error: 'Wrong token' });
       }
 
       // Get basic information - User, UserWallet, UserProgress, Box
@@ -41,7 +41,7 @@ module.exports = (io, socket) => {
 
       // Compare box budget and user wallet
       if (userWallet.main < box.original_price) {
-        return callback({ error: 'tight wallet' });
+        return callback({ error: 'Tight wallet' });
       }
 
       // Get user client and server seed
@@ -148,7 +148,7 @@ module.exports = (io, socket) => {
     } catch (error) {
       console.log(error);
       if (error.message == 'jwt expired')
-        callback({ error: 'token expired' });
+        callback({ error: 'Token is expired' });
       else 
         callback({ error: error.message })
     }
@@ -156,18 +156,18 @@ module.exports = (io, socket) => {
 
   socket.on('box.open.picked', async (payload, callback) => {
     if (typeof callback !== "function") {
-      socket.emit('box.open.fail', { error: 'callback error' });
+      socket.emit('box.open.fail', { error: 'Callback error' });
       return socket.disconnect();
     }
     // Validate params and user info
     const { usercode, token, bol, method, time } = payload;
     if (!(usercode && token && bol && method && time)) {
-      return callback({ error: 'params must be filled' });
+      return callback({ error: 'Params must be filled' });
     }
     // verify user
     const userData = jwt.verify(token, process.env.TOKEN_KEY);
     if (!usercode == userData.userCode) {
-      return callback({ error: 'wrong token' });
+      return callback({ error: 'Wrong token' });
     }
 
     const boxOpen = await BoxOpenSchema
@@ -179,9 +179,9 @@ module.exports = (io, socket) => {
     }
     
     if (boxOpen == null) {
-      return callback({ error: 'this is fake data' });
+      return callback({ error: 'This is fake data' });
     } else if (boxOpen.user.code !== usercode) {
-      return callback({ error: 'user not match' });
+      return callback({ error: 'User not match' });
     }
 
     const userWallet = await UserWalletSchema.findOne({ user_code: usercode });

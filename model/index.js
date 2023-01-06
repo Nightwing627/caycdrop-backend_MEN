@@ -35,5 +35,7 @@ require('./UserCryptoWalletSchema');
 require('./TierSchema');
 require('./AffliateTxsSchema');
 require('./PromoCodeSchema');
+require('./UserAffliateSchema');
+require('./OrderPromoSchema');
 
-console.log('loaded all collections!');
+console.log('>> Loaded all collections!');

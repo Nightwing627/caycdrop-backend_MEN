@@ -39,11 +39,11 @@ const UserController = {
       const user = await Util.getUserByCode(userCode);
       
       if (user == null) {
-        return res.status(400).json({ error: "user not found" });  
+        return res.status(400).json({ error: "User not found" });  
       }
       res.status(200).json({ data: user });
     } catch (error) {
-      res.status(400).json({ error: "user not found" });
+      res.status(400).json({ error: "User not found" });
     }
   },
 
@@ -52,12 +52,12 @@ const UserController = {
 
     try {
       if (!(username && email)) {
-        return res.status(400).json({ error: "please send the user information" });
+        return res.status(400).json({ error: "Please send the user information" });
       }
 
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: "user not found" });
+        return res.status(400).json({ error: "User not found" });
       }
       const account = await AccountSchema.findOne({ user_code: userCode });
       account.username = username;
@@ -74,7 +74,7 @@ const UserController = {
 
       res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
     } catch (error) {
-      res.status(400).json({ error: "user not found" })
+      res.status(400).json({ error: "User not found" })
     }
   },
 
@@ -114,7 +114,7 @@ const UserController = {
       res.status(200).json({ result: 'success', data: await Util.getUserByCode(userCode) });
     } catch (error) {
       console.log('>> Update User Shipping Info: ', error);
-      return res.status(400).json({ error: "wrong parameter" });
+      return res.status(400).json({ error: "Wrong parameter" });
     }
   },
 
@@ -157,7 +157,7 @@ const UserController = {
       }
 
       if (user == null) {
-        return res.status(400).json({ error: "user not found" });
+        return res.status(400).json({ error: "User not found" });
       }
 
       let search = query == undefined ? '' : query;
@@ -192,7 +192,7 @@ const UserController = {
       
       res.status(200).json({ data: userCarts });
     } catch (error) {
-      res.status(400).json({ error: "cart item not found" });
+      res.status(400).json({ error: "Cart item not found" });
     } 
   },
 
@@ -201,12 +201,12 @@ const UserController = {
 
     try {
       if (!Array.isArray(itemIds)) {
-        return res.status(400).json({ error: 'item info must be array' });
+        return res.status(400).json({ error: 'Item info must be array' });
       }
 
       const userCarts = await UserCartSchema.find({ code: { $in: itemIds } });
       if (userCarts == null) {
-        return res.status(400).json({ error: "wrong user cart info" });
+        return res.status(400).json({ error: "Wrong user cart info" });
       }
 
       var isUserOwn = true;
@@ -216,7 +216,7 @@ const UserController = {
       }
 
       if (!isUserOwn) {
-        return res.status(400).json({ error: "this items is not for user" });
+        return res.status(400).json({ error: "This items is not for user" });
       }
 
       const user = await UserSchema.findOne({ code: userCode });
@@ -255,7 +255,7 @@ const UserController = {
       res.status(200).json({ result: 'success' });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: 'item sell failed' });
+      res.status(400).json({ error: 'Item sell failed' });
     }
   },
 
@@ -274,7 +274,7 @@ const UserController = {
       txLimit.push({ coin: rate.coinType, rate: rate.value, depositMin: _dMin, withdrawMin: _wMin });
     });
     if (data == null)
-      res.status(400).json({ error: 'wrong user code' });
+      res.status(400).json({ error: 'Wrong user code' });
     else
       res.status(200).json({ data: { ...data.toGetJSON(), txLimit } });
   },
@@ -337,18 +337,18 @@ const UserController = {
     // verify user info
     const user = await UserSchema.findOne({ code: userCode });
     if (user == null)
-      return res.status(400).json({ error: 'wrong user info ' });
+      return res.status(400).json({ error: 'Wrong user info ' });
     
     // validate items
     if (!Array.isArray(items))
-      return res.status(400).json({ error: 'wrong items formart' });
+      return res.status(400).json({ error: 'Wrong items formart' });
     if (items.length == 0)
-      return res.status(200).json({ error: 'no item data' });
+      return res.status(200).json({ error: 'No item data' });
 
     // match the user info and items
     const cart = await UserCartSchema.find({ user_code: userCode });
     if (cart == null)
-      return res.status(200).json({ error: 'no user cart data' });
+      return res.status(200).json({ error: 'No user cart data' });
     
     // get user cart items and calc the total amount
     const userCarts = await UserCartSchema.aggregate([
@@ -411,7 +411,7 @@ const UserController = {
           return res.status(200).json({ result: 'success' });
         } else {
           // fail withdraw
-          return res.status(400).json({ error: 'transaction failed' });
+          return res.status(400).json({ error: 'Transaction failed' });
         }
       })
       .catch(error => {
@@ -436,7 +436,7 @@ const UserController = {
       }
       
       if (user == null) {
-        res.status(400).json({ error: 'user not found'});
+        res.status(400).json({ error: 'User not found'});
       }
 
       // get total unboxed value
@@ -564,7 +564,7 @@ const UserController = {
 
     } catch (error) {
       console.log('User get statistic: ', error);
-      res.status(400).json({ error: 'user not found'});
+      res.status(400).json({ error: 'User not found'});
     }
   },
 
@@ -573,10 +573,10 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
       if (type != process.env.TYPE_IDENTITY || type != process.env.TYPE_RESIDENCE) {
-        return res.status(400).json({ error: 'wrong type info' });
+        return res.status(400).json({ error: 'Wrong type info' });
       }
       
       await uploadFFiles(req, res);
@@ -617,7 +617,7 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
       
       const seeds = await UserSeedSchema
@@ -632,7 +632,7 @@ const UserController = {
       res.status(200).json({ data: seeds.toGetJSON() });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: 'wrong user info' })
+      res.status(400).json({ error: 'Wrong user info' })
     }
   },
 
@@ -642,10 +642,10 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
       if (value == '') {
-        return res.status(400).json({ error: 'wrong client value' });
+        return res.status(400).json({ error: 'Wrong client value' });
       }
 
       const userSeeds = await UserSeedSchema.findOne({ userId: user._id });
@@ -687,7 +687,7 @@ const UserController = {
       res.status(200).json({ result: 'success' });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: 'wrong user info' })
+      res.status(400).json({ error: 'Wrong user info' })
     }
   },
 
@@ -697,7 +697,7 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
       
       // change current, future, old server seed
@@ -706,7 +706,7 @@ const UserController = {
       res.status(200).json({ result: 'success' });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: 'wrong user info' })
+      res.status(400).json({ error: 'Wrong user info' })
     }
   },
 
@@ -827,7 +827,7 @@ const UserController = {
       });
     } catch (error) {
       console.log('>> Fetch game history error: \n', error);
-      res.status(400).json({ error: 'feteching data error' });
+      res.status(400).json({ error: 'Feteching data error' });
     }    
   },
 
@@ -889,7 +889,7 @@ const UserController = {
       res.status(200).json({ data });
     } catch (error) {
       console.log('>> Fetching unboxing history error: \n', error);
-      res.status(400).json({ error: 'fetching data error' });
+      res.status(400).json({ error: 'Fetching data error' });
     }
   },
 
@@ -919,7 +919,7 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
 
       // set filters
@@ -978,7 +978,7 @@ const UserController = {
       res.status(200).json({ data });
     } catch (error) {
       console.log('>> Fetch transaction history error: \n', error);
-      res.status(400).json({ error: 'feteching data error' });
+      res.status(400).json({ error: 'Feteching data error' });
     }
   },
 
@@ -988,7 +988,7 @@ const UserController = {
     try {
       const user = await UserSchema.findOne({ code: userCode });
       if (user == null) {
-        return res.status(400).json({ error: 'wrong user info' });
+        return res.status(400).json({ error: 'Wrong user info' });
       }
 
       let filters = { user_code: userCode };
@@ -1025,7 +1025,7 @@ const UserController = {
       res.status(200).json({ data });
     } catch (error) {
        console.log('>> Fetch top-up history error: \n', error);
-      res.status(400).json({ error: 'feteching data error' });
+      res.status(400).json({ error: 'Feteching data error' });
     }
   }
 };

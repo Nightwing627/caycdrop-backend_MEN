@@ -4,15 +4,9 @@ var verifyToken = require('../middleware/auth');
 
 const seed = require('../../seed');
 const util = require('../../util');
-const socket = require('../../socket');
-const mongoose = require('mongoose');
-const PvpRoundSchema = require('../../model/PvpRoundSchema');
-const BoxOpenSchema = require('../../model/BoxOpenSchema');
-const WalletExchangeSchema = require('../../model/WalletExchangeSchema');
-const PvpGamePlayerSchema = require('../../model/PvpGamePlayerSchema');
-const PvpGameSchema = require('../../model/PvpGameSchema');
-const BoxSchema = require('../../model/BoxSchema');
-const ItemSchema = require('../../model/ItemSchema');
+const UserSchema = require('../../model/UserSchema');
+const TierSchema = require('../../model/TierSchema');
+const UserAffliateSchema = require('../../model/UserAffliateSchema');
 
 // define API router
 router.use("/player", verifyToken, require("./users"));
@@ -28,14 +22,14 @@ router.post('/encrypt_key', (req, res) => {
   try {
     const { value } = req.body;
     if (!value) {
-      return res.status(400).json({ error: 'value must be filled' });
+      return res.status(400).json({ error: 'Value must be filled' });
     }
     console.log('value is :', value);
     const encData = util.encryption(value);
     res.status(200).json({ data: encData });
   } catch (error) {
     console.log(error)
-    res.status(400).json({ error: "encryption is failed, please try again" });
+    res.status(400).json({ error: "Encryption is failed, please try again" });
   }
 });
 
@@ -44,13 +38,13 @@ router.post('/decrypt_key', (req, res) => {
   try {
     const { hashed } = req.body;
     if (!hashed) {
-      return res.status(400).json({ error: 'hashed must be filled' });
+      return res.status(400).json({ error: 'Hashed must be filled' });
     }
     const decData = util.decryption(hashed);
     res.status(200).json({ data: decData });
   } catch (error) {
     console.log(error)
-    res.status(400).json({ error: "encryption is failed, please try again" });
+    res.status(400).json({ error: "Encryption is failed, please try again" });
   }
 });
 
@@ -70,7 +64,9 @@ router.post('/testseed', function (req, res) {
 // test funcs
 router.post('/testfunc', async (req, res) => {
   try {    
-    res.status(200).json({ data: '' });  
+    // TODO: test codes
+
+    res.status(200).json({ result: 'success' });
   } catch (error) {
     console.log(error)
     res.status(400).json({ error });

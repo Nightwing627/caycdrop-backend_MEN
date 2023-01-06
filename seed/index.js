@@ -28,8 +28,7 @@ const init = async () => {
   if (tiers == null || tiers.length == 0) {
     await TierSchema.insertMany(tierData);
   }
-
-
+  
   // const boxItems = await BoxItemSchema.find();
   // if (boxItems == null || boxItems.length == 0) {
   //   await BoxItemSchema.insertMany(boxItemData);

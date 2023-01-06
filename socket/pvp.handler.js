@@ -30,7 +30,7 @@ module.exports = {
       const { pvpId } = payload;
       const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
       if (pvpGame == null) {
-        return callback({ error: 'wrong battle id' });
+        return callback({ error: 'Wrong battle id' });
       }
       let battleName = 'battle_' + pvpId;
       pvpSocket.join(battleName);
@@ -48,29 +48,29 @@ module.exports = {
       const { pvpId, userCode } = payload;
 
       if (!(pvpId && userCode))
-        return callback({ error: 'wrong params' });
+        return callback({ error: 'Wrong params' });
 
       const pvpGame = await PvpGameSchema.findOne({ code: pvpId }).populate('box_list');
       // check battle exist
       if (pvpGame == null)
-        return callback({ error: 'wrong battle id' });
+        return callback({ error: 'Wrong battle id' });
       // check the battle status
       if (pvpGame.status != process.env.PVP_GAME_CREATED)
-        return callback({ error: 'this battle already started or finished' });
+        return callback({ error: 'This battle already started or finished' });
       
       let joiner = await UserSchema.findOne({ code: userCode })
         .populate('wallets').populate('account').populate('user_progress');
       // check user exist       
       if (joiner == null)
-        return callback({ error: 'wrong user info' });
+        return callback({ error: 'Wrong user info' });
       
       // check user data with creator
       const player = await PvpGamePlayerSchema.findOne({ pvpId: pvpGame._id });
       if (player.creator == null || player.creator.get('code') == userCode)
-        return callback({ error: 'user info is same with opponent' });
+        return callback({ error: 'User info is same with opponent' });
       // check user wallet
       if (joiner.wallets.main < pvpGame.total_bet)
-        return callback({ error: 'too tight budget' });
+        return callback({ error: 'Too tight budget' });
       
       // update pvpgame
       pvpGame.status = process.env.PVP_GAME_STARTED;

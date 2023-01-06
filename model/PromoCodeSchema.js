@@ -3,10 +3,7 @@ const { Schema, SchemaTypes } = mongoose;
 const uniqueValidator = require('mongoose-unique-validator');
 
 const PromoCodeSchema = new Schema({
-  user_code: {
-    type: SchemaTypes.String,
-    index: true
-  },
+  user_code: { type: SchemaTypes.String },
   promo_code: { type: SchemaTypes.String },
   status: { type: SchemaTypes.Boolean }
 }, {

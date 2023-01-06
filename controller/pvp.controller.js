@@ -114,10 +114,10 @@ const PVPController = {
     try {
       // validate params
       if (!(userCode && isPrivate != null && botEnable != null && strategy && boxData))
-        return res.status(400).json({ error: 'params is wrong' });
+        return res.status(400).json({ error: 'Params are wrong' });
       
       if (!Array.isArray(boxData))
-        return res.status(400).json({ error: 'box list\'s format is wrong ' });  
+        return res.status(400).json({ error: 'Box list\'s format is wrong ' });  
       
       const user = await UserSchema
         .findOne({ code: userCode })
@@ -140,7 +140,7 @@ const PVPController = {
       
       // check the user ballance
       if (totalBet == 0 || totalBet > user.wallets.main)
-        return res.status(400).json({ error: 'tight budget' });
+        return res.status(400).json({ error: 'Tight budget' });
       
       // order boxlist by price
       betedBoxList.sort((a, b) => { return a.cost - b.cost });
@@ -238,7 +238,7 @@ const PVPController = {
       res.status('200').json({ data: pvpGameCode });
     } catch (error) {
       console.log(error)
-      res.status('400').json({ error: 'created failed' });
+      res.status('400').json({ error: 'Created failed' });
     }
   },
 
@@ -248,7 +248,7 @@ const PVPController = {
     try {
       const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
       if (pvpGame == null)
-        return res.status(400).json({ error: 'wrong battle info' });
+        return res.status(400).json({ error: 'Wrong battle info' });
       
       const players = await PvpGamePlayerSchema.findOne(
         { pvpId: pvpGame._id }, { _id: 0, __v: 0, pvpId: 0 });
@@ -339,7 +339,7 @@ const PVPController = {
     } catch (error) {
       console.log(`Get Battle By Code Error`);
       console.log(error);
-      res.status(400).json({ error: 'wrong battle info' });
+      res.status(400).json({ error: 'Wrong battle info' });
     }
   },
 
@@ -349,11 +349,11 @@ const PVPController = {
     try {
       const pvpGame = await PvpGameSchema.findOne({ code: pvpId });
       if (pvpGame == null)
-        return res.status(400).json({ error: 'wrong pvp id' });
+        return res.status(400).json({ error: 'Wrong pvp id' });
       
       const rollHis = await RollHistorySchema.findById(pvpGame.roll);      
       if (rollHis == null)
-        return res.status(400).json({ error: 'wrong pvp id' });
+        return res.status(400).json({ error: 'Wrong pvp id' });
       console.log(req.params);
       const serverSeed = (await SeedSchema.findById(rollHis.server_seed)).toGameJSON();
       const clientSeed = (await SeedSchema.findById(rollHis.client_seed)).toGameJSON();
@@ -417,7 +417,7 @@ const PVPController = {
       res.status(200).json({ data });
     } catch (error) {
       console.log(error);
-      res.status(400).json({ error: 'wrong pvp id'})
+      res.status(400).json({ error: 'Wrong pvp id'})
     }
   },
 
@@ -427,7 +427,7 @@ const PVPController = {
     try {
       const box = await BoxSchema.findOne({ code });
       if (box == null)
-        return res.status(400).send({ error: 'wrong box code' });
+        return res.status(400).send({ error: 'Wrong box code' });
       
       let boxItems = await BoxItemSchema.aggregate([
         { $match: { box_code: box.code } },
@@ -511,7 +511,7 @@ const PVPController = {
       res.status(200).json({ data });
     } catch (error) {
       console.log(error)
-      res.status(400).json({ error: "server has a problem" });
+      res.status(400).json({ error: "Server has a problem" });
     }
   }
 };

@@ -78,7 +78,7 @@ mongoose.connect(
     useNewUrlParser: true,
   },
   async () => {
-    console.log("connected to the database!");
+    console.log(">> Connected to the database!");
     require('./model');
     await util.CryptoRate();
   }

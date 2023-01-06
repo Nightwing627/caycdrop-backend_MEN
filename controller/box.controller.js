@@ -232,7 +232,7 @@ const BoxController = {
       return res.status(200).json({ result });
     } catch (err) {
       console.log(err);
-      return res.status(400).json({ error: 'no data'});
+      return res.status(400).json({ error: 'No data'});
     }
   },
 
@@ -240,17 +240,17 @@ const BoxController = {
     const { usercode, boxcode } = req.body;
 
     if (!(usercode && boxcode)) {
-      return res.status(400).json({ error: "params must be filled" });
+      return res.status(400).json({ error: "Params must be filled" });
     }
     // validate params
     const user = await UserSchema.findOne({ code: usercode });
     if (user == null) {
-      return res.status(400).json({ error: "user doesn't exist" });
+      return res.status(400).json({ error: "User doesn't exist" });
     }
 
     const box = await BoxSchema.findOne({ code: boxcode });
     if (box == null) {
-      return res.status(400).json({ error: "wrong box info" });
+      return res.status(400).json({ error: "Wrong box info" });
     }
 
     // get basic information for verifying
@@ -259,7 +259,7 @@ const BoxController = {
     
     // compare user wallet and box cost
     if (userWallet.main < box.original_price) {
-      return res.status(400).json({ error: "please check your balance. it must be greater than bet" });
+      return res.status(400).json({ error: "Please check your balance. it must be greater than bet" });
     }
 
     // get verify box roll value

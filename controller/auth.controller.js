@@ -13,6 +13,8 @@ const UserSeedSchema = require("../model/UserSeedSchema");
 
 const Util = require('../util');
 const walletManage = require('../walletManage');
+const TierSchema = require("../model/TierSchema");
+const UserAffliateSchema = require("../model/UserAffliateSchema");
 
 const AuthController = {
   login: async (req, res) => {
@@ -218,11 +220,18 @@ const AuthController = {
       });
       await userVerify.save();
 
-      // Create user crypto wallet
+      // create user crypto wallet
       await walletManage.walletCreate(code);
       
-      // TODO: fix issues
+      // create user affliate
+      const tier1 = await TierSchema.findOne({ level: 1 });
+      await UserAffliateSchema.create({
+        user_code: code,
+        level: 1,
+        tier: tier1._id
+      });
 
+      // TODO: fix issues
       // Util.sendEmail(
       //   process.env.EMAIL_VERIFY,
       //   {

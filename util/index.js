@@ -25,7 +25,7 @@ function encrypt(text) {
     return { iv: iv.toString('hex'), encryptedData: encrypted.toString('hex') };  
   } catch (error) {
     console.log(error)
-    return { error: 'encrypt module error' }
+    return { error: 'Encrypt module error' }
   }
 }
 
